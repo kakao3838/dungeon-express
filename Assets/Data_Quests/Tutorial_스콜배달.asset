@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0230ae3bea6038b44bee460d0d1bc269, type: 3}
+  m_Name: "Tutorial_\uC2A4\uCF5C\uBC30\uB2EC"
+  m_EditorClassIdentifier: Assembly-CSharp::QuestData
+  questName: "\uC2A4\uCF5C \uBC30\uB2EC"
+  category: 2
+  requiredItems:
+  - item: {fileID: 11400000, guid: eec6c1a40fe6c4c4296cd57bb3c43dc5, type: 2}
+    quantity: 1
+  targetLocation: "\uC815\uAE00 \uB358\uC804 (\uC2A4\uCF5C \uAD6C\uC5ED)"
+  reward: 0
+  description: "\uC2A4\uCF5C\uC774 \uB0B4\uB9AC\uB294 \uAD6C\uC5ED\uC744 \uC9C0\uB098\uAC00\uC57C
+    \uD558\uB294 \uBC30\uB2EC\uC774\uB2E4. \uBB3C\uD488\uC774 \uC816\uC9C0 \uC54A\uB3C4\uB85D
+    \uC870\uC2EC\uD574\uC11C \uC62E\uAE30\uC790."
+  objectives:
+  - "\uC2A4\uCF5C \uAE30\uBBF9\uC744 \uD53C\uD574 \uBAA9\uC801\uC9C0\uAE4C\uC9C0
+    \uBC30\uB2EC\uD558\uC790"
+  unlocksQuests:
+  - {fileID: 11400000, guid: f3befb0e8efc6be4d82b3f59ebdebdb7, type: 2}

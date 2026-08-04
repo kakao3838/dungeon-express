@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0230ae3bea6038b44bee460d0d1bc269, type: 3}
+  m_Name: "Quest_\uC601\uC57D\uBC30\uB2EC"
+  m_EditorClassIdentifier: Assembly-CSharp::QuestData
+  questName: "\uC601\uC57D \uBC30\uB2EC"
+  category: 0
+  requiredItems:
+  - item: {fileID: 11400000, guid: 6a2768e8c3b928647a00133140d76fd5, type: 2}
+    quantity: 2
+  targetLocation: "\uC720\uC801 \uB0B4 \uD654\uC5FC \uD568\uC815 \uAE38\uBAA9 / \uC815\uAE00
+    \uACE0\uC9C0\uB300 \uC544\uB798"
+  reward: 0
+  description: "\uBD80\uD65C\uC758 \uC601\uC57D\uC744 \uB098\uBA38\uC9C0 \uB450 \uB3D9\uB8CC\uC5D0\uAC8C\uB3C4
+    \uBC30\uB2EC\uD574\uB2EC\uB77C\uB294 \uBD80\uD0C1\uC744 \uBC1B\uC558\uB2E4. \uC644\uB8CC\uD558\uBA74
+    \uC720\uC801\uC5D0\uC11C \uBC1C\uACAC\uD55C \uBCF4\uBB3C\uC744 \uBCF4\uC218\uB85C
+    \uBC1B\uAE30\uB85C \uD588\uB2E4."
+  objectives:
+  - "\uD654\uC5FC \uD568\uC815 \uAE38\uBAA9\uC758 \uBAA8\uD5D8\uAC00\uC5D0\uAC8C
+    \uBC30\uB2EC"
+  - "\uC815\uAE00 \uACE0\uC9C0\uB300 \uC544\uB798\uC758 \uBAA8\uD5D8\uAC00\uC5D0\uAC8C
+    \uBC30\uB2EC"
+  unlocksQuests:
+  - {fileID: 11400000, guid: b58c31c3cc407124fb28b998a6ea4048, type: 2}
+  - {fileID: 11400000, guid: b04342702f284ab47ba97098d94c16d3, type: 2}
