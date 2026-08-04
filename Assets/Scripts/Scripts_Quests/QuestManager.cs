@@ -22,10 +22,23 @@ public class QuestManager : MonoBehaviour
         DontDestroyOnLoad(gameObject); // Town → Dungeon 씬 전환에도 퀘스트 상태 유지
     }
 
-    public void StartQuest(QuestData quest)
+    public void StartQuest(QuestData quest, Inventory inventory = null)
     {
         currentQuest = quest;
         Debug.Log("퀘스트 시작: " + quest.questName);
+
+        // 배달할 물품을 미리 가방에 넣어줌 (플레이어가 직접 구할 방법이 없는 배달용 아이템)
+        if (inventory != null)
+        {
+            foreach (var req in quest.requiredItems)
+            {
+                for (int i = 0; i < req.quantity; i++)
+                {
+                    inventory.AddItem(req.item);
+                }
+            }
+        }
+
         OnQuestStarted?.Invoke(quest);
     }
 
@@ -71,7 +84,7 @@ public class QuestManager : MonoBehaviour
         // 다음 퀘스트로 전환 (분기가 있으면 첫 번째만 자동 시작, 나머지는 나중에 수동 처리)
         if (currentQuest.unlocksQuests != null && currentQuest.unlocksQuests.Count > 0)
         {
-            StartQuest(currentQuest.unlocksQuests[0]);
+            StartQuest(currentQuest.unlocksQuests[0], inventory);
         }
         else
         {

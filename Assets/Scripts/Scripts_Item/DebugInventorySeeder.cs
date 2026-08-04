@@ -2,23 +2,26 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 // 테스트 전용 스크립트입니다.
-// Town 씬(의뢰 시스템)이 아직 없을 때, I키로 가방에 테스트 아이템을 넣어서
-// 인벤토리 UI와 로직이 잘 동작하는지 확인하는 용도입니다.
-// 나중에 진짜 의뢰 시스템이 생기면 이 컴포넌트는 지우고,
-// 그 시스템이 Inventory.AddItem()을 직접 호출하면 됩니다.
+// 이제 QuestGiverTrigger가 퀘스트에 필요한 아이템을 정확히 지급해주므로,
+// 임의로 아이템을 넣는 기능은 제거했습니다. 가방을 빠르게 비우는 기능만 남겨뒀어요.
 public class DebugInventorySeeder : MonoBehaviour
 {
     public Inventory inventory;
-    public ItemData testItem;
 
     void Update()
     {
         var keyboard = Keyboard.current;
-        if (keyboard == null || inventory == null || testItem == null) return;
+        if (keyboard == null || inventory == null) return;
 
-        if (keyboard.iKey.wasPressedThisFrame)
+        // 테스트 중 가방+퀘스트 상태를 한 번에 초기화하고 싶을 때 O키
+        if (keyboard.oKey.wasPressedThisFrame)
         {
-            inventory.AddItem(testItem);
+            inventory.ClearAll();
+            if (QuestManager.Instance != null)
+            {
+                QuestManager.Instance.currentQuest = null;
+            }
+            Debug.Log("가방과 퀘스트 상태를 초기화했습니다.");
         }
     }
 }

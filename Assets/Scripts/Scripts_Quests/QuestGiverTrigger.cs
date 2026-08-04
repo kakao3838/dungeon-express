@@ -7,15 +7,20 @@ public class QuestGiverTrigger : MonoBehaviour
     public QuestData questToGive;
 
     private bool playerInRange = false;
+    private Inventory playerInventory;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) playerInRange = true;
+        if (!other.CompareTag("Player")) return;
+        playerInRange = true;
+        playerInventory = other.GetComponent<Inventory>();
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) playerInRange = false;
+        if (!other.CompareTag("Player")) return;
+        playerInRange = false;
+        playerInventory = null;
     }
 
     void Update()
@@ -25,7 +30,7 @@ public class QuestGiverTrigger : MonoBehaviour
         var keyboard = Keyboard.current;
         if (keyboard != null && keyboard.fKey.wasPressedThisFrame)
         {
-            QuestManager.Instance.StartQuest(questToGive);
+            QuestManager.Instance.StartQuest(questToGive, playerInventory);
         }
     }
 }

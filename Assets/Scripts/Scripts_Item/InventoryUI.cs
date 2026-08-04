@@ -6,29 +6,13 @@ using UnityEngine.UI;
 public class InventoryUI : MonoBehaviour
 {
     [Header("연결")]
-    public Inventory inventory;
-    public GameObject inventoryPanel; // E키로 켜고 끌 패널 전체 (평소엔 꺼져있음)
-    public Image slotPrefab;          // 슬롯 하나짜리 프리팹 (Image + 자식 Text)
-    public Transform slotsContainer;  // Horizontal/Grid Layout Group이 붙은 부모
+    public GameObject inventoryPanel;
+    public Image slotPrefab;
+    public Transform slotsContainer;
 
+    private Inventory inventory; // 드래그 연결 대신 자동으로 찾음
     private readonly List<Image> slotIcons = new List<Image>();
     private bool isOpen = false;
-
-    void OnEnable()
-    {
-        if (inventory != null)
-        {
-            inventory.OnInventoryChanged += RefreshUI;
-        }
-    }
-
-    void OnDisable()
-    {
-        if (inventory != null)
-        {
-            inventory.OnInventoryChanged -= RefreshUI;
-        }
-    }
 
     void Start()
     {
@@ -36,12 +20,26 @@ public class InventoryUI : MonoBehaviour
         {
             inventoryPanel.SetActive(false);
         }
-        BuildSlots();
-        RefreshUI();
     }
 
     void Update()
     {
+        // 아직 인벤토리를 못 찾았으면 계속 찾아봄 (Player가 나중에 생기는 경우 대응)
+        if (inventory == null)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                inventory = player.GetComponent<Inventory>();
+                if (inventory != null)
+                {
+                    inventory.OnInventoryChanged += RefreshUI;
+                    BuildSlots();
+                    RefreshUI();
+                }
+            }
+        }
+
         var keyboard = Keyboard.current;
         if (keyboard == null) return;
 
@@ -52,6 +50,14 @@ public class InventoryUI : MonoBehaviour
             {
                 inventoryPanel.SetActive(isOpen);
             }
+        }
+    }
+
+    void OnDestroy()
+    {
+        if (inventory != null)
+        {
+            inventory.OnInventoryChanged -= RefreshUI;
         }
     }
 
@@ -78,6 +84,11 @@ public class InventoryUI : MonoBehaviour
 
         var items = inventory.Items;
 
+        if (slotIcons.Count != inventory.maxSlots)
+        {
+            BuildSlots();
+        }
+
         for (int i = 0; i < slotIcons.Count; i++)
         {
             Text label = slotIcons[i].GetComponentInChildren<Text>();
@@ -93,7 +104,6 @@ public class InventoryUI : MonoBehaviour
                 }
                 else
                 {
-                    // 아이콘 없을 때 임시로 연두색 표시
                     slotIcons[i].color = new Color(0.6f, 0.85f, 0.6f);
                 }
 
@@ -104,7 +114,6 @@ public class InventoryUI : MonoBehaviour
             }
             else
             {
-                // 빈 슬롯
                 slotIcons[i].color = new Color(0.3f, 0.3f, 0.3f);
                 if (label != null)
                 {
