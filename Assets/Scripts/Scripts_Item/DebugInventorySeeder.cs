@@ -19,7 +19,7 @@ public class DebugInventorySeeder : MonoBehaviour
             inventory.ClearAll();
             if (QuestManager.Instance != null)
             {
-                QuestManager.Instance.currentQuest = null;
+                QuestManager.Instance.ResetAll();
             }
             Debug.Log("가방과 퀘스트 상태를 초기화했습니다.");
         }
