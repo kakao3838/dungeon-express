@@ -1,12 +1,16 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
     public static QuestManager Instance { get; private set; }
 
-    [Header("현재 진행 중인 퀘스트 (테스트용으로 직접 연결 가능)")]
-    public QuestData currentQuest;
+    [Header("현재 진행 중인 퀘스트 목록 (동시에 여러 개 가능)")]
+    public List<QuestData> activeQuests = new List<QuestData>();
+
+    [Header("완료된 퀘스트 기록 (중복 접수 방지용)")]
+    public List<QuestData> completedQuests = new List<QuestData>();
 
     public event Action<QuestData> OnQuestStarted;
     public event Action<QuestData> OnQuestCompleted;
@@ -19,35 +23,46 @@ public class QuestManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject); // Town → Dungeon 씬 전환에도 퀘스트 상태 유지
+        DontDestroyOnLoad(gameObject);
     }
 
-    public void StartQuest(QuestData quest, Inventory inventory = null)
+    public bool IsQuestActive(QuestData quest)
     {
-        currentQuest = quest;
-        Debug.Log("퀘스트 시작: " + quest.questName);
+        return activeQuests.Contains(quest);
+    }
 
-        // 배달할 물품을 미리 가방에 넣어줌 (플레이어가 직접 구할 방법이 없는 배달용 아이템)
-        if (inventory != null)
+    public bool IsQuestCompleted(QuestData quest)
+    {
+        return completedQuests.Contains(quest);
+    }
+
+    public void StartQuest(QuestData quest)
+    {
+        if (quest == null) return;
+
+        if (activeQuests.Contains(quest))
         {
-            foreach (var req in quest.requiredItems)
-            {
-                for (int i = 0; i < req.quantity; i++)
-                {
-                    inventory.AddItem(req.item);
-                }
-            }
+            Debug.Log("이미 진행 중인 퀘스트입니다: " + quest.questName);
+            return;
         }
 
+        if (completedQuests.Contains(quest))
+        {
+            Debug.Log("이미 완료한 퀘스트입니다: " + quest.questName);
+            return;
+        }
+
+        activeQuests.Add(quest);
+        Debug.Log("퀘스트 시작: " + quest.questName);
         OnQuestStarted?.Invoke(quest);
     }
 
-    // 인벤토리가 현재 퀘스트에 필요한 물품을 다 갖고 있는지 확인
-    public bool HasRequiredItems(Inventory inventory)
+    // 특정 퀘스트 하나에 대해서만 물품이 충분한지 확인
+    public bool HasRequiredItems(QuestData quest, Inventory inventory)
     {
-        if (currentQuest == null || inventory == null) return false;
+        if (quest == null || inventory == null) return false;
 
-        foreach (var req in currentQuest.requiredItems)
+        foreach (var req in quest.requiredItems)
         {
             int count = 0;
             foreach (var item in inventory.Items)
@@ -59,15 +74,14 @@ public class QuestManager : MonoBehaviour
         return true;
     }
 
-    // 퀘스트 완료 처리: 물품 제거, 보상 지급(로그), 다음 퀘스트로 전환
-    public void CompleteCurrentQuest(Inventory inventory)
+    // 정확히 어느 퀘스트를 완료할지 지정해서 처리 (자동으로 다른 퀘스트가 같이 끝나지 않음)
+    public void CompleteQuest(QuestData quest, Inventory inventory)
     {
-        if (currentQuest == null) return;
+        if (quest == null || !activeQuests.Contains(quest)) return;
 
-        foreach (var req in currentQuest.requiredItems)
+        foreach (var req in quest.requiredItems)
         {
             int removed = 0;
-            // 리스트를 뒤에서부터 지우면서 필요한 개수만큼 제거
             for (int i = inventory.Items.Count - 1; i >= 0 && removed < req.quantity; i--)
             {
                 if (inventory.Items[i] == req.item)
@@ -78,17 +92,27 @@ public class QuestManager : MonoBehaviour
             }
         }
 
-        Debug.Log(currentQuest.questName + " 완료! 보상: " + currentQuest.reward + " 골드");
-        OnQuestCompleted?.Invoke(currentQuest);
+        activeQuests.Remove(quest);
+        completedQuests.Add(quest);
 
-        // 다음 퀘스트로 전환 (분기가 있으면 첫 번째만 자동 시작, 나머지는 나중에 수동 처리)
-        if (currentQuest.unlocksQuests != null && currentQuest.unlocksQuests.Count > 0)
+        Debug.Log(quest.questName + " 완료! 보상: " + quest.reward + " 골드");
+        OnQuestCompleted?.Invoke(quest);
+
+        // 연계 퀘스트가 있으면 자동으로 시작 (여러 개로 분기 가능)
+        if (quest.unlocksQuests != null)
         {
-            StartQuest(currentQuest.unlocksQuests[0], inventory);
+            foreach (var next in quest.unlocksQuests)
+            {
+                StartQuest(next);
+            }
         }
-        else
-        {
-            currentQuest = null;
-        }
+    }
+
+    // 테스트 편의용: 진행/완료 기록 전체 초기화
+    public void ResetAll()
+    {
+        activeQuests.Clear();
+        completedQuests.Clear();
+        Debug.Log("퀘스트 진행/완료 기록을 모두 초기화했습니다.");
     }
 }

@@ -27,14 +27,14 @@ public class QuestTurnInTrigger : MonoBehaviour
     void Update()
     {
         if (!playerInRange || playerInventory == null) return;
-        if (questToComplete == null || QuestManager.Instance.currentQuest != questToComplete) return;
+        if (questToComplete == null || !QuestManager.Instance.IsQuestActive(questToComplete)) return;
 
         var keyboard = Keyboard.current;
         if (keyboard != null && keyboard.fKey.wasPressedThisFrame)
         {
-            if (QuestManager.Instance.HasRequiredItems(playerInventory))
+            if (QuestManager.Instance.HasRequiredItems(questToComplete, playerInventory))
             {
-                QuestManager.Instance.CompleteCurrentQuest(playerInventory);
+                QuestManager.Instance.CompleteQuest(questToComplete, playerInventory);
             }
             else
             {
