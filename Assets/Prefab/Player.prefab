@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b946193382ebea4381d56c7f468ebd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
-  maxSlots: 5
+  maxSlots: 4
 --- !u!114 &3538483800464818104
 MonoBehaviour:
   m_ObjectHideFlags: 0

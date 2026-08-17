@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0230ae3bea6038b44bee460d0d1bc269, type: 3}
-  m_Name: "Quest_\uBB3C\uBCD1\uBC30\uB2EC"
+  m_Name: "Quest_\uC720\uB9AC\uBCD1\uBC30\uB2EC"
   m_EditorClassIdentifier: Assembly-CSharp::QuestData
-  questName: "\uBB3C\uBCD1 \uBC30\uB2EC"
+  questName: "\uC720\uB9AC\uBCD1 \uBC30\uB2EC"
   category: 0
   requiredItems:
   - item: {fileID: 11400000, guid: fc9c55f9e11e0864f953995680024ce8, type: 2}

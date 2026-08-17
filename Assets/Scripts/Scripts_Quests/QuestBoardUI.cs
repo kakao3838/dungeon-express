@@ -116,6 +116,22 @@ public class QuestBoardUI : MonoBehaviour
         if (selectedQuest == null || QuestManager.Instance == null) return;
 
         QuestManager.Instance.StartQuest(selectedQuest);
+
+        // Town 씬에 실제 물품 지급 연출이 아직 없어서, QuestGiverTrigger와 동일하게 임시로 즉시 지급합니다.
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Inventory playerInventory = player != null ? player.GetComponent<Inventory>() : null;
+
+        if (playerInventory != null)
+        {
+            foreach (var req in selectedQuest.requiredItems)
+            {
+                for (int i = 0; i < req.quantity; i++)
+                {
+                    playerInventory.AddItem(req.item);
+                }
+            }
+        }
+
         ClearDetail();
         RefreshQuestList();
     }
