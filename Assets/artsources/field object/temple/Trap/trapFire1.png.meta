@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 6e93fddb925d4e041a6049eb43f3d802
+guid: 905d9da2927ab1a48896506b78122466
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2420898447410600410
-    second: trapFire0_0
-  - first:
-      213: -7188603067762431058
-    second: trapFire0_1
-  - first:
-      213: -5744877241949132988
-    second: trapFire0_2
+      213: -8149575623516072844
+    second: trapFire1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: trapFire0_0
+      name: trapFire1_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 79
-        width: 1983
-        height: 349
+        x: 237
+        y: 675
+        width: 1680
+        height: 1304
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,52 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ad9143bbf42c89120800000000000000
-      internalID: 2420898447410600410
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: trapFire0_1
-      rect:
-        serializedVersion: 2
-        x: 2079
-        y: 79
-        width: 1983
-        height: 261
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eabacb2c893fc3c90800000000000000
-      internalID: -7188603067762431058
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: trapFire0_2
-      rect:
-        serializedVersion: 2
-        x: 4127
-        y: 79
-        width: 1983
-        height: 158
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 447656b06981640b0800000000000000
-      internalID: -5744877241949132988
+      spriteID: 47454221624e6ee80800000000000000
+      internalID: -8149575623516072844
       vertices: []
       indices: 
       edges: []
@@ -185,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      trapFire0_0: 2420898447410600410
-      trapFire0_1: -7188603067762431058
-      trapFire0_2: -5744877241949132988
+      trapFire1_0: -8149575623516072844
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
