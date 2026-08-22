@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 112d99f6985902045af4f3d8ef01005f
+guid: 905d9da2927ab1a48896506b78122466
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7953490864217768618
-    second: halfGrass1_0
+      213: -8149575623516072844
+    second: trapFire1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 450
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: halfGrass1_0
+      name: trapFire1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1020
-        height: 653
+        x: 237
+        y: 675
+        width: 1680
+        height: 1304
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 65d3cf9c2368f9190800000000000000
-      internalID: -7953490864217768618
+      spriteID: 47454221624e6ee80800000000000000
+      internalID: -8149575623516072844
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      halfGrass1_0: -7953490864217768618
+      trapFire1_0: -8149575623516072844
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

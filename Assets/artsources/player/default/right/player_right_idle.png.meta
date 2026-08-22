@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 112d99f6985902045af4f3d8ef01005f
+guid: 489697d033997494e8acc28de8f7d9c9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7953490864217768618
-    second: halfGrass1_0
+      213: 6965001576245408387
+    second: player_right_idle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 450
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
+    maxTextureSize: 4096
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: halfGrass1_0
+      name: player_right_idle_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1020
-        height: 653
+        x: 931
+        y: 338
+        width: 717
+        height: 1672
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 65d3cf9c2368f9190800000000000000
-      internalID: -7953490864217768618
+      spriteID: 382b42c0808a8a060800000000000000
+      internalID: 6965001576245408387
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      halfGrass1_0: -7953490864217768618
+      player_right_idle_0: 6965001576245408387
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

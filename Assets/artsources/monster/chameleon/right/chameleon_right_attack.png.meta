@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: b87ba590d2f64cd4daa089beb7fd00e4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7784675007052874265
+    second: chameleon_right_attack_0
+  - first:
+      213: 7706307429377493567
+    second: chameleon_right_attack_1
+  - first:
+      213: -1205350678532370477
+    second: chameleon_right_attack_2
+  - first:
+      213: 5595937996433134659
+    second: chameleon_right_attack_3
+  - first:
+      213: 2943368867289306300
+    second: chameleon_right_attack_4
+  - first:
+      213: -8027034579783680402
+    second: chameleon_right_attack_5
+  - first:
+      213: 6851997351603820906
+    second: chameleon_right_attack_6
+  - first:
+      213: 2990346625251818953
+    second: chameleon_right_attack_7
+  - first:
+      213: 6204593865992123290
+    second: chameleon_right_attack_8
+  - first:
+      213: -1612639097916337554
+    second: chameleon_right_attack_9
+  - first:
+      213: -5315199666669293783
+    second: chameleon_right_attack_10
+  - first:
+      213: -8888767669650508219
+    second: chameleon_right_attack_11
+  - first:
+      213: 4538977007682145811
+    second: chameleon_right_attack_12
+  - first:
+      213: 268208416152843941
+    second: chameleon_right_attack_13
+  - first:
+      213: -3846429120063255973
+    second: chameleon_right_attack_14
+  - first:
+      213: -5447987919630314658
+    second: chameleon_right_attack_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: chameleon_right_attack_0
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 6633
+        width: 1043
+        height: 1006
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9128f378ca8b80c60800000000000000
+      internalID: 7784675007052874265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_attack_1
+      rect:
+        serializedVersion: 2
+        x: 2630
+        y: 6633
+        width: 1043
+        height: 1006
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3acff9f6cd42fa60800000000000000
+      internalID: 7706307429377493567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_attack_2
+      rect:
+        serializedVersion: 2
+        x: 4598
+        y: 6633
+        width: 1043
+        height: 1062
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3df4d40b1fbb54fe0800000000000000
+      internalID: -1205350678532370477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_attack_3
+      rect:
+        serializedVersion: 2
+        x: 6566
+        y: 6633
+        width: 1043
+        height: 1062
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 344128e85f3c8ad40800000000000000
+      internalID: 5595937996433134659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_attack_4
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 4665
+        width: 1121
+        height: 1006
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb419b1e362f8d820800000000000000
+      internalID: 2943368867289306300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_attack_5
+      rect:
+        serializedVersion: 2
+        x: 2630
+        y: 4665
+        width: 1043
+        height: 1006
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6e7738249e3a9090800000000000000
+      internalID: -8027034579783680402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_attack_6
+      rect:
+        serializedVersion: 2
+        x: 4556
+        y: 4665
+        width: 1536
+        height: 1006
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a695340b94f271f50800000000000000
+      internalID: 6851997351603820906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_attack_7
+      rect:
+        serializedVersion: 2
+        x: 6566
+        y: 4665
+        width: 1043
+        height: 1006
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cd3c618968df7920800000000000000
+      internalID: 2990346625251818953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_attack_8
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 2697
+        width: 1165
+        height: 1006
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a93370e6f352b1650800000000000000
+      internalID: 6204593865992123290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_attack_9
+      rect:
+        serializedVersion: 2
+        x: 2588
+        y: 2697
+        width: 1121
+        height: 1006
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e625ac9d841ce99e0800000000000000
+      internalID: -1612639097916337554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_attack_10
+      rect:
+        serializedVersion: 2
+        x: 4556
+        y: 2697
+        width: 1536
+        height: 1006
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92fe6e5701e9c36b0800000000000000
+      internalID: -5315199666669293783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_attack_11
+      rect:
+        serializedVersion: 2
+        x: 6524
+        y: 2697
+        width: 1183
+        height: 1006
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 546318f26e0c4a480800000000000000
+      internalID: -8888767669650508219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_attack_12
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 729
+        width: 1121
+        height: 1006
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31e4f8a3a8fadfe30800000000000000
+      internalID: 4538977007682145811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_attack_13
+      rect:
+        serializedVersion: 2
+        x: 2588
+        y: 729
+        width: 1121
+        height: 1006
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a67f8a222ed8b300800000000000000
+      internalID: 268208416152843941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_attack_14
+      rect:
+        serializedVersion: 2
+        x: 4556
+        y: 729
+        width: 1121
+        height: 1006
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5a49e4381dbe9ac0800000000000000
+      internalID: -3846429120063255973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_attack_15
+      rect:
+        serializedVersion: 2
+        x: 6524
+        y: 729
+        width: 1121
+        height: 1006
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e53d0dd0adbd464b0800000000000000
+      internalID: -5447987919630314658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      chameleon_right_attack_0: 7784675007052874265
+      chameleon_right_attack_1: 7706307429377493567
+      chameleon_right_attack_10: -5315199666669293783
+      chameleon_right_attack_11: -8888767669650508219
+      chameleon_right_attack_12: 4538977007682145811
+      chameleon_right_attack_13: 268208416152843941
+      chameleon_right_attack_14: -3846429120063255973
+      chameleon_right_attack_15: -5447987919630314658
+      chameleon_right_attack_2: -1205350678532370477
+      chameleon_right_attack_3: 5595937996433134659
+      chameleon_right_attack_4: 2943368867289306300
+      chameleon_right_attack_5: -8027034579783680402
+      chameleon_right_attack_6: 6851997351603820906
+      chameleon_right_attack_7: 2990346625251818953
+      chameleon_right_attack_8: 6204593865992123290
+      chameleon_right_attack_9: -1612639097916337554
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

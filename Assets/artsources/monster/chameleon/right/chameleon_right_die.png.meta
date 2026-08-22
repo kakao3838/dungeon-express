@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: 8156e9c07725a2d4093d14bd327f8a31
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8653876597679470877
+    second: chameleon_right_die_0
+  - first:
+      213: 8821077628568404182
+    second: chameleon_right_die_1
+  - first:
+      213: -9191855677585041230
+    second: chameleon_right_die_2
+  - first:
+      213: -8856570914794757782
+    second: chameleon_right_die_3
+  - first:
+      213: -1555446074208474420
+    second: chameleon_right_die_4
+  - first:
+      213: -2214868216471754556
+    second: chameleon_right_die_5
+  - first:
+      213: 928515748738838013
+    second: chameleon_right_die_6
+  - first:
+      213: -181031924995547851
+    second: chameleon_right_die_7
+  - first:
+      213: -5938957320512609855
+    second: chameleon_right_die_8
+  - first:
+      213: -3868795519159089187
+    second: chameleon_right_die_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: chameleon_right_die_0
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 6622
+        width: 1106
+        height: 1038
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1930c65aeeb81870800000000000000
+      internalID: 8653876597679470877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_die_1
+      rect:
+        serializedVersion: 2
+        x: 2630
+        y: 6633
+        width: 1043
+        height: 1062
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d007fafd53ca6a70800000000000000
+      internalID: 8821077628568404182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_die_2
+      rect:
+        serializedVersion: 2
+        x: 4598
+        y: 6633
+        width: 1043
+        height: 1062
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b8d2e636f7ff6080800000000000000
+      internalID: -9191855677585041230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_die_3
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 4665
+        width: 1262
+        height: 970
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a612a975da3271580800000000000000
+      internalID: -8856570914794757782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_die_4
+      rect:
+        serializedVersion: 2
+        x: 2524
+        y: 4665
+        width: 1262
+        height: 970
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cca278f5902f96ae0800000000000000
+      internalID: -1555446074208474420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_die_5
+      rect:
+        serializedVersion: 2
+        x: 4567
+        y: 4654
+        width: 1106
+        height: 1038
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c8e5ec87153341e0800000000000000
+      internalID: -2214868216471754556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_die_6
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 2697
+        width: 1262
+        height: 970
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfd2feb6720c2ec00800000000000000
+      internalID: 928515748738838013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_die_7
+      rect:
+        serializedVersion: 2
+        x: 2524
+        y: 2697
+        width: 1262
+        height: 970
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53d92a16c68dc7df0800000000000000
+      internalID: -181031924995547851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_die_8
+      rect:
+        serializedVersion: 2
+        x: 4492
+        y: 2697
+        width: 1262
+        height: 970
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c1e3ae68c5949da0800000000000000
+      internalID: -5938957320512609855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chameleon_right_die_9
+      rect:
+        serializedVersion: 2
+        x: 4492
+        y: 729
+        width: 1262
+        height: 970
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd746eb19f64f4ac0800000000000000
+      internalID: -3868795519159089187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      chameleon_right_die_0: 8653876597679470877
+      chameleon_right_die_1: 8821077628568404182
+      chameleon_right_die_2: -9191855677585041230
+      chameleon_right_die_3: -8856570914794757782
+      chameleon_right_die_4: -1555446074208474420
+      chameleon_right_die_5: -2214868216471754556
+      chameleon_right_die_6: 928515748738838013
+      chameleon_right_die_7: -181031924995547851
+      chameleon_right_die_8: -5938957320512609855
+      chameleon_right_die_9: -3868795519159089187
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
