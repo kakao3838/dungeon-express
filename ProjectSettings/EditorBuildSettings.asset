@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DungeonScene.unity
     guid: 2bef0f910c4f49846b7bfbaebbf9936e
+  - enabled: 1
+    path: Assets/Scenes/DefaultJungleScene.unity
+    guid: 487c1e481e973074e8beeec7c5db81fe
+  - enabled: 1
+    path: Assets/Scenes/TempleScene.unity
+    guid: 671eb9fb604ed044ba5cc78e10102ebc
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
