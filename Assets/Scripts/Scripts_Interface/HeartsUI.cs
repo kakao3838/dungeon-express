@@ -15,14 +15,6 @@ public class HeartsUI : MonoBehaviour
 
     private readonly List<Image> heartIcons = new List<Image>();
 
-    void OnEnable()
-    {
-        if (playerHealth != null)
-        {
-            playerHealth.OnHealthChanged += UpdateDisplay;
-        }
-    }
-
     void OnDisable()
     {
         if (playerHealth != null)
@@ -33,7 +25,30 @@ public class HeartsUI : MonoBehaviour
 
     void Start()
     {
-        if (playerHealth == null) return;
+        if (playerHealth != null)
+        {
+            Bind(playerHealth);
+        }
+    }
+
+    void Update()
+    {
+        // Player가 아직 없거나(씬 단독 테스트 등) 나중에 생기는 경우 대응
+        if (playerHealth == null)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                PlayerHealth health = player.GetComponent<PlayerHealth>();
+                if (health != null) Bind(health);
+            }
+        }
+    }
+
+    void Bind(PlayerHealth health)
+    {
+        playerHealth = health;
+        playerHealth.OnHealthChanged += UpdateDisplay;
         BuildHearts(playerHealth.maxHearts);
         UpdateDisplay(playerHealth.CurrentHearts, playerHealth.maxHearts);
     }
