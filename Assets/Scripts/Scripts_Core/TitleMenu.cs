@@ -6,6 +6,10 @@ public class TitleMenu : MonoBehaviour
     [Tooltip("게임 시작 버튼을 누르면 이동할 씬 이름 (나중에 Town 씬이 완성되면 그걸로 바꾸세요)")]
     public string sceneToLoad = "DungeonScene";
 
+    // 상세 패널 열면 숨기는 변수 
+    [SerializeField] private GameObject categoryGroup;
+    [SerializeField] private GameObject settingsHomeBottomButtons;
+
     [Header("메뉴 패널")]
     public GameObject mainMenuPanel;
     public GameObject continuePanel;
@@ -41,11 +45,24 @@ public class TitleMenu : MonoBehaviour
         continuePanel.SetActive(false);
         settingsPanel.SetActive(true);
 
-        OpenKeyboardSettings();
+        OpenSettingsHome();
+    }
+
+    public void OpenSettingsHome()
+    {
+        categoryGroup.SetActive(true);
+        settingsHomeBottomButtons.SetActive(true);
+
+        keyboardPanel.SetActive(false);
+        audioPanel.SetActive(false);
+        videoPanel.SetActive(false);
     }
 
     public void OpenKeyboardSettings()
     {
+        categoryGroup.SetActive(false);
+        settingsHomeBottomButtons.SetActive(false);
+
         keyboardPanel.SetActive(true);
         audioPanel.SetActive(false);
         videoPanel.SetActive(false);
@@ -53,6 +70,9 @@ public class TitleMenu : MonoBehaviour
 
     public void OpenAudioSettings()
     {
+        categoryGroup.SetActive(false);
+        settingsHomeBottomButtons.SetActive(false);
+
         keyboardPanel.SetActive(false);
         audioPanel.SetActive(true);
         videoPanel.SetActive(false);
@@ -60,6 +80,9 @@ public class TitleMenu : MonoBehaviour
 
     public void OpenVideoSettings()
     {
+        categoryGroup.SetActive(false);
+        settingsHomeBottomButtons.SetActive(false);
+
         keyboardPanel.SetActive(false);
         audioPanel.SetActive(false);
         videoPanel.SetActive(true);
