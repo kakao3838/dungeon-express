@@ -1,19 +1,54 @@
 using UnityEngine;
 
-// Main Camera¿¡ ºÙÀÌ¼¼¿ä.
-// ÇÃ·¹ÀÌ¾î°¡ ¾À ½ÃÀÛ ½Ã ¹Ù·Î ÀÖÁö ¾Ê°í ³ªÁß¿¡ »ý¼ºµÇ´Â °æ¿ì(ScenePlayerSpawner µî)¿¡µµ
-// ÀÚµ¿À¸·Î Ã£¾Æ¼­ µû¶ó°©´Ï´Ù.
+// Main Cameraï¿½ï¿½ ï¿½ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½.
+// ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½(ScenePlayerSpawner ï¿½ï¿½)ï¿½ï¿½ï¿½ï¿½
+// ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½Æ¼ï¿½ ï¿½ï¿½ï¿½ó°©´Ï´ï¿½.
 public class CameraFollow : MonoBehaviour
 {
-    [Header("µû¶ó°¡±â ¼³Á¤")]
+    [Header("ï¿½ï¿½ï¿½ó°¡±ï¿½ ï¿½ï¿½ï¿½ï¿½")]
     public float smoothSpeed = 5f;
-    public Vector3 offset = new Vector3(0f, 0f, -10f); // 2D´Â º¸Åë Z¸¸ -10
+    public Vector3 offset = new Vector3(0f, 0f, -10f); // 2Dï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Zï¿½ï¿½ -10
 
     private Transform target;
+    private bool hasSnappedToTarget;
+
+    public static CameraFollow Instance { get; private set; }
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void LateUpdate()
     {
-        // ¾ÆÁ÷ Å¸°Ù(ÇÃ·¹ÀÌ¾î)À» ¸ø Ã£¾ÒÀ¸¸é °è¼Ó Ã£¾Æº½
+        // ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½(ï¿½Ã·ï¿½ï¿½Ì¾ï¿½)ï¿½ï¿½ ï¿½ï¿½ Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ Ã£ï¿½Æºï¿½
+        if (target == null)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                target = player.transform;
+                SnapToTarget();
+            }
+            else
+            {
+                return; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+            }
+        }
+
+        Vector3 desiredPosition = target.position + offset;
+        if (!hasSnappedToTarget)
+        {
+            transform.position = desiredPosition;
+            hasSnappedToTarget = true;
+            return;
+        }
+
+        transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+    }
+
+    public void SnapToTarget()
+    {
         if (target == null)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -21,13 +56,20 @@ public class CameraFollow : MonoBehaviour
             {
                 target = player.transform;
             }
-            else
-            {
-                return; // ¾ÆÁ÷ ÇÃ·¹ÀÌ¾î°¡ ¾øÀ¸¸é ÀÌ¹ø ÇÁ·¹ÀÓÀº ´ë±â
-            }
         }
 
-        Vector3 desiredPosition = target.position + offset;
-        transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+        if (target != null)
+        {
+            transform.position = target.position + offset;
+            hasSnappedToTarget = true;
+        }
+    }
+
+    void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
     }
 }
