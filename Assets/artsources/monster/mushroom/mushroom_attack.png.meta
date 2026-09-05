@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 16be06f169ef9494bb1be6f086242afc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8732739043038035631
+    second: mushroom_attack_0
+  - first:
+      213: 6229009575812392278
+    second: mushroom_attack_1
+  - first:
+      213: -7816195561251198814
+    second: mushroom_attack_2
+  - first:
+      213: -7801370673425474044
+    second: mushroom_attack_3
+  - first:
+      213: -6892634546434409678
+    second: mushroom_attack_4
+  - first:
+      213: -1113150135081179536
+    second: mushroom_attack_5
+  - first:
+      213: 4852703384773300415
+    second: mushroom_attack_6
+  - first:
+      213: -6417302125124986031
+    second: mushroom_attack_7
+  - first:
+      213: -6082213772709241286
+    second: mushroom_attack_8
+  - first:
+      213: 1605663568290077609
+    second: mushroom_attack_9
+  - first:
+      213: -4269700759178049782
+    second: mushroom_attack_10
+  - first:
+      213: -5309861845904662045
+    second: mushroom_attack_11
+  - first:
+      213: 7695765796484769211
+    second: mushroom_attack_12
+  - first:
+      213: 2305187674341434882
+    second: mushroom_attack_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: mushroom_attack_0
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 7790
+        width: 620
+        height: 623
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fae777044ebe03970800000000000000
+      internalID: 8732739043038035631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_attack_1
+      rect:
+        serializedVersion: 2
+        x: 2093
+        y: 7790
+        width: 622
+        height: 623
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 655edccd433e17650800000000000000
+      internalID: 6229009575812392278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_attack_2
+      rect:
+        serializedVersion: 2
+        x: 3523
+        y: 7790
+        width: 625
+        height: 652
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a823ac8c8b478390800000000000000
+      internalID: -7816195561251198814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_attack_3
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 6360
+        width: 623
+        height: 652
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40e1359b4b6fbb390800000000000000
+      internalID: -7801370673425474044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_attack_4
+      rect:
+        serializedVersion: 2
+        x: 2093
+        y: 6360
+        width: 625
+        height: 652
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23bf03516617850a0800000000000000
+      internalID: -6892634546434409678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_attack_5
+      rect:
+        serializedVersion: 2
+        x: 3523
+        y: 6360
+        width: 625
+        height: 652
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 076eec099db4d80f0800000000000000
+      internalID: -1113150135081179536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_attack_6
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 4932
+        width: 623
+        height: 652
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb09fb98404485340800000000000000
+      internalID: 4852703384773300415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_attack_7
+      rect:
+        serializedVersion: 2
+        x: 2093
+        y: 4932
+        width: 625
+        height: 652
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15bd09fa7b921f6a0800000000000000
+      internalID: -6417302125124986031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_attack_8
+      rect:
+        serializedVersion: 2
+        x: 3523
+        y: 4932
+        width: 625
+        height: 652
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3e5da57cc2a79ba0800000000000000
+      internalID: -6082213772709241286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_attack_9
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 3502
+        width: 623
+        height: 652
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ab57b81286784610800000000000000
+      internalID: 1605663568290077609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_attack_10
+      rect:
+        serializedVersion: 2
+        x: 2093
+        y: 3502
+        width: 625
+        height: 652
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a070af708c9feb4c0800000000000000
+      internalID: -4269700759178049782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_attack_11
+      rect:
+        serializedVersion: 2
+        x: 3523
+        y: 3502
+        width: 625
+        height: 652
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e1e374b8c49f46b0800000000000000
+      internalID: -5309861845904662045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_attack_12
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 2072
+        width: 623
+        height: 652
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb5631ec73adcca60800000000000000
+      internalID: 7695765796484769211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_attack_13
+      rect:
+        serializedVersion: 2
+        x: 2093
+        y: 2072
+        width: 625
+        height: 652
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 206eab5f9fbadff10800000000000000
+      internalID: 2305187674341434882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      mushroom_attack_0: 8732739043038035631
+      mushroom_attack_1: 6229009575812392278
+      mushroom_attack_10: -4269700759178049782
+      mushroom_attack_11: -5309861845904662045
+      mushroom_attack_12: 7695765796484769211
+      mushroom_attack_13: 2305187674341434882
+      mushroom_attack_2: -7816195561251198814
+      mushroom_attack_3: -7801370673425474044
+      mushroom_attack_4: -6892634546434409678
+      mushroom_attack_5: -1113150135081179536
+      mushroom_attack_6: 4852703384773300415
+      mushroom_attack_7: -6417302125124986031
+      mushroom_attack_8: -6082213772709241286
+      mushroom_attack_9: 1605663568290077609
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
