@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
 
     private Rigidbody2D rb;
+    private Animator animator;
     private float moveInput;
     private bool isGrounded;
     private bool facingRight = true;
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -36,9 +38,11 @@ public class PlayerController : MonoBehaviour
         if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed) moveInput = -1f;
         if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed) moveInput = 1f;
 
-        // 이동 방향에 따라 스프라이트 좌우 반전
+        // 이동 방향에 따라 바라보는 방향 갱신
         if (moveInput > 0f && !facingRight) Flip();
         else if (moveInput < 0f && facingRight) Flip();
+
+        if (animator != null) animator.SetBool("IsMoving", moveInput != 0f);
 
         // 바닥에 닿아있는지 체크
         if (groundCheck != null)
@@ -67,9 +71,7 @@ public class PlayerController : MonoBehaviour
     void Flip()
     {
         facingRight = !facingRight;
-        Vector3 scale = transform.localScale;
-        scale.x *= -1f;
-        transform.localScale = scale;
+        if (animator != null) animator.SetBool("FacingRight", facingRight);
     }
 
     void OnDrawGizmosSelected()

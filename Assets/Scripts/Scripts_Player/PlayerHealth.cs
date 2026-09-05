@@ -15,10 +15,13 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private bool isInvincible;
     private float invincibilityTimer;
+    private Animator animator;
+    private bool isDead;
 
     void Awake()
     {
         CurrentHearts = maxHearts;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -34,7 +37,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     public void TakeDamage(int amount)
     {
-        if (isInvincible || CurrentHearts <= 0) return;
+        if (isDead || isInvincible || CurrentHearts <= 0) return;
 
         CurrentHearts = Mathf.Max(0, CurrentHearts - amount);
         OnHealthChanged?.Invoke(CurrentHearts, maxHearts);
@@ -52,7 +55,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     public void Heal(int amount)
     {
-        if (CurrentHearts <= 0) return;
+        if (isDead || CurrentHearts <= 0) return;
 
         CurrentHearts = Mathf.Min(maxHearts, CurrentHearts + amount);
         OnHealthChanged?.Invoke(CurrentHearts, maxHearts);
@@ -60,6 +63,19 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     void Die()
     {
+        isDead = true;
+
+        if (animator != null) animator.SetTrigger("Die");
+
+        var rb = GetComponent<Rigidbody2D>();
+        if (rb != null) rb.linearVelocity = Vector2.zero;
+
+        var controller = GetComponent<PlayerController>();
+        if (controller != null) controller.enabled = false;
+
+        var attack = GetComponent<PlayerAttack>();
+        if (attack != null) attack.enabled = false;
+
         OnDeath?.Invoke();
         // TODO: 사망 처리 (리스폰, 가방 드롭 로직 등은 추후 구현)
     }

@@ -10,10 +10,18 @@ public class HeartsUI : MonoBehaviour
     public Transform heartsContainer; // Horizontal Layout Group이 붙은 부모 오브젝트
 
     [Header("스프라이트 (나중에 실제 하트 이미지가 생기면 여기만 교체하세요)")]
-    public Sprite fullHeartSprite;  // 비워두면 임시로 색깔 원으로 표시됩니다
-    public Sprite emptyHeartSprite;
+    public Sprite fullHeartSprite;  // 비워두면 기본 원형 스프라이트 그대로 사용됩니다
 
     private readonly List<Image> heartIcons = new List<Image>();
+
+    void Awake()
+    {
+        // 씬이 바뀌어도(Player는 DontDestroyOnLoad로 유지됨) 자동으로 연결되도록 함
+        if (playerHealth == null)
+        {
+            playerHealth = FindFirstObjectByType<PlayerHealth>();
+        }
+    }
 
     void OnEnable()
     {
@@ -66,17 +74,14 @@ public class HeartsUI : MonoBehaviour
         {
             bool filled = i < current;
 
-            if (fullHeartSprite != null && emptyHeartSprite != null)
+            // 맞아서 잃은 하트는 아예 사라지게 함
+            heartIcons[i].gameObject.SetActive(filled);
+
+            if (fullHeartSprite != null)
             {
-                // 실제 하트 스프라이트가 있으면 이미지로 표시
-                heartIcons[i].sprite = filled ? fullHeartSprite : emptyHeartSprite;
-                heartIcons[i].color = Color.white;
+                heartIcons[i].sprite = fullHeartSprite;
             }
-            else
-            {
-                // 스프라이트가 아직 없으면 색깔로 임시 표시 (기본 원 모양 그대로)
-                heartIcons[i].color = filled ? new Color(1f, 0.23f, 0.23f) : new Color(0.3f, 0.3f, 0.3f);
-            }
+            heartIcons[i].color = new Color(1f, 0.23f, 0.23f);
         }
     }
 }

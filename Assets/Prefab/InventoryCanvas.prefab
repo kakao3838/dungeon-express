@@ -141,7 +141,6 @@ MonoBehaviour:
   heartIconPrefab: {fileID: 5085039088179004593, guid: a433899ce0419374d8441f01fc5e44bf, type: 3}
   heartsContainer: {fileID: 4378402228124783061}
   fullHeartSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  emptyHeartSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &1857681430371451531
 GameObject:
   m_ObjectHideFlags: 0
