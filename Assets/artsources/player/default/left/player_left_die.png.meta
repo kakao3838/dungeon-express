@@ -690,6 +690,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: player_left_die_24
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 0
+        width: 7377
+        height: 8129
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a99224afb28b008468a0c642e8280fb6
+      internalID: 1829341513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -721,6 +743,7 @@ TextureImporter:
       player_left_die_21: 4980915174896547909
       player_left_die_22: 882037419
       player_left_die_23: 1047787769
+      player_left_die_24: 1829341513
       player_left_die_3: 1815469823508245156
       player_left_die_4: -8213554081926809175
       player_left_die_5: -7718680422183402630

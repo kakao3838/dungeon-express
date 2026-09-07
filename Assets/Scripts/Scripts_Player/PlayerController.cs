@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         }
 
+        if (animator != null) animator.SetBool("IsGrounded", isGrounded);
+
         // 디버그용 로그: 스페이스를 누른 순간 isGrounded 값을 콘솔에 출력
         if (keyboard.spaceKey.wasPressedThisFrame)
         {
