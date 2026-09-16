@@ -4,6 +4,10 @@ using UnityEngine.InputSystem;
 // 퀘스트를 주는 NPC/오브젝트입니다. Box Collider 2D + Is Trigger를 추가하고 배치하세요.
 public class QuestGiverTrigger : MonoBehaviour
 {
+    [Header("대화")]
+    public string npcName = "사장";
+    [TextArea] public string talkLine = "ㅎㅇ 나 사장";
+
     public QuestData questToGive;
 
     private bool playerInRange = false;
@@ -25,12 +29,32 @@ public class QuestGiverTrigger : MonoBehaviour
 
     void Update()
     {
-        if (!playerInRange || questToGive == null) return;
+        if (!playerInRange) return;
+        if (NPCDialogueMenu.Instance != null && NPCDialogueMenu.Instance.IsOpen) return;
 
         var keyboard = Keyboard.current;
         if (keyboard != null && keyboard.fKey.wasPressedThisFrame)
         {
-            QuestManager.Instance.StartQuest(questToGive, playerInventory);
+            if (NPCDialogueMenu.Instance != null)
+            {
+                NPCDialogueMenu.Instance.Open(this);
+            }
+            else if (questToGive != null)
+            {
+                // 대화 메뉴가 씬에 없을 때를 위한 예전 동작 (안전장치)
+                QuestManager.Instance.StartQuest(questToGive, playerInventory);
+            }
         }
+    }
+
+    // "1. 메인 퀘스트" 선택 시 NPCDialogueMenu가 호출
+    public void GiveMainQuest()
+    {
+        if (questToGive == null)
+        {
+            Debug.Log(npcName + ": 지금은 줄 퀘스트가 없어요.");
+            return;
+        }
+        QuestManager.Instance.StartQuest(questToGive, playerInventory);
     }
 }
