@@ -2,28 +2,30 @@ using UnityEngine;
 
 public enum ItemType
 {
-    Normal,      // ±âº» - ÀÏ¹İ ¹è¼Û ¹°Ç°
-    RocketDelivery, // ·ÎÄÏ¹è¼Û - Á¦ÇÑ ½Ã°£ ³» ¹è¼Û ÇÊ¿ä (½Å¼±½ÄÇ°·ù)
-    HeatSensitive,  // °í¿Âx - °í¿Â È¯°æ ¹× È­¿° °ø°İ¿¡ Ãë¾à (³Ãµ¿·ù)
-    WaterSensitive, // ¹°±âx - ¹°¿¡ ³ëÃâ ½Ã Ç°Áú ÀúÇÏ (Á¾ÀÌ·ù)
-    Fragile      // Àß±úÁü - ³«ÇÏ ¹× °­ÇÑ Ãæ°İ ½Ã Ç°Áú ÀúÇÏ (ÆÄ¼ÕÁÖÀÇ)
+    Normal,         // ê¸°ë³¸ - ì¼ë°˜ ë°°ì†¡ í’ˆëª©
+    RocketDelivery, // ë¡œì¼“ë°°ì†¡ - ì§§ì€ ì‹œê°„ ë‚´ ë°°ì†¡ í•„ìš” (ì‹ ì„ ì‹í’ˆë¥˜)
+    HeatSensitive,  // ê³ ì˜¨x - ê³ ì˜¨ í™˜ê²½ ì‹œ í™”ì¬ ìœ„í—˜ì— ì·¨ì•½ (ì–‘ì´ˆë¥˜)
+    WaterSensitive, // ìˆ˜ë¶„x - ë¬¼ì— ì –ìœ¼ë©´ í’ˆì§ˆ ì €í•˜ (í¸ì§€ë¥˜)
+    Fragile         // íŒŒì†ì£¼ì˜ - ì¶©ê²© ì‹œ ë‚´ìš©ë¬¼ íŒŒì† ìœ„í—˜ (ìœ ë¦¬ë³‘ë¥˜)
 }
 
 [CreateAssetMenu(fileName = "NewItem", menuName = "Dungeon Express/Item Data")]
 public class ItemData : ScriptableObject
 {
-    [Header("±âº» Á¤º¸")]
+    [Header("ê¸°ë³¸ ì •ë³´")]
     public string itemName;
     public ItemType itemType;
 
-    [Header("Ç°Áú °ü·Ã (°è»ê ¹æ½ÄÀº ±âÈ¹ È®Á¤ ÈÄ °áÁ¤ ¿¹Á¤)")]
-    [Tooltip("¹ÌÁ¤")]
+    [Header("í’ˆì§ˆ ê´€ë ¨ (ë°°ë‹¬ ë°©ì‹ì— ë”°ë¥¸ ê°ì  ì‚°ì • ì‹œ ì‚¬ìš©)")]
+    [Tooltip("ë¯¼ê°ë„")]
     public float sensitivity = 1f;
 
-    [Header("ºñÁÖ¾ó (³ªÁß¿¡ ½ÇÁ¦ ¾ÆÀÌÄÜ »ı±â¸é ±³Ã¼)")]
+    [Header("í‘œì‹œìš© (ì¸ë²¤í† ë¦¬ UI)")]
     public Sprite icon;
+    [TextArea] public string description;
+    [Range(0, 100)] public int quality;
+    public bool isLocked;
 
-    [Header("¼³¸í (¼±ÅÃ)")]
-    [TextArea]
-    public string description;
+    public enum Rarity { Common, Rare, Epic, Legendary }
+    public Rarity rarity;
 }
