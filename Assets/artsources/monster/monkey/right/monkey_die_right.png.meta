@@ -1,0 +1,2093 @@
+fileFormatVersion: 2
+guid: 86a2ad7929c412c488eeda8198292aad
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4603576718108907373
+    second: monkey_die_right_0
+  - first:
+      213: -6038902361922435640
+    second: monkey_die_right_1
+  - first:
+      213: -2633291619704238641
+    second: monkey_die_right_2
+  - first:
+      213: 170371145368322966
+    second: monkey_die_right_3
+  - first:
+      213: 6877464728362938632
+    second: monkey_die_right_4
+  - first:
+      213: 588853792981326112
+    second: monkey_die_right_5
+  - first:
+      213: -1959105521616161760
+    second: monkey_die_right_6
+  - first:
+      213: 374607433300267172
+    second: monkey_die_right_7
+  - first:
+      213: 3410969699915891748
+    second: monkey_die_right_8
+  - first:
+      213: 723310549083917
+    second: monkey_die_right_9
+  - first:
+      213: 2227439361673524638
+    second: monkey_die_right_10
+  - first:
+      213: -3447023063717691727
+    second: monkey_die_right_11
+  - first:
+      213: 815930774217930420
+    second: monkey_die_right_12
+  - first:
+      213: 5463817529624855845
+    second: monkey_die_right_13
+  - first:
+      213: -599102768126665115
+    second: monkey_die_right_14
+  - first:
+      213: -8369602286308552672
+    second: monkey_die_right_15
+  - first:
+      213: -95232232178074107
+    second: monkey_die_right_16
+  - first:
+      213: -6990825115260016061
+    second: monkey_die_right_17
+  - first:
+      213: -4603923545601411636
+    second: monkey_die_right_18
+  - first:
+      213: -8216930486783847223
+    second: monkey_die_right_19
+  - first:
+      213: -4035301777191651058
+    second: monkey_die_right_20
+  - first:
+      213: 4191038907938557343
+    second: monkey_die_right_21
+  - first:
+      213: 711895247283519246
+    second: monkey_die_right_22
+  - first:
+      213: -5211089130108223932
+    second: monkey_die_right_23
+  - first:
+      213: -6681093733386171741
+    second: monkey_die_right_24
+  - first:
+      213: 4608155199431312539
+    second: monkey_die_right_25
+  - first:
+      213: 339308508008051129
+    second: monkey_die_right_26
+  - first:
+      213: 4408913027226564614
+    second: monkey_die_right_27
+  - first:
+      213: -1681889723129223482
+    second: monkey_die_right_28
+  - first:
+      213: 6204626744896878864
+    second: monkey_die_right_29
+  - first:
+      213: -6401398309611485381
+    second: monkey_die_right_30
+  - first:
+      213: -2698699813148689687
+    second: monkey_die_right_31
+  - first:
+      213: 7043155722523534318
+    second: monkey_die_right_32
+  - first:
+      213: 2698276902042217013
+    second: monkey_die_right_33
+  - first:
+      213: -86623553943344821
+    second: monkey_die_right_34
+  - first:
+      213: -8952038782415024791
+    second: monkey_die_right_35
+  - first:
+      213: -8743874271520613077
+    second: monkey_die_right_36
+  - first:
+      213: 1962434844026451945
+    second: monkey_die_right_37
+  - first:
+      213: 8346171999852536804
+    second: monkey_die_right_38
+  - first:
+      213: 8055755829057324771
+    second: monkey_die_right_39
+  - first:
+      213: 6165082249051795188
+    second: monkey_die_right_40
+  - first:
+      213: -5403489314768526540
+    second: monkey_die_right_41
+  - first:
+      213: -784194852412139021
+    second: monkey_die_right_42
+  - first:
+      213: -5022654551210949952
+    second: monkey_die_right_43
+  - first:
+      213: -4673122697143510621
+    second: monkey_die_right_44
+  - first:
+      213: 3348363074508070677
+    second: monkey_die_right_45
+  - first:
+      213: -6962168976260020653
+    second: monkey_die_right_46
+  - first:
+      213: -6211902022296205187
+    second: monkey_die_right_47
+  - first:
+      213: 1107727303670111138
+    second: monkey_die_right_48
+  - first:
+      213: 5996787021471575194
+    second: monkey_die_right_49
+  - first:
+      213: 7941401650185793639
+    second: monkey_die_right_50
+  - first:
+      213: -3445229157973293279
+    second: monkey_die_right_51
+  - first:
+      213: -4810596656580581416
+    second: monkey_die_right_52
+  - first:
+      213: -5556589655278183306
+    second: monkey_die_right_53
+  - first:
+      213: 2645460734549962802
+    second: monkey_die_right_54
+  - first:
+      213: -1721144966772406307
+    second: monkey_die_right_55
+  - first:
+      213: 703839636219962434
+    second: monkey_die_right_56
+  - first:
+      213: -8503487803187201057
+    second: monkey_die_right_57
+  - first:
+      213: 6748029507356358432
+    second: monkey_die_right_58
+  - first:
+      213: 1113921327774460745
+    second: monkey_die_right_59
+  - first:
+      213: -6247978729622791816
+    second: monkey_die_right_60
+  - first:
+      213: -2473909839890777263
+    second: monkey_die_right_61
+  - first:
+      213: 5323684650535605841
+    second: monkey_die_right_62
+  - first:
+      213: -4027877648613530745
+    second: monkey_die_right_63
+  - first:
+      213: 8857838417558836301
+    second: monkey_die_right_64
+  - first:
+      213: 6520024834684168053
+    second: monkey_die_right_65
+  - first:
+      213: 9034655964398723075
+    second: monkey_die_right_66
+  - first:
+      213: -2026942971219751015
+    second: monkey_die_right_67
+  - first:
+      213: 3455445775858874602
+    second: monkey_die_right_68
+  - first:
+      213: 562740482656943400
+    second: monkey_die_right_69
+  - first:
+      213: -7964013184815299974
+    second: monkey_die_right_70
+  - first:
+      213: -4844641861577506486
+    second: monkey_die_right_71
+  - first:
+      213: -7591512468363336263
+    second: monkey_die_right_72
+  - first:
+      213: 994730432353556118
+    second: monkey_die_right_73
+  - first:
+      213: -6652692330100832163
+    second: monkey_die_right_74
+  - first:
+      213: -8282715941835808142
+    second: monkey_die_right_75
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: monkey_die_right_0
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 6101
+        width: 1044
+        height: 1041
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d67d32362a033ef30800000000000000
+      internalID: 4603576718108907373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_1
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 6098
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c5885c1c42813ca0800000000000000
+      internalID: -6038902361922435640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_2
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 6101
+        width: 1044
+        height: 1041
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcd0481493ba47bd0800000000000000
+      internalID: -2633291619704238641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_3
+      rect:
+        serializedVersion: 2
+        x: 2663
+        y: 6098
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 693c7af67a74d5200800000000000000
+      internalID: 170371145368322966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_4
+      rect:
+        serializedVersion: 2
+        x: 4412
+        y: 6101
+        width: 1044
+        height: 1041
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 801f9596bb9a17f50800000000000000
+      internalID: 6877464728362938632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_5
+      rect:
+        serializedVersion: 2
+        x: 4527
+        y: 6098
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0291b43a7670c2800800000000000000
+      internalID: 588853792981326112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_6
+      rect:
+        serializedVersion: 2
+        x: 6276
+        y: 6101
+        width: 1044
+        height: 1041
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 024ff8a68ebdfc4e0800000000000000
+      internalID: -1959105521616161760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_7
+      rect:
+        serializedVersion: 2
+        x: 6391
+        y: 6098
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a05510d97fd23500800000000000000
+      internalID: 374607433300267172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_8
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 4237
+        width: 1044
+        height: 1041
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4248b17bed2365f20800000000000000
+      internalID: 3410969699915891748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_9
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 4237
+        width: 1044
+        height: 1041
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d07275cd8d1920000800000000000000
+      internalID: 723310549083917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_10
+      rect:
+        serializedVersion: 2
+        x: 4412
+        y: 4237
+        width: 1055
+        height: 1030
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e95f5474c4479ee10800000000000000
+      internalID: 2227439361673524638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_11
+      rect:
+        serializedVersion: 2
+        x: 4929
+        y: 5206
+        width: 130
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be378269c6b920d0800000000000000
+      internalID: -3447023063717691727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_12
+      rect:
+        serializedVersion: 2
+        x: 5494
+        y: 5219
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b6b19657b4c25b00800000000000000
+      internalID: 815930774217930420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_13
+      rect:
+        serializedVersion: 2
+        x: 6276
+        y: 4237
+        width: 1055
+        height: 1030
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52587da381163db40800000000000000
+      internalID: 5463817529624855845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_14
+      rect:
+        serializedVersion: 2
+        x: 6793
+        y: 5206
+        width: 130
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56e5bd1e43f8fa7f0800000000000000
+      internalID: -599102768126665115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_15
+      rect:
+        serializedVersion: 2
+        x: 7358
+        y: 5219
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 020184d801339db80800000000000000
+      internalID: -8369602286308552672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_16
+      rect:
+        serializedVersion: 2
+        x: 5466
+        y: 5197
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50ebbd51acaadaef0800000000000000
+      internalID: -95232232178074107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_17
+      rect:
+        serializedVersion: 2
+        x: 5539
+        y: 5142
+        width: 15
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34a2c0eb8999bfe90800000000000000
+      internalID: -6990825115260016061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_18
+      rect:
+        serializedVersion: 2
+        x: 7330
+        y: 5197
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc5fe5b8de39b10c0800000000000000
+      internalID: -4603923545601411636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_19
+      rect:
+        serializedVersion: 2
+        x: 7403
+        y: 5142
+        width: 15
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c4db27e14997fd80800000000000000
+      internalID: -8216930486783847223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_20
+      rect:
+        serializedVersion: 2
+        x: 5477
+        y: 4995
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e093df0e96abff7c0800000000000000
+      internalID: -4035301777191651058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_21
+      rect:
+        serializedVersion: 2
+        x: 7341
+        y: 4995
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9dc4838eaf892a30800000000000000
+      internalID: 4191038907938557343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_22
+      rect:
+        serializedVersion: 2
+        x: 4365
+        y: 4509
+        width: 106
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f7f93a4f821e900800000000000000
+      internalID: 711895247283519246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_23
+      rect:
+        serializedVersion: 2
+        x: 6229
+        y: 4509
+        width: 106
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44efff2bb0e7ea7b0800000000000000
+      internalID: -5211089130108223932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_24
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 4234
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aacd6eb5acf743a0800000000000000
+      internalID: -6681093733386171741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_25
+      rect:
+        serializedVersion: 2
+        x: 2663
+        y: 4234
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9409f32db473ff30800000000000000
+      internalID: 4608155199431312539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_26
+      rect:
+        serializedVersion: 2
+        x: 4527
+        y: 4234
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b176115a4775b400800000000000000
+      internalID: 339308508008051129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_27
+      rect:
+        serializedVersion: 2
+        x: 6391
+        y: 4234
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6087e61f90b9f2d30800000000000000
+      internalID: 4408913027226564614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_28
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 2373
+        width: 1055
+        height: 1030
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c6a085353ab8a8e0800000000000000
+      internalID: -1681889723129223482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_29
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 3342
+        width: 130
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0197775a6234b1650800000000000000
+      internalID: 6204626744896878864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_30
+      rect:
+        serializedVersion: 2
+        x: 1766
+        y: 3355
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3742d9472aa927a0800000000000000
+      internalID: -6401398309611485381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_31
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 2373
+        width: 1055
+        height: 1030
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eafbd971da4c8ad0800000000000000
+      internalID: -2698699813148689687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_32
+      rect:
+        serializedVersion: 2
+        x: 3065
+        y: 3342
+        width: 130
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee366ca30d05eb160800000000000000
+      internalID: 7043155722523534318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_33
+      rect:
+        serializedVersion: 2
+        x: 3630
+        y: 3355
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53a2edbdb84327520800000000000000
+      internalID: 2698276902042217013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_34
+      rect:
+        serializedVersion: 2
+        x: 4412
+        y: 2373
+        width: 1055
+        height: 1030
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b49660e26504ccef0800000000000000
+      internalID: -86623553943344821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_35
+      rect:
+        serializedVersion: 2
+        x: 4929
+        y: 3342
+        width: 130
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96dc1a64828f3c380800000000000000
+      internalID: -8952038782415024791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_36
+      rect:
+        serializedVersion: 2
+        x: 5494
+        y: 3355
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2d16555da487a680800000000000000
+      internalID: -8743874271520613077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_37
+      rect:
+        serializedVersion: 2
+        x: 6276
+        y: 2373
+        width: 1055
+        height: 1030
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e7bb0dd718fb3b10800000000000000
+      internalID: 1962434844026451945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_38
+      rect:
+        serializedVersion: 2
+        x: 6793
+        y: 3342
+        width: 130
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e3a585c63f83d370800000000000000
+      internalID: 8346171999852536804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_39
+      rect:
+        serializedVersion: 2
+        x: 7358
+        y: 3355
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e68e3cce3bcbcf60800000000000000
+      internalID: 8055755829057324771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_40
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 3333
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fe6cc934a5ce8550800000000000000
+      internalID: 6165082249051795188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_41
+      rect:
+        serializedVersion: 2
+        x: 1811
+        y: 3278
+        width: 15
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4336a9dd813f205b0800000000000000
+      internalID: -5403489314768526540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_42
+      rect:
+        serializedVersion: 2
+        x: 3602
+        y: 3333
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f9d843cfeafd15f0800000000000000
+      internalID: -784194852412139021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_43
+      rect:
+        serializedVersion: 2
+        x: 3675
+        y: 3278
+        width: 15
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c2829dfb42fb4ab0800000000000000
+      internalID: -5022654551210949952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_44
+      rect:
+        serializedVersion: 2
+        x: 5466
+        y: 3333
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a912fc8aabb52fb0800000000000000
+      internalID: -4673122697143510621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_45
+      rect:
+        serializedVersion: 2
+        x: 5539
+        y: 3278
+        width: 15
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51f9613d976c77e20800000000000000
+      internalID: 3348363074508070677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_46
+      rect:
+        serializedVersion: 2
+        x: 7330
+        y: 3333
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 356c6c70438616f90800000000000000
+      internalID: -6962168976260020653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_47
+      rect:
+        serializedVersion: 2
+        x: 7403
+        y: 3278
+        width: 15
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d780185d504eac9a0800000000000000
+      internalID: -6211902022296205187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_48
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 3131
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ab124b1d107f5f00800000000000000
+      internalID: 1107727303670111138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_49
+      rect:
+        serializedVersion: 2
+        x: 3613
+        y: 3131
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9c6c70160ed83350800000000000000
+      internalID: 5996787021471575194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_50
+      rect:
+        serializedVersion: 2
+        x: 5477
+        y: 3131
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 760760ab9b6853e60800000000000000
+      internalID: 7941401650185793639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_51
+      rect:
+        serializedVersion: 2
+        x: 7341
+        y: 3131
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1270f2d95561030d0800000000000000
+      internalID: -3445229157973293279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_52
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 2645
+        width: 106
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d725d614d35d3db0800000000000000
+      internalID: -4810596656580581416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_53
+      rect:
+        serializedVersion: 2
+        x: 2501
+        y: 2645
+        width: 106
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67c988a062703e2b0800000000000000
+      internalID: -5556589655278183306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_54
+      rect:
+        serializedVersion: 2
+        x: 4365
+        y: 2645
+        width: 106
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2303816958096b420800000000000000
+      internalID: 2645460734549962802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_55
+      rect:
+        serializedVersion: 2
+        x: 6229
+        y: 2645
+        width: 106
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd7449095c34d18e0800000000000000
+      internalID: -1721144966772406307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_56
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 2370
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2442bb78b6a84c900800000000000000
+      internalID: 703839636219962434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_57
+      rect:
+        serializedVersion: 2
+        x: 2663
+        y: 2370
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdbf82b75ea8df980800000000000000
+      internalID: -8503487803187201057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_58
+      rect:
+        serializedVersion: 2
+        x: 4527
+        y: 2370
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02774d79511d5ad50800000000000000
+      internalID: 6748029507356358432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_59
+      rect:
+        serializedVersion: 2
+        x: 6391
+        y: 2370
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94b6ab9bb81757f00800000000000000
+      internalID: 1113921327774460745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_60
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 509
+        width: 1055
+        height: 1030
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87913a8d278ba49a0800000000000000
+      internalID: -6247978729622791816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_61
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 1478
+        width: 130
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15b77f2ab18eaadd0800000000000000
+      internalID: -2473909839890777263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_62
+      rect:
+        serializedVersion: 2
+        x: 1766
+        y: 1491
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 156df5bcbf681e940800000000000000
+      internalID: 5323684650535605841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_63
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 509
+        width: 1055
+        height: 1030
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 783a7a38e9a1a18c0800000000000000
+      internalID: -4027877648613530745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_64
+      rect:
+        serializedVersion: 2
+        x: 3065
+        y: 1478
+        width: 130
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4417642c1d5dea70800000000000000
+      internalID: 8857838417558836301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_65
+      rect:
+        serializedVersion: 2
+        x: 3630
+        y: 1491
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5772316ea08cb7a50800000000000000
+      internalID: 6520024834684168053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_66
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 1469
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 300a9d16bbb816d70800000000000000
+      internalID: 9034655964398723075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_67
+      rect:
+        serializedVersion: 2
+        x: 1811
+        y: 1414
+        width: 15
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99fc87c5b1aded3e0800000000000000
+      internalID: -2026942971219751015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_68
+      rect:
+        serializedVersion: 2
+        x: 3602
+        y: 1469
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae831ba10a534ff20800000000000000
+      internalID: 3455445775858874602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_69
+      rect:
+        serializedVersion: 2
+        x: 3675
+        y: 1414
+        width: 15
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82dbf79cc714fc700800000000000000
+      internalID: 562740482656943400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_70
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 1267
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a728e8c14342a7190800000000000000
+      internalID: -7964013184815299974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_71
+      rect:
+        serializedVersion: 2
+        x: 3613
+        y: 1267
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a418fa815ef54ccb0800000000000000
+      internalID: -4844641861577506486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_72
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 781
+        width: 106
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b5214fa1a785a690800000000000000
+      internalID: -7591512468363336263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_73
+      rect:
+        serializedVersion: 2
+        x: 2501
+        y: 781
+        width: 106
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69654b3de0efdcd00800000000000000
+      internalID: 994730432353556118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_74
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 506
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d58cf50c293eca3a0800000000000000
+      internalID: -6652692330100832163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_die_right_75
+      rect:
+        serializedVersion: 2
+        x: 2663
+        y: 506
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 272696f0cb1ed0d80800000000000000
+      internalID: -8282715941835808142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      monkey_die_right_0: 4603576718108907373
+      monkey_die_right_1: -6038902361922435640
+      monkey_die_right_10: 2227439361673524638
+      monkey_die_right_11: -3447023063717691727
+      monkey_die_right_12: 815930774217930420
+      monkey_die_right_13: 5463817529624855845
+      monkey_die_right_14: -599102768126665115
+      monkey_die_right_15: -8369602286308552672
+      monkey_die_right_16: -95232232178074107
+      monkey_die_right_17: -6990825115260016061
+      monkey_die_right_18: -4603923545601411636
+      monkey_die_right_19: -8216930486783847223
+      monkey_die_right_2: -2633291619704238641
+      monkey_die_right_20: -4035301777191651058
+      monkey_die_right_21: 4191038907938557343
+      monkey_die_right_22: 711895247283519246
+      monkey_die_right_23: -5211089130108223932
+      monkey_die_right_24: -6681093733386171741
+      monkey_die_right_25: 4608155199431312539
+      monkey_die_right_26: 339308508008051129
+      monkey_die_right_27: 4408913027226564614
+      monkey_die_right_28: -1681889723129223482
+      monkey_die_right_29: 6204626744896878864
+      monkey_die_right_3: 170371145368322966
+      monkey_die_right_30: -6401398309611485381
+      monkey_die_right_31: -2698699813148689687
+      monkey_die_right_32: 7043155722523534318
+      monkey_die_right_33: 2698276902042217013
+      monkey_die_right_34: -86623553943344821
+      monkey_die_right_35: -8952038782415024791
+      monkey_die_right_36: -8743874271520613077
+      monkey_die_right_37: 1962434844026451945
+      monkey_die_right_38: 8346171999852536804
+      monkey_die_right_39: 8055755829057324771
+      monkey_die_right_4: 6877464728362938632
+      monkey_die_right_40: 6165082249051795188
+      monkey_die_right_41: -5403489314768526540
+      monkey_die_right_42: -784194852412139021
+      monkey_die_right_43: -5022654551210949952
+      monkey_die_right_44: -4673122697143510621
+      monkey_die_right_45: 3348363074508070677
+      monkey_die_right_46: -6962168976260020653
+      monkey_die_right_47: -6211902022296205187
+      monkey_die_right_48: 1107727303670111138
+      monkey_die_right_49: 5996787021471575194
+      monkey_die_right_5: 588853792981326112
+      monkey_die_right_50: 7941401650185793639
+      monkey_die_right_51: -3445229157973293279
+      monkey_die_right_52: -4810596656580581416
+      monkey_die_right_53: -5556589655278183306
+      monkey_die_right_54: 2645460734549962802
+      monkey_die_right_55: -1721144966772406307
+      monkey_die_right_56: 703839636219962434
+      monkey_die_right_57: -8503487803187201057
+      monkey_die_right_58: 6748029507356358432
+      monkey_die_right_59: 1113921327774460745
+      monkey_die_right_6: -1959105521616161760
+      monkey_die_right_60: -6247978729622791816
+      monkey_die_right_61: -2473909839890777263
+      monkey_die_right_62: 5323684650535605841
+      monkey_die_right_63: -4027877648613530745
+      monkey_die_right_64: 8857838417558836301
+      monkey_die_right_65: 6520024834684168053
+      monkey_die_right_66: 9034655964398723075
+      monkey_die_right_67: -2026942971219751015
+      monkey_die_right_68: 3455445775858874602
+      monkey_die_right_69: 562740482656943400
+      monkey_die_right_7: 374607433300267172
+      monkey_die_right_70: -7964013184815299974
+      monkey_die_right_71: -4844641861577506486
+      monkey_die_right_72: -7591512468363336263
+      monkey_die_right_73: 994730432353556118
+      monkey_die_right_74: -6652692330100832163
+      monkey_die_right_75: -8282715941835808142
+      monkey_die_right_8: 3410969699915891748
+      monkey_die_right_9: 723310549083917
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

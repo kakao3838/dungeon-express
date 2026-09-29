@@ -1,0 +1,689 @@
+fileFormatVersion: 2
+guid: 43531e42b58265748a43dac98f72bbd3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1096934947094205432
+    second: flowertree_attack_right_0
+  - first:
+      213: -8409055251397930924
+    second: flowertree_attack_right_1
+  - first:
+      213: -6338799393633633526
+    second: flowertree_attack_right_2
+  - first:
+      213: -8953289851439048809
+    second: flowertree_attack_right_3
+  - first:
+      213: -2416064099152448296
+    second: flowertree_attack_right_4
+  - first:
+      213: 7766890480225420268
+    second: flowertree_attack_right_5
+  - first:
+      213: 7683168613284474814
+    second: flowertree_attack_right_6
+  - first:
+      213: 4754774415583988315
+    second: flowertree_attack_right_7
+  - first:
+      213: 8832634262469952244
+    second: flowertree_attack_right_8
+  - first:
+      213: -6913179255640708056
+    second: flowertree_attack_right_9
+  - first:
+      213: -802885062346613606
+    second: flowertree_attack_right_10
+  - first:
+      213: -6359665310113446509
+    second: flowertree_attack_right_11
+  - first:
+      213: 6206588941808600126
+    second: flowertree_attack_right_12
+  - first:
+      213: 3447848938415722494
+    second: flowertree_attack_right_13
+  - first:
+      213: 7648335522112181559
+    second: flowertree_attack_right_14
+  - first:
+      213: 8295515183289687029
+    second: flowertree_attack_right_15
+  - first:
+      213: 348416151077689836
+    second: flowertree_attack_right_16
+  - first:
+      213: -5748023635173535899
+    second: flowertree_attack_right_17
+  - first:
+      213: -2036694551268787769
+    second: flowertree_attack_right_18
+  - first:
+      213: 4945524176448254480
+    second: flowertree_attack_right_19
+  - first:
+      213: -1417921483737011109
+    second: flowertree_attack_right_20
+  - first:
+      213: -6160543536177588583
+    second: flowertree_attack_right_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flowertree_attack_right_0
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 8863
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f31347c588193f00800000000000000
+      internalID: 1096934947094205432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_1
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 8453
+        width: 1068
+        height: 2043
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4501bcb4dc80d4b80800000000000000
+      internalID: -8409055251397930924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_2
+      rect:
+        serializedVersion: 2
+        x: 3647
+        y: 8863
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0b7100398f0808a0800000000000000
+      internalID: -6338799393633633526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_3
+      rect:
+        serializedVersion: 2
+        x: 3708
+        y: 8453
+        width: 1068
+        height: 2043
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7979dd111568fb380800000000000000
+      internalID: -8953289851439048809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_4
+      rect:
+        serializedVersion: 2
+        x: 5916
+        y: 8450
+        width: 2109
+        height: 2005
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d4b17fa08a687ed0800000000000000
+      internalID: -2416064099152448296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_5
+      rect:
+        serializedVersion: 2
+        x: 8417
+        y: 8860
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce30333bdb989cb60800000000000000
+      internalID: 7766890480225420268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_6
+      rect:
+        serializedVersion: 2
+        x: 8476
+        y: 8450
+        width: 1072
+        height: 2046
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebf6048852910aa60800000000000000
+      internalID: 7683168613284474814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 5842
+        width: 1249
+        height: 2051
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5acffb932a5cf140800000000000000
+      internalID: 4754774415583988315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_8
+      rect:
+        serializedVersion: 2
+        x: 2992
+        y: 5842
+        width: 1249
+        height: 2051
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f2477d7012d39a70800000000000000
+      internalID: 8832634262469952244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_9
+      rect:
+        serializedVersion: 2
+        x: 5809
+        y: 6252
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82cafe638147f00a0800000000000000
+      internalID: -6913179255640708056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_10
+      rect:
+        serializedVersion: 2
+        x: 5876
+        y: 5842
+        width: 1128
+        height: 2143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9cdc572a449bd4f0800000000000000
+      internalID: -802885062346613606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_11
+      rect:
+        serializedVersion: 2
+        x: 8524
+        y: 5842
+        width: 2109
+        height: 2005
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 395405c681eedb7a0800000000000000
+      internalID: -6359665310113446509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_12
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 3234
+        width: 2112
+        height: 2005
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e348e5732cb322650800000000000000
+      internalID: 6206588941808600126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_13
+      rect:
+        serializedVersion: 2
+        x: 3308
+        y: 3234
+        width: 2112
+        height: 2005
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eff0a7d875839df20800000000000000
+      internalID: 3447848938415722494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_14
+      rect:
+        serializedVersion: 2
+        x: 5916
+        y: 3234
+        width: 2163
+        height: 1987
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7359f7e72a8542a60800000000000000
+      internalID: 7648335522112181559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_15
+      rect:
+        serializedVersion: 2
+        x: 8524
+        y: 3234
+        width: 2163
+        height: 1987
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fb57d09b179f1370800000000000000
+      internalID: 8295515183289687029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_16
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 626
+        width: 2163
+        height: 1987
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce99ef6b4a2d5d400800000000000000
+      internalID: 348416151077689836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_17
+      rect:
+        serializedVersion: 2
+        x: 3308
+        y: 626
+        width: 2163
+        height: 1987
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56f8ee845faea30b0800000000000000
+      internalID: -5748023635173535899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_18
+      rect:
+        serializedVersion: 2
+        x: 6255
+        y: 1039
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c976a3b8153cb3e0800000000000000
+      internalID: -2036694551268787769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_19
+      rect:
+        serializedVersion: 2
+        x: 6316
+        y: 624
+        width: 1103
+        height: 2053
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 012fd45390802a440800000000000000
+      internalID: 4945524176448254480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_20
+      rect:
+        serializedVersion: 2
+        x: 8863
+        y: 1039
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5ce57a4ce7825ce0800000000000000
+      internalID: -1417921483737011109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_attack_right_21
+      rect:
+        serializedVersion: 2
+        x: 8924
+        y: 624
+        width: 1103
+        height: 2053
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9965ec63b4a518aa0800000000000000
+      internalID: -6160543536177588583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      flowertree_attack_right_0: 1096934947094205432
+      flowertree_attack_right_1: -8409055251397930924
+      flowertree_attack_right_10: -802885062346613606
+      flowertree_attack_right_11: -6359665310113446509
+      flowertree_attack_right_12: 6206588941808600126
+      flowertree_attack_right_13: 3447848938415722494
+      flowertree_attack_right_14: 7648335522112181559
+      flowertree_attack_right_15: 8295515183289687029
+      flowertree_attack_right_16: 348416151077689836
+      flowertree_attack_right_17: -5748023635173535899
+      flowertree_attack_right_18: -2036694551268787769
+      flowertree_attack_right_19: 4945524176448254480
+      flowertree_attack_right_2: -6338799393633633526
+      flowertree_attack_right_20: -1417921483737011109
+      flowertree_attack_right_21: -6160543536177588583
+      flowertree_attack_right_3: -8953289851439048809
+      flowertree_attack_right_4: -2416064099152448296
+      flowertree_attack_right_5: 7766890480225420268
+      flowertree_attack_right_6: 7683168613284474814
+      flowertree_attack_right_7: 4754774415583988315
+      flowertree_attack_right_8: 8832634262469952244
+      flowertree_attack_right_9: -6913179255640708056
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
