@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: "\uCF00\uC774\uD06C"
   itemType: 0
   sensitivity: 1
-  icon: {fileID: 0}
+  icon: {fileID: 4429927966939240221, guid: da4507b89173f124f9f914dea64a208d, type: 3}
   description: "\uB2EC\uCF64\uD55C \uCF00\uC774\uD06C-\uC124\uBA85~~~"
   quality: 82
   isLocked: 0
