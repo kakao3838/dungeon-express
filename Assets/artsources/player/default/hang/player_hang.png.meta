@@ -1,0 +1,715 @@
+fileFormatVersion: 2
+guid: 076f74538341f28459c734ef0d1a719b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6130671123826414140
+    second: player_hang_0
+  - first:
+      213: -3419873253885355974
+    second: player_hang_1
+  - first:
+      213: 1381437501539910326
+    second: player_hang_2
+  - first:
+      213: 7291203976534260056
+    second: player_hang_3
+  - first:
+      213: 4805598920803066574
+    second: player_hang_4
+  - first:
+      213: 3277829140802061668
+    second: player_hang_5
+  - first:
+      213: 4524219008291531689
+    second: player_hang_6
+  - first:
+      213: -8673977181669631525
+    second: player_hang_7
+  - first:
+      213: -1579349005604307976
+    second: player_hang_8
+  - first:
+      213: 3117594536212747523
+    second: player_hang_9
+  - first:
+      213: -1602442265468017887
+    second: player_hang_10
+  - first:
+      213: 4225179155034152925
+    second: player_hang_11
+  - first:
+      213: -6354413250593229316
+    second: player_hang_12
+  - first:
+      213: -1563476428038132394
+    second: player_hang_13
+  - first:
+      213: -389029261551851661
+    second: player_hang_14
+  - first:
+      213: -5710326822836588695
+    second: player_hang_15
+  - first:
+      213: 5318072380105816927
+    second: player_hang_16
+  - first:
+      213: 4625034182036587278
+    second: player_hang_17
+  - first:
+      213: 4335079851109057928
+    second: player_hang_18
+  - first:
+      213: 3505690501010479187
+    second: player_hang_19
+  - first:
+      213: 3229985641970662136
+    second: player_hang_20
+  - first:
+      213: -7704495195244423925
+    second: player_hang_21
+  - first:
+      213: -5577402502600289426
+    second: player_hang_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: player_hang_0
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 4355
+        width: 618
+        height: 1962
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c321b6ac7e4841550800000000000000
+      internalID: 6130671123826414140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_1
+      rect:
+        serializedVersion: 2
+        x: 1733
+        y: 5599
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a38dd45156b2a80d0800000000000000
+      internalID: -3419873253885355974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_2
+      rect:
+        serializedVersion: 2
+        x: 3003
+        y: 4355
+        width: 618
+        height: 1962
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b280b6a61adb2310800000000000000
+      internalID: 1381437501539910326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_3
+      rect:
+        serializedVersion: 2
+        x: 3781
+        y: 5599
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8597d3ed26f8f2560800000000000000
+      internalID: 7291203976534260056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_4
+      rect:
+        serializedVersion: 2
+        x: 5051
+        y: 4355
+        width: 618
+        height: 1962
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec2a77fd1cae0b240800000000000000
+      internalID: 4805598920803066574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_5
+      rect:
+        serializedVersion: 2
+        x: 5829
+        y: 5599
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4654ee3ac303d7d20800000000000000
+      internalID: 3277829140802061668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_6
+      rect:
+        serializedVersion: 2
+        x: 7155
+        y: 4489
+        width: 628
+        height: 1736
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ab694bb73149ce30800000000000000
+      internalID: 4524219008291531689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_7
+      rect:
+        serializedVersion: 2
+        x: 8055
+        y: 5425
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd9dcb0c5b7df9780800000000000000
+      internalID: -8673977181669631525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_8
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 5097
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fbb6987276051ae0800000000000000
+      internalID: -1579349005604307976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_9
+      rect:
+        serializedVersion: 2
+        x: 3967
+        y: 5097
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 305d8a486bbe34b20800000000000000
+      internalID: 3117594536212747523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_10
+      rect:
+        serializedVersion: 2
+        x: 6015
+        y: 5097
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 123e4b9ef3bf2c9e0800000000000000
+      internalID: -1602442265468017887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_11
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 2441
+        width: 628
+        height: 1736
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddf12383e0ad2aa30800000000000000
+      internalID: 4225179155034152925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_12
+      rect:
+        serializedVersion: 2
+        x: 1911
+        y: 3377
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf5fa52d0d690d7a0800000000000000
+      internalID: -6354413250593229316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_13
+      rect:
+        serializedVersion: 2
+        x: 3099
+        y: 2321
+        width: 658
+        height: 1916
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65d271ce87a6d4ae0800000000000000
+      internalID: -1563476428038132394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_14
+      rect:
+        serializedVersion: 2
+        x: 5147
+        y: 2321
+        width: 658
+        height: 1916
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37728f1a2f3e99af0800000000000000
+      internalID: -389029261551851661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_15
+      rect:
+        serializedVersion: 2
+        x: 7195
+        y: 2321
+        width: 658
+        height: 1916
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96fa07d5208d0c0b0800000000000000
+      internalID: -5710326822836588695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_16
+      rect:
+        serializedVersion: 2
+        x: 2769
+        y: 3065
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5bf50247a69dc940800000000000000
+      internalID: 5318072380105816927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_17
+      rect:
+        serializedVersion: 2
+        x: 4817
+        y: 3065
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e038456851c6f2040800000000000000
+      internalID: 4625034182036587278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_18
+      rect:
+        serializedVersion: 2
+        x: 6865
+        y: 3065
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8850f46082c492c30800000000000000
+      internalID: 4335079851109057928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_19
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 1089
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 358d03dcfe6b6a030800000000000000
+      internalID: 3505690501010479187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_20
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 305
+        width: 698
+        height: 1760
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8faf54304d633dc20800000000000000
+      internalID: 3229985641970662136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_21
+      rect:
+        serializedVersion: 2
+        x: 2759
+        y: 1089
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0590c9a072241590800000000000000
+      internalID: -7704495195244423925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_hang_22
+      rect:
+        serializedVersion: 2
+        x: 3019
+        y: 305
+        width: 698
+        height: 1760
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e63922769f51992b0800000000000000
+      internalID: -5577402502600289426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      player_hang_0: 6130671123826414140
+      player_hang_1: -3419873253885355974
+      player_hang_10: -1602442265468017887
+      player_hang_11: 4225179155034152925
+      player_hang_12: -6354413250593229316
+      player_hang_13: -1563476428038132394
+      player_hang_14: -389029261551851661
+      player_hang_15: -5710326822836588695
+      player_hang_16: 5318072380105816927
+      player_hang_17: 4625034182036587278
+      player_hang_18: 4335079851109057928
+      player_hang_19: 3505690501010479187
+      player_hang_2: 1381437501539910326
+      player_hang_20: 3229985641970662136
+      player_hang_21: -7704495195244423925
+      player_hang_22: -5577402502600289426
+      player_hang_3: 7291203976534260056
+      player_hang_4: 4805598920803066574
+      player_hang_5: 3277829140802061668
+      player_hang_6: 4524219008291531689
+      player_hang_7: -8673977181669631525
+      player_hang_8: -1579349005604307976
+      player_hang_9: 3117594536212747523
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
