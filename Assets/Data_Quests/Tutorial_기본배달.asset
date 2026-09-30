@@ -18,10 +18,10 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: fdf22f0c4bdea364f9d5b22a9ec390ef, type: 2}
     quantity: 1
   targetLocation: "\uC815\uAE00 \uB358\uC804"
-  reward: 0
+  reward: 80
   description: "\uC544\uAE4C\uBD80\uD130 \uBA38\uB9AC\uAC00 \uACC4\uC18D \uC9C0\uB048\uAC70\uB9AC\uB124\uC694.
     \uD0D0\uD5D8\uC744 \uACC4\uC18D\uD558\uB824\uBA74 \uC57D\uC774 \uD544\uC694\uD560
     \uAC83 \uAC19\uC544\uC694."
   objectives:
-  - "\uBE44\uC0C1\uC57D\uC744 \uC815\uAE00 \uB358\uC804\uAE4C\uC9C0 \uBC30\uB2EC\uD558\uC790"
+  - "\uCE74\uC77C \u2192 \uCF00\uC774\uD06C \uC804\uB2EC"
   unlocksQuests: []
