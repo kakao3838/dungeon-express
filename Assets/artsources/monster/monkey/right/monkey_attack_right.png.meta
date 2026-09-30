@@ -1,0 +1,1183 @@
+fileFormatVersion: 2
+guid: 1feca3419d391484a94c37e0b57f3c02
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6089684384471232604
+    second: monkey_attack_right_0
+  - first:
+      213: 7120320155348851484
+    second: monkey_attack_right_1
+  - first:
+      213: -1168711881675142918
+    second: monkey_attack_right_2
+  - first:
+      213: -834283668310249716
+    second: monkey_attack_right_3
+  - first:
+      213: -508722115583097541
+    second: monkey_attack_right_4
+  - first:
+      213: 3185852366945016718
+    second: monkey_attack_right_5
+  - first:
+      213: 7634099613103703109
+    second: monkey_attack_right_6
+  - first:
+      213: -7173601057760140213
+    second: monkey_attack_right_7
+  - first:
+      213: 7990803380630821434
+    second: monkey_attack_right_8
+  - first:
+      213: 8201751448264417009
+    second: monkey_attack_right_9
+  - first:
+      213: -4977605257311595154
+    second: monkey_attack_right_10
+  - first:
+      213: -4757487337804046095
+    second: monkey_attack_right_11
+  - first:
+      213: 4461286714030683837
+    second: monkey_attack_right_12
+  - first:
+      213: -7331593328878355311
+    second: monkey_attack_right_13
+  - first:
+      213: 4550975372919648619
+    second: monkey_attack_right_14
+  - first:
+      213: -4135444893120618055
+    second: monkey_attack_right_15
+  - first:
+      213: -1570807098585251480
+    second: monkey_attack_right_16
+  - first:
+      213: -7162157720457462156
+    second: monkey_attack_right_17
+  - first:
+      213: -3170016493619273422
+    second: monkey_attack_right_18
+  - first:
+      213: -3048424346270127514
+    second: monkey_attack_right_19
+  - first:
+      213: -7667757012727082512
+    second: monkey_attack_right_20
+  - first:
+      213: -4170894123785582318
+    second: monkey_attack_right_21
+  - first:
+      213: -4790887782586714973
+    second: monkey_attack_right_22
+  - first:
+      213: -256807827138594159
+    second: monkey_attack_right_23
+  - first:
+      213: -4391480827257805786
+    second: monkey_attack_right_24
+  - first:
+      213: -8139434246443873862
+    second: monkey_attack_right_25
+  - first:
+      213: -8803599687793747087
+    second: monkey_attack_right_26
+  - first:
+      213: 8854966081279290245
+    second: monkey_attack_right_27
+  - first:
+      213: 8673916129741713178
+    second: monkey_attack_right_28
+  - first:
+      213: -8694107330405802279
+    second: monkey_attack_right_29
+  - first:
+      213: 8539845953083452245
+    second: monkey_attack_right_30
+  - first:
+      213: 8873144730350603059
+    second: monkey_attack_right_31
+  - first:
+      213: -9046778817523253550
+    second: monkey_attack_right_32
+  - first:
+      213: -5695125134751171710
+    second: monkey_attack_right_33
+  - first:
+      213: 8427813102928420051
+    second: monkey_attack_right_34
+  - first:
+      213: -2991886623555082445
+    second: monkey_attack_right_35
+  - first:
+      213: -7757299480982688079
+    second: monkey_attack_right_36
+  - first:
+      213: 8832783403424292063
+    second: monkey_attack_right_37
+  - first:
+      213: 3145852259555577763
+    second: monkey_attack_right_38
+  - first:
+      213: -8772545888718373789
+    second: monkey_attack_right_39
+  - first:
+      213: -9205206833040636901
+    second: monkey_attack_right_40
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: monkey_attack_right_0
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 6101
+        width: 1048
+        height: 1068
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c50b6a2eea7e28450800000000000000
+      internalID: 6089684384471232604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_1
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 6101
+        width: 1048
+        height: 1068
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1b5f9ac47570d260800000000000000
+      internalID: 7120320155348851484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_2
+      rect:
+        serializedVersion: 2
+        x: 4412
+        y: 6101
+        width: 1048
+        height: 1068
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af889f75cb6e7cfe0800000000000000
+      internalID: -1168711881675142918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_3
+      rect:
+        serializedVersion: 2
+        x: 5477
+        y: 6899
+        width: 68
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f25748c670c64f0800000000000000
+      internalID: -834283668310249716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_4
+      rect:
+        serializedVersion: 2
+        x: 6276
+        y: 6101
+        width: 1048
+        height: 1068
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b35c8436ee7a0f8f0800000000000000
+      internalID: -508722115583097541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_5
+      rect:
+        serializedVersion: 2
+        x: 7341
+        y: 6899
+        width: 68
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8b589e29db663c20800000000000000
+      internalID: 3185852366945016718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_6
+      rect:
+        serializedVersion: 2
+        x: 5492
+        y: 6835
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5444ef2a625c1f960800000000000000
+      internalID: 7634099613103703109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_7
+      rect:
+        serializedVersion: 2
+        x: 7356
+        y: 6835
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4427d768df327c90800000000000000
+      internalID: -7173601057760140213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_8
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 6098
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3a9d7c665905ee60800000000000000
+      internalID: 7990803380630821434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_9
+      rect:
+        serializedVersion: 2
+        x: 2663
+        y: 6098
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fe98d9cc7972d170800000000000000
+      internalID: 8201751448264417009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_10
+      rect:
+        serializedVersion: 2
+        x: 4527
+        y: 6098
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6553d5146efbeab0800000000000000
+      internalID: -4977605257311595154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_11
+      rect:
+        serializedVersion: 2
+        x: 6391
+        y: 6098
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f065c6f8720afdb0800000000000000
+      internalID: -4757487337804046095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_12
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 4237
+        width: 1048
+        height: 1068
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db6f7f621aca9ed30800000000000000
+      internalID: 4461286714030683837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_13
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 5035
+        width: 68
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19cf49a36b2f04a90800000000000000
+      internalID: -7331593328878355311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_14
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 4237
+        width: 1048
+        height: 1068
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b613d645dff482f30800000000000000
+      internalID: 4550975372919648619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_15
+      rect:
+        serializedVersion: 2
+        x: 3613
+        y: 5035
+        width: 68
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b1a75db7c2fb96c0800000000000000
+      internalID: -4135444893120618055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_16
+      rect:
+        serializedVersion: 2
+        x: 4390
+        y: 4237
+        width: 1068
+        height: 1110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8610a2e244f533ae0800000000000000
+      internalID: -1570807098585251480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_17
+      rect:
+        serializedVersion: 2
+        x: 6254
+        y: 4237
+        width: 1068
+        height: 1110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47ebfceff77ea9c90800000000000000
+      internalID: -7162157720457462156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_18
+      rect:
+        serializedVersion: 2
+        x: 1764
+        y: 4971
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 231a1b56bc6d104d0800000000000000
+      internalID: -3170016493619273422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_19
+      rect:
+        serializedVersion: 2
+        x: 3628
+        y: 4971
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66aaae35532d1b5d0800000000000000
+      internalID: -3048424346270127514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_20
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 4234
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f154685f97a69590800000000000000
+      internalID: -7667757012727082512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_21
+      rect:
+        serializedVersion: 2
+        x: 2663
+        y: 4234
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2190ffb84e10e16c0800000000000000
+      internalID: -4170894123785582318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_22
+      rect:
+        serializedVersion: 2
+        x: 4527
+        y: 4234
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a4f828e1f8538db0800000000000000
+      internalID: -4790887782586714973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_23
+      rect:
+        serializedVersion: 2
+        x: 6391
+        y: 4234
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19a3ddf44a2af6cf0800000000000000
+      internalID: -256807827138594159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_24
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 2373
+        width: 1068
+        height: 1110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6242c5564735e03c0800000000000000
+      internalID: -4391480827257805786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_25
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 2370
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab9401c6dabea0f80800000000000000
+      internalID: -8139434246443873862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_26
+      rect:
+        serializedVersion: 2
+        x: 2526
+        y: 2373
+        width: 1068
+        height: 1110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17b50583ab453d580800000000000000
+      internalID: -8803599687793747087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_27
+      rect:
+        serializedVersion: 2
+        x: 2663
+        y: 2370
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58be8cc3cb823ea70800000000000000
+      internalID: 8854966081279290245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_28
+      rect:
+        serializedVersion: 2
+        x: 4401
+        y: 2373
+        width: 1104
+        height: 1103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1f29cc73c0ff5870800000000000000
+      internalID: 8673916129741713178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_29
+      rect:
+        serializedVersion: 2
+        x: 4527
+        y: 2370
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9deda044273585780800000000000000
+      internalID: -8694107330405802279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_30
+      rect:
+        serializedVersion: 2
+        x: 6265
+        y: 2373
+        width: 1104
+        height: 1103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55ba816f5a0a38670800000000000000
+      internalID: 8539845953083452245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_31
+      rect:
+        serializedVersion: 2
+        x: 6391
+        y: 2370
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33b4d2dce1eb32b70800000000000000
+      internalID: 8873144730350603059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_32
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 509
+        width: 1048
+        height: 1068
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2de7ffbe892637280800000000000000
+      internalID: -9046778817523253550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_33
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 509
+        width: 1305
+        height: 1093
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28bf1cf2dd9d6f0b0800000000000000
+      internalID: -5695125134751171710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_34
+      rect:
+        serializedVersion: 2
+        x: 3788
+        y: 986
+        width: 90
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dc5e695d5b95f470800000000000000
+      internalID: 8427813102928420051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_35
+      rect:
+        serializedVersion: 2
+        x: 4412
+        y: 509
+        width: 1048
+        height: 1068
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 337a1c2b7feaa76d0800000000000000
+      internalID: -2991886623555082445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_36
+      rect:
+        serializedVersion: 2
+        x: 6276
+        y: 509
+        width: 1048
+        height: 1068
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be64b3d839885490800000000000000
+      internalID: -7757299480982688079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_37
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 506
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdc121315b9549a70800000000000000
+      internalID: 8832783403424292063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_38
+      rect:
+        serializedVersion: 2
+        x: 2663
+        y: 506
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3af8bae66ff48ab20800000000000000
+      internalID: 3145852259555577763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_39
+      rect:
+        serializedVersion: 2
+        x: 4527
+        y: 506
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36cb02f3ef7a14680800000000000000
+      internalID: -8772545888718373789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_attack_right_40
+      rect:
+        serializedVersion: 2
+        x: 6391
+        y: 506
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b144d981829804080800000000000000
+      internalID: -9205206833040636901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      monkey_attack_right_0: 6089684384471232604
+      monkey_attack_right_1: 7120320155348851484
+      monkey_attack_right_10: -4977605257311595154
+      monkey_attack_right_11: -4757487337804046095
+      monkey_attack_right_12: 4461286714030683837
+      monkey_attack_right_13: -7331593328878355311
+      monkey_attack_right_14: 4550975372919648619
+      monkey_attack_right_15: -4135444893120618055
+      monkey_attack_right_16: -1570807098585251480
+      monkey_attack_right_17: -7162157720457462156
+      monkey_attack_right_18: -3170016493619273422
+      monkey_attack_right_19: -3048424346270127514
+      monkey_attack_right_2: -1168711881675142918
+      monkey_attack_right_20: -7667757012727082512
+      monkey_attack_right_21: -4170894123785582318
+      monkey_attack_right_22: -4790887782586714973
+      monkey_attack_right_23: -256807827138594159
+      monkey_attack_right_24: -4391480827257805786
+      monkey_attack_right_25: -8139434246443873862
+      monkey_attack_right_26: -8803599687793747087
+      monkey_attack_right_27: 8854966081279290245
+      monkey_attack_right_28: 8673916129741713178
+      monkey_attack_right_29: -8694107330405802279
+      monkey_attack_right_3: -834283668310249716
+      monkey_attack_right_30: 8539845953083452245
+      monkey_attack_right_31: 8873144730350603059
+      monkey_attack_right_32: -9046778817523253550
+      monkey_attack_right_33: -5695125134751171710
+      monkey_attack_right_34: 8427813102928420051
+      monkey_attack_right_35: -2991886623555082445
+      monkey_attack_right_36: -7757299480982688079
+      monkey_attack_right_37: 8832783403424292063
+      monkey_attack_right_38: 3145852259555577763
+      monkey_attack_right_39: -8772545888718373789
+      monkey_attack_right_4: -508722115583097541
+      monkey_attack_right_40: -9205206833040636901
+      monkey_attack_right_5: 3185852366945016718
+      monkey_attack_right_6: 7634099613103703109
+      monkey_attack_right_7: -7173601057760140213
+      monkey_attack_right_8: 7990803380630821434
+      monkey_attack_right_9: 8201751448264417009
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
