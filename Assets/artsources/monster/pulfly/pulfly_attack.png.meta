@@ -1,0 +1,871 @@
+fileFormatVersion: 2
+guid: dbaf28616aad4b04c8c94c1859ad37fa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7846839094514092423
+    second: pulfly_attack_0
+  - first:
+      213: 1968273119247068241
+    second: pulfly_attack_1
+  - first:
+      213: 7199090880818592206
+    second: pulfly_attack_2
+  - first:
+      213: 2229552914220475613
+    second: pulfly_attack_3
+  - first:
+      213: -2853166748117292802
+    second: pulfly_attack_4
+  - first:
+      213: 2499390522485997237
+    second: pulfly_attack_5
+  - first:
+      213: -8551224278115464014
+    second: pulfly_attack_6
+  - first:
+      213: 5861252329230767459
+    second: pulfly_attack_7
+  - first:
+      213: 8906318640374144615
+    second: pulfly_attack_8
+  - first:
+      213: -9035491965704333949
+    second: pulfly_attack_9
+  - first:
+      213: -5291441898209058934
+    second: pulfly_attack_10
+  - first:
+      213: -8933802404779638510
+    second: pulfly_attack_11
+  - first:
+      213: 6307216881129018649
+    second: pulfly_attack_12
+  - first:
+      213: 5393745702530757083
+    second: pulfly_attack_13
+  - first:
+      213: 3594391539957082402
+    second: pulfly_attack_14
+  - first:
+      213: -685706011878739237
+    second: pulfly_attack_15
+  - first:
+      213: -1468178886184753540
+    second: pulfly_attack_16
+  - first:
+      213: -5910632312224531214
+    second: pulfly_attack_17
+  - first:
+      213: 536212302644324954
+    second: pulfly_attack_18
+  - first:
+      213: -7532987105294941581
+    second: pulfly_attack_19
+  - first:
+      213: 6510270673432019874
+    second: pulfly_attack_20
+  - first:
+      213: 5236726446714336756
+    second: pulfly_attack_21
+  - first:
+      213: 780642202240629567
+    second: pulfly_attack_22
+  - first:
+      213: 4570888715097206675
+    second: pulfly_attack_23
+  - first:
+      213: -1028797918054903199
+    second: pulfly_attack_24
+  - first:
+      213: 7180222334430162179
+    second: pulfly_attack_25
+  - first:
+      213: 4793827557334465883
+    second: pulfly_attack_26
+  - first:
+      213: -532742201141056940
+    second: pulfly_attack_27
+  - first:
+      213: 7227812086606708896
+    second: pulfly_attack_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pulfly_attack_0
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 4127
+        width: 742
+        height: 838
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7890926059295ec60800000000000000
+      internalID: 7846839094514092423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_1
+      rect:
+        serializedVersion: 2
+        x: 2462
+        y: 4127
+        width: 741
+        height: 838
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15cebad39f5b05b10800000000000000
+      internalID: 1968273119247068241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_2
+      rect:
+        serializedVersion: 2
+        x: 4150
+        y: 4154
+        width: 744
+        height: 797
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec932f0830f48e360800000000000000
+      internalID: 7199090880818592206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_3
+      rect:
+        serializedVersion: 2
+        x: 4848
+        y: 4553
+        width: 54
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd46c041096f0fe10800000000000000
+      internalID: 2229552914220475613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_4
+      rect:
+        serializedVersion: 2
+        x: 5832
+        y: 4127
+        width: 742
+        height: 838
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef8238595f38768d0800000000000000
+      internalID: -2853166748117292802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_5
+      rect:
+        serializedVersion: 2
+        x: 6533
+        y: 4553
+        width: 54
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5be71c7107e9fa220800000000000000
+      internalID: 2499390522485997237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_6
+      rect:
+        serializedVersion: 2
+        x: 4099
+        y: 4427
+        width: 72
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bc4b3c43d2f35980800000000000000
+      internalID: -8551224278115464014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_7
+      rect:
+        serializedVersion: 2
+        x: 5785
+        y: 4427
+        width: 71
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3651bbe60f9575150800000000000000
+      internalID: 5861252329230767459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_8
+      rect:
+        serializedVersion: 2
+        x: 4109
+        y: 4257
+        width: 79
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76ed0ff9d99999b70800000000000000
+      internalID: 8906318640374144615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_9
+      rect:
+        serializedVersion: 2
+        x: 5794
+        y: 4257
+        width: 79
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3851c45edeb7b9280800000000000000
+      internalID: -9035491965704333949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_10
+      rect:
+        serializedVersion: 2
+        x: 2159
+        y: 2834
+        width: 254
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8f51abf0a50196b0800000000000000
+      internalID: -5291441898209058934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_11
+      rect:
+        serializedVersion: 2
+        x: 2211
+        y: 2276
+        width: 1165
+        height: 1130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2114491db02c40480800000000000000
+      internalID: -8933802404779638510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_12
+      rect:
+        serializedVersion: 2
+        x: 2485
+        y: 3316
+        width: 761
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 915da09165cb78750800000000000000
+      internalID: 6307216881129018649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_13
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 2468
+        width: 743
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd1b220a32f6ada40800000000000000
+      internalID: 5393745702530757083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_14
+      rect:
+        serializedVersion: 2
+        x: 1477
+        y: 2868
+        width: 54
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 229afcacf08d1e130800000000000000
+      internalID: 3594391539957082402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_15
+      rect:
+        serializedVersion: 2
+        x: 3309
+        y: 2476
+        width: 151
+        height: 770
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd23e95e302eb76f0800000000000000
+      internalID: -685706011878739237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_16
+      rect:
+        serializedVersion: 2
+        x: 4063
+        y: 2468
+        width: 832
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c76aa3ee41bff9be0800000000000000
+      internalID: -1468178886184753540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_17
+      rect:
+        serializedVersion: 2
+        x: 4848
+        y: 2868
+        width: 54
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fc39e75a3739fda0800000000000000
+      internalID: -5910632312224531214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_18
+      rect:
+        serializedVersion: 2
+        x: 5748
+        y: 2429
+        width: 859
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a2f4f8f32017700800000000000000
+      internalID: 536212302644324954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_19
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 2741
+        width: 71
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3720c43a324757790800000000000000
+      internalID: -7532987105294941581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_20
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 2572
+        width: 79
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a30f814fa0295a50800000000000000
+      internalID: 6510270673432019874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_21
+      rect:
+        serializedVersion: 2
+        x: 2170
+        y: 2397
+        width: 166
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f53d4a35f69ca840800000000000000
+      internalID: 5236726446714336756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_22
+      rect:
+        serializedVersion: 2
+        x: 2404
+        y: 2190
+        width: 857
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3b3b3962f565da00800000000000000
+      internalID: 780642202240629567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_23
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 1148
+        width: 254
+        height: 515
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39fe53b911f0f6f30800000000000000
+      internalID: 4570888715097206675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_24
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 590
+        width: 1165
+        height: 1131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1621dac8eb9f8b1f0800000000000000
+      internalID: -1028797918054903199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_25
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1630
+        width: 762
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d2904bb2645a360800000000000000
+      internalID: 7180222334430162179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_26
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 712
+        width: 166
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5d366db3c8178240800000000000000
+      internalID: 4793827557334465883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_27
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 791
+        width: 151
+        height: 770
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45aa0286ac15b98f0800000000000000
+      internalID: -532742201141056940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulfly_attack_28
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 505
+        width: 857
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a0c7755cc85e4460800000000000000
+      internalID: 7227812086606708896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pulfly_attack_0: 7846839094514092423
+      pulfly_attack_1: 1968273119247068241
+      pulfly_attack_10: -5291441898209058934
+      pulfly_attack_11: -8933802404779638510
+      pulfly_attack_12: 6307216881129018649
+      pulfly_attack_13: 5393745702530757083
+      pulfly_attack_14: 3594391539957082402
+      pulfly_attack_15: -685706011878739237
+      pulfly_attack_16: -1468178886184753540
+      pulfly_attack_17: -5910632312224531214
+      pulfly_attack_18: 536212302644324954
+      pulfly_attack_19: -7532987105294941581
+      pulfly_attack_2: 7199090880818592206
+      pulfly_attack_20: 6510270673432019874
+      pulfly_attack_21: 5236726446714336756
+      pulfly_attack_22: 780642202240629567
+      pulfly_attack_23: 4570888715097206675
+      pulfly_attack_24: -1028797918054903199
+      pulfly_attack_25: 7180222334430162179
+      pulfly_attack_26: 4793827557334465883
+      pulfly_attack_27: -532742201141056940
+      pulfly_attack_28: 7227812086606708896
+      pulfly_attack_3: 2229552914220475613
+      pulfly_attack_4: -2853166748117292802
+      pulfly_attack_5: 2499390522485997237
+      pulfly_attack_6: -8551224278115464014
+      pulfly_attack_7: 5861252329230767459
+      pulfly_attack_8: 8906318640374144615
+      pulfly_attack_9: -9035491965704333949
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
