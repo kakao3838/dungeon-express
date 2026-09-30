@@ -3845,7 +3845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryPanelController
   slotGridParent: {fileID: 1021404893823571037}
-  slotPrefab: {fileID: 3859454852454971329}
+  slotPrefab: {fileID: 2537638081865813004, guid: ac0e9d9ca3029bb4e937e7b0009760e1, type: 3}
   items:
   - {fileID: 11400000, guid: 994c128936a257f48b41c5e073456308, type: 2}
   detailIcon: {fileID: 7186433161745060066}
