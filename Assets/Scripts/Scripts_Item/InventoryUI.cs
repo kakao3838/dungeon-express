@@ -12,7 +12,6 @@ public class InventoryUI : MonoBehaviour
 
     private Inventory inventory; // 드래그 연결 대신 자동으로 찾음
     private readonly List<Image> slotIcons = new List<Image>();
-    private bool isOpen = false;
 
     void Start()
     {
@@ -40,17 +39,9 @@ public class InventoryUI : MonoBehaviour
             }
         }
 
+        // E키 토글은 태블릿 메뉴(MenuManager)가 담당하므로 여기서는 처리하지 않음
         var keyboard = Keyboard.current;
         if (keyboard == null) return;
-
-        if (keyboard.eKey.wasPressedThisFrame)
-        {
-            isOpen = !isOpen;
-            if (inventoryPanel != null)
-            {
-                inventoryPanel.SetActive(isOpen);
-            }
-        }
     }
 
     void OnDestroy()

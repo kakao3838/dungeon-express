@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.UI;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum MenuTab
 {
-    None,       // ¡ç Ãß°¡: ¾Æ¹« ÅÇµµ ¼±ÅÃ ¾È µÈ "¼±ÅÃ ´ë±â" »óÅÂ
     Equipment,
     Inventory,
     Quest,
@@ -11,9 +14,18 @@ public enum MenuTab
     Codex
 }
 
+// íƒœë¸”ë¦¿ ë©”ë‰´(ì¥ë¹„/ê°€ë°©/ì˜ë¢°/ì§€ë„/ë„ê°) ê´€ë¦¬ì.
+// - Resources/TabletMenu í”„ë¦¬íŒ¹ì„ ì²« ì”¬ ë¡œë“œ ì‹œ ìë™ ìƒì„±í•˜ê³  DontDestroyOnLoadë¡œ ìœ ì§€í•˜ë¯€ë¡œ
+//   íƒ€ìš´/ë˜ì „ ë“± ì–´ëŠ ì”¬ì—ë„ ë”°ë¡œ ë°°ì¹˜í•  í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤.
+// - ì”¬ì— ì§ì ‘ ë°°ì¹˜ëœ MenuManager(ì˜ˆ: MenuTest)ê°€ ìˆìœ¼ë©´ ìë™ ìƒì„±í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
 public class MenuManager : MonoBehaviour
 {
+    private const string PrefabResourcePath = "TabletMenu";
+
     public static MenuManager Instance { get; private set; }
+
+    // í”Œë ˆì´ì–´ ì…ë ¥ ìŠ¤í¬ë¦½íŠ¸ê°€ ë©”ë‰´ê°€ ì—´ë ¤ ìˆì„ ë•Œ ì…ë ¥ì„ ë¬´ì‹œí•˜ë„ë¡ í™•ì¸í•˜ëŠ” ìš©ë„
+    public static bool IsMenuOpen => Instance != null && Instance.IsOpen;
 
     [Header("Menu Root")]
     [SerializeField] private GameObject menuRoot;
@@ -25,96 +37,147 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject mapPanel;
     [SerializeField] private GameObject codexPanel;
 
-    public bool IsOpen { get; private set; }
+    [Header("Sidebar ì„ íƒ í‘œì‹œ (MenuTab ìˆœì„œ: ì¥ë¹„, ê°€ë°©, ì˜ë¢°, ì§€ë„, ë„ê°)")]
+    [SerializeField] private GameObject[] tabHighlights;
 
-    private MenuTab currentTab = MenuTab.None;   // Áö±İ ½ÇÁ¦·Î ¶° ÀÖ´Â ÅÇ
-    private MenuTab lastRealTab = MenuTab.Equipment; // Tab Å°·Î ¿­ ¶§ µ¹¾Æ°¥ ÅÇ
+    [Header("ë©”ë‰´ë¥¼ ì—´ ìˆ˜ ì—†ëŠ” ì”¬")]
+    [SerializeField] private string[] blockedScenes = { "BootScene", "TitleScene" };
+
+    public bool IsOpen { get; private set; }
+    public MenuTab CurrentTab { get; private set; } = MenuTab.Inventory;
+
+    private bool holdingPause; // GamePauseë¥¼ ë‚´ê°€ ì¡ê³  ìˆëŠ”ì§€ (ëŒ€í™”ì°½/ê²°ê³¼ì°½ ë“±ê³¼ ê°™ì€ ì •ì§€ ì²˜ë¦¬ë¥¼ ê³µìœ )
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private static void Bootstrap()
+    {
+        if (Instance != null) return;
+        if (FindFirstObjectByType<MenuManager>(FindObjectsInactive.Include) != null) return;
+
+        var prefab = Resources.Load<GameObject>(PrefabResourcePath);
+        if (prefab == null)
+        {
+            Debug.LogWarning("[MenuManager] Resources/" + PrefabResourcePath + " í”„ë¦¬íŒ¹ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
+            return;
+        }
+        Instantiate(prefab);
+    }
 
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
+        if (transform.parent == null) DontDestroyOnLoad(gameObject);
+
         IsOpen = false;
         menuRoot.SetActive(false);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance != this) return;
+
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        ReleasePause();
+        Instance = null;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // ì”¬ì´ ë°”ë€Œë©´ ì´ì „ ì”¬ì˜ í”Œë ˆì´ì–´/ê°€ë°©ì„ ë³´ê³  ìˆì„ ìˆ˜ ìˆìœ¼ë¯€ë¡œ í•­ìƒ ë‹«ìŒ
+        if (IsOpen) Close();
+    }
+
+    private bool IsBlockedScene()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        foreach (string blocked in blockedScenes)
+        {
+            if (sceneName == blocked) return true;
+        }
+        return false;
     }
 
     private void Update()
     {
-        // E : ÅÂºí¸´À» "¼±ÅÃ ´ë±â »óÅÂ"·Î ¿­±â / ´İ±â
-        if (Keyboard.current.eKey.wasPressedThisFrame)
+        var keyboard = Keyboard.current;
+        if (keyboard == null) return;
+
+        if (IsBlockedScene())
         {
-            if (IsOpen)
-                Close();
-            else
-                OpenSelection();
+            if (IsOpen) Close();
+            return;
         }
 
-        // Tab : ¸¶Áö¸·À¸·Î º¸´ø ÅÇ ±×´ë·Î ¿­±â / ´İ±â
-        if (Keyboard.current.tabKey.wasPressedThisFrame)
+        // E / Tab : ë§ˆì§€ë§‰ìœ¼ë¡œ ë³´ë˜ íƒ­ìœ¼ë¡œ ì—´ê¸° / ë‹«ê¸° (EscëŠ” PauseMenuê°€ ì“°ë¯€ë¡œ ì—¬ê¸°ì„œëŠ” ì²˜ë¦¬í•˜ì§€ ì•ŠìŒ)
+        if (keyboard.eKey.wasPressedThisFrame || keyboard.tabKey.wasPressedThisFrame)
         {
-            if (IsOpen)
-                Close();
-            else
-                Open(lastRealTab);
+            if (IsOpen) Close();
+            else Open(CurrentTab);
         }
 
-        // 1 : Àåºñ
-        if (Keyboard.current.digit1Key.wasPressedThisFrame)
-            ToggleTab(MenuTab.Equipment);
+        // 1~5, M : í•´ë‹¹ íƒ­ìœ¼ë¡œ ë°”ë¡œ ì—´ê¸° (ì´ë¯¸ ê·¸ íƒ­ì´ë©´ ë‹«ê¸°)
+        if (keyboard.digit1Key.wasPressedThisFrame) ToggleTab(MenuTab.Equipment);
+        if (keyboard.digit2Key.wasPressedThisFrame) ToggleTab(MenuTab.Inventory);
+        if (keyboard.digit3Key.wasPressedThisFrame) ToggleTab(MenuTab.Quest);
+        if (keyboard.digit4Key.wasPressedThisFrame) ToggleTab(MenuTab.Map);
+        if (keyboard.digit5Key.wasPressedThisFrame) ToggleTab(MenuTab.Codex);
+        if (keyboard.mKey.wasPressedThisFrame) ToggleTab(MenuTab.Map);
+    }
 
-        // 2 : °¡¹æ
-        if (Keyboard.current.digit2Key.wasPressedThisFrame)
-            ToggleTab(MenuTab.Inventory);
-
-        // 3 : ÀÇ·Ú
-        if (Keyboard.current.digit3Key.wasPressedThisFrame)
-            ToggleTab(MenuTab.Quest);
-
-        // 4 : Áöµµ
-        if (Keyboard.current.digit4Key.wasPressedThisFrame)
-            ToggleTab(MenuTab.Map);
-
-        // 5 : µµ°¨
-        if (Keyboard.current.digit5Key.wasPressedThisFrame)
-            ToggleTab(MenuTab.Codex);
-
-        // M : Áöµµ
-        if (Keyboard.current.mKey.wasPressedThisFrame)
-            ToggleTab(MenuTab.Map);
+    // NPC ëŒ€í™”ì°½ì€ GamePauseë¥¼ ì“°ì§€ ì•Šì•„ì„œ ë”°ë¡œ í™•ì¸
+    private static bool IsNpcDialogueOpen()
+    {
+        return NPCDialogueMenu.Instance != null && NPCDialogueMenu.Instance.IsOpen;
     }
 
     private void ToggleTab(MenuTab tab)
     {
-        // ÀÌ¹Ì ±× ÅÇÀÌ ¿­·ÁÀÖ´Â »óÅÂ¿¡¼­ °°Àº Å°¸¦ ¶Ç ´©¸£¸é ´İ±â
-        if (IsOpen && currentTab == tab)
-            Close();
-        else
-            Open(tab);
+        if (IsOpen && CurrentTab == tab) Close();
+        else Open(tab);
     }
 
-    // ½ÇÁ¦ ÄÜÅÙÃ÷°¡ ÀÖ´Â ÅÇÀ» ¿©´Â ÇÔ¼ö (¼ıÀÚÅ°, Tab, UI ¹öÆ°¿ë)
+    // ë‹¨ì¶•í‚¤, ì‚¬ì´ë“œë°” ë²„íŠ¼ì—ì„œ í˜¸ì¶œ
     public void Open(MenuTab tab)
     {
+        if (IsBlockedScene()) return;
+        // ëŒ€í™”ì°½, ê²°ê³¼ì°½, ì¼ì‹œì •ì§€ ì°½ ë“± ë‹¤ë¥¸ ì°½ì´ ê²Œì„ì„ ë©ˆì¶”ê³  ìˆìœ¼ë©´ ì—´ì§€ ì•ŠìŒ
+        if (!IsOpen && (GamePause.IsPaused || IsNpcDialogueOpen())) return;
+
+        EnsureEventSystem();
+
+        if (!holdingPause)
+        {
+            holdingPause = true;
+            GamePause.Push(); // ë©”ë‰´ë¥¼ ë³´ëŠ” ë™ì•ˆ ê²Œì„ ì¼ì‹œì •ì§€ + í”Œë ˆì´ì–´ ì¡°ì‘ ë¹„í™œì„±í™”
+        }
+
         IsOpen = true;
-        currentTab = tab;
-        lastRealTab = tab; // "´ÙÀ½ TabÅ°¿¡ µ¹¾Æ°¥ ÅÇ"µµ °»½Å
+        CurrentTab = tab;
         menuRoot.SetActive(true);
         ShowOnly(tab);
     }
 
-    // EÅ° Àü¿ë: ¼±ÅÃ ´ë±â »óÅÂ·Î ¿­±â (lastRealTabÀº °Çµå¸®Áö ¾ÊÀ½)
-    public void OpenSelection()
-    {
-        IsOpen = true;
-        currentTab = MenuTab.None;
-        menuRoot.SetActive(true);
-        ShowOnly(MenuTab.None);
-    }
-
     public void Close()
     {
+        if (!IsOpen) return;
+
         IsOpen = false;
-        currentTab = MenuTab.None;
         menuRoot.SetActive(false);
+        ReleasePause();
+    }
+
+    private void ReleasePause()
+    {
+        if (!holdingPause) return;
+        holdingPause = false;
+        GamePause.Pop();
     }
 
     private void ShowOnly(MenuTab tab)
@@ -124,10 +187,26 @@ public class MenuManager : MonoBehaviour
         questPanel.SetActive(tab == MenuTab.Quest);
         mapPanel.SetActive(tab == MenuTab.Map);
         codexPanel.SetActive(tab == MenuTab.Codex);
-        // tabÀÌ NoneÀÌ¸é À§ Á¶°ÇÀÌ ÀüºÎ false°¡ µÇ¾î ÀÚµ¿À¸·Î ´Ù ²¨Áü
+
+        if (tabHighlights == null) return;
+        for (int i = 0; i < tabHighlights.Length; i++)
+        {
+            if (tabHighlights[i] != null) tabHighlights[i].SetActive(i == (int)tab);
+        }
     }
 
-    // UI ¹öÆ°¿ë ÇÔ¼ö (SidebarÀÇ 5°³ ¹öÆ° OnClick¿¡ ¿¬°á)
+    // ì”¬ì— EventSystemì´ ì—†ìœ¼ë©´(ì˜ˆ: ì •ê¸€ ë˜ì „) ë²„íŠ¼ í´ë¦­ì´ ì•ˆ ë˜ë¯€ë¡œ í•˜ë‚˜ ë§Œë“¤ì–´ ë‘ .
+    // DontDestroyOnLoadë¥¼ ê±¸ì§€ ì•Šì•„ì„œ ì”¬ì´ ë°”ë€Œë©´ ì‚¬ë¼ì§€ê³ , ë‹¤ìŒ ì”¬ì˜ EventSystemê³¼ ê²¹ì¹˜ì§€ ì•ŠìŒ
+    private static void EnsureEventSystem()
+    {
+        if (FindFirstObjectByType<EventSystem>() != null) return;
+
+        var go = new GameObject("EventSystem (TabletMenu)");
+        go.AddComponent<EventSystem>();
+        go.AddComponent<InputSystemUIInputModule>();
+    }
+
+    // ì‚¬ì´ë“œë°” ë²„íŠ¼ OnClick ì—°ê²°ìš©
     public void OpenEquipment() => Open(MenuTab.Equipment);
     public void OpenInventory() => Open(MenuTab.Inventory);
     public void OpenQuest() => Open(MenuTab.Quest);

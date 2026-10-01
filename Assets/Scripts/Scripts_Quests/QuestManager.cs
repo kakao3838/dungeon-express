@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class QuestManager : MonoBehaviour
@@ -7,6 +8,10 @@ public class QuestManager : MonoBehaviour
 
     [Header("현재 진행 중인 퀘스트 (테스트용으로 직접 연결 가능)")]
     public QuestData currentQuest;
+
+    // 완료한 퀘스트 기록 (태블릿 메뉴 '의뢰' 탭의 완료 목록에 사용)
+    private readonly List<QuestData> completedQuests = new List<QuestData>();
+    public IReadOnlyList<QuestData> CompletedQuests => completedQuests;
 
     public event Action<QuestData> OnQuestStarted;
     public event Action<QuestData> OnQuestCompleted;
@@ -77,6 +82,9 @@ public class QuestManager : MonoBehaviour
                 }
             }
         }
+
+        // 보상 지급은 DeliveryCompleteWindow가 PlayerWallet에 하므로 여기서는 완료 기록만 남김
+        if (!completedQuests.Contains(currentQuest)) completedQuests.Add(currentQuest);
 
         Debug.Log(currentQuest.questName + " 완료! 보상: " + currentQuest.reward + " 골드");
         OnQuestCompleted?.Invoke(currentQuest);

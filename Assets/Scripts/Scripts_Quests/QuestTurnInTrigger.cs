@@ -27,6 +27,7 @@ public class QuestTurnInTrigger : MonoBehaviour
     void Update()
     {
         if (!playerInRange || playerInventory == null) return;
+        if (MenuManager.IsMenuOpen) return; // 태블릿 메뉴가 열려 있을 때는 납품 처리 안 함
         // QuestManager는 Town에서 만들어져 넘어오므로, 던전 씬만 단독으로 실행하면 없을 수 있음
         // (없는 채로 아래를 실행하면 플레이어가 범위 안에 있는 동안 매 프레임 NullReferenceException이 남)
         if (QuestManager.Instance == null) return;

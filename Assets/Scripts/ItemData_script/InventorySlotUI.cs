@@ -1,41 +1,47 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+// 가방 탭의 슬롯 한 칸. 상태는 3가지: 아이템 있음 / 빈 칸 / 잠김(가방 용량 밖)
 public class InventorySlotUI : MonoBehaviour
 {
-    public Image borderImage;
     public Image iconImage;
+    public TMP_Text fallbackLabel;   // 아이콘 스프라이트가 없는 아이템은 이름을 대신 표시
     public GameObject lockIcon;
+    public GameObject selectedFrame;
+    public Button button;
 
     private ItemData currentItem;
     private InventoryPanelController panelController;
 
-    public void Setup(ItemData item, InventoryPanelController controller)
+    public ItemData Item => currentItem;
+
+    public void Setup(ItemData item, bool locked, InventoryPanelController controller)
     {
         currentItem = item;
         panelController = controller;
 
-        iconImage.enabled = item != null;
-        if (item == null) { lockIcon.SetActive(false); return; }
+        bool hasItem = item != null;
+        bool hasIcon = hasItem && item.icon != null;
 
-        iconImage.sprite = item.icon;
-        lockIcon.SetActive(item.isLocked);
-        borderImage.color = GetColorByRarity(item.rarity);
+        iconImage.enabled = hasIcon;
+        iconImage.sprite = hasIcon ? item.icon : null;
+
+        fallbackLabel.gameObject.SetActive(hasItem && !hasIcon);
+        fallbackLabel.text = hasItem ? item.itemName : "";
+
+        lockIcon.SetActive(locked && !hasItem);
+        button.interactable = hasItem;
+        SetSelected(false);
     }
 
-    Color GetColorByRarity(ItemData.Rarity rarity)
+    public void SetSelected(bool selected)
     {
-        switch (rarity)
-        {
-            case ItemData.Rarity.Rare: return Color.blue;
-            case ItemData.Rarity.Epic: return new Color(0.6f, 0f, 0.8f);
-            case ItemData.Rarity.Legendary: return new Color(1f, 0.6f, 0f);
-            default: return Color.white;
-        }
+        selectedFrame.SetActive(selected);
     }
 
     public void OnClick()
     {
-        panelController.ShowDetail(currentItem);
+        if (currentItem != null) panelController.Select(this);
     }
 }
