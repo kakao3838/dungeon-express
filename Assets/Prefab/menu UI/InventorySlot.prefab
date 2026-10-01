@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 3999198078443395836}
   - component: {fileID: 7726809118942918803}
   - component: {fileID: 4566720144086398023}
+  - component: {fileID: 688657517179552686}
   m_Layer: 5
   m_Name: InventorySlot
   m_TagString: Untagged
@@ -196,7 +197,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7726809118942918803}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 688657517179552686}
+        m_TargetAssemblyTypeName: InventorySlotUI, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &688657517179552686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2537638081865813004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2400ec98d8a34ad44be08d9fd33635d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventorySlotUI
+  borderImage: {fileID: 7726809118942918803}
+  iconImage: {fileID: 4565838898784336912}
+  lockIcon: {fileID: 6140319700587899760}
 --- !u!1 &6140319700587899760
 GameObject:
   m_ObjectHideFlags: 0
