@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class TitleMenu : MonoBehaviour
 {
     [Tooltip("게임 시작 버튼을 누르면 이동할 씬 이름 (나중에 Town 씬이 완성되면 그걸로 바꾸세요)")]
-    public string sceneToLoad = "DungeonScene";
+    public string sceneToLoad = "TownScene";
 
     // 상세 패널 열면 숨기는 변수 
     [SerializeField] private GameObject categoryGroup;
