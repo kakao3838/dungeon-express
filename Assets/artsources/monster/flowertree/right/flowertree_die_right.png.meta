@@ -1,0 +1,2769 @@
+fileFormatVersion: 2
+guid: 91e7c00b93f04a9408461b9303a283ae
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6438262113197621164
+    second: flowertree_die_right_0
+  - first:
+      213: -7670217783220258499
+    second: flowertree_die_right_1
+  - first:
+      213: -7162820251784877713
+    second: flowertree_die_right_2
+  - first:
+      213: 874692410446365033
+    second: flowertree_die_right_3
+  - first:
+      213: 7685877653214199453
+    second: flowertree_die_right_4
+  - first:
+      213: -5930003225336791039
+    second: flowertree_die_right_5
+  - first:
+      213: -5353077904709223426
+    second: flowertree_die_right_6
+  - first:
+      213: 6039300037495841173
+    second: flowertree_die_right_7
+  - first:
+      213: 6483702856450892320
+    second: flowertree_die_right_8
+  - first:
+      213: -2931584436473406568
+    second: flowertree_die_right_9
+  - first:
+      213: 3319070911546869343
+    second: flowertree_die_right_10
+  - first:
+      213: -2537853072660737579
+    second: flowertree_die_right_11
+  - first:
+      213: -5087935898564935730
+    second: flowertree_die_right_12
+  - first:
+      213: 9186965750239839393
+    second: flowertree_die_right_13
+  - first:
+      213: -1089203352881967678
+    second: flowertree_die_right_14
+  - first:
+      213: -3389551919575566644
+    second: flowertree_die_right_15
+  - first:
+      213: 4064908012743153863
+    second: flowertree_die_right_16
+  - first:
+      213: 182814314431011085
+    second: flowertree_die_right_17
+  - first:
+      213: 8562284865991749845
+    second: flowertree_die_right_18
+  - first:
+      213: 698616526416317090
+    second: flowertree_die_right_19
+  - first:
+      213: 2380479415537541693
+    second: flowertree_die_right_20
+  - first:
+      213: -2719181024398179680
+    second: flowertree_die_right_21
+  - first:
+      213: -7438451284509739318
+    second: flowertree_die_right_22
+  - first:
+      213: -4355939940160745694
+    second: flowertree_die_right_23
+  - first:
+      213: -8224136382801055046
+    second: flowertree_die_right_24
+  - first:
+      213: -1501974458424219819
+    second: flowertree_die_right_25
+  - first:
+      213: -5773514831927954276
+    second: flowertree_die_right_26
+  - first:
+      213: 1274829325773545796
+    second: flowertree_die_right_27
+  - first:
+      213: -3707190761041503281
+    second: flowertree_die_right_28
+  - first:
+      213: -1619572306492073717
+    second: flowertree_die_right_29
+  - first:
+      213: -617633423295436755
+    second: flowertree_die_right_30
+  - first:
+      213: -4691415287997587330
+    second: flowertree_die_right_31
+  - first:
+      213: -7992257398293637101
+    second: flowertree_die_right_32
+  - first:
+      213: 1062729997346658702
+    second: flowertree_die_right_33
+  - first:
+      213: 8455635882429576343
+    second: flowertree_die_right_34
+  - first:
+      213: -3242837475344938503
+    second: flowertree_die_right_35
+  - first:
+      213: 1612603670256027653
+    second: flowertree_die_right_36
+  - first:
+      213: 3160704051497050706
+    second: flowertree_die_right_37
+  - first:
+      213: -3985975342878052602
+    second: flowertree_die_right_38
+  - first:
+      213: -1493620650126151445
+    second: flowertree_die_right_39
+  - first:
+      213: -4636937614305223544
+    second: flowertree_die_right_40
+  - first:
+      213: -3149602468790585216
+    second: flowertree_die_right_41
+  - first:
+      213: -4707310498136591314
+    second: flowertree_die_right_42
+  - first:
+      213: 2392636367275534139
+    second: flowertree_die_right_43
+  - first:
+      213: -5939298371339352648
+    second: flowertree_die_right_44
+  - first:
+      213: -4481840984442731184
+    second: flowertree_die_right_45
+  - first:
+      213: 6669150915741283305
+    second: flowertree_die_right_46
+  - first:
+      213: 7998940131585039415
+    second: flowertree_die_right_47
+  - first:
+      213: 2095130765869785434
+    second: flowertree_die_right_48
+  - first:
+      213: 259154079991129505
+    second: flowertree_die_right_49
+  - first:
+      213: -3354363735970518881
+    second: flowertree_die_right_50
+  - first:
+      213: -5976483184648960330
+    second: flowertree_die_right_51
+  - first:
+      213: -7416309727803894096
+    second: flowertree_die_right_52
+  - first:
+      213: 8484178925955767018
+    second: flowertree_die_right_53
+  - first:
+      213: -5745886447999209052
+    second: flowertree_die_right_54
+  - first:
+      213: -3266430932968356173
+    second: flowertree_die_right_55
+  - first:
+      213: 846736101261318166
+    second: flowertree_die_right_56
+  - first:
+      213: -4560844681801017961
+    second: flowertree_die_right_57
+  - first:
+      213: 4200229149097336329
+    second: flowertree_die_right_58
+  - first:
+      213: -875938222922344375
+    second: flowertree_die_right_59
+  - first:
+      213: 3470805337113254472
+    second: flowertree_die_right_60
+  - first:
+      213: 9138826936741678912
+    second: flowertree_die_right_61
+  - first:
+      213: -856543727366684245
+    second: flowertree_die_right_62
+  - first:
+      213: 2642988421499863295
+    second: flowertree_die_right_63
+  - first:
+      213: 2635196135677675582
+    second: flowertree_die_right_64
+  - first:
+      213: 9085441245940874921
+    second: flowertree_die_right_65
+  - first:
+      213: 7575312663990738482
+    second: flowertree_die_right_66
+  - first:
+      213: -8093900341571076718
+    second: flowertree_die_right_67
+  - first:
+      213: 572439988813578805
+    second: flowertree_die_right_68
+  - first:
+      213: 4785262977382827154
+    second: flowertree_die_right_69
+  - first:
+      213: 481188986238170555
+    second: flowertree_die_right_70
+  - first:
+      213: 8702170696684397218
+    second: flowertree_die_right_71
+  - first:
+      213: -4960678280915405009
+    second: flowertree_die_right_72
+  - first:
+      213: 808760689801540782
+    second: flowertree_die_right_73
+  - first:
+      213: 5065778815166710967
+    second: flowertree_die_right_74
+  - first:
+      213: -3038536366405322516
+    second: flowertree_die_right_75
+  - first:
+      213: 196298246989453648
+    second: flowertree_die_right_76
+  - first:
+      213: -6650341814667520423
+    second: flowertree_die_right_77
+  - first:
+      213: 1774622126202127110
+    second: flowertree_die_right_78
+  - first:
+      213: 2280617567636643598
+    second: flowertree_die_right_79
+  - first:
+      213: 4362272863943718739
+    second: flowertree_die_right_80
+  - first:
+      213: -2140550854386855583
+    second: flowertree_die_right_81
+  - first:
+      213: -4599655216553560552
+    second: flowertree_die_right_82
+  - first:
+      213: -1845912559457804139
+    second: flowertree_die_right_83
+  - first:
+      213: 1134032501828075131
+    second: flowertree_die_right_84
+  - first:
+      213: -6628213607988091220
+    second: flowertree_die_right_85
+  - first:
+      213: 2794631457639054221
+    second: flowertree_die_right_86
+  - first:
+      213: -3882951559317312026
+    second: flowertree_die_right_87
+  - first:
+      213: -5769232977234313401
+    second: flowertree_die_right_88
+  - first:
+      213: 4019562046007422942
+    second: flowertree_die_right_89
+  - first:
+      213: -4431483093965555395
+    second: flowertree_die_right_90
+  - first:
+      213: -795480581829927019
+    second: flowertree_die_right_91
+  - first:
+      213: -2518069125451882733
+    second: flowertree_die_right_92
+  - first:
+      213: 4556051637947436524
+    second: flowertree_die_right_93
+  - first:
+      213: -1398152807922726250
+    second: flowertree_die_right_94
+  - first:
+      213: 1543503380742366643
+    second: flowertree_die_right_95
+  - first:
+      213: -8041999898973409904
+    second: flowertree_die_right_96
+  - first:
+      213: 7669054301616046289
+    second: flowertree_die_right_97
+  - first:
+      213: 5936410711127464199
+    second: flowertree_die_right_98
+  - first:
+      213: -3337297982091656879
+    second: flowertree_die_right_99
+  - first:
+      213: 3598294787871915444
+    second: flowertree_die_right_100
+  - first:
+      213: -5042794342438730867
+    second: flowertree_die_right_101
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flowertree_die_right_0
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 8863
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 450000c28b2b6a6a0800000000000000
+      internalID: -6438262113197621164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_1
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 8453
+        width: 1068
+        height: 2043
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d39b5419099ed8590800000000000000
+      internalID: -7670217783220258499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_2
+      rect:
+        serializedVersion: 2
+        x: 3647
+        y: 8863
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6963666eec889c90800000000000000
+      internalID: -7162820251784877713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_3
+      rect:
+        serializedVersion: 2
+        x: 3708
+        y: 8453
+        width: 1068
+        height: 2043
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 961c26cec18832c00800000000000000
+      internalID: 874692410446365033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_4
+      rect:
+        serializedVersion: 2
+        x: 6260
+        y: 8866
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9ef1fa0109b9aa60800000000000000
+      internalID: 7685877653214199453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_5
+      rect:
+        serializedVersion: 2
+        x: 6326
+        y: 8453
+        width: 1060
+        height: 2038
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10041ec2c7564bda0800000000000000
+      internalID: -5930003225336791039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_6
+      rect:
+        serializedVersion: 2
+        x: 8868
+        y: 8866
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efb70dae10c06b5b0800000000000000
+      internalID: -5353077904709223426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_7
+      rect:
+        serializedVersion: 2
+        x: 8934
+        y: 8453
+        width: 1060
+        height: 2038
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59161f2f267efc350800000000000000
+      internalID: 6039300037495841173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_8
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 6258
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 022e0f3556dbaf950800000000000000
+      internalID: 6483702856450892320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_9
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 5845
+        width: 1034
+        height: 2038
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89b50fabc7be057d0800000000000000
+      internalID: -2931584436473406568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_10
+      rect:
+        serializedVersion: 2
+        x: 3652
+        y: 6258
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f56451ba865bf0e20800000000000000
+      internalID: 3319070911546869343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_11
+      rect:
+        serializedVersion: 2
+        x: 3724
+        y: 5845
+        width: 1034
+        height: 2038
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d15ce7931cb7ccd0800000000000000
+      internalID: -2537853072660737579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_12
+      rect:
+        serializedVersion: 2
+        x: 6337
+        y: 5865
+        width: 1034
+        height: 1913
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecf341ed1450469b0800000000000000
+      internalID: -5087935898564935730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_13
+      rect:
+        serializedVersion: 2
+        x: 8945
+        y: 5865
+        width: 1034
+        height: 1913
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a4c9badca8ae7f70800000000000000
+      internalID: 9186965750239839393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_14
+      rect:
+        serializedVersion: 2
+        x: 6265
+        y: 6153
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cd4e47425f52e0f0800000000000000
+      internalID: -1089203352881967678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_15
+      rect:
+        serializedVersion: 2
+        x: 8873
+        y: 6153
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc674fddc74e5f0d0800000000000000
+      internalID: -3389551919575566644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_16
+      rect:
+        serializedVersion: 2
+        x: 6515
+        y: 5786
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c8d1300d44796830800000000000000
+      internalID: 4064908012743153863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_17
+      rect:
+        serializedVersion: 2
+        x: 9123
+        y: 5786
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d09548f76ac798200800000000000000
+      internalID: 182814314431011085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_18
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 4885
+        width: 329
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d0342f78b853d670800000000000000
+      internalID: 8562284865991749845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_19
+      rect:
+        serializedVersion: 2
+        x: 1681
+        y: 4964
+        width: 87
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aa0343870cf1b900800000000000000
+      internalID: 698616526416317090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_20
+      rect:
+        serializedVersion: 2
+        x: 1882
+        y: 5055
+        width: 189
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d32ae368a69290120800000000000000
+      internalID: 2380479415537541693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_21
+      rect:
+        serializedVersion: 2
+        x: 3866
+        y: 4885
+        width: 329
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a283c0e347834ad0800000000000000
+      internalID: -2719181024398179680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_22
+      rect:
+        serializedVersion: 2
+        x: 4289
+        y: 4964
+        width: 87
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac6bfb3a7ff45c890800000000000000
+      internalID: -7438451284509739318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_23
+      rect:
+        serializedVersion: 2
+        x: 4490
+        y: 5055
+        width: 189
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22f48c304b79c83c0800000000000000
+      internalID: -4355939940160745694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_24
+      rect:
+        serializedVersion: 2
+        x: 6474
+        y: 4885
+        width: 329
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab2f6ce788ffddd80800000000000000
+      internalID: -8224136382801055046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_25
+      rect:
+        serializedVersion: 2
+        x: 6897
+        y: 4964
+        width: 87
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5572ae7103ae72be0800000000000000
+      internalID: -1501974458424219819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_26
+      rect:
+        serializedVersion: 2
+        x: 7098
+        y: 5055
+        width: 189
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c943c7989da50efa0800000000000000
+      internalID: -5773514831927954276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_27
+      rect:
+        serializedVersion: 2
+        x: 9082
+        y: 4885
+        width: 329
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 441abf7748a11b110800000000000000
+      internalID: 1274829325773545796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_28
+      rect:
+        serializedVersion: 2
+        x: 9505
+        y: 4964
+        width: 87
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcbd285f4a96d8cc0800000000000000
+      internalID: -3707190761041503281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_29
+      rect:
+        serializedVersion: 2
+        x: 9706
+        y: 5055
+        width: 189
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b09da7f619f1689e0800000000000000
+      internalID: -1619572306492073717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_30
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 4816
+        width: 392
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2821138ca9bd67f0800000000000000
+      internalID: -617633423295436755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_31
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 4859
+        width: 125
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e702119d6aeb4eeb0800000000000000
+      internalID: -4691415287997587330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_32
+      rect:
+        serializedVersion: 2
+        x: 1788
+        y: 4694
+        width: 379
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3185835bd3cc51190800000000000000
+      internalID: -7992257398293637101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_33
+      rect:
+        serializedVersion: 2
+        x: 3492
+        y: 4816
+        width: 392
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e89dfff4d439fbe00800000000000000
+      internalID: 1062729997346658702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_34
+      rect:
+        serializedVersion: 2
+        x: 3825
+        y: 4859
+        width: 125
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 794f2420904785570800000000000000
+      internalID: 8455635882429576343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_35
+      rect:
+        serializedVersion: 2
+        x: 4396
+        y: 4694
+        width: 379
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f98db95f702ff2d0800000000000000
+      internalID: -3242837475344938503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_36
+      rect:
+        serializedVersion: 2
+        x: 6100
+        y: 4816
+        width: 392
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5080a118e7e116610800000000000000
+      internalID: 1612603670256027653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_37
+      rect:
+        serializedVersion: 2
+        x: 6433
+        y: 4859
+        width: 125
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 252ae95b6931ddb20800000000000000
+      internalID: 3160704051497050706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_38
+      rect:
+        serializedVersion: 2
+        x: 7004
+        y: 4694
+        width: 379
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60fa9445b88fea8c0800000000000000
+      internalID: -3985975342878052602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_39
+      rect:
+        serializedVersion: 2
+        x: 8708
+        y: 4816
+        width: 392
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be0fa08aee7954be0800000000000000
+      internalID: -1493620650126151445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_40
+      rect:
+        serializedVersion: 2
+        x: 9041
+        y: 4859
+        width: 125
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88c90bdaec946afb0800000000000000
+      internalID: -4636937614305223544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_41
+      rect:
+        serializedVersion: 2
+        x: 9612
+        y: 4694
+        width: 379
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0883b00fd3d5a44d0800000000000000
+      internalID: -3149602468790585216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_42
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 4513
+        width: 410
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e24f917da064caeb0800000000000000
+      internalID: -4707310498136591314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_43
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 4355
+        width: 344
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b37a32c691a543120800000000000000
+      internalID: 2392636367275534139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_44
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 3257
+        width: 1151
+        height: 1570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b50349599f539da0800000000000000
+      internalID: -5939298371339352648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_45
+      rect:
+        serializedVersion: 2
+        x: 2022
+        y: 4470
+        width: 242
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0550186de5d4dc1c0800000000000000
+      internalID: -4481840984442731184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_46
+      rect:
+        serializedVersion: 2
+        x: 3571
+        y: 4513
+        width: 410
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e3fa365c659d8c50800000000000000
+      internalID: 6669150915741283305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_47
+      rect:
+        serializedVersion: 2
+        x: 3576
+        y: 4355
+        width: 344
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73c1eb26ba1f10f60800000000000000
+      internalID: 7998940131585039415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_48
+      rect:
+        serializedVersion: 2
+        x: 3665
+        y: 3257
+        width: 1151
+        height: 1570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5129a1c456631d10800000000000000
+      internalID: 2095130765869785434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_49
+      rect:
+        serializedVersion: 2
+        x: 4630
+        y: 4470
+        width: 242
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a5e6ff3343b89300800000000000000
+      internalID: 259154079991129505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_50
+      rect:
+        serializedVersion: 2
+        x: 6179
+        y: 4513
+        width: 410
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f98660e44f7e271d0800000000000000
+      internalID: -3354363735970518881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_51
+      rect:
+        serializedVersion: 2
+        x: 6184
+        y: 4355
+        width: 344
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b647e455344f0da0800000000000000
+      internalID: -5976483184648960330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_52
+      rect:
+        serializedVersion: 2
+        x: 6273
+        y: 3257
+        width: 1151
+        height: 1570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b699f98899f31990800000000000000
+      internalID: -7416309727803894096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_53
+      rect:
+        serializedVersion: 2
+        x: 7238
+        y: 4470
+        width: 242
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aead27438cbddb570800000000000000
+      internalID: 8484178925955767018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_54
+      rect:
+        serializedVersion: 2
+        x: 8787
+        y: 4513
+        width: 410
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a1b643f7b28240b0800000000000000
+      internalID: -5745886447999209052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_55
+      rect:
+        serializedVersion: 2
+        x: 8792
+        y: 4355
+        width: 344
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b6c21d6f5e4ba2d0800000000000000
+      internalID: -3266430932968356173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_56
+      rect:
+        serializedVersion: 2
+        x: 8881
+        y: 3257
+        width: 1151
+        height: 1570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6181e267ff530cb00800000000000000
+      internalID: 846736101261318166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_57
+      rect:
+        serializedVersion: 2
+        x: 9846
+        y: 4470
+        width: 242
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79555812def94b0c0800000000000000
+      internalID: -4560844681801017961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_58
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 4271
+        width: 153
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90e103748263a4a30800000000000000
+      internalID: 4200229149097336329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_59
+      rect:
+        serializedVersion: 2
+        x: 2119
+        y: 4123
+        width: 191
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 948d681c3da08d3f0800000000000000
+      internalID: -875938222922344375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_60
+      rect:
+        serializedVersion: 2
+        x: 3624
+        y: 4271
+        width: 153
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84a5a23a017ca2030800000000000000
+      internalID: 3470805337113254472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_61
+      rect:
+        serializedVersion: 2
+        x: 4727
+        y: 4123
+        width: 191
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04f424ceda2a3de70800000000000000
+      internalID: 9138826936741678912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_62
+      rect:
+        serializedVersion: 2
+        x: 6232
+        y: 4271
+        width: 153
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba148b3a402fc14f0800000000000000
+      internalID: -856543727366684245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_63
+      rect:
+        serializedVersion: 2
+        x: 7335
+        y: 4123
+        width: 191
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff048f857f7cda420800000000000000
+      internalID: 2642988421499863295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_64
+      rect:
+        serializedVersion: 2
+        x: 8840
+        y: 4271
+        width: 153
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e38cc8c6ce8129420800000000000000
+      internalID: 2635196135677675582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_65
+      rect:
+        serializedVersion: 2
+        x: 9943
+        y: 4123
+        width: 191
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aefcfb2da8f51e70800000000000000
+      internalID: 9085441245940874921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_66
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 3545
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e9faf6bbae02960800000000000000
+      internalID: 7575312663990738482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_67
+      rect:
+        serializedVersion: 2
+        x: 3657
+        y: 3545
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d3e3dc580bcaf80800000000000000
+      internalID: -8093900341571076718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_68
+      rect:
+        serializedVersion: 2
+        x: 6265
+        y: 3545
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 532467c0327b1f700800000000000000
+      internalID: 572439988813578805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_69
+      rect:
+        serializedVersion: 2
+        x: 8873
+        y: 3545
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2944bb3135ba86240800000000000000
+      internalID: 4785262977382827154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_70
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 3178
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb57e8265d68da600800000000000000
+      internalID: 481188986238170555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_71
+      rect:
+        serializedVersion: 2
+        x: 3907
+        y: 3178
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a2efae742254c870800000000000000
+      internalID: 8702170696684397218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_72
+      rect:
+        serializedVersion: 2
+        x: 6515
+        y: 3178
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f27ba05e261282bb0800000000000000
+      internalID: -4960678280915405009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_73
+      rect:
+        serializedVersion: 2
+        x: 9123
+        y: 3178
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea4bbe7ff8b493b00800000000000000
+      internalID: 808760689801540782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_74
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 2277
+        width: 329
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b406b42ef24d4640800000000000000
+      internalID: 5065778815166710967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_75
+      rect:
+        serializedVersion: 2
+        x: 1681
+        y: 2356
+        width: 87
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce8fd4b0643f4d5d0800000000000000
+      internalID: -3038536366405322516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_76
+      rect:
+        serializedVersion: 2
+        x: 1882
+        y: 2447
+        width: 189
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05996d1373469b200800000000000000
+      internalID: 196298246989453648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_77
+      rect:
+        serializedVersion: 2
+        x: 3866
+        y: 2277
+        width: 329
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 956d0d5ca5d35b3a0800000000000000
+      internalID: -6650341814667520423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_78
+      rect:
+        serializedVersion: 2
+        x: 4289
+        y: 2356
+        width: 87
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60383d2eb69b0a810800000000000000
+      internalID: 1774622126202127110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_79
+      rect:
+        serializedVersion: 2
+        x: 4490
+        y: 2447
+        width: 189
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f5f73389166af10800000000000000
+      internalID: 2280617567636643598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_80
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 2208
+        width: 392
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 357f0b4be08e98c30800000000000000
+      internalID: 4362272863943718739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_81
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 2251
+        width: 125
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 161dc9cc65c3b42e0800000000000000
+      internalID: -2140550854386855583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_82
+      rect:
+        serializedVersion: 2
+        x: 1788
+        y: 2086
+        width: 379
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8167d0853fdba20c0800000000000000
+      internalID: -4599655216553560552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_83
+      rect:
+        serializedVersion: 2
+        x: 3492
+        y: 2208
+        width: 392
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 590e517ae400266e0800000000000000
+      internalID: -1845912559457804139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_84
+      rect:
+        serializedVersion: 2
+        x: 3825
+        y: 2251
+        width: 125
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7eb5335d84ecbf00800000000000000
+      internalID: 1134032501828075131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_85
+      rect:
+        serializedVersion: 2
+        x: 4396
+        y: 2086
+        width: 379
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca6a57067dad304a0800000000000000
+      internalID: -6628213607988091220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_86
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 1905
+        width: 410
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8b35be018688c620800000000000000
+      internalID: 2794631457639054221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_87
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 1747
+        width: 344
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eda7da212cfc1ac0800000000000000
+      internalID: -3882951559317312026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_88
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 649
+        width: 1151
+        height: 1570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74fba758c219fefa0800000000000000
+      internalID: -5769232977234313401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_89
+      rect:
+        serializedVersion: 2
+        x: 2022
+        y: 1862
+        width: 242
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edf2ae0626a58c730800000000000000
+      internalID: 4019562046007422942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_90
+      rect:
+        serializedVersion: 2
+        x: 3571
+        y: 1905
+        width: 410
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d39b804ea953082c0800000000000000
+      internalID: -4431483093965555395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_91
+      rect:
+        serializedVersion: 2
+        x: 3576
+        y: 1747
+        width: 344
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59f5e4e10a2e5f4f0800000000000000
+      internalID: -795480581829927019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_92
+      rect:
+        serializedVersion: 2
+        x: 3665
+        y: 649
+        width: 1151
+        height: 1570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31fdf81c8750e0dd0800000000000000
+      internalID: -2518069125451882733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_93
+      rect:
+        serializedVersion: 2
+        x: 4630
+        y: 1862
+        width: 242
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ced813263d85a3f30800000000000000
+      internalID: 4556051637947436524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_94
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 1663
+        width: 153
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69a0d0ecd63c89ce0800000000000000
+      internalID: -1398152807922726250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_95
+      rect:
+        serializedVersion: 2
+        x: 2119
+        y: 1515
+        width: 191
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b563ce9520ab6510800000000000000
+      internalID: 1543503380742366643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_96
+      rect:
+        serializedVersion: 2
+        x: 3624
+        y: 1663
+        width: 153
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09d66f143b3156090800000000000000
+      internalID: -8041999898973409904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_97
+      rect:
+        serializedVersion: 2
+        x: 4727
+        y: 1515
+        width: 191
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d081034144fd6a60800000000000000
+      internalID: 7669054301616046289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_98
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 937
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 709939dd61e526250800000000000000
+      internalID: 5936410711127464199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_99
+      rect:
+        serializedVersion: 2
+        x: 3657
+        y: 937
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1518cc3ca298fa1d0800000000000000
+      internalID: -3337297982091656879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_100
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 570
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bdbe348b06bfe130800000000000000
+      internalID: 3598294787871915444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowertree_die_right_101
+      rect:
+        serializedVersion: 2
+        x: 3907
+        y: 570
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d83079f6345640ab0800000000000000
+      internalID: -5042794342438730867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      flowertree_die_right_0: -6438262113197621164
+      flowertree_die_right_1: -7670217783220258499
+      flowertree_die_right_10: 3319070911546869343
+      flowertree_die_right_100: 3598294787871915444
+      flowertree_die_right_101: -5042794342438730867
+      flowertree_die_right_11: -2537853072660737579
+      flowertree_die_right_12: -5087935898564935730
+      flowertree_die_right_13: 9186965750239839393
+      flowertree_die_right_14: -1089203352881967678
+      flowertree_die_right_15: -3389551919575566644
+      flowertree_die_right_16: 4064908012743153863
+      flowertree_die_right_17: 182814314431011085
+      flowertree_die_right_18: 8562284865991749845
+      flowertree_die_right_19: 698616526416317090
+      flowertree_die_right_2: -7162820251784877713
+      flowertree_die_right_20: 2380479415537541693
+      flowertree_die_right_21: -2719181024398179680
+      flowertree_die_right_22: -7438451284509739318
+      flowertree_die_right_23: -4355939940160745694
+      flowertree_die_right_24: -8224136382801055046
+      flowertree_die_right_25: -1501974458424219819
+      flowertree_die_right_26: -5773514831927954276
+      flowertree_die_right_27: 1274829325773545796
+      flowertree_die_right_28: -3707190761041503281
+      flowertree_die_right_29: -1619572306492073717
+      flowertree_die_right_3: 874692410446365033
+      flowertree_die_right_30: -617633423295436755
+      flowertree_die_right_31: -4691415287997587330
+      flowertree_die_right_32: -7992257398293637101
+      flowertree_die_right_33: 1062729997346658702
+      flowertree_die_right_34: 8455635882429576343
+      flowertree_die_right_35: -3242837475344938503
+      flowertree_die_right_36: 1612603670256027653
+      flowertree_die_right_37: 3160704051497050706
+      flowertree_die_right_38: -3985975342878052602
+      flowertree_die_right_39: -1493620650126151445
+      flowertree_die_right_4: 7685877653214199453
+      flowertree_die_right_40: -4636937614305223544
+      flowertree_die_right_41: -3149602468790585216
+      flowertree_die_right_42: -4707310498136591314
+      flowertree_die_right_43: 2392636367275534139
+      flowertree_die_right_44: -5939298371339352648
+      flowertree_die_right_45: -4481840984442731184
+      flowertree_die_right_46: 6669150915741283305
+      flowertree_die_right_47: 7998940131585039415
+      flowertree_die_right_48: 2095130765869785434
+      flowertree_die_right_49: 259154079991129505
+      flowertree_die_right_5: -5930003225336791039
+      flowertree_die_right_50: -3354363735970518881
+      flowertree_die_right_51: -5976483184648960330
+      flowertree_die_right_52: -7416309727803894096
+      flowertree_die_right_53: 8484178925955767018
+      flowertree_die_right_54: -5745886447999209052
+      flowertree_die_right_55: -3266430932968356173
+      flowertree_die_right_56: 846736101261318166
+      flowertree_die_right_57: -4560844681801017961
+      flowertree_die_right_58: 4200229149097336329
+      flowertree_die_right_59: -875938222922344375
+      flowertree_die_right_6: -5353077904709223426
+      flowertree_die_right_60: 3470805337113254472
+      flowertree_die_right_61: 9138826936741678912
+      flowertree_die_right_62: -856543727366684245
+      flowertree_die_right_63: 2642988421499863295
+      flowertree_die_right_64: 2635196135677675582
+      flowertree_die_right_65: 9085441245940874921
+      flowertree_die_right_66: 7575312663990738482
+      flowertree_die_right_67: -8093900341571076718
+      flowertree_die_right_68: 572439988813578805
+      flowertree_die_right_69: 4785262977382827154
+      flowertree_die_right_7: 6039300037495841173
+      flowertree_die_right_70: 481188986238170555
+      flowertree_die_right_71: 8702170696684397218
+      flowertree_die_right_72: -4960678280915405009
+      flowertree_die_right_73: 808760689801540782
+      flowertree_die_right_74: 5065778815166710967
+      flowertree_die_right_75: -3038536366405322516
+      flowertree_die_right_76: 196298246989453648
+      flowertree_die_right_77: -6650341814667520423
+      flowertree_die_right_78: 1774622126202127110
+      flowertree_die_right_79: 2280617567636643598
+      flowertree_die_right_8: 6483702856450892320
+      flowertree_die_right_80: 4362272863943718739
+      flowertree_die_right_81: -2140550854386855583
+      flowertree_die_right_82: -4599655216553560552
+      flowertree_die_right_83: -1845912559457804139
+      flowertree_die_right_84: 1134032501828075131
+      flowertree_die_right_85: -6628213607988091220
+      flowertree_die_right_86: 2794631457639054221
+      flowertree_die_right_87: -3882951559317312026
+      flowertree_die_right_88: -5769232977234313401
+      flowertree_die_right_89: 4019562046007422942
+      flowertree_die_right_9: -2931584436473406568
+      flowertree_die_right_90: -4431483093965555395
+      flowertree_die_right_91: -795480581829927019
+      flowertree_die_right_92: -2518069125451882733
+      flowertree_die_right_93: 4556051637947436524
+      flowertree_die_right_94: -1398152807922726250
+      flowertree_die_right_95: 1543503380742366643
+      flowertree_die_right_96: -8041999898973409904
+      flowertree_die_right_97: 7669054301616046289
+      flowertree_die_right_98: 5936410711127464199
+      flowertree_die_right_99: -3337297982091656879
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

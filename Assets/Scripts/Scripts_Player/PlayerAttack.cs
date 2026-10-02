@@ -10,11 +10,13 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask enemyLayer;
 
     private PlayerController controller;
+    private Animator animator;
     private Vector2 attackDirection = Vector2.right;
 
     void Awake()
     {
         controller = GetComponent<PlayerController>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -36,6 +38,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (attackPressed)
         {
+            if (animator != null) animator.SetTrigger("Attack");
             Attack();
         }
     }

@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0230ae3bea6038b44bee460d0d1bc269, type: 3}
   m_Name: "Tutorial_\uAE30\uBCF8\uBC30\uB2EC"
   m_EditorClassIdentifier: Assembly-CSharp::QuestData
-  questName: "\uAE30\uBCF8 \uBC30\uB2EC"
-  category: 2
+  questName: "\uB358\uC804\uC73C\uB85C \uCD9C\uBC1C!"
+  category: 0
   requiredItems:
-  - item: {fileID: 11400000, guid: 1daf330cd2fa00246947ae1be6792802, type: 2}
+  - item: {fileID: 11400000, guid: fdf22f0c4bdea364f9d5b22a9ec390ef, type: 2}
     quantity: 1
   targetLocation: "\uC815\uAE00 \uB358\uC804"
-  reward: 0
-  description: "\uC774\uBC88\uC5D0 \uC0C8\uB85C \uC815\uAE00 \uB358\uC804 \uBC30\uB2EC\uC744
-    \uB098\uAC00\uAC8C \uB418\uC5C8\uB2E4. \uBE44\uAC00 \uC624\uB2C8 \uC870\uC2EC\uD558\uB77C\uB294
-    \uB2F9\uBD80\uC640 \uD568\uAED8 \uCCAB \uBC30\uB2EC\uC744 \uC2DC\uC791\uD55C\uB2E4."
+  reward: 80
+  description: "\uC544\uAE4C\uBD80\uD130 \uBA38\uB9AC\uAC00 \uACC4\uC18D \uC9C0\uB048\uAC70\uB9AC\uB124\uC694.
+    \uD0D0\uD5D8\uC744 \uACC4\uC18D\uD558\uB824\uBA74 \uC57D\uC774 \uD544\uC694\uD560
+    \uAC83 \uAC19\uC544\uC694."
   objectives:
-  - "\uAE30\uBCF8 \uBB3C\uD488\uC744 \uBAA9\uC801\uC9C0\uAE4C\uC9C0 \uBC30\uB2EC\uD558\uC790"
+  - "\uCE74\uC77C \u2192 \uCF00\uC774\uD06C \uC804\uB2EC"
   unlocksQuests: []

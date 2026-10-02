@@ -16,4 +16,8 @@ MonoBehaviour:
   itemType: 0
   sensitivity: 1
   icon: {fileID: 0}
-  description: 
+  description: "\uAE09\uD560 \uB54C \uC77C\uB2E8 \uBA39\uACE0 \uBCF4\uB294 \uC9C4\uD1B5\uD6A8\uACFC\uAC00
+    \uD3EC\uD568\uB41C \uC57D. \uC624\uB0A8\uC6A9\uC5D0 \uC8FC\uC758."
+  quality: 80
+  isLocked: 0
+  rarity: 0
