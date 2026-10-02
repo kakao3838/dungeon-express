@@ -4246,7 +4246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cdabae980800734d9c08be43d064941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonDoorTrigger
-  sceneToLoad: DungeonScene
+  sceneToLoad: JungleDungeonScene
 --- !u!61 &1888602687
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4722,10 +4722,6 @@ PrefabInstance:
     - target: {fileID: 2743947416986101687, guid: 34f98e1336dc6d74689fcea56253ce6e, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3663700780583864567, guid: 34f98e1336dc6d74689fcea56253ce6e, type: 3}
-      propertyPath: m_Offset.y
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7456257281979614044, guid: 34f98e1336dc6d74689fcea56253ce6e, type: 3}
       propertyPath: m_LocalPosition.x
