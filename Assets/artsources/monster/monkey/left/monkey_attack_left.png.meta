@@ -192,10 +192,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 2048
     resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -223,12 +223,12 @@ TextureImporter:
       name: monkey_attack_left_0
       rect:
         serializedVersion: 2
-        x: 644
-        y: 6101
-        width: 1048
-        height: 1068
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 5976
+        width: 1992
+        height: 1992
+      alignment: 9
+      pivot: {x: 0.59604, y: 0.0583}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -245,12 +245,12 @@ TextureImporter:
       name: monkey_attack_left_1
       rect:
         serializedVersion: 2
-        x: 2508
-        y: 6101
-        width: 1048
-        height: 1068
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1992
+        y: 5976
+        width: 1992
+        height: 1992
+      alignment: 9
+      pivot: {x: 0.53178, y: 0.0583}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -289,12 +289,12 @@ TextureImporter:
       name: monkey_attack_left_3
       rect:
         serializedVersion: 2
-        x: 4372
-        y: 6101
-        width: 1048
-        height: 1068
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3984
+        y: 5976
+        width: 1992
+        height: 1992
+      alignment: 9
+      pivot: {x: 0.46753, y: 0.0583}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -333,12 +333,12 @@ TextureImporter:
       name: monkey_attack_left_5
       rect:
         serializedVersion: 2
-        x: 6236
-        y: 6101
-        width: 1048
-        height: 1068
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 5976
+        y: 5976
+        width: 1992
+        height: 1992
+      alignment: 9
+      pivot: {x: 0.40327, y: 0.0583}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -509,12 +509,12 @@ TextureImporter:
       name: monkey_attack_left_13
       rect:
         serializedVersion: 2
-        x: 644
-        y: 4237
-        width: 1048
-        height: 1068
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 3984
+        width: 1992
+        height: 1992
+      alignment: 9
+      pivot: {x: 0.59604, y: 0.12256}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -553,12 +553,12 @@ TextureImporter:
       name: monkey_attack_left_15
       rect:
         serializedVersion: 2
-        x: 2508
-        y: 4237
-        width: 1048
-        height: 1068
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1992
+        y: 3984
+        width: 1992
+        height: 1992
+      alignment: 9
+      pivot: {x: 0.53178, y: 0.12256}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -575,12 +575,12 @@ TextureImporter:
       name: monkey_attack_left_16
       rect:
         serializedVersion: 2
-        x: 4374
-        y: 4237
-        width: 1068
-        height: 1110
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3984
+        y: 3984
+        width: 1992
+        height: 1992
+      alignment: 9
+      pivot: {x: 0.46753, y: 0.12256}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -597,12 +597,12 @@ TextureImporter:
       name: monkey_attack_left_17
       rect:
         serializedVersion: 2
-        x: 6238
-        y: 4237
-        width: 1068
-        height: 1110
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 5976
+        y: 3984
+        width: 1992
+        height: 1992
+      alignment: 9
+      pivot: {x: 0.40327, y: 0.12256}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -751,12 +751,12 @@ TextureImporter:
       name: monkey_attack_left_24
       rect:
         serializedVersion: 2
-        x: 646
-        y: 2373
-        width: 1068
-        height: 1110
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 1992
+        width: 1992
+        height: 1992
+      alignment: 9
+      pivot: {x: 0.59604, y: 0.18681}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -795,12 +795,12 @@ TextureImporter:
       name: monkey_attack_left_26
       rect:
         serializedVersion: 2
-        x: 2510
-        y: 2373
-        width: 1068
-        height: 1110
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1992
+        y: 1992
+        width: 1992
+        height: 1992
+      alignment: 9
+      pivot: {x: 0.522, y: 0.191}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -839,12 +839,12 @@ TextureImporter:
       name: monkey_attack_left_28
       rect:
         serializedVersion: 2
-        x: 4327
-        y: 2373
-        width: 1104
-        height: 1103
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3984
+        y: 1992
+        width: 1992
+        height: 1992
+      alignment: 9
+      pivot: {x: 0.46753, y: 0.18681}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -883,12 +883,12 @@ TextureImporter:
       name: monkey_attack_left_30
       rect:
         serializedVersion: 2
-        x: 6191
-        y: 2373
-        width: 1104
-        height: 1103
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 5976
+        y: 1992
+        width: 1992
+        height: 1992
+      alignment: 9
+      pivot: {x: 0.40327, y: 0.18681}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -927,12 +927,12 @@ TextureImporter:
       name: monkey_attack_left_32
       rect:
         serializedVersion: 2
-        x: 644
-        y: 509
-        width: 1048
-        height: 1068
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 1992
+        height: 1992
+      alignment: 9
+      pivot: {x: 0.59604, y: 0.25107}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -971,12 +971,12 @@ TextureImporter:
       name: monkey_attack_left_34
       rect:
         serializedVersion: 2
-        x: 2251
-        y: 509
-        width: 1305
-        height: 1093
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1992
+        y: 0
+        width: 1992
+        height: 1992
+      alignment: 9
+      pivot: {x: 0.53178, y: 0.25107}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -993,12 +993,12 @@ TextureImporter:
       name: monkey_attack_left_35
       rect:
         serializedVersion: 2
-        x: 4372
-        y: 509
-        width: 1048
-        height: 1068
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3984
+        y: 0
+        width: 1992
+        height: 1992
+      alignment: 9
+      pivot: {x: 0.46753, y: 0.25107}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1015,12 +1015,12 @@ TextureImporter:
       name: monkey_attack_left_36
       rect:
         serializedVersion: 2
-        x: 6236
-        y: 509
-        width: 1048
-        height: 1068
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 5976
+        y: 0
+        width: 1992
+        height: 1992
+      alignment: 9
+      pivot: {x: 0.40327, y: 0.25107}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

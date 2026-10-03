@@ -214,9 +214,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Monster
   maxHealth: 3
-  hitFlashColor: {r: 1, g: 1, b: 1, a: 1}
+  hitFlashColor: {r: 1, g: 0.25, b: 0.25, a: 1}
   hitFlashDuration: 0.1
   deathAnimDuration: 0.9
+  knockbackDistance: 0.8
+  knockbackDuration: 0.18
 --- !u!114 &2270572740381361527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,7 +237,7 @@ MonoBehaviour:
     m_Bits: 128
   attackDamage: 1
   attackCooldown: 2
-  attackHitDelay: 0.6
+  attackAnimDuration: 1.35
   moveSpeed: 1.5
   patrolDistance: 2
   facingRight: 1

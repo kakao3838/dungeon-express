@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 243b958c819870846bf966cab2d59018
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8454645917981418207
+    second: mushroom_angry_0
+  - first:
+      213: -5343956055780607205
+    second: mushroom_angry_1
+  - first:
+      213: -5682110183986753953
+    second: mushroom_angry_2
+  - first:
+      213: -5698730090937344688
+    second: mushroom_angry_3
+  - first:
+      213: -3768957506970183579
+    second: mushroom_angry_4
+  - first:
+      213: 7392628093155571488
+    second: mushroom_angry_5
+  - first:
+      213: -2545624053869587472
+    second: mushroom_angry_6
+  - first:
+      213: -1489280148426379151
+    second: mushroom_angry_7
+  - first:
+      213: -5399809081594683113
+    second: mushroom_angry_8
+  - first:
+      213: 5779806730281317379
+    second: mushroom_angry_9
+  - first:
+      213: 4114488929754746456
+    second: mushroom_angry_10
+  - first:
+      213: 163544842892052622
+    second: mushroom_angry_11
+  - first:
+      213: 7314058378803845153
+    second: mushroom_angry_12
+  - first:
+      213: -1962076315311986680
+    second: mushroom_angry_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: mushroom_angry_0
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 14594
+        width: 1179
+        height: 1183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd22df2faafe45570800000000000000
+      internalID: 8454645917981418207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_angry_1
+      rect:
+        serializedVersion: 2
+        x: 3753
+        y: 14594
+        width: 1182
+        height: 1183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1b36efd74476d5b0800000000000000
+      internalID: -5343956055780607205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_angry_2
+      rect:
+        serializedVersion: 2
+        x: 6474
+        y: 14594
+        width: 1186
+        height: 1238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5e07dc84e61521b0800000000000000
+      internalID: -5682110183986753953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_angry_3
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 11873
+        width: 1183
+        height: 1238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05d99daec2b0ae0b0800000000000000
+      internalID: -5698730090937344688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_angry_4
+      rect:
+        serializedVersion: 2
+        x: 3753
+        y: 11873
+        width: 1186
+        height: 1238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 568108fbd19f1bbc0800000000000000
+      internalID: -3768957506970183579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_angry_5
+      rect:
+        serializedVersion: 2
+        x: 6474
+        y: 11873
+        width: 1186
+        height: 1238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0277c193514e79660800000000000000
+      internalID: 7392628093155571488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_angry_6
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 9156
+        width: 1183
+        height: 1238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f3d96909602cacd0800000000000000
+      internalID: -2545624053869587472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_angry_7
+      rect:
+        serializedVersion: 2
+        x: 3753
+        y: 9156
+        width: 1186
+        height: 1238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17031067893055be0800000000000000
+      internalID: -1489280148426379151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_angry_8
+      rect:
+        serializedVersion: 2
+        x: 6474
+        y: 9156
+        width: 1186
+        height: 1238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 711ee9cef360015b0800000000000000
+      internalID: -5399809081594683113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_angry_9
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 6434
+        width: 1183
+        height: 1238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30474d4399ff53050800000000000000
+      internalID: 5779806730281317379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_angry_10
+      rect:
+        serializedVersion: 2
+        x: 3753
+        y: 6434
+        width: 1186
+        height: 1238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85e0f42d1e9991930800000000000000
+      internalID: 4114488929754746456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_angry_11
+      rect:
+        serializedVersion: 2
+        x: 6474
+        y: 6434
+        width: 1186
+        height: 1238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e888d690b27054200800000000000000
+      internalID: 163544842892052622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_angry_12
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 3713
+        width: 1183
+        height: 1238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 128921f0851c08560800000000000000
+      internalID: 7314058378803845153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mushroom_angry_13
+      rect:
+        serializedVersion: 2
+        x: 3753
+        y: 3713
+        width: 1186
+        height: 1238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8082f9b9cfd45c4e0800000000000000
+      internalID: -1962076315311986680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      mushroom_angry_0: 8454645917981418207
+      mushroom_angry_1: -5343956055780607205
+      mushroom_angry_10: 4114488929754746456
+      mushroom_angry_11: 163544842892052622
+      mushroom_angry_12: 7314058378803845153
+      mushroom_angry_13: -1962076315311986680
+      mushroom_angry_2: -5682110183986753953
+      mushroom_angry_3: -5698730090937344688
+      mushroom_angry_4: -3768957506970183579
+      mushroom_angry_5: 7392628093155571488
+      mushroom_angry_6: -2545624053869587472
+      mushroom_angry_7: -1489280148426379151
+      mushroom_angry_8: -5399809081594683113
+      mushroom_angry_9: 5779806730281317379
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

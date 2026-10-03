@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     private bool facingRight = true;
 
     public bool IsFacingRight => facingRight;
+    public bool IsGrounded => isGrounded;
+    public bool IsMoving => Mathf.Abs(moveInput) > 0.01f;
 
     void Awake()
     {
@@ -55,7 +57,7 @@ public class PlayerController : MonoBehaviour
         // 디버그용 로그: 스페이스를 누른 순간 isGrounded 값을 콘솔에 출력
         if (keyboard.spaceKey.wasPressedThisFrame)
         {
-            Debug.Log("스페이스 눌림! isGrounded = " + isGrounded);
+            Debug.Log("Jump input. Grounded: " + isGrounded);
         }
 
         // 점프 (바닥에 있을 때만)

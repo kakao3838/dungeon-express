@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     // UI(하트 아이콘)가 이 이벤트를 구독해서 currentHearts, maxHearts를 받아 갱신하면 됨
     public event Action<int, int> OnHealthChanged;
+    public event Action OnDamaged;
     public event Action OnDeath;
 
     private bool isInvincible;
@@ -118,6 +119,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
         CurrentHearts = Mathf.Max(0, CurrentHearts - amount);
         OnHealthChanged?.Invoke(CurrentHearts, maxHearts);
+        OnDamaged?.Invoke();
 
         if (CurrentHearts <= 0)
         {
