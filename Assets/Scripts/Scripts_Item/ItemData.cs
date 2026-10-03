@@ -28,4 +28,18 @@ public class ItemData : ScriptableObject
 
     public enum Rarity { Common, Rare, Epic, Legendary }
     public Rarity rarity;
+
+    // 의뢰 물품 카드 등 UI에 보여줄 특성 라벨
+    public static string GetTraitLabel(ItemType type)
+    {
+        switch (type)
+        {
+            case ItemType.Normal: return "일반";
+            case ItemType.RocketDelivery: return "로켓배송";
+            case ItemType.HeatSensitive: return "고온주의";
+            case ItemType.WaterSensitive: return "수분주의";
+            case ItemType.Fragile: return "충격주의";
+            default: return "";
+        }
+    }
 }

@@ -41,6 +41,13 @@ public class HeartsUI : MonoBehaviour
 
     void Start()
     {
+        // Awake 때 Player가 아직 없었다면(씬 단독 테스트 등) 여기서 한 번 더 찾아서 연결
+        if (playerHealth == null)
+        {
+            playerHealth = FindFirstObjectByType<PlayerHealth>();
+            if (playerHealth != null) playerHealth.OnHealthChanged += UpdateDisplay;
+        }
+
         if (playerHealth == null) return;
         BuildHearts(playerHealth.maxHearts);
         UpdateDisplay(playerHealth.CurrentHearts, playerHealth.maxHearts);
