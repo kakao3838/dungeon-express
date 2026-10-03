@@ -19,6 +19,9 @@ GameObject:
   - component: {fileID: 3538483800464818104}
   - component: {fileID: 5701930492749248396}
   - component: {fileID: 4661396923778442879}
+  - component: {fileID: 764131478179146558}
+  - component: {fileID: 1609773700234860167}
+  - component: {fileID: 4556138104253121582}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -89,7 +92,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6965001576245408387, guid: 489697d033997494e8acc28de8f7d9c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -162,7 +165,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 1}
+  m_Offset: {x: 0, y: 7}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -172,7 +175,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 5, y: 14}
   m_EdgeRadius: 0
 --- !u!114 &981680714340007490
 MonoBehaviour:
@@ -205,12 +208,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 547b5359f06e9ce4da5520cbfd045c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
-  attackRange: 0.9
-  hitboxRadius: 0.5
+  attackRange: 1.2
+  hitboxRadius: 0.65
   attackDamage: 1
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  allowAirAttack: 1
+  attackAnimationDuration: 1.17
+  attackLeftClip: {fileID: 7400000, guid: 4b6ff264f4764a2468eb3e660062ce74, type: 2}
+  attackRightClip: {fileID: 7400000, guid: 194a27de6b8b8224aabbe28965c47e3e, type: 2}
 --- !u!114 &6877503546551651531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,6 +292,50 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &764131478179146558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743947416986101687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f31be5984f48579162bbf2fc4e8195, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerVineClimb
+  climbSpeed: 3
+  centerSnapSpeed: 12
+  exitJumpForce: 8
+--- !u!114 &1609773700234860167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743947416986101687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aa3b8fe07786bc4b93cdbc85eb5b2b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDamageReceiver
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
+  hitColorDuration: 0.2
+--- !u!114 &4556138104253121582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743947416986101687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0876895548a6ba74aabb7d73c8e32852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerKnockback
+  horizontalForce: 5
+  verticalForce: 3
+  knockbackDuration: 0.2
 --- !u!1 &6519137043486164049
 GameObject:
   m_ObjectHideFlags: 0
