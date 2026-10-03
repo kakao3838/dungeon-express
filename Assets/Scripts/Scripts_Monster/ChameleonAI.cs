@@ -5,20 +5,20 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class ChameleonAI : MonoBehaviour
 {
-    [Header("°¨Áö ¼³Á¤")]
+    [Header("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½")]
     public float detectionRange = 2f;
     public LayerMask playerLayer;
 
-    [Header("°ø°Ý ¼³Á¤")]
+    [Header("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½")]
     public int attackDamage = 1;
     public float attackCooldown = 2f;
-    public float attackHitDelay = 0.6f; // °ø°Ý ¾Ö´Ï¸ÞÀÌ¼Ç Áß µ¥¹ÌÁö°¡ µé¾î°¡´Â ½ÃÁ¡
+    public float attackHitDelay = 0.6f; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½î°¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-    [Header("ÀÌµ¿ ¼³Á¤")]
+    [Header("ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½")]
     public float moveSpeed = 1.5f;
-    public float patrolDistance = 2f; // ½ÃÀÛ À§Ä¡ ±âÁØ ÁÂ¿ì·Î ÀÌµ¿ÇÏ´Â °Å¸®
+    public float patrolDistance = 2f; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ ï¿½Â¿ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Ï´ï¿½ ï¿½Å¸ï¿½
 
-    [Header("¹æÇâ")]
+    [Header("ï¿½ï¿½ï¿½ï¿½")]
     public bool facingRight = true;
 
     private Animator animator;
@@ -94,19 +94,28 @@ public class ChameleonAI : MonoBehaviour
             animator.SetTrigger("Attack");
         }
 
-        // °ø°Ý ¾Ö´Ï¸ÞÀÌ¼Ç Áß µ¥¹ÌÁö°¡ µé¾î°¡´Â ½ÃÁ¡±îÁö ´ë±â
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½î°¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         yield return new WaitForSeconds(attackHitDelay);
 
         if (target != null)
         {
-            IDamageable damageable = target.GetComponent<IDamageable>();
-            if (damageable != null)
+            PlayerDamageReceiver damageReceiver = target.GetComponent<PlayerDamageReceiver>();
+            if (damageReceiver == null)
+                damageReceiver = target.GetComponentInParent<PlayerDamageReceiver>();
+
+            if (damageReceiver != null)
             {
-                damageable.TakeDamage(attackDamage);
+                damageReceiver.Hit(attackDamage, transform.position);
+            }
+            else
+            {
+                IDamageable damageable = target.GetComponent<IDamageable>();
+                if (damageable != null)
+                    damageable.TakeDamage(attackDamage);
             }
         }
 
-        // Äð´Ù¿î
+        // ï¿½ï¿½Ù¿ï¿½
         yield return new WaitForSeconds(attackCooldown);
 
         isAttacking = false;
@@ -116,5 +125,12 @@ public class ChameleonAI : MonoBehaviour
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+        isAttacking = false;
+        if (rb != null) rb.linearVelocity = Vector2.zero;
     }
 }
