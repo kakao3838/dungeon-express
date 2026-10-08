@@ -20,6 +20,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public float fallDeathMargin = 12f;
 
     public int CurrentHearts { get; private set; }
+    public bool IsDead => isDead;
 
     // UI(하트 아이콘)가 이 이벤트를 구독해서 currentHearts, maxHearts를 받아 갱신하면 됨
     public event Action<int, int> OnHealthChanged;
@@ -140,15 +141,32 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         OnHealthChanged?.Invoke(CurrentHearts, maxHearts);
     }
 
-    // 맵 밖으로 떨어지면 무적/남은 체력과 상관없이 바로 사망
+    // 맵 밖으로 떨어지면 무적과 상관없이 하트를 하나 잃고 시작 위치로 돌아감.
+    // 남은 하트가 없으면 일반 사망과 같이 처리
     void FallDeath()
     {
-        CurrentHearts = 0;
+        CurrentHearts = Mathf.Max(0, CurrentHearts - 1);
         OnHealthChanged?.Invoke(CurrentHearts, maxHearts);
+        OnDamaged?.Invoke();
+
+        var rb = GetComponent<Rigidbody2D>();
+
+        if (CurrentHearts > 0)
+        {
+            transform.position = respawnPosition;
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+                rb.angularVelocity = 0f;
+            }
+            isInvincible = true;
+            invincibilityTimer = respawnInvincibilityDuration;
+            return;
+        }
+
         Die();
 
         // 계속 추락하지 않도록 그 자리에 멈춰 둠 (부활할 때 중력 복구)
-        var rb = GetComponent<Rigidbody2D>();
         if (rb != null) rb.gravityScale = 0f;
     }
 

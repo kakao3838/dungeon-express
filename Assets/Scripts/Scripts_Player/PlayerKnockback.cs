@@ -11,6 +11,7 @@ public class PlayerKnockback : MonoBehaviour
     private Rigidbody2D rb;
     private PlayerController playerController;
     private PlayerVineClimb playerVineClimb;
+    private PlayerHealth playerHealth;
 
     private Coroutine knockbackCoroutine;
 
@@ -19,6 +20,7 @@ public class PlayerKnockback : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerController = GetComponent<PlayerController>();
         playerVineClimb = GetComponent<PlayerVineClimb>();
+        playerHealth = GetComponent<PlayerHealth>();
     }
 
     public void Knockback(Vector2 attackerPosition)
@@ -56,7 +58,8 @@ public class PlayerKnockback : MonoBehaviour
 
         yield return new WaitForSeconds(knockbackDuration);
 
-        if (playerController != null)
+        // 넉백 도중 죽었다면 조작을 되살리지 않음 (부활 때 PlayerHealth가 켬)
+        if (playerController != null && (playerHealth == null || !playerHealth.IsDead))
         {
             playerController.enabled = true;
         }

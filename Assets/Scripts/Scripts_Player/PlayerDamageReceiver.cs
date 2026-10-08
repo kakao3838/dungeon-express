@@ -52,7 +52,8 @@ public class PlayerDamageReceiver : MonoBehaviour
         if (playerHealth.CurrentHearts == beforeHealth)
             return;
 
-        if (playerKnockback != null)
+        // 이번 피해로 죽었으면 넉백하지 않음 (Die 모션이 Jump로 덮이고 시체가 날아감)
+        if (playerKnockback != null && !playerHealth.IsDead)
         {
             playerKnockback.Knockback(attackerPosition);
         }
