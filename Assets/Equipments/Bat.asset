@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93794068537e08b4fbf8a1f85ef75065, type: 3}
+  m_Name: Bat
+  m_EditorClassIdentifier: Assembly-CSharp::EquipmentData
+  equipName: "\uC57C\uAD6C\uBC30\uD2B8"
+  slotType: 0
+  icon: {fileID: 1365288284328934772, guid: 5b5c8d630560dbe41abe64dae9b70410, type: 3}
+  attackPower: 10
+  magicEffect: "\uC5C6\uC74C"
+  grade: 0
+  description: "\uC124\uBA85 \uB4E4\uC5B4\uAC08 \uC790\uB9AC"
+  rarity: 0

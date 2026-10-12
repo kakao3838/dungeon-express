@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93794068537e08b4fbf8a1f85ef75065, type: 3}
+  m_Name: Jacket
+  m_EditorClassIdentifier: Assembly-CSharp::EquipmentData
+  equipName: "\uC790\uCF13"
+  slotType: 2
+  icon: {fileID: 662515663187333422, guid: 9f7f37c6adc29fa43a56a6a3b37a6e04, type: 3}
+  attackPower: 0
+  magicEffect: 
+  grade: 0
+  description: "\uC124\uBA85"
+  rarity: 0

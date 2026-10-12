@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 1609773700234860167}
   - component: {fileID: 4556138104253121582}
   - component: {fileID: 789489667117391790}
+  - component: {fileID: 7953825844749948104}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -233,6 +234,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHearts: 3
   invincibilityDuration: 1
+  respawnDelay: 2.2
+  respawnInvincibilityDuration: 1.5
+  fallDeathMargin: 12
 --- !u!114 &7075128389573785810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +354,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerWallet
   gold: 0
+--- !u!114 &7953825844749948104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743947416986101687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57c66e806a5b6a946aef7548bd4b8898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerEquipment
+  startingEquipment:
+  - {fileID: 11400000, guid: a2d86e87dc537b248b16247ff38569aa, type: 2}
+  - {fileID: 11400000, guid: 3fbf9e0dae9c1394eb39529241630fd4, type: 2}
+  - {fileID: 11400000, guid: 313f93fed591c874abdae31ee69a347f, type: 2}
+  - {fileID: 11400000, guid: 2c3b22f1e6b4d714ab736b72f9006f40, type: 2}
 --- !u!1 &6519137043486164049
 GameObject:
   m_ObjectHideFlags: 0
