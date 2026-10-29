@@ -33,6 +33,7 @@ public class PauseMenu : MonoBehaviour
     {
         var keyboard = Keyboard.current;
         if (keyboard == null || !keyboard.escapeKey.wasPressedThisFrame) return;
+        if (MenuManager.ClosedByEscFrame == Time.frameCount) return; // 이 Esc는 인벤토리 메뉴를 닫는 데 쓰임
 
         if (settingsWindow != null && settingsWindow.IsOpen) settingsWindow.Close(); // 설정 창에서는 ESC로 일시정지 창으로 돌아감
         else if (IsOpen) Resume();

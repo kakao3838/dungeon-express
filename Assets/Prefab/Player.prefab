@@ -229,8 +229,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7671d568f55c0f488fe605b9afce8fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 6
+  moveSpeed: 3.5
+  runSpeed: 7
   jumpForce: 12
+  fallGravityMultiplier: 2
+  lowJumpGravityMultiplier: 2.5
   groundCheck: {fileID: 2480681725536092212}
   groundCheckRadius: 0.1
   groundLayer:
@@ -248,14 +251,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 547b5359f06e9ce4da5520cbfd045c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
-  attackRange: 1.2
-  hitboxRadius: 0.65
+  attackRange: 1.3
+  hitboxRadius: 0.9
   attackDamage: 1
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
   allowAirAttack: 1
-  attackAnimationDuration: 1.17
+  attackAnimationDuration: 0.6
   attackLeftClip: {fileID: 7400000, guid: 4b6ff264f4764a2468eb3e660062ce74, type: 2}
   attackRightClip: {fileID: 7400000, guid: 194a27de6b8b8224aabbe28965c47e3e, type: 2}
 --- !u!114 &6877503546551651531

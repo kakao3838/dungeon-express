@@ -104,6 +104,9 @@ public class MenuManager : MonoBehaviour
         return false;
     }
 
+    // Esc로 메뉴를 닫은 프레임 (PauseMenu가 같은 Esc 입력을 무시하는 데 사용)
+    public static int ClosedByEscFrame { get; private set; } = -1;
+
     private void Update()
     {
         var keyboard = Keyboard.current;
@@ -115,7 +118,15 @@ public class MenuManager : MonoBehaviour
             return;
         }
 
-        // E / Tab : 마지막으로 보던 탭으로 열기 / 닫기 (Esc는 PauseMenu가 쓰므로 여기서는 처리하지 않음)
+        // Esc : 메뉴가 열려 있을 때만 닫음 (열려 있지 않을 때의 Esc는 PauseMenu가 처리)
+        if (IsOpen && keyboard.escapeKey.wasPressedThisFrame)
+        {
+            ClosedByEscFrame = Time.frameCount; // 같은 프레임에 PauseMenu가 Esc를 또 받아 일시정지 창을 열지 않게
+            Close();
+            return;
+        }
+
+        // E / Tab : 마지막으로 보던 탭으로 열기 / 닫기
         if (keyboard.eKey.wasPressedThisFrame || keyboard.tabKey.wasPressedThisFrame)
         {
             if (IsOpen) Close();
@@ -158,6 +169,7 @@ public class MenuManager : MonoBehaviour
     public void Open(MenuTab tab)
     {
         if (IsBlockedScene()) return;
+        if (TutorialManager.BlocksMenu) return; // 사무실 튜토리얼 진행 중에는 태블릿을 열지 않음
         // 대화창, 결과창, 일시정지 창 등 다른 창이 게임을 멈추고 있으면 열지 않음
         if (!IsOpen && (GamePause.IsPaused || IsNpcDialogueOpen())) return;
 
