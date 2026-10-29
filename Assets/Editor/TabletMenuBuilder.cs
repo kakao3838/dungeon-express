@@ -290,21 +290,72 @@ public static class TabletMenuBuilder
     static GameObject BuildEquipmentPanel(Transform content)
     {
         var panel = Stretch("EquipmentPanel", content);
+        var controller = panel.gameObject.AddComponent<EquipmentPanelController>();
 
         var character = Rect("CharacterArea", panel, 440, 190, 300, 640);
         Img(character, PillGray, round, true);
         Txt("Label", character, "PC\n전신 or 반신", 30, Ink, TextAlignmentOptions.Center, 0, 0, 300, 640);
 
         string[] slotNames = { "무기", "머리", "상의", "신발" };
+        var slots = new EquipmentSlotUI[4];
+
         for (int i = 0; i < slotNames.Length; i++)
         {
             float y = 190 + i * 165;
-            var slot = Rect(slotNames[i] + "Slot", panel, 800, y, 120, 120);
-            Img(slot, SlotGray, round, true);
+            var slotRt = Rect(slotNames[i] + "Slot", panel, 800, y, 120, 120);
+            var bg = Img(slotRt, SlotGray, round, true);
+            var button = MakeButton(slotRt, bg);
+            var slotUI = slotRt.gameObject.AddComponent<EquipmentSlotUI>();
+
+            var icon = Img(Stretch("Icon", slotRt, 14), Color.white);
+            icon.preserveAspect = true;
+            icon.enabled = false;
+
+            var selected = OutlineFrame(slotRt, 5, Selected);
+            selected.SetActive(false);
+
+            slotUI.iconImage = icon;
+            slotUI.selectedFrame = selected;
+            slotUI.button = button;
+            UnityEventTools.AddVoidPersistentListener(button.onClick, slotUI.OnClick);
+
             Txt("Label", panel, slotNames[i], 22, Muted, TextAlignmentOptions.Center, 800, y + 124, 120, 30);
+            slots[i] = slotUI;
         }
 
-        Txt("Empty", panel, "장착한 장비가 없습니다.", 30, Muted, TextAlignmentOptions.Center, 1230, 450, 560, 60);
+        controller.weaponSlot = slots[0];
+        controller.headSlot = slots[1];
+        controller.bodySlot = slots[2];
+        controller.shoesSlot = slots[3];
+
+        controller.emptyDetailText = Txt("Empty", panel, "장착한 장비가 없습니다.", 30, Muted,
+            TextAlignmentOptions.Center, 1230, 450, 560, 60).gameObject;
+
+        var detail = Stretch("ItemDetail", panel);
+        controller.detailRoot = detail.gameObject;
+        controller.categoryLabel = Txt("Category", detail, "", 24, Muted, TextAlignmentOptions.Center, 1230, 132, 560, 40);
+        controller.nameText = Txt("Name", detail, "", 44, Ink, TextAlignmentOptions.Center, 1230, 172, 560, 60, 24);
+
+        var iconBox = Rect("IconBox", detail, 1400, 255, 220, 220);
+        Img(iconBox, SlotGray, round, true);
+        var icon2 = Img(Stretch("Icon", iconBox, 14), Color.white);
+        icon2.preserveAspect = true;
+        controller.iconImage = icon2;
+
+        var gradeRow = Rect("GradeRow", detail, 1260, 510, 500, 36);
+        Pill(gradeRow, "등급", 0, 2, 80, 32, 22);
+        controller.gradeText = Txt("GradeText", gradeRow, "", 24, Ink, TextAlignmentOptions.MidlineLeft, 100, 0, 300, 36, 16);
+
+        var attackRow = Rect("AttackRow", detail, 1260, 560, 500, 36);
+        Pill(attackRow, "기본 효과", 0, 2, 110, 32, 20);
+        controller.attackPowerText = Txt("AttackText", attackRow, "", 24, Ink, TextAlignmentOptions.MidlineLeft, 130, 0, 300, 36, 16);
+
+        var magicRow = Rect("MagicRow", detail, 1260, 610, 500, 36);
+        Pill(magicRow, "마법 효과", 0, 2, 110, 32, 20);
+        controller.magicEffectText = Txt("MagicText", magicRow, "", 24, Ink, TextAlignmentOptions.MidlineLeft, 130, 0, 300, 36, 16);
+
+        controller.descriptionText = Txt("Description", detail, "", 26, Ink, TextAlignmentOptions.TopLeft, 1260, 660, 500, 280, 16);
+
         return panel.gameObject;
     }
 
