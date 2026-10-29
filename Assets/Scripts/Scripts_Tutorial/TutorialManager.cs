@@ -231,10 +231,31 @@ public class TutorialManager : MonoBehaviour
 
     void PlacePlayerNextToDoor(Transform door)
     {
-        Vector3 p = player.transform.position;
-        p.x = door.position.x - 0.8f;
-        player.transform.position = p;
-        var body = player.GetComponent<Rigidbody2D>();
+        PlaceNextToDoor(player, door);
+    }
+
+    // 문 왼쪽 바닥 위에 플레이어를 세움. 던전에서 돌아올 때는 던전의 높이(y)가 남아 있어서
+    // x만 옮기면 바닥 아래로 떨어지므로, 바닥을 찾아서 y도 맞춤
+    static void PlaceNextToDoor(PlayerController p, Transform door)
+    {
+        Vector3 pos = p.transform.position;
+        pos.x = door.position.x - 0.8f;
+        pos.y = door.position.y - 0.55f; // 바닥을 못 찾을 때를 위한 기본값
+        p.transform.position = pos;
+        Physics2D.SyncTransforms(); // 옮긴 위치를 콜라이더 범위(bounds)에 바로 반영
+
+        // 트리거(문, PC 범위 등)와 플레이어 자신은 건너뛰고 가장 위쪽의 실제 바닥을 찾음
+        var col = p.GetComponent<Collider2D>();
+        var hits = Physics2D.RaycastAll(new Vector2(pos.x, door.position.y + 3f), Vector2.down, 20f, p.groundLayer);
+        foreach (var hit in hits)
+        {
+            if (hit.collider.isTrigger || hit.collider.transform.root == p.transform.root) continue;
+            if (col != null) pos.y = hit.point.y + (p.transform.position.y - col.bounds.min.y) + 0.02f;
+            break;
+        }
+
+        p.transform.position = pos;
+        var body = p.GetComponent<Rigidbody2D>();
         if (body != null) body.linearVelocity = Vector2.zero;
     }
 
@@ -400,16 +421,12 @@ public class TutorialManager : MonoBehaviour
         else if (returnToTown && scene.name == townSceneName)
         {
             returnToTown = false;
-            var p = FindFirstObjectByType<PlayerController>();
+            // 사무실 씬에 원래 있던 플레이어 사본은 곧 지워지므로, 유지되는 쪽 플레이어를 옮김
+            var p = PersistentPlayer.Instance != null
+                ? PersistentPlayer.Instance.GetComponent<PlayerController>()
+                : FindFirstObjectByType<PlayerController>();
             var door = FindFirstObjectByType<DungeonDoorTrigger>();
-            if (p != null && door != null)
-            {
-                Vector3 pos = p.transform.position;
-                pos.x = door.transform.position.x - 0.8f;
-                p.transform.position = pos;
-                var body = p.GetComponent<Rigidbody2D>();
-                if (body != null) body.linearVelocity = Vector2.zero;
-            }
+            if (p != null && door != null) PlaceNextToDoor(p, door.transform);
         }
     }
 
