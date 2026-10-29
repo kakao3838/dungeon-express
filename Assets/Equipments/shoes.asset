@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93794068537e08b4fbf8a1f85ef75065, type: 3}
+  m_Name: shoes
+  m_EditorClassIdentifier: Assembly-CSharp::EquipmentData
+  equipName: "\uC2E0\uBC1C"
+  slotType: 3
+  icon: {fileID: -540985438910447958, guid: e516d1d89ff47f24bb8dc95cf57a5e0f, type: 3}
+  attackPower: 0
+  magicEffect: 
+  grade: 0
+  description: 1234
+  rarity: 0
