@@ -78,6 +78,7 @@ public class PlayerAttack : MonoBehaviour
     private bool IsBlockedByUI()
     {
         if (GamePause.IsPaused) return true;
+        if (TutorialManager.InputLocked) return true;
         if (NPCDialogueMenu.Instance != null && NPCDialogueMenu.Instance.IsOpen) return true;
         var mouse = Mouse.current;
         return mouse != null && mouse.leftButton.wasPressedThisFrame

@@ -26,6 +26,9 @@ public class DungeonDoorTrigger : MonoBehaviour
         var keyboard = Keyboard.current;
         if (keyboard != null && keyboard.fKey.wasPressedThisFrame)
         {
+            // 던전 선택창(TutorialManager)을 거쳐서 입장. 튜토리얼 중에는 의뢰를 접수해야 열림
+            if (TutorialManager.Instance != null && TutorialManager.Instance.HandleDoorInteract(sceneToLoad)) return;
+
             SceneManager.LoadScene(sceneToLoad);
         }
     }

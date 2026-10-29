@@ -169,6 +169,7 @@ public class MenuManager : MonoBehaviour
     public void Open(MenuTab tab)
     {
         if (IsBlockedScene()) return;
+        if (TutorialManager.BlocksMenu) return; // 사무실 튜토리얼 진행 중에는 태블릿을 열지 않음
         // 대화창, 결과창, 일시정지 창 등 다른 창이 게임을 멈추고 있으면 열지 않음
         if (!IsOpen && (GamePause.IsPaused || IsNpcDialogueOpen())) return;
 
