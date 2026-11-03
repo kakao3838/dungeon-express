@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: "Item_\uC815\uB839\uC758\uC774\uC2AC"
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: "\uC815\uB839\uC758 \uC774\uC2AC"
+  itemId: spirit_dew
   itemType: 2
   sensitivity: 1
   icon: {fileID: 0}
   description: 
+  quality: 0
+  isLocked: 0
+  rarity: 0

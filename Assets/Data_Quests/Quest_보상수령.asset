@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: "Quest_\uBCF4\uC0C1\uC218\uB839"
   m_EditorClassIdentifier: Assembly-CSharp::QuestData
   questName: "\uBCF4\uC0C1 \uC218\uB839"
+  questId: legacy_reward
   category: 0
+  client: 
   requiredItems: []
   targetLocation: "\uC720\uC801 \uBCF4\uBB3C\uBC29"
   reward: 100000

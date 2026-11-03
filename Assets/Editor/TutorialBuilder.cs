@@ -4,7 +4,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
-// 열려 있는 TownScene에 튜토리얼용 오브젝트(PC, TutorialManager, 튜토리얼 UI)를 만듭니다.
+// 열려 있는 TownScene에 튜토리얼용 오브젝트(PC, PC 화면, TutorialManager, 튜토리얼 UI)를 만듭니다.
 // 메뉴: Dungeon Express > Build Tutorial (TownScene을 연 상태에서 실행)
 // 레이아웃을 바꾸고 싶으면 이 스크립트의 좌표를 수정하고 다시 실행하세요. (이미 있으면 지우고 다시 만듦)
 public static class TutorialBuilder
@@ -36,16 +36,23 @@ public static class TutorialBuilder
         if (font == null) throw new System.InvalidOperationException("한글 TMP 폰트를 찾을 수 없습니다: " + FontAssetPath);
         round = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/UISprite.psd");
 
+        // 다시 실행해도 Run Tutorial 설정은 이전 값을 유지함
+        var oldManager = Object.FindFirstObjectByType<TutorialManager>();
+        bool keepRunTutorial = oldManager == null || oldManager.runTutorial;
+
         // 다시 실행하면 이전 결과를 지우고 새로 만듦
         DestroyIfExists("TutorialManager");
-        DestroyIfExists("TutorialPC");
+        DestroyIfExists("TutorialPC"); // 예전 이름
+        DestroyIfExists("OfficePC");
+        DestroyIfExists("PCBoardCanvas");
 
         BuildPC();
-        BuildManager();
+        BuildManager(keepRunTutorial);
+        PCBoardBuilder.BuildAndLink(); // PC 화면(PCBoardUI)을 만들고 PC / 튜토리얼에 연결
 
         EditorSceneManager.MarkSceneDirty(scene);
         EditorSceneManager.SaveScene(scene);
-        Debug.Log("[TutorialBuilder] 완료: TownScene에 TutorialPC / TutorialManager 생성");
+        Debug.Log("[TutorialBuilder] 완료: TownScene에 OfficePC / PCBoardCanvas / TutorialManager 생성");
     }
 
     static void DestroyIfExists(string name)
@@ -58,14 +65,14 @@ public static class TutorialBuilder
 
     static void BuildPC()
     {
-        var root = new GameObject("TutorialPC");
+        var root = new GameObject("OfficePC");
         root.transform.position = new Vector3(-1f, -2f, 0f);
 
         var col = root.AddComponent<BoxCollider2D>();
         col.isTrigger = true;
         col.size = new Vector2(4f, 3f);
         col.offset = new Vector2(0f, 1f);
-        var pc = root.AddComponent<TutorialPC>();
+        var pc = root.AddComponent<OfficePC>();
 
         // 책상 + 모니터 (시안처럼 단순한 회색 도형, 크기는 월드 단위)
         Block(root.transform, "Desk", new Vector3(0f, -0.02f, 0f), new Vector2(3.2f, 0.96f), new Color(0.72f, 0.72f, 0.72f));
@@ -113,10 +120,11 @@ public static class TutorialBuilder
 
     // ---------- 매니저 + UI ----------
 
-    static void BuildManager()
+    static void BuildManager(bool runTutorial)
     {
         var root = new GameObject("TutorialManager");
         var manager = root.AddComponent<TutorialManager>();
+        manager.runTutorial = runTutorial;
 
         var canvasGo = new GameObject("TutorialCanvas", typeof(RectTransform));
         canvasGo.transform.SetParent(root.transform, false);
@@ -134,8 +142,7 @@ public static class TutorialBuilder
         if (so.FindProperty("tutorialQuest").objectReferenceValue == null)
             Debug.LogWarning("[TutorialBuilder] 튜토리얼 퀘스트를 찾지 못했습니다: " + QuestPath);
 
-        // PC / 던전 선택 / 키 안내 / 선택지 / 토스트 / 대사창 (대사창이 가장 위에 오도록 마지막에)
-        BuildPCPanel(canvasGo.transform, so);
+        // 던전 선택 / 키 안내 / 선택지 / 토스트 / 대사창 (대사창이 가장 위에 오도록 마지막에)
         BuildDungeonPanel(canvasGo.transform, so);
         BuildKeyGuide(canvasGo.transform, so);
         BuildChoice(canvasGo.transform, so);
@@ -147,7 +154,7 @@ public static class TutorialBuilder
         // 씬을 열었을 때 화면을 가리지 않게 패널과 견본은 꺼둠 (TutorialManager가 필요할 때 켬)
         foreach (var field in new[]
         {
-            "dialoguePanel", "keyGuidePanel", "pcPanel", "dungeonPanel", "choicePanel", "toastPanel",
+            "dialoguePanel", "keyGuidePanel", "dungeonPanel", "choicePanel", "toastPanel",
             "keyGuideRowTemplate", "keyCapTemplate"
         })
         {
@@ -302,62 +309,6 @@ public static class TutorialBuilder
         Set(so, "keyGuideRowTemplate", rowGo);
         Set(so, "keyCapTemplate", capGo);
         Set(so, "keyGuideConfirmButton", okBtn);
-    }
-
-    // ----- PC 화면 -----
-    static void BuildPCPanel(Transform canvas, SerializedObject so)
-    {
-        var panel = Full("PCPanel", canvas);
-        Img(panel, Dim, null, false, true); // 뒤쪽 클릭 막기
-
-        // 모니터 외곽선 (1400x640, 대사창 위쪽에 위치)
-        var frame = Rect("Monitor", panel, 0, 0, 1400, 640);
-        frame.anchorMin = frame.anchorMax = new Vector2(0.5f, 0.5f);
-        frame.pivot = new Vector2(0.5f, 0.5f);
-        frame.anchoredPosition = new Vector2(0, 130);
-        Img(frame, new Color(0.12f, 0.14f, 0.16f), round, true);
-
-        var screen = Rect("Screen", frame, 24, 24, 1352, 592);
-        Img(screen, new Color(0.95f, 0.97f, 0.98f), null, false, true);
-        Txt("Header", screen, "DUNGEON EXPRESS", 26, Muted, TextAlignmentOptions.MidlineLeft, 24, 12, 600, 40);
-
-        // 홈 화면: 의뢰 접수 아이콘 버튼
-        var home = Rect("HomeView", screen, 0, 0, 1352, 592);
-        var iconRt = Rect("RequestButton", home, 546, 160, 260, 260);
-        var iconImg = Img(iconRt, new Color(0.9f, 0.9f, 0.9f), round, true, true);
-        var requestBtn = MakeButton(iconRt, iconImg);
-        Txt("Label", iconRt, "의뢰 접수", 40, Ink, TextAlignmentOptions.Center, 0, 0, 260, 260);
-
-        // 의뢰 접수 화면
-        var quest = Rect("QuestView", screen, 0, 0, 1352, 592);
-        quest.gameObject.SetActive(false);
-
-        var tabs = Rect("Tabs", quest, 24, 64, 240, 80);
-        Img(tabs, new Color(0.82f, 0.82f, 0.82f));
-        Txt("Label", tabs, "의뢰 접수", 32, Ink, TextAlignmentOptions.Center, 0, 0, 240, 80);
-
-        Txt("Region", quest, "정글 던전", 34, Ink, TextAlignmentOptions.MidlineLeft, 300, 64, 400, 56);
-
-        var row = Rect("QuestRow", quest, 300, 140, 520, 84);
-        Img(row, new Color(0.88f, 0.88f, 0.88f));
-        var nameText = Txt("QuestName", row, "", 32, Ink, TextAlignmentOptions.MidlineLeft, 24, 0, 360, 84);
-        var acceptRt = Rect("AcceptButton", row, 390, 14, 110, 56);
-        var acceptImg = Img(acceptRt, new Color(0.85f, 0.15f, 0.15f), round, true, true);
-        var acceptBtn = MakeButton(acceptRt, acceptImg);
-        Txt("Label", acceptRt, "접수", 30, Color.white, TextAlignmentOptions.Center, 0, 0, 110, 56);
-
-        var detailBox = Rect("DetailBox", quest, 860, 64, 470, 500);
-        Img(detailBox, new Color(1f, 1f, 1f));
-        Txt("DetailTitle", detailBox, "의뢰 정보", 32, Ink, TextAlignmentOptions.MidlineLeft, 24, 16, 420, 50).fontStyle = FontStyles.Bold;
-        var detail = Txt("DetailText", detailBox, "", 28, Ink, TextAlignmentOptions.TopLeft, 24, 80, 422, 400);
-
-        Set(so, "pcPanel", panel.gameObject);
-        Set(so, "pcHomeView", home.gameObject);
-        Set(so, "pcRequestButton", requestBtn);
-        Set(so, "pcQuestView", quest.gameObject);
-        Set(so, "pcQuestNameText", nameText);
-        Set(so, "pcDetailText", detail);
-        Set(so, "pcAcceptButton", acceptBtn);
     }
 
     // ----- 던전 선택 (문) -----

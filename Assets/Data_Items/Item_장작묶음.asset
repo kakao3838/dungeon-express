@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: "Item_\uC7A5\uC791\uBB36\uC74C"
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: "\uC7A5\uC791 \uBB36\uC74C"
+  itemId: firewood_bundle
   itemType: 3
   sensitivity: 1
   icon: {fileID: 0}
   description: 
+  quality: 0
+  isLocked: 0
+  rarity: 0

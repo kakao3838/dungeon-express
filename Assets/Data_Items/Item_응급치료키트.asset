@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: "Item_\uC751\uAE09\uCE58\uB8CC\uD0A4\uD2B8"
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: "\uC751\uAE09\uCE58\uB8CC\uD0A4\uD2B8"
+  itemId: first_aid_kit
   itemType: 1
   sensitivity: 1
   icon: {fileID: 0}
   description: 
+  quality: 0
+  isLocked: 0
+  rarity: 0

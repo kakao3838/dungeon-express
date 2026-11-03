@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: "Item_\uC2E0\uC120\uD55C\uC57C\uCC44"
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: "\uC2E0\uC120\uD55C \uC57C\uCC44"
+  itemId: fresh_vegetables
   itemType: 1
   sensitivity: 1
   icon: {fileID: 0}
   description: 
+  quality: 0
+  isLocked: 0
+  rarity: 0

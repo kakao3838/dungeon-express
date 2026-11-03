@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: "Item_\uC720\uB9AC\uBCD1"
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: "\uC720\uB9AC\uBCD1"
+  itemId: glass_bottle
   itemType: 4
   sensitivity: 1
   icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   description: 
+  quality: 0
+  isLocked: 0
+  rarity: 0

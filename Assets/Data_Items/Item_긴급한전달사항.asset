@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: "Item_\uAE34\uAE09\uD55C\uC804\uB2EC\uC0AC\uD56D"
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: "\uAE34\uAE09\uD55C \uC804\uB2EC \uC0AC\uD56D"
+  itemId: urgent_notice
   itemType: 1
   sensitivity: 1
   icon: {fileID: 0}
   description: 
+  quality: 0
+  isLocked: 0
+  rarity: 0

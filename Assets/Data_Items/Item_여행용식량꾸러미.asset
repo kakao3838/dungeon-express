@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: "Item_\uC5EC\uD589\uC6A9\uC2DD\uB7C9\uAFB8\uB7EC\uBBF8"
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: "\uC5EC\uD589\uC6A9 \uC2DD\uB7C9 \uAFB8\uB7EC\uBBF8"
+  itemId: travel_rations
   itemType: 0
   sensitivity: 1
   icon: {fileID: 0}
   description: 
+  quality: 0
+  isLocked: 0
+  rarity: 0

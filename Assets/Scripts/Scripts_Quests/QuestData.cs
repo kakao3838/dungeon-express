@@ -21,7 +21,11 @@ public class QuestData : ScriptableObject
 {
     [Header("기본 정보")]
     public string questName;
+    [Tooltip("고유 ID (저장/불러오기용). 한 번 정하면 바꾸지 마세요. 예: main_1_1, sub_hunter_snack")]
+    public string questId;
     public QuestCategory category;
+    [Tooltip("의뢰인 이름 (PC 의뢰 목록 상세에 표시)")]
+    public string client;
 
     [Header("의뢰 물품")]
     public List<QuestItemRequirement> requiredItems = new List<QuestItemRequirement>();

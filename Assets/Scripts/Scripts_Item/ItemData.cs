@@ -14,6 +14,8 @@ public class ItemData : ScriptableObject
 {
     [Header("기본 정보")]
     public string itemName;
+    [Tooltip("고유 ID (저장/불러오기용). 한 번 정하면 바꾸지 마세요. 예: glass_bottle")]
+    public string itemId;
     public ItemType itemType;
 
     [Header("품질 관련 (배달 방식에 따른 감점 산정 시 사용)")]

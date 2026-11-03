@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -45,13 +46,7 @@ public class TutorialManager : MonoBehaviour
     public Button keyGuideConfirmButton;
 
     [Header("연결 - PC")]
-    public GameObject pcPanel;
-    public GameObject pcHomeView;
-    public Button pcRequestButton;
-    public GameObject pcQuestView;
-    public TMP_Text pcQuestNameText;
-    public TMP_Text pcDetailText;
-    public Button pcAcceptButton;
+    public PCBoardUI pcBoard; // 튜토리얼도 일반 PC 화면을 그대로 씀 (목록에는 튜토리얼 퀘스트 하나만 보여줌)
 
     [Header("연결 - 던전 선택")]
     public GameObject dungeonPanel;
@@ -86,12 +81,12 @@ public class TutorialManager : MonoBehaviour
 
     private PlayerController player;
     private QuestGiverTrigger bossGiver;
-    private TutorialPC pc;
+    private OfficePC pc;
 
     // 버튼 클릭 신호
     private bool advanceClicked;
-    private bool pcRequestClicked;
-    private bool pcAcceptClicked;
+    private bool pcRequestTabOpened;
+    private bool pcQuestAccepted;
     private bool keyGuideConfirmed;
     private int dungeonResult; // 0 대기, 1 입장, 2 닫기
     private int choiceResult;  // 0 대기, 1 예, 2 아니요
@@ -139,8 +134,6 @@ public class TutorialManager : MonoBehaviour
     void BindButtons()
     {
         if (dialogueButton != null) dialogueButton.onClick.AddListener(() => advanceClicked = true);
-        if (pcRequestButton != null) pcRequestButton.onClick.AddListener(() => pcRequestClicked = true);
-        if (pcAcceptButton != null) pcAcceptButton.onClick.AddListener(() => pcAcceptClicked = true);
         if (keyGuideConfirmButton != null) keyGuideConfirmButton.onClick.AddListener(() => keyGuideConfirmed = true);
         if (dungeonJungleButton != null) dungeonJungleButton.onClick.AddListener(() => SelectJungle(true));
         if (dungeonEnterButton != null) dungeonEnterButton.onClick.AddListener(() =>
@@ -157,7 +150,6 @@ public class TutorialManager : MonoBehaviour
     {
         SetActive(dialoguePanel, false);
         SetActive(keyGuidePanel, false);
-        SetActive(pcPanel, false);
         SetActive(dungeonPanel, false);
         SetActive(choicePanel, false);
         SetActive(toastPanel, false);
@@ -179,7 +171,7 @@ public class TutorialManager : MonoBehaviour
 
         player = FindFirstObjectByType<PlayerController>();
         bossGiver = FindFirstObjectByType<QuestGiverTrigger>();
-        pc = FindFirstObjectByType<TutorialPC>();
+        pc = FindFirstObjectByType<OfficePC>();
         var door = FindFirstObjectByType<DungeonDoorTrigger>();
         if (player == null || door == null)
         {
@@ -259,7 +251,7 @@ public class TutorialManager : MonoBehaviour
         if (body != null) body.linearVelocity = Vector2.zero;
     }
 
-    // TutorialPC에서 호출
+    // OfficePC에서 호출
     public void OnPCInteract()
     {
         if (phase == Phase.WaitPC) phase = Phase.PCMenu;
@@ -267,22 +259,33 @@ public class TutorialManager : MonoBehaviour
 
     IEnumerator RunPC()
     {
-        OpenPC();
-        pcRequestClicked = false;
-        pcAcceptClicked = false;
+        pcRequestTabOpened = false;
+        pcQuestAccepted = false;
+
+        if (pcBoard != null)
+        {
+            pcBoard.OnRequestTabOpened += HandleRequestTabOpened;
+            pcBoard.OnQuestAccepted += HandleQuestAccepted;
+            // 튜토리얼 중에는 튜토리얼 퀘스트 하나만 보여주고 PC를 닫을 수 없게 함
+            pcBoard.Open(new List<QuestData> { tutorialQuest }, false);
+        }
 
         yield return Say(Boss, "PC에서는 의뢰를 받을 수 있다네.");
         yield return Say(Boss, "'의뢰 접수'를 클릭하게.", false);
-        while (!pcRequestClicked) yield return null;
+        while (pcBoard != null && !pcRequestTabOpened) yield return null;
 
-        ShowPCQuest();
         yield return Say(Boss, "이 창에서는 어떤 의뢰를 받을지 선택할 수 있네. 의뢰에 대한 자세한 정보도 함께 확인할 수 있지.");
         yield return Say(Boss, "자, 우선 의뢰를 접수해보게나.", false);
-        pcAcceptClicked = false; // 설명을 읽는 동안 눌러 둔 값은 무시
-        while (!pcAcceptClicked) yield return null;
+        pcQuestAccepted = false; // 설명을 읽는 동안 눌러 둔 값은 무시
+        while (pcBoard != null && !pcQuestAccepted) yield return null;
 
-        AcceptTutorialQuest();
-        ClosePC();
+        if (pcBoard != null)
+        {
+            pcBoard.OnRequestTabOpened -= HandleRequestTabOpened;
+            pcBoard.OnQuestAccepted -= HandleQuestAccepted;
+            pcBoard.Close();
+        }
+        SubscribeQuestCompleted();
 
         yield return Say(Boss, "좋아. 이 물품은 그렇지 않은 것 같네만, 종종 특별한 주의사항이 있는 물품들이 있다네.");
         yield return Say(Boss, "그러니 반드시 물품 정보를 확인하고 그 주의점에 맞춰 배송 업무를 해주길 바라네.");
@@ -291,49 +294,15 @@ public class TutorialManager : MonoBehaviour
         CloseDialogue();
     }
 
-    void OpenPC()
+    void HandleRequestTabOpened() { pcRequestTabOpened = true; }
+    void HandleQuestAccepted(QuestData accepted) { pcQuestAccepted = true; }
+
+    // 튜토리얼 퀘스트를 다 끝내면 사장 전화 장면을 띄우기 위해 완료 이벤트를 구독
+    void SubscribeQuestCompleted()
     {
-        SetActive(pcPanel, true);
-        SetActive(pcHomeView, true);
-        SetActive(pcQuestView, false);
-        HoldPause();
-    }
-
-    void ShowPCQuest()
-    {
-        SetActive(pcHomeView, false);
-        SetActive(pcQuestView, true);
-        if (tutorialQuest == null) return;
-
-        if (pcQuestNameText != null) pcQuestNameText.text = tutorialQuest.questName;
-        string itemName = "";
-        if (tutorialQuest.requiredItems != null && tutorialQuest.requiredItems.Count > 0 && tutorialQuest.requiredItems[0].item != null)
-            itemName = tutorialQuest.requiredItems[0].item.itemName;
-        if (pcDetailText != null)
-        {
-            pcDetailText.text = "의뢰 품목  " + itemName
-                + "\n의뢰 위치  " + tutorialQuest.targetLocation
-                + "\n의뢰 보수  " + tutorialQuest.reward + " 골드"
-                + "\n\n" + tutorialQuest.description;
-        }
-    }
-
-    void ClosePC()
-    {
-        SetActive(pcPanel, false);
-    }
-
-    void AcceptTutorialQuest()
-    {
-        if (QuestManager.Instance == null || tutorialQuest == null) return;
-        var inventory = player != null ? player.GetComponent<Inventory>() : null;
-        QuestManager.Instance.StartQuest(tutorialQuest, inventory);
-
-        if (!subscribedQuest)
-        {
-            subscribedQuest = true;
-            QuestManager.Instance.OnQuestCompleted += OnQuestCompleted;
-        }
+        if (subscribedQuest || QuestManager.Instance == null) return;
+        subscribedQuest = true;
+        QuestManager.Instance.OnQuestCompleted += OnQuestCompleted;
     }
 
     // ---------- 문 (던전 선택) ----------

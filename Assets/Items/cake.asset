@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: cake
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: "\uCF00\uC774\uD06C"
+  itemId: cake
   itemType: 0
   sensitivity: 1
   icon: {fileID: 4429927966939240221, guid: da4507b89173f124f9f914dea64a208d, type: 3}
