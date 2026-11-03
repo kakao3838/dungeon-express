@@ -54,7 +54,7 @@ public class GameHUD : MonoBehaviour
             questManager = QuestManager.Instance;
             questManager.OnQuestStarted += RefreshQuest;
             questManager.OnQuestCompleted += OnQuestCompleted;
-            RefreshQuest(questManager.currentQuest);
+            RefreshQuest(questManager.TrackedQuest);
         }
     }
 
@@ -75,10 +75,9 @@ public class GameHUD : MonoBehaviour
 
     void OnQuestCompleted(QuestData completed)
     {
-        // 완료 이벤트가 오는 시점에는 QuestManager.currentQuest가 아직 방금 완료한 퀘스트 그대로라서
-        // 그 값을 읽으면 완료된 퀘스트가 계속 남아 보임. 일단 비우고,
-        // 다음 퀘스트가 자동으로 시작되면 이어서 오는 OnQuestStarted가 다시 채워줌
-        RefreshQuest(null);
+        // 완료한 퀘스트는 이미 진행 목록에서 빠진 상태이므로, 남은 진행 중 퀘스트 중 가장 최근 것을 보여줌 (없으면 숨김)
+        // 이어서 시작되는 퀘스트가 있으면 뒤따르는 OnQuestStarted가 다시 갱신함
+        RefreshQuest(questManager.TrackedQuest);
     }
 
     void RefreshQuest(QuestData quest)

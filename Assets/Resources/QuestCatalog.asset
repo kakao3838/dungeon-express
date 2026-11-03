@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cf687bbd483650449e5545ee02844fe, type: 3}
+  m_Name: QuestCatalog
+  m_EditorClassIdentifier: Assembly-CSharp::QuestCatalog
+  allQuests:
+  - {fileID: 11400000, guid: b58c31c3cc407124fb28b998a6ea4048, type: 2}
+  - {fileID: 11400000, guid: f3befb0e8efc6be4d82b3f59ebdebdb7, type: 2}
+  - {fileID: 11400000, guid: 5bd35899b02d93648921b0cb625d9b44, type: 2}
+  - {fileID: 11400000, guid: 4b10c64d1eedd8b49bbcf6110081ad77, type: 2}
+  - {fileID: 11400000, guid: b04342702f284ab47ba97098d94c16d3, type: 2}
+  - {fileID: 11400000, guid: c38d5d305ae799a43940284e72ada31d, type: 2}
+  - {fileID: 11400000, guid: 731a493b430cbe84da08f72ff628f7f9, type: 2}
+  - {fileID: 11400000, guid: 79a61b4621574b84db6a383d08410252, type: 2}
+  - {fileID: 11400000, guid: fb54e252aff24534581b39d743a9ad04, type: 2}
+  - {fileID: 11400000, guid: 9c235f827b6863c4dbb566355b5a1b7f, type: 2}
+  - {fileID: 11400000, guid: bda55b4fd6d04214e8363280541be4a3, type: 2}
+  pcQuests:
+  - {fileID: 11400000, guid: 731a493b430cbe84da08f72ff628f7f9, type: 2}
+  - {fileID: 11400000, guid: fb54e252aff24534581b39d743a9ad04, type: 2}
+  - {fileID: 11400000, guid: c38d5d305ae799a43940284e72ada31d, type: 2}
+  - {fileID: 11400000, guid: 79a61b4621574b84db6a383d08410252, type: 2}

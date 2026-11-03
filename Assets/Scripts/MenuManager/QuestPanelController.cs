@@ -44,8 +44,18 @@ public class QuestPanelController : MonoBehaviour
     void OnEnable()
     {
         // 열 때마다 진행 중인 퀘스트가 있는 탭으로 이동 (없으면 메인)
-        QuestData active = QuestManager.Instance != null ? QuestManager.Instance.currentQuest : null;
-        currentTab = active != null && active.category != QuestCategory.Main ? QuestTab.Regular : QuestTab.Main;
+        // 진행 중인 메인 퀘스트가 없고 일반 퀘스트만 있으면 일반 탭으로 시작
+        var manager = QuestManager.Instance;
+        bool hasMain = false, hasRegular = false;
+        if (manager != null)
+        {
+            foreach (var q in manager.activeQuests)
+            {
+                if (q.category == QuestCategory.Main) hasMain = true;
+                else hasRegular = true;
+            }
+        }
+        currentTab = !hasMain && hasRegular ? QuestTab.Regular : QuestTab.Main;
         selectedQuest = null;
         Refresh();
     }
@@ -69,11 +79,11 @@ public class QuestPanelController : MonoBehaviour
             return result;
         }
 
-        QuestData active = manager.currentQuest;
-        if (active == null) return result;
-
-        bool isMain = active.category == QuestCategory.Main;
-        if ((currentTab == QuestTab.Main) == isMain) result.Add(active);
+        foreach (var quest in manager.activeQuests)
+        {
+            bool isMain = quest.category == QuestCategory.Main;
+            if ((currentTab == QuestTab.Main) == isMain) result.Add(quest);
+        }
         return result;
     }
 

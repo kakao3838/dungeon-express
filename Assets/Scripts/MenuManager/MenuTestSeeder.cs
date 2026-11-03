@@ -18,6 +18,6 @@ public class MenuTestSeeder : MonoBehaviour
         foreach (var item in items) inventory.AddItem(item);
 
         if (QuestManager.Instance != null && activeQuest != null)
-            QuestManager.Instance.currentQuest = activeQuest;
+            QuestManager.Instance.StartQuest(activeQuest);
     }
 }

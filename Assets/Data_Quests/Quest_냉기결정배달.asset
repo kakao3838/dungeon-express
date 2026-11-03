@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: "Quest_\uB0C9\uAE30\uACB0\uC815\uBC30\uB2EC"
   m_EditorClassIdentifier: Assembly-CSharp::QuestData
   questName: "\uB0C9\uAE30 \uACB0\uC815 \uBC30\uB2EC"
+  questId: legacy_frost_crystal
   category: 0
+  client: 
   requiredItems:
   - item: {fileID: 11400000, guid: d1029b8a453cc64419adc1a8afa22e27, type: 2}
     quantity: 1

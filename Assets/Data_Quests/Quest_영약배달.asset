@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: "Quest_\uC601\uC57D\uBC30\uB2EC"
   m_EditorClassIdentifier: Assembly-CSharp::QuestData
   questName: "\uC601\uC57D \uBC30\uB2EC"
+  questId: legacy_elixir
   category: 0
+  client: 
   requiredItems:
   - item: {fileID: 11400000, guid: 6a2768e8c3b928647a00133140d76fd5, type: 2}
     quantity: 2

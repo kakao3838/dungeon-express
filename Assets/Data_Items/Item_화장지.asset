@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: "Item_\uD654\uC7A5\uC9C0"
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: "\uD654\uC7A5\uC9C0"
+  itemId: toilet_paper
   itemType: 3
   sensitivity: 1
   icon: {fileID: 0}
   description: 
+  quality: 0
+  isLocked: 0
+  rarity: 0

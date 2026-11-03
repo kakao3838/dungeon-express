@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0230ae3bea6038b44bee460d0d1bc269, type: 3}
+  m_Name: "Sub_\uB450\uADFC\uB450\uADFC\uC190\uD3B8\uC9C0"
+  m_EditorClassIdentifier: Assembly-CSharp::QuestData
+  questName: "\uB450\uADFC\uB450\uADFC \uC190\uD3B8\uC9C0"
+  questId: sub_love_letter
+  category: 2
+  client: "\uC124\uB808\uB294 \uD0D0\uD5D8\uAC00"
+  requiredItems:
+  - item: {fileID: 11400000, guid: eec6c1a40fe6c4c4296cd57bb3c43dc5, type: 2}
+    quantity: 1
+  targetLocation: "\uC815\uAE00 \uB358\uC804"
+  reward: 60
+  description: "\uC5EC\uC790\uCE5C\uAD6C\uAC00 \uC9C1\uC811 \uC4F4 \uC190\uD3B8\uC9C0\uB97C
+    \uBCF4\uB0B4\uC8FC\uACE0 \uC2F6\uB300\uC694! \uC18C\uC911\uD55C \uB9C8\uC74C\uC774
+    \uB2F4\uAE34 \uD3B8\uC9C0\uC778 \uB9CC\uD07C \uC870\uC2EC\uD788 \uBC30\uB2EC\uD574
+    \uC8FC\uC138\uC694."
+  objectives:
+  - "\uC124\uB808\uB294 \uD0D0\uD5D8\uAC00 \u2192 \uD3B8\uC9C0 \uC804\uB2EC"
+  unlocksQuests: []

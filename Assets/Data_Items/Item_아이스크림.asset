@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: "Item_\uC544\uC774\uC2A4\uD06C\uB9BC"
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: "\uC544\uC774\uC2A4\uD06C\uB9BC"
+  itemId: ice_cream
   itemType: 2
   sensitivity: 1
   icon: {fileID: 0}
   description: 
+  quality: 0
+  isLocked: 0
+  rarity: 0

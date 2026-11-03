@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: "Quest_\uBB3C\uBCD1\uBC30\uB2EC"
   m_EditorClassIdentifier: Assembly-CSharp::QuestData
   questName: "\uBB3C\uBCD1 \uBC30\uB2EC"
+  questId: legacy_glass_bottle
   category: 0
+  client: 
   requiredItems:
   - item: {fileID: 11400000, guid: fc9c55f9e11e0864f953995680024ce8, type: 2}
     quantity: 3

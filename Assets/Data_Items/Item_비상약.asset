@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: "Item_\uBE44\uC0C1\uC57D"
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: "\uBE44\uC0C1\uC57D"
+  itemId: emergency_medicine
   itemType: 0
   sensitivity: 1
   icon: {fileID: 0}

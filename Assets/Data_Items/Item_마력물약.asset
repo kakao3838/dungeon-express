@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: "Item_\uB9C8\uB825\uBB3C\uC57D"
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: "\uB9C8\uB825 \uBB3C\uC57D"
+  itemId: mana_potion
   itemType: 4
   sensitivity: 1
   icon: {fileID: 0}
   description: 
+  quality: 0
+  isLocked: 0
+  rarity: 0

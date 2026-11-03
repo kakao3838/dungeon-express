@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: "Item_\uC601\uC57D\uC774\uB2F4\uAE34\uBCD1"
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: "\uC601\uC57D\uC774 \uB2F4\uAE34 \uBCD1"
+  itemId: elixir_bottle
   itemType: 4
   sensitivity: 1
   icon: {fileID: 0}
   description: 
+  quality: 0
+  isLocked: 0
+  rarity: 0
