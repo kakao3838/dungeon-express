@@ -443,6 +443,7 @@ public class TutorialManager : MonoBehaviour
 
         completed = true;
         phase = Phase.Done;
+        if (QuestManager.Instance != null) QuestManager.Instance.SetFlag(QuestManager.FlagTutorialDone); // 이후 메인 퀘스트 스토리가 시작될 수 있음
 
         if (choiceResult == 1)
         {

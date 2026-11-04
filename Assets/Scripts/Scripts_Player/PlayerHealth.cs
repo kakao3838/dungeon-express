@@ -116,11 +116,19 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     public void TakeDamage(int amount)
     {
+        TakeDamage(amount, DamageCause.Generic);
+    }
+
+    // cause에 따라 가방 물품의 특성별 품질 감소가 달라짐 (함정 불 → Fire 등)
+    public void TakeDamage(int amount, DamageCause cause)
+    {
         if (isDead || isInvincible || CurrentHearts <= 0) return;
 
+        int before = CurrentHearts;
         CurrentHearts = Mathf.Max(0, CurrentHearts - amount);
         OnHealthChanged?.Invoke(CurrentHearts, maxHearts);
         OnDamaged?.Invoke();
+        ApplyQualityLoss(before - CurrentHearts, cause);
 
         if (CurrentHearts <= 0)
         {
@@ -131,6 +139,17 @@ public class PlayerHealth : MonoBehaviour, IDamageable
             isInvincible = true;
             invincibilityTimer = invincibilityDuration;
         }
+    }
+
+    // 하트를 잃은 만큼 가방 안 물품의 품질을 깎음 (규칙은 QualityRules)
+    void ApplyQualityLoss(int heartsLost, DamageCause cause)
+    {
+        if (heartsLost <= 0) return;
+
+        var inventory = GetComponent<Inventory>();
+        if (inventory == null) return;
+
+        inventory.ReduceQuality(item => QualityRules.LossFor(item, heartsLost, cause));
     }
 
     public void Heal(int amount)
@@ -145,9 +164,11 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     // 남은 하트가 없으면 일반 사망과 같이 처리
     void FallDeath()
     {
+        int before = CurrentHearts;
         CurrentHearts = Mathf.Max(0, CurrentHearts - 1);
         OnHealthChanged?.Invoke(CurrentHearts, maxHearts);
         OnDamaged?.Invoke();
+        ApplyQualityLoss(before - CurrentHearts, DamageCause.Fall);
 
         var rb = GetComponent<Rigidbody2D>();
 
