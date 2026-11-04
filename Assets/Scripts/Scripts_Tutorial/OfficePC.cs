@@ -26,11 +26,15 @@ public class OfficePC : MonoBehaviour
     void Update()
     {
         var manager = TutorialManager.Instance;
+        var story = StoryManager.Instance;
         bool tutorialTurn = manager != null && manager.WaitingForPC;
+        // 메인 퀘스트 스토리가 PC를 쓸 차례이면 그 연출이 PC 화면을 엶 (플레이어가 직접 접수하지 않음)
+        bool storyTurn = !tutorialTurn && story != null && story.WaitingForPC;
         // 튜토리얼이 진행 중인 동안에는 튜토리얼이 정한 차례에만 열림
-        bool freeUse = !TutorialManager.BlocksMenu && board != null && !board.IsOpen && !GamePause.IsPaused;
+        bool freeUse = !storyTurn && !TutorialManager.BlocksMenu && board != null && !board.IsOpen && !GamePause.IsPaused;
 
-        bool show = inRange && (tutorialTurn || freeUse);
+        bool show = inRange && !GamePause.IsPaused && (tutorialTurn || storyTurn || freeUse);
+        if (tutorialTurn) show = inRange; // 튜토리얼 차례는 이미 정지 상태가 아님
         if (promptRoot != null && promptRoot.activeSelf != show) promptRoot.SetActive(show);
         if (!show) return;
 
@@ -38,6 +42,7 @@ public class OfficePC : MonoBehaviour
         if (keyboard == null || !keyboard.fKey.wasPressedThisFrame) return;
 
         if (tutorialTurn) manager.OnPCInteract();
+        else if (storyTurn) story.OnPCInteract();
         else board.Open();
     }
 }

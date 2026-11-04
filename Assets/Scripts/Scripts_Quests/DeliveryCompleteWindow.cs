@@ -110,14 +110,18 @@ public class DeliveryCompleteWindow : MonoBehaviour
         Vector2 firstPos = ((RectTransform)rowTemplate.transform).anchoredPosition;
         int index = 0;
 
-        foreach (var req in quest.requiredItems)
+        for (int r = 0; r < quest.requiredItems.Count; r++)
         {
+            var req = quest.requiredItems[r];
             if (req.item == null) continue;
 
             int units = Mathf.Max(1, req.quantity);
             int itemBase = Mathf.RoundToInt(quest.reward * (units / (float)totalUnits));
 
-            int quality = unchangedQuality;
+            // 배송 중 실제로 깎인 품질로 정산 (기록이 없으면 변동 없는 품질)
+            int quality = QuestManager.Instance != null
+                ? QuestManager.Instance.GetDeliveredQuality(quest, r, unchangedQuality)
+                : unchangedQuality;
             bool failed = quality <= 0;
             string grade = quality >= gradeAMinQuality ? "A" : quality >= gradeBMinQuality ? "B" : "C";
             int itemBonus = (!failed && grade == "A") ? Mathf.RoundToInt(itemBase * gradeABonusRate) : 0;

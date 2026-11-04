@@ -57,6 +57,7 @@ public class PCBoardUI : MonoBehaviour
     private List<QuestData> offered;
     private QuestData selected;
     private bool allowClose = true;
+    private bool allowAccept = true;
     private bool holdingPause;
     private int openedFrame = -1;
     private int currentTab = -1;
@@ -98,9 +99,11 @@ public class PCBoardUI : MonoBehaviour
 
     // offeredQuests가 null이면 QuestCatalog의 PC 퀘스트 목록을 보여줌 (튜토리얼은 튜토리얼 퀘스트 하나만 넘김)
     // allowCloseBoard가 false면 닫기 버튼과 Esc로 닫을 수 없음 (튜토리얼 중)
-    public void Open(IList<QuestData> offeredQuests = null, bool allowCloseBoard = true)
+    // allowAcceptQuest가 false면 접수 버튼을 쓸 수 없음 (스토리에서 NPC가 대신 접수해 줄 때)
+    public void Open(IList<QuestData> offeredQuests = null, bool allowCloseBoard = true, bool allowAcceptQuest = true)
     {
         if (panel == null) return;
+        allowAccept = allowAcceptQuest;
 
         if (offeredQuests != null) offered = new List<QuestData>(offeredQuests);
         else
@@ -248,11 +251,16 @@ public class PCBoardUI : MonoBehaviour
 
         // 의뢰는 한 번에 하나만 접수할 수 있음 (메인/서브 구분 없이, 진행 중인 의뢰를 끝내야 다음 접수)
         bool blocked = HasActiveQuest();
-        if (acceptButton != null) acceptButton.interactable = !blocked;
+        if (acceptButton != null)
+        {
+            acceptButton.gameObject.SetActive(allowAccept); // 스토리에서 NPC가 대신 접수할 때는 접수 버튼을 숨김
+            acceptButton.interactable = !blocked;
+        }
         if (acceptHintText != null)
         {
-            acceptHintText.text = blocked ? "진행 중인 의뢰를 끝내야\n새 의뢰를 접수할 수 있습니다." : "";
-            acceptHintText.gameObject.SetActive(blocked);
+            string reason = allowAccept && blocked ? "진행 중인 의뢰를 끝내야\n새 의뢰를 접수할 수 있습니다." : "";
+            acceptHintText.text = reason;
+            acceptHintText.gameObject.SetActive(reason.Length > 0);
         }
 
         if (detailNameText != null) detailNameText.text = quest.questName;
@@ -293,7 +301,7 @@ public class PCBoardUI : MonoBehaviour
     void AcceptSelected()
     {
         if (selected == null || QuestManager.Instance == null) return;
-        if (HasActiveQuest()) return; // 한 번에 하나만 접수
+        if (HasActiveQuest() || !allowAccept) return; // 한 번에 하나만 접수
 
         var inventory = FindFirstObjectByType<Inventory>();
         QuestData accepted = selected;

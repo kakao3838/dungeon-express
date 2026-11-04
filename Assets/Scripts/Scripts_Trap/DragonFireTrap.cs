@@ -179,7 +179,7 @@ public class DragonFireTrap : MonoBehaviour
 
             // 무적 시간 중이라 피해가 안 들어갔으면 맞은 걸로 치지 않고, 불이 계속되는 동안 다시 시도함
             int before = health.CurrentHearts;
-            health.TakeDamage(damage);
+            health.TakeDamage(damage, DamageCause.Fire); // 불: 고온 주의 물품은 품질이 추가로 감소
             if (health.CurrentHearts < before)
             {
                 hitThisBreath = true;
