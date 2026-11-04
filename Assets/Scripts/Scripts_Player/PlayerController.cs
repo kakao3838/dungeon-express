@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
     public bool IsGrounded => isGrounded;
     public bool IsMoving => Mathf.Abs(moveInput) > 0.01f;
 
+    private bool IsDialogueOpen => NPCDialogueMenu.Instance != null && NPCDialogueMenu.Instance.IsOpen;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -45,12 +47,17 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         var keyboard = Keyboard.current;
-        if (keyboard == null && !InputLocked) return;
+        if (keyboard == null && !InputLocked && !IsDialogueOpen) return;
 
         // 좌우 이동 입력 (WASD + 화살표 둘 다 지원)
         // 튜토리얼 연출 중에는 키보드 대신 ScriptedMove로 움직임
         moveInput = 0f;
-        if (InputLocked)
+        if (IsDialogueOpen)
+        {
+            isRunning = false;
+            jumpHeld = false;
+        }
+        else if (InputLocked)
         {
             moveInput = ScriptedMove;
             isRunning = false;
@@ -89,7 +96,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // 점프 (바닥에 있을 때만)
-        if (!InputLocked && keyboard != null && keyboard.spaceKey.wasPressedThisFrame && isGrounded)
+        if (!IsDialogueOpen && !InputLocked && keyboard != null && keyboard.spaceKey.wasPressedThisFrame && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
@@ -97,6 +104,9 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // 대화가 Update 이후에 열려도 다음 물리 프레임부터 즉시 멈춥니다.
+        if (IsDialogueOpen) moveInput = 0f;
+
         float speed = isRunning ? runSpeed : moveSpeed;
         Vector2 velocity = new Vector2(moveInput * speed, rb.linearVelocity.y);
 
