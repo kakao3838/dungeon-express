@@ -267,17 +267,28 @@ public class TutorialManager : MonoBehaviour
             pcBoard.OnRequestTabOpened += HandleRequestTabOpened;
             pcBoard.OnQuestAccepted += HandleQuestAccepted;
             // 튜토리얼 중에는 튜토리얼 퀘스트 하나만 보여주고 PC를 닫을 수 없게 함
-            pcBoard.Open(new List<QuestData> { tutorialQuest }, false);
+            // 접수 버튼은 사장이 "접수해보게나"라고 할 때까지 숨겨 둠 (설명을 읽기 전에 먼저 눌러서 튜토리얼이 막히지 않게)
+            pcBoard.Open(new List<QuestData> { tutorialQuest }, false, false);
         }
 
         yield return Say(Boss, "PC에서는 의뢰를 받을 수 있다네.");
-        yield return Say(Boss, "'의뢰 접수'를 클릭하게.", false);
-        while (pcBoard != null && !pcRequestTabOpened) yield return null;
+
+        // 대사를 읽는 동안 플레이어가 이미 '의뢰 접수' 화면을 열었다면 클릭 안내는 건너뜀
+        if (pcBoard != null && !pcRequestTabOpened)
+        {
+            yield return Say(Boss, "'의뢰 접수'를 클릭하게.", false);
+            while (!pcRequestTabOpened) yield return null;
+        }
 
         yield return Say(Boss, "이 창에서는 어떤 의뢰를 받을지 선택할 수 있네. 의뢰에 대한 자세한 정보도 함께 확인할 수 있지.");
         yield return Say(Boss, "자, 우선 의뢰를 접수해보게나.", false);
-        pcQuestAccepted = false; // 설명을 읽는 동안 눌러 둔 값은 무시
-        while (pcBoard != null && !pcQuestAccepted) yield return null;
+
+        // 이제 접수 버튼을 보여주고 접수할 때까지 기다림. 이미 접수된 상태면 기다리지 않음
+        if (pcBoard != null)
+        {
+            pcBoard.SetAcceptAllowed(true);
+            while (!pcQuestAccepted && !IsTutorialQuestActive()) yield return null;
+        }
 
         if (pcBoard != null)
         {
@@ -292,6 +303,11 @@ public class TutorialManager : MonoBehaviour
         yield return Say(Boss, "아, 깜빡했군. PC를 설치하면서 문도 함께 손을 좀 봤다네. 이제 옆의 기기를 조작하면 원하는 던전으로 바로 이동할 수 있을 걸세.");
         yield return Say(Boss, "이제 의뢰를 접수했으니, 배송하러 가보시게! 저 옆에 문이 있으니, 그쪽으로 가면 된다네.");
         CloseDialogue();
+    }
+
+    bool IsTutorialQuestActive()
+    {
+        return QuestManager.Instance != null && QuestManager.Instance.IsQuestActive(tutorialQuest);
     }
 
     void HandleRequestTabOpened() { pcRequestTabOpened = true; }
