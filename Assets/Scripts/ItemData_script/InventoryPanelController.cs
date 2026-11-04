@@ -39,6 +39,7 @@ public class InventoryPanelController : MonoBehaviour
     private readonly List<InventorySlotUI> slots = new List<InventorySlotUI>();
     private int currentTab = 0;
     private ItemData selectedItem;
+    private int selectedQuality = Inventory.FullQuality; // 선택한 아이템이 가방에서 가진 품질(%)
 
     void OnEnable()
     {
@@ -99,6 +100,7 @@ public class InventoryPanelController : MonoBehaviour
         int total = Mathf.Max(columns * rows, capacity);
         BuildSlots(total);
 
+        selectedQuality = Inventory.FullQuality;
         bool selectedMarked = false;
         for (int i = 0; i < slots.Count; i++)
         {
@@ -110,6 +112,7 @@ public class InventoryPanelController : MonoBehaviour
             {
                 slots[i].SetSelected(true);
                 selectedMarked = true;
+                selectedQuality = QualityOfSlot(i);
             }
         }
 
@@ -118,6 +121,12 @@ public class InventoryPanelController : MonoBehaviour
 
         coinText.text = (wallet != null ? wallet.Gold : 0).ToString("N0");
         ShowDetail(selectedItem);
+    }
+
+    // 슬롯 번호의 아이템이 가방에서 가진 품질 (표시 순서가 가방 순서와 같은 탭 기준)
+    int QualityOfSlot(int slotIndex)
+    {
+        return inventory != null && slotIndex >= 0 ? inventory.GetQuality(slotIndex) : Inventory.FullQuality;
     }
 
     void BuildSlots(int count)
@@ -131,6 +140,7 @@ public class InventoryPanelController : MonoBehaviour
     public void Select(InventorySlotUI slot)
     {
         selectedItem = slot.Item;
+        selectedQuality = QualityOfSlot(slots.IndexOf(slot));
         foreach (var s in slots) s.SetSelected(s == slot);
         ShowDetail(selectedItem);
     }
@@ -151,14 +161,10 @@ public class InventoryPanelController : MonoBehaviour
         iconFallbackText.gameObject.SetActive(!hasIcon);
         iconFallbackText.text = item.itemName;
 
-        // 품질 값이 설정된 아이템만 게이지 표시 (미설정 0은 '품질 0%'로 오해되므로 숨김)
-        bool showQuality = item.quality > 0;
-        qualityRow.SetActive(showQuality);
-        if (showQuality)
-        {
-            qualityFill.anchorMax = new Vector2(item.quality / 100f, 1f);
-            qualityText.text = item.quality + "%";
-        }
+        // 아이템 하나하나가 들고 있는 현재 품질을 보여줌 (배송 중 하트가 깎이면 줄어듦)
+        qualityRow.SetActive(true);
+        qualityFill.anchorMax = new Vector2(selectedQuality / 100f, 1f);
+        qualityText.text = selectedQuality + "%";
 
         traitText.text = ItemData.GetTraitLabel(item.itemType);
         descriptionText.text = string.IsNullOrEmpty(item.description) ? "설명이 없습니다." : item.description;

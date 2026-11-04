@@ -12,6 +12,7 @@ public class QuestManager : MonoBehaviour
     // 해금/이야기 플래그 이름 (SetFlag / HasFlag)
     public const string FlagEquipmentUpgrade = "unlock_equipment_upgrade";
     public const string FlagBagUpgrade = "unlock_bag_upgrade";
+    public const string FlagTutorialDone = "tutorial_done";
 
     [Header("진행 중인 퀘스트 (테스트용으로 직접 연결 가능, 동시에 여러 개 가능)")]
     public List<QuestData> activeQuests = new List<QuestData>();
@@ -23,6 +24,9 @@ public class QuestManager : MonoBehaviour
     // 이야기 진행/기능 해금 기록 (예: "cave_collapsed", FlagEquipmentUpgrade)
     private readonly HashSet<string> flags = new HashSet<string>();
     public IReadOnlyCollection<string> Flags => flags;
+
+    // 배송 완료 때 낸 물품들의 평균 품질 (퀘스트 ID별, 의뢰 물품 순서대로). 배송 완료 창이 정산에 씀
+    private readonly Dictionary<string, int[]> deliveredQualities = new Dictionary<string, int[]>();
 
     public event Action<QuestData> OnQuestStarted;
     public event Action<QuestData> OnQuestCompleted;
@@ -67,7 +71,7 @@ public class QuestManager : MonoBehaviour
         Debug.Log("퀘스트 시작: " + quest.questName);
 
         // 배달할 물품을 미리 가방에 넣어줌 (플레이어가 직접 구할 방법이 없는 배달용 아이템)
-        if (inventory != null)
+        if (inventory != null && quest.giveItemsOnStart)
         {
             foreach (var req in quest.requiredItems)
             {
@@ -105,22 +109,30 @@ public class QuestManager : MonoBehaviour
     {
         if (!IsQuestActive(quest)) return;
 
+        var delivered = new int[quest.requiredItems.Count];
+        for (int r = 0; r < delivered.Length; r++) delivered[r] = Inventory.FullQuality;
+
         if (inventory != null)
         {
-            foreach (var req in quest.requiredItems)
+            for (int r = 0; r < quest.requiredItems.Count; r++)
             {
+                var req = quest.requiredItems[r];
                 int removed = 0;
-                // 리스트를 뒤에서부터 지우면서 필요한 개수만큼 제거
+                int qualitySum = 0;
+                // 리스트를 뒤에서부터 지우면서 필요한 개수만큼 제거하고, 낸 물품들의 품질을 모음
                 for (int i = inventory.Items.Count - 1; i >= 0 && removed < req.quantity; i--)
                 {
-                    if (inventory.Items[i] == req.item)
-                    {
-                        inventory.RemoveItem(req.item);
-                        removed++;
-                    }
+                    if (inventory.Items[i] != req.item) continue;
+
+                    int quality;
+                    inventory.RemoveAt(i, out quality);
+                    qualitySum += quality;
+                    removed++;
                 }
+                if (removed > 0) delivered[r] = Mathf.RoundToInt(qualitySum / (float)removed);
             }
         }
+        deliveredQualities[QuestKey(quest)] = delivered;
 
         // 보상 지급은 DeliveryCompleteWindow가 PlayerWallet에 하므로 여기서는 완료 기록만 남김
         activeQuests.Remove(quest);
@@ -134,6 +146,20 @@ public class QuestManager : MonoBehaviour
         {
             foreach (var next in quest.unlocksQuests) StartQuest(next, inventory);
         }
+    }
+
+    // 배송 완료한 퀘스트의 r번째 의뢰 물품 평균 품질 (기록이 없으면 fallback)
+    public int GetDeliveredQuality(QuestData quest, int requirementIndex, int fallback)
+    {
+        int[] delivered;
+        if (quest == null || !deliveredQualities.TryGetValue(QuestKey(quest), out delivered)) return fallback;
+        return requirementIndex >= 0 && requirementIndex < delivered.Length ? delivered[requirementIndex] : fallback;
+    }
+
+    // 배송 완료 창이 퀘스트 복사본(보수만 바꾼 것)을 받아도 같은 기록을 찾을 수 있게 ID로 구분
+    static string QuestKey(QuestData quest)
+    {
+        return string.IsNullOrEmpty(quest.questId) ? quest.questName : quest.questId;
     }
 
     // ---------- 플래그 ----------

@@ -29,6 +29,8 @@ public class QuestData : ScriptableObject
 
     [Header("의뢰 물품")]
     public List<QuestItemRequirement> requiredItems = new List<QuestItemRequirement>();
+    [Tooltip("끄면 퀘스트를 시작할 때 물품을 가방에 자동으로 넣지 않음 (이야기 속에서 직접 얻는 물품용. 예: 영약 우물)")]
+    public bool giveItemsOnStart = true;
 
     [Header("의뢰 정보")]
     public string targetLocation; // 의뢰 장소 (예: "정글 던전")

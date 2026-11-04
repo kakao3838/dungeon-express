@@ -36,6 +36,9 @@ public class QuestGiverTrigger : MonoBehaviour
         var keyboard = Keyboard.current;
         if (keyboard != null && keyboard.fKey.wasPressedThisFrame)
         {
+            // 메인 퀘스트 스토리가 이 NPC(사장)와의 대화를 차지하면 기존 대화 메뉴는 열지 않음
+            if (StoryManager.Instance != null && StoryManager.Instance.HandleBossInteract()) return;
+
             if (NPCDialogueMenu.Instance != null)
             {
                 NPCDialogueMenu.Instance.Open(this);

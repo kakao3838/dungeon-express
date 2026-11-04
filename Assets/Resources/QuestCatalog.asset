@@ -24,6 +24,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fb54e252aff24534581b39d743a9ad04, type: 2}
   - {fileID: 11400000, guid: 9c235f827b6863c4dbb566355b5a1b7f, type: 2}
   - {fileID: 11400000, guid: bda55b4fd6d04214e8363280541be4a3, type: 2}
+  - {fileID: 11400000, guid: b19120914ff28e44b8fdc24b7eeaf9db, type: 2}
+  - {fileID: 11400000, guid: 6cff118216456304eb36ee93507d99b6, type: 2}
+  - {fileID: 11400000, guid: d26fe16919881414ca76d966c84218ae, type: 2}
+  - {fileID: 11400000, guid: 81239409c9933cc4886714390dd6317f, type: 2}
   pcQuests:
   - {fileID: 11400000, guid: 731a493b430cbe84da08f72ff628f7f9, type: 2}
   - {fileID: 11400000, guid: fb54e252aff24534581b39d743a9ad04, type: 2}

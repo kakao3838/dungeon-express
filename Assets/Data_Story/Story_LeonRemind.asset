@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1c2ba155c3d5c4ab960ecfc990c120, type: 3}
+  m_Name: Story_LeonRemind
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
+  lines:
+  - speaker: "\uB808\uC628"
+    text: "\uC81C \uB3D9\uB8CC\uB4E4\uC744 \uBD80\uD0C1\uB4DC\uB9BD\uB2C8\uB2E4\u2026"
