@@ -124,6 +124,13 @@ public class PCBoardUI : MonoBehaviour
         HoldPause();
     }
 
+    // 열려 있는 동안 접수 버튼을 쓸 수 있게 하거나 숨김 (튜토리얼/스토리에서 안내가 끝난 뒤에 열어 줄 때)
+    public void SetAcceptAllowed(bool allowed)
+    {
+        allowAccept = allowed;
+        if (IsOpen) ShowDetail(selected);
+    }
+
     public void Close()
     {
         if (!IsOpen) return;
