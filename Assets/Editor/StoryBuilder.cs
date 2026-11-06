@@ -17,6 +17,7 @@ public static class StoryBuilder
     const string QuestDir = "Assets/Data_Quests/";
     const string ItemDir = "Assets/Data_Items/";
     const string CatalogPath = "Assets/Resources/QuestCatalog.asset";
+    const string StoryMapId = "1-3-3"; // 시안의 1-2-2 유적 (2). 레온/영약 우물을 둘 맵 구역 (보물방이 생길 때까지 임시)
 
     static readonly Color Ink = new Color(0.1f, 0.1f, 0.1f);
     static readonly Color Muted = new Color(0.45f, 0.45f, 0.45f);
@@ -297,16 +298,17 @@ public static class StoryBuilder
         foreach (var a in Object.FindObjectsByType<MapArea>(FindObjectsInactive.Include, FindObjectsSortMode.None))
         {
             var so = new SerializedObject(a);
-            if (so.FindProperty("mapId").stringValue == "1-2-2") { area = a; break; }
+            if (so.FindProperty("mapId").stringValue == StoryMapId) { area = a; break; }
         }
         if (area == null)
         {
-            EditorUtility.DisplayDialog("스토리 오브젝트 만들기", "1-2-2 구역(MapArea)을 찾지 못했습니다.", "확인");
+            EditorUtility.DisplayDialog("스토리 오브젝트 만들기", StoryMapId + " 구역(MapArea)을 찾지 못했습니다.", "확인");
             return;
         }
 
-        // 이전에 만든 레온/우물은 지우고 다시 만듦 (맵 담당이 둔 NPC 자리표시자는 건드리지 않음)
-        // 단, 우물은 사용자가 씬에서 옮겨 둔 위치를 기억했다가 같은 자리에 다시 만듦
+        // 이전에 만든 레온/우물은 지우고 다시 만듦. 맵 담당이 둔 NPC 자리표시자는 건드리지 않고,
+        // 예전 방식으로 내가 붙였던 레온 상호작용만 떼어냄
+        RestorePlaceholders();
         Vector3? keptWellPosition = null;
         foreach (string name in new[] { "Leon", "ElixirWell" })
         {
@@ -324,110 +326,103 @@ public static class StoryBuilder
         area.RecalculateBounds();
         Bounds bounds = area.WorldBounds;
 
-        // 1-2-2에는 맵 담당이 이미 NPC 자리표시자(파란 타원)를 2개 둠: 왼쪽 위(탐험가)와 맨 아래 오른쪽(레온)
-        // 새로 도형을 만들지 않고, 맨 아래 오른쪽 자리표시자에 레온 상호작용을 붙임
-        Transform leonNpc = FindLeonPlaceholder(bounds);
-        float leonX;
-        if (leonNpc != null)
-        {
-            AttachLeon(leonNpc);
-            leonX = leonNpc.position.x;
-        }
-        else
-        {
-            // 자리표시자를 못 찾으면 시안 위치(가로 80%, 맨 아래 바닥)에 직접 만듦
-            leonX = bounds.min.x + bounds.size.x * LeonMapFraction;
-            float y = FindFloor(bounds, ref leonX);
-            BuildLeon(area.transform, new Vector3(leonX, y, 0f));
-        }
+        // 레온과 영약 우물은 시안의 '1-2-2 유적 (보물방)'에 있음: 유적 (1) → 유적 (2) 끝의 보스룸 → 숨겨진 길 → 맨 오른쪽 보물방
+        // 정글 씬에서는 시안의 '유적 (2)'가 '1-3-3'이고, 보스룸/숨겨진 길/보물방은 아직 만들어지지 않았음
+        // 그래서 보물방이 생길 때까지 임시로 이 구역의 가장 오른쪽 평평한 바닥에 둠 (보물방이 만들어지면 씬에서 옮기면 됨)
+        float anchorX, floorY;
+        bool foundFlat = FindRightmostFlat(bounds, out anchorX, out floorY);
 
-        // 영약 우물은 시안 위치를 몰라 레온 바로 옆 바닥에 둠 (이미 옮겨 둔 위치가 있으면 그대로 유지)
-        float wellX = leonX + 1.6f;
-        float wellY = FindFloor(bounds, ref wellX);
-        if (keptWellPosition.HasValue)
+        float leonX = anchorX - 3.2f;
+        float leonY = LowestFloorTop(bounds, leonX);
+        BuildLeon(area.transform, new Vector3(leonX, leonY, 0f));
+
+        float wellX = anchorX - 0.8f;
+        float wellY = LowestFloorTop(bounds, wellX);
+        // 사용자가 씬에서 옮겨 둔 우물이 이 구역 오른쪽 끝 근처에 있으면 그 위치를 유지 (BuildWell은 바닥 높이 + 0.7에 만듦)
+        if (keptWellPosition.HasValue && keptWellPosition.Value.x > bounds.max.x - 40f && keptWellPosition.Value.x <= bounds.max.x)
         {
             wellX = keptWellPosition.Value.x;
-            wellY = keptWellPosition.Value.y - 0.7f; // BuildWell은 바닥 높이 + 0.7에 만듦
+            wellY = keptWellPosition.Value.y - 0.7f;
         }
         BuildWell(area.transform, new Vector3(wellX, wellY, 0f));
 
         EditorSceneManager.MarkSceneDirty(scene);
         EditorSceneManager.SaveScene(scene);
-        Debug.Log("[StoryBuilder] 완료: 1-2-2 레온 = " + (leonNpc != null ? "기존 NPC 자리표시자 '" + leonNpc.name + "' " + leonNpc.position : "새로 만듦") + ", 영약 우물 (" + wellX + ", " + wellY + ")");
+        Debug.Log("[StoryBuilder] 완료: " + StoryMapId + " 오른쪽 끝(" + (foundFlat ? "평평한 바닥" : "평평한 곳을 못 찾아 대체 위치") + ")에 레온 (" + leonX + ", " + leonY + "), 영약 우물 (" + wellX + ", " + wellY + ")");
     }
 
-    // 구역 안의 'NPCs' 아래 자리표시자 중 가장 아래쪽, 같으면 가장 오른쪽 것 (시안의 레온 위치)
-    static Transform FindLeonPlaceholder(Bounds bounds)
+    // 예전에 맵 담당의 NPC 자리표시자(NPCs 아래)에 붙였던 레온 상호작용(컴포넌트, 감지 범위, 'F' 안내)을 떼어냄
+    static void RestorePlaceholders()
     {
-        Transform best = null;
-        foreach (var t in Object.FindObjectsByType<Transform>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        foreach (var interact in Object.FindObjectsByType<StoryInteractable>(FindObjectsInactive.Include, FindObjectsSortMode.None))
         {
-            if (t.parent == null || t.parent.name != "NPCs") continue;
-            if (!bounds.Contains(new Vector3(t.position.x, t.position.y, bounds.center.z))) continue;
-            if (best == null || t.position.y < best.position.y - 0.5f
-                || (Mathf.Abs(t.position.y - best.position.y) <= 0.5f && t.position.x > best.position.x)) best = t;
-        }
-        return best;
-    }
+            var tr = interact.transform;
+            if (tr.parent == null || tr.parent.name != "NPCs") continue;
 
-    // 기존 NPC 오브젝트에 감지 범위, 'F' 안내, 레온 상호작용을 붙임 (여러 번 실행해도 한 번만 붙음)
-    static void AttachLeon(Transform npc)
-    {
-        var go = npc.gameObject;
-        var interact = go.GetComponent<StoryInteractable>();
-        if (interact == null)
-        {
-            var col = go.AddComponent<BoxCollider2D>();
-            col.isTrigger = true;
-            col.size = new Vector2(3.5f, 3f);
-            interact = go.AddComponent<StoryInteractable>();
-        }
-        interact.interactionId = StoryManager.IdLeon;
-
-        var oldPrompt = npc.Find("Prompt");
-        if (oldPrompt != null) Object.DestroyImmediate(oldPrompt.gameObject);
-        interact.promptRoot = BuildPrompt(npc, new Vector3(0f, 1.6f, 0f));
-        EditorUtility.SetDirty(go);
-    }
-
-    // x 근처에서 맨 아래 바닥이 있는 가장 가까운 자리로 x를 옮겨서 그 바닥 윗면 높이를 돌려줌
-    static float FindFloor(Bounds bounds, ref float x)
-    {
-        float bestX = x;
-        float bestY = float.MaxValue;
-        for (float dx = 0f; dx <= 8f; dx += 0.5f)
-        {
-            foreach (float sign in new[] { 1f, -1f })
+            var prompt = tr.Find("Prompt");
+            if (prompt != null) Object.DestroyImmediate(prompt.gameObject);
+            foreach (var col in tr.GetComponents<BoxCollider2D>())
             {
-                float cx = x + dx * sign;
-                float y = LowestFloorTop(bounds, cx);
-                // 더 낮은 바닥이면 채택. 같은 높이면(0.3 이내) 처음 찾은 것(원래 x에 더 가까운 것)을 유지
-                if (y < bestY - 0.3f) { bestY = y; bestX = cx; }
+                if (col.isTrigger) Object.DestroyImmediate(col);
             }
+            Object.DestroyImmediate(interact);
+            EditorUtility.SetDirty(tr.gameObject);
         }
-        x = bestX;
-        return bestY == float.MaxValue ? bounds.min.y : bestY;
+    }
+
+    // 구역 맨 아래 바닥에서 가장 오른쪽에 있는 평평하고 머리 위가 트인 자리(너비 5칸)를 찾음. x는 그 오른쪽 끝
+    static bool FindRightmostFlat(Bounds bounds, out float x, out float floorY)
+    {
+        for (float cx = bounds.max.x - 2f; cx > bounds.min.x + 6f; cx -= 0.5f)
+        {
+            float f0 = LowestFloorTop(bounds, cx);
+            bool ok = true;
+            for (float dx = -5f; dx <= 0f && ok; dx += 1f)
+            {
+                float f = LowestFloorTop(bounds, cx + dx);
+                if (Mathf.Abs(f - f0) > 0.2f) { ok = false; break; }
+                for (float h = 1f; h <= 3f; h += 1f)
+                {
+                    if (IsSolid(cx + dx, f + h)) { ok = false; break; }
+                }
+            }
+            if (!ok) continue;
+
+            x = cx;
+            floorY = f0;
+            return true;
+        }
+
+        x = bounds.max.x - 8f;
+        floorY = LowestFloorTop(bounds, x);
+        return false;
     }
 
     // x 한 줄을 위에서 아래로 훑어서, 빈 곳에서 단단한 곳으로 바뀌는 지점 중 가장 낮은 곳(바닥 윗면)의 높이
+    // 못 찾으면 구역 맨 아래에서 바닥 한 칸 두께만큼 위를 돌려줌
     static float LowestFloorTop(Bounds bounds, float x)
     {
+        Physics2D.SyncTransforms(); // 방금 지우거나 옮긴 오브젝트가 충돌 검사에 남아 있지 않게
+
         float lowest = float.MaxValue;
-        bool prevSolid = true; // 맨 위는 지붕(단단함)으로 시작
-        for (float y = bounds.max.y - 0.2f; y > bounds.min.y; y -= 0.1f)
+        bool prevSolid = IsSolid(x, bounds.max.y + 0.5f);
+        for (float y = bounds.max.y + 0.3f; y > bounds.min.y - 0.3f; y -= 0.1f)
         {
-            bool solid = false;
-            foreach (var c in Physics2D.OverlapPointAll(new Vector2(x, y)))
-            {
-                if (!c.isTrigger) { solid = true; break; }
-            }
+            bool solid = IsSolid(x, y);
             if (solid && !prevSolid) lowest = y;
             prevSolid = solid;
         }
-        return lowest;
+        return lowest == float.MaxValue ? bounds.min.y + 0.9f : lowest;
     }
 
-    const float LeonMapFraction = 0.8f;
+    static bool IsSolid(float x, float y)
+    {
+        foreach (var c in Physics2D.OverlapPointAll(new Vector2(x, y)))
+        {
+            if (!c.isTrigger) return true;
+        }
+        return false;
+    }
 
     static GameObject BuildLeon(Transform parent, Vector3 groundPos)
     {
