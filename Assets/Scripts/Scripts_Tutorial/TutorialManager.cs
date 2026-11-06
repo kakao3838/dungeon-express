@@ -74,6 +74,7 @@ public class TutorialManager : MonoBehaviour
     private bool returnToTown;
     private bool doorBusy;
     private bool doorIntroShown;
+    private bool dungeonGuideShown;
     private bool jungleSelected;
     private bool subscribedQuest;
     private bool holdingPause;
@@ -228,7 +229,8 @@ public class TutorialManager : MonoBehaviour
 
     // 문 왼쪽 바닥 위에 플레이어를 세움. 던전에서 돌아올 때는 던전의 높이(y)가 남아 있어서
     // x만 옮기면 바닥 아래로 떨어지므로, 바닥을 찾아서 y도 맞춤
-    static void PlaceNextToDoor(PlayerController p, Transform door)
+    // (DeathManager도 죽은 뒤 사무실에서 부활할 때 같은 자리를 씀)
+    public static void PlaceNextToDoor(PlayerController p, Transform door)
     {
         Vector3 pos = p.transform.position;
         pos.x = door.position.x - 0.8f;
@@ -383,8 +385,9 @@ public class TutorialManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (phase == Phase.Dungeon && scene.name != townSceneName)
+        if (phase == Phase.Dungeon && scene.name != townSceneName && !dungeonGuideShown)
         {
+            dungeonGuideShown = true; // 죽어서 사무실에 갔다가 다시 들어와도 조작 안내는 처음 한 번만
             StartCoroutine(RunDungeonGuide());
         }
         else if (returnToTown && scene.name == townSceneName)
