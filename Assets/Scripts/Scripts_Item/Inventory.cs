@@ -2,6 +2,14 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 죽을 때 가방에서 사라진 아이템 하나 (이름표시, 분실물 회수용으로 품질도 같이 기억)
+[Serializable]
+public struct LostItem
+{
+    public ItemData item;
+    public int quality;
+}
+
 public class Inventory : MonoBehaviour
 {
     public const int FullQuality = 100;
@@ -19,6 +27,10 @@ public class Inventory : MonoBehaviour
 
     // UI가 이 이벤트를 구독해서 슬롯 표시를 갱신하면 됨 (아이템 추가/제거와 품질 변화 모두에서 호출됨)
     public event Action OnInventoryChanged;
+
+    // 죽어서 잃어버린 아이템 기록 (나중에 분실물 회수 NPC가 돌려줄 때 씀. 지금은 보관만 함)
+    private readonly List<LostItem> lostItems = new List<LostItem>();
+    public IReadOnlyList<LostItem> LostItems => lostItems;
 
     public IReadOnlyList<ItemData> Items => items;
     public bool IsFull => items.Count >= maxSlots;
@@ -71,6 +83,30 @@ public class Inventory : MonoBehaviour
         items.Clear();
         qualities.Clear();
         OnInventoryChanged?.Invoke();
+    }
+
+    // 죽었을 때: 가방 칸 수에 따라 정해진 개수만큼 랜덤으로 아이템을 잃음 (규칙은 DeathRules)
+    // 잃은 아이템 목록을 돌려줌 (없으면 빈 목록)
+    public List<LostItem> RemoveRandomOnDeath()
+    {
+        var lost = new List<LostItem>();
+        int count = DeathRules.RollLossCount(maxSlots, items.Count);
+
+        for (int n = 0; n < count && items.Count > 0; n++)
+        {
+            int index = UnityEngine.Random.Range(0, items.Count);
+            LostItem entry = new LostItem { item = items[index], quality = qualities[index] };
+            items.RemoveAt(index);
+            qualities.RemoveAt(index);
+            lost.Add(entry);
+        }
+
+        if (lost.Count > 0)
+        {
+            lostItems.AddRange(lost);
+            OnInventoryChanged?.Invoke();
+        }
+        return lost;
     }
 
     // 가방 안 모든 물품의 품질을 깎음. lossFor는 아이템마다 깎을 %를 정해 줌 (가방 완화 배율이 곱해짐)

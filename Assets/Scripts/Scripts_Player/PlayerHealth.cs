@@ -221,7 +221,21 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     {
         yield return new WaitForSeconds(respawnDelay);
 
-        transform.position = respawnPosition;
+        // 사망 화면(아이템 손실, 사무실 부활)을 맡는 DeathManager가 있으면 거기서 처리하고,
+        // 없는 씬(던전만 단독 실행 등)에서는 예전처럼 그 씬의 시작 위치에서 바로 부활
+        if (DeathManager.Instance != null)
+        {
+            yield return DeathManager.Instance.RunDeath(this);
+            yield break;
+        }
+
+        RespawnAt(respawnPosition);
+    }
+
+    // 지정한 위치에서 부활: 하트를 모두 채우고 조작/공격을 다시 켬 (DeathManager가 사무실 위치를 넘겨서 부름)
+    public void RespawnAt(Vector3 position)
+    {
+        transform.position = position;
 
         var rb = GetComponent<Rigidbody2D>();
         if (rb != null)
