@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21e05bfc77290445ab35aad030d4dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestManager
-  currentQuest: {fileID: 0}
+  activeQuests: []
 --- !u!4 &738119047
 Transform:
   m_ObjectHideFlags: 0
@@ -393,6 +393,7 @@ GameObject:
   - component: {fileID: 1211194842}
   - component: {fileID: 1211194845}
   - component: {fileID: 1211194846}
+  - component: {fileID: 1211194847}
   m_Layer: 0
   m_Name: TestPlayer
   m_TagString: Player
@@ -476,6 +477,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3fbf9e0dae9c1394eb39529241630fd4, type: 2}
   - {fileID: 11400000, guid: 313f93fed591c874abdae31ee69a347f, type: 2}
   - {fileID: 11400000, guid: 2c3b22f1e6b4d714ab736b72f9006f40, type: 2}
+--- !u!114 &1211194847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211194841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23b9ff06b14313849b0f3152febbbd8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCodex
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

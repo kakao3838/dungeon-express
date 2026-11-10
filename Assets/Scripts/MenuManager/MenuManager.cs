@@ -145,12 +145,16 @@ public class MenuManager : MonoBehaviour
     // Esc : 태블릿이 열려 있으면 닫기
     // PauseMenu도 Esc를 읽는데, 같은 프레임의 Update에서 먼저 닫아버리면 GamePause가 풀려서
     // 일시정지 창이 같이 뜰 수 있다. LateUpdate는 모든 Update가 끝난 뒤라 실행 순서와 상관없이 안전하다.
+    // 패널이 이번 프레임의 Esc를 이미 처리했으면(예: 지도 상세 → 전체) true
+    public static bool EscapeConsumed;
+
     private void LateUpdate()
     {
         var keyboard = Keyboard.current;
-        if (keyboard == null || !IsOpen) return;
+        if (keyboard == null || !IsOpen) { EscapeConsumed = false; return; }
 
-        if (keyboard.escapeKey.wasPressedThisFrame) Close();
+        if (keyboard.escapeKey.wasPressedThisFrame && !EscapeConsumed) Close();
+        EscapeConsumed = false;
     }
 
     // NPC 대화창은 GamePause를 쓰지 않아서 따로 확인
