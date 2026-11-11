@@ -87,6 +87,7 @@ public class StoryManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (SaveLoadRequest.HasPending) return;
         if (debugWarpToLeon && Has(FlagAccepted) && !Has(FlagLeonMet)) StartCoroutine(WarpToLeon());
     }
 

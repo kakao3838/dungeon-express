@@ -12,7 +12,13 @@ namespace UnityEngine
     public class ScriptableObject { }
     public class GameObject { }
     public class Sprite { }
-    public class MonoBehaviour
+    public class Behaviour { public bool enabled = true; }
+    public class Object
+    {
+        public static readonly Dictionary<Type, object> Scene = new Dictionary<Type, object>();
+        public static T FindFirstObjectByType<T>() where T : class => Scene.ContainsKey(typeof(T)) ? Scene[typeof(T)] as T : null;
+    }
+    public class MonoBehaviour : Behaviour
     {
         public GameObject gameObject = new GameObject();
         protected static void Destroy(object value) { }
@@ -27,7 +33,7 @@ namespace UnityEngine
     public enum RuntimeInitializeLoadType { SubsystemRegistration }
     public class RuntimeInitializeOnLoadMethodAttribute : Attribute
     { public RuntimeInitializeOnLoadMethodAttribute(RuntimeInitializeLoadType type) { } }
-    public static class Time { public static double realtimeSinceStartupAsDouble; }
+    public static class Time { public static double realtimeSinceStartupAsDouble; public static float timeScale = 1f; }
     public static class Application { public static string persistentDataPath; }
     public static class Debug
     {
@@ -76,6 +82,14 @@ public class TutorialManager
     public bool Completed;
     public void RestoreSaveState(bool completed, bool shown) { Completed = completed; DungeonGuideShown = shown; }
 }
+
+public class PlayerController : UnityEngine.Behaviour
+{
+    public int StopCount;
+    public void StopForMenu() { StopCount++; }
+}
+public class PlayerAttack : UnityEngine.Behaviour { }
+public class PlayerVineClimb : UnityEngine.Behaviour { }
 
 internal static class SaveSystemChecks
 {
@@ -191,5 +205,75 @@ internal static class SaveSystemChecks
         SaveGameService.RestoreReadData(1, read, inventory, wallet, manager, tutorial);
         Check(SaveGameService.CurrentSlot == 1, "active slot follows restore");
         SaveGameService.Delete(1); Check(SaveGameService.CurrentSlot == 0, "delete clears selected slot");
+
+        Check(SaveSlotInfo.Read(store, 1).State == SaveSlotState.Empty, "browser empty slot");
+        Check(SaveSlotInfo.Read(store, 2).State == SaveSlotState.Unreadable, "browser corrupt slot");
+        var occupied = SaveSlotInfo.Read(store, 3);
+        Check(occupied.CanLoad && occupied.Occupied, "browser ready slot");
+        var empty = SaveSlotInfo.Read(store, 1);
+        Check(!empty.CanLoad && !empty.Occupied, "empty slots cannot load/delete");
+        store.Save(3, data, true);
+        File.WriteAllText(store.GetSlotPath(3), "broken");
+        Check(SaveSlotInfo.Read(store, 3).State == SaveSlotState.Backup, "browser marks backup recovery");
+
+        int requested = 0;
+        Action handler = () => requested++;
+        SaveLoadRequest.Requested += handler;
+        SaveLoadRequest.Select(1, read, false);
+        Check(requested == 1 && SaveLoadRequest.HasPending && SaveLoadRequest.Slot == 1, "title load request without scene");
+        SaveLoadRequest.Apply(inventory, wallet, manager, tutorial);
+        Check(!SaveLoadRequest.HasPending && SaveGameService.CurrentSlot == 1, "apply pending data after scene setup");
+        SaveLoadRequest.Requested -= handler;
+
+        var player = new PlayerController();
+        var attack = new PlayerAttack();
+        var vine = new PlayerVineClimb { enabled = false };
+        UnityEngine.Object.Scene[typeof(PlayerController)] = player;
+        UnityEngine.Object.Scene[typeof(PlayerAttack)] = attack;
+        UnityEngine.Object.Scene[typeof(PlayerVineClimb)] = vine;
+        UnityEngine.Time.timeScale = 0.5f;
+        GamePause.Push();
+        Check(GamePause.IsPaused && UnityEngine.Time.timeScale == 0f && !player.enabled && !attack.enabled,
+            "slot/modal pause blocks controls");
+        Check(player.StopCount == 1, "opening pause stops existing movement");
+        GamePause.Push();
+        GamePause.Pop();
+        Check(GamePause.IsPaused && !player.enabled && UnityEngine.Time.timeScale == 0f,
+            "closing child window retains parent menu pause");
+        GamePause.Pop();
+        Check(!GamePause.IsPaused && player.enabled && attack.enabled && UnityEngine.Time.timeScale == 0.5f,
+            "last window restores previous controls/time scale");
+        Check(!vine.enabled, "originally disabled input stays disabled");
+        GamePause.Pop();
+        Check(!GamePause.IsPaused, "extra release cannot underflow pause count");
+
+        Check(SaveScenePolicy.IsAllowed("TownScene", "TownScene", false, false), "office save enabled in builds");
+        Check(!SaveScenePolicy.IsAllowed("JungleDungeonScene", "TownScene", false, true), "dungeon cannot save");
+        Check(!SaveScenePolicy.IsAllowed("TitleScene", "TownScene", true, true), "title cannot save");
+        Check(SaveScenePolicy.IsAllowed("PlayerMonsterTest", "TownScene", true, true), "explicit editor test exception");
+        Check(!SaveScenePolicy.IsAllowed("PlayerMonsterTest", "TownScene", true, false), "test scene denied by default");
+        Check(!SaveScenePolicy.IsAllowed("PlayerMonsterTest", "TownScene", false, true), "test exception stripped in builds");
+
+        SaveDataRestorer.ValidateForLoad(read, items, quests);
+        Check(wallet.Gold == read.gold, "title preflight does not grant/change gold");
+        string knownId = read.items[0].itemId;
+        read.items[0].itemId = "unavailable";
+        Throws<InvalidDataException>(() => SaveDataRestorer.ValidateForLoad(read, items, quests), "reject invalid ID before scene change");
+        read.items[0].itemId = knownId;
+
+        var gate = new DungeonEntrySession();
+        Check(!gate.CanEnter, "opening prompt cannot enter");
+        gate.ChooseSave();
+        Check(!gate.CanEnter, "selecting a slot / failed writes cannot enter");
+        Throws<InvalidOperationException>(() => gate.SkipSave(), "cannot bypass failed save with hidden skip action");
+        gate.Cancel();
+        Check(!gate.CanEnter && gate.State == DungeonEntryState.Cancelled, "cancel slot window stays in office");
+        Throws<InvalidOperationException>(() => gate.Saved(), "late save completion cannot enter after cancellation");
+        gate = new DungeonEntrySession(); gate.SkipSave();
+        Check(gate.CanEnter, "No permits entry without writing a save");
+        gate = new DungeonEntrySession(); gate.ChooseSave(); gate.Saved(); gate.Cancel();
+        Check(gate.CanEnter, "successful save permits entry when success window closes");
+        gate = new DungeonEntrySession(); gate.Cancel();
+        Check(!gate.CanEnter, "cancel initial prompt stays in office");
     }
 }

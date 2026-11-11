@@ -31,6 +31,7 @@ public sealed class PlayerVineClimb : MonoBehaviour
 
     private void Update()
     {
+        if (SaveSlotWindow.BlocksGameplayInput) return;
         Keyboard keyboard = Keyboard.current;
         if (keyboard == null)
         {

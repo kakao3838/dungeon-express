@@ -11,6 +11,7 @@ $sources = @(
     'Assets/Scripts/Scripts_Item/ItemData.cs',
     'Assets/Scripts/Scripts_Item/DeathRules.cs',
     'Assets/Scripts/Scripts_Interface/PlayerWallet.cs',
+    'Assets/Scripts/Scripts_Interface/GamePause.cs',
     'Assets/Scripts/Scripts_Quests/QuestManager.cs',
     'Assets/Scripts/Scripts_Quests/QuestData.cs',
     'Assets/Scripts/Scripts_Quests/QuestCatalog.cs',

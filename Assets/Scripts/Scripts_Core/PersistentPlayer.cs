@@ -31,6 +31,7 @@ public class PersistentPlayer : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (SaveLoadRequest.HasPending) return;
         GameObject spawnPointObject = GameObject.Find("SpawnPoint");
         if (spawnPointObject == null) return;
 

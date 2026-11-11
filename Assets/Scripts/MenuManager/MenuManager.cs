@@ -109,6 +109,7 @@ public class MenuManager : MonoBehaviour
 
     private void Update()
     {
+        if (SaveSlotWindow.BlocksGameplayInput) return;
         var keyboard = Keyboard.current;
         if (keyboard == null) return;
 
@@ -147,6 +148,7 @@ public class MenuManager : MonoBehaviour
     // 일시정지 창이 같이 뜰 수 있다. LateUpdate는 모든 Update가 끝난 뒤라 실행 순서와 상관없이 안전하다.
     private void LateUpdate()
     {
+        if (SaveSlotWindow.BlocksGameplayInput) return;
         var keyboard = Keyboard.current;
         if (keyboard == null || !IsOpen) return;
 

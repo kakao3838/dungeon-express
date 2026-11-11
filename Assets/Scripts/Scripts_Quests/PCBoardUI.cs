@@ -86,6 +86,7 @@ public class PCBoardUI : MonoBehaviour
 
     void Update()
     {
+        if (SaveSlotWindow.BlocksGameplayInput) return;
         // 열린 뒤 Esc로 닫기 (열린 그 프레임의 입력은 무시)
         if (!IsOpen || !allowClose || Time.frameCount == openedFrame) return;
         var keyboard = Keyboard.current;

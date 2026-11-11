@@ -121,7 +121,22 @@ public class TutorialManager : MonoBehaviour
         doorIntroShown = false;
         toastRoutine = null;
         phase = tutorialDone ? Phase.Done : Phase.Idle;
+        if (!tutorialDone && QuestManager.Instance != null && QuestManager.Instance.IsQuestActive(tutorialQuest))
+        {
+            // A save made at the first dungeon door resumes after PC acceptance.
+            phase = Phase.AfterPC;
+            townActive = true;
+            SubscribeQuestCompleted();
+        }
         saveStateRestored = true;
+    }
+
+    public void ResumeAfterSaveLoad()
+    {
+        if (completed || QuestManager.Instance == null) return;
+        if (QuestManager.Instance.IsQuestCompleted(tutorialQuest)) StartCoroutine(RunCall());
+        else if (phase == Phase.Idle && runTutorial && SceneManager.GetActiveScene().name == townSceneName)
+            StartCoroutine(RunTown());
     }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
@@ -158,6 +173,7 @@ public class TutorialManager : MonoBehaviour
     {
         if (Instance != this) return;
         if (saveStateRestored) return;
+        if (SaveLoadRequest.HasPending) return;
         if (!runTutorial || completed) { phase = Phase.Done; return; }
         if (SceneManager.GetActiveScene().name == townSceneName) StartCoroutine(RunTown());
     }
@@ -373,12 +389,23 @@ public class TutorialManager : MonoBehaviour
         doorBusy = true;
         bool inTutorial = townActive; // 튜토리얼 중이면 사장 대사와 안내를 곁들임
         HideKeyGuide();
+        HoldPause();
+        bool proceed = false;
+        yield return SaveFlowCoordinator.ConfirmDungeonEntry(result => proceed = result);
+        if (!proceed)
+        {
+            ReleasePause();
+            doorBusy = false;
+            if (inTutorial)
+                ShowKeyGuide("", new[] { new KeyRow(new[] { "F" }, "문 앞에서 F키를 눌러 던전을 선택할 수 있습니다.") }, false);
+            yield break;
+        }
 
         if (inTutorial && !doorIntroShown)
         {
             doorIntroShown = true;
-            yield return Say(Boss, "사용 방법은 간단하네. 원하는 던전을 선택하고 입장 버튼을 누르면 끝!");
-            CloseDialogue();
+            // After Save/No, open dungeon selection immediately without another dialog click.
+            ShowToast("원하는 던전을 선택하고 입장 버튼을 누르세요.");
         }
 
         SelectJungle(false);
@@ -537,6 +564,7 @@ public class TutorialManager : MonoBehaviour
 
     static bool AdvanceKeyPressed()
     {
+        if (SaveSlotWindow.BlocksGameplayInput) return false;
         var kb = Keyboard.current;
         return kb != null && (kb.fKey.wasPressedThisFrame || kb.spaceKey.wasPressedThisFrame
             || kb.enterKey.wasPressedThisFrame || kb.numpadEnterKey.wasPressedThisFrame);

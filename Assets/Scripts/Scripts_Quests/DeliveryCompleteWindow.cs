@@ -42,6 +42,7 @@ public class DeliveryCompleteWindow : MonoBehaviour
 
     void Update()
     {
+        if (SaveSlotWindow.BlocksGameplayInput) return;
         // 열린 뒤 F를 누르면 확인 (열린 그 프레임의 F는 무시)
         if (IsOpen && Time.frameCount != openedFrame)
         {
