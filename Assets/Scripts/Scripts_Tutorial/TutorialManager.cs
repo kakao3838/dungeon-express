@@ -95,6 +95,34 @@ public class TutorialManager : MonoBehaviour
 
     public bool WaitingForPC => phase == Phase.WaitPC;
     public bool DungeonGuideShown => dungeonGuideShown;
+    private bool saveStateRestored;
+
+    // Loading does not replay tutorial movement or dialog. The scene coordinator
+    // may restart an incomplete tutorial separately after placing the player.
+    public void RestoreSaveState(bool tutorialDone, bool guideShown)
+    {
+        StopAllCoroutines();
+        if (pcBoard != null)
+        {
+            pcBoard.OnRequestTabOpened -= HandleRequestTabOpened;
+            pcBoard.OnQuestAccepted -= HandleQuestAccepted;
+        }
+        if (subscribedQuest && QuestManager.Instance != null)
+            QuestManager.Instance.OnQuestCompleted -= OnQuestCompleted;
+        subscribedQuest = false;
+        ReleasePause();
+        LockInput(false);
+        HideAll();
+        completed = tutorialDone;
+        dungeonGuideShown = guideShown;
+        townActive = false;
+        returnToTown = false;
+        doorBusy = false;
+        doorIntroShown = false;
+        toastRoutine = null;
+        phase = tutorialDone ? Phase.Done : Phase.Idle;
+        saveStateRestored = true;
+    }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     static void ResetState()
@@ -129,6 +157,7 @@ public class TutorialManager : MonoBehaviour
     void Start()
     {
         if (Instance != this) return;
+        if (saveStateRestored) return;
         if (!runTutorial || completed) { phase = Phase.Done; return; }
         if (SceneManager.GetActiveScene().name == townSceneName) StartCoroutine(RunTown());
     }
