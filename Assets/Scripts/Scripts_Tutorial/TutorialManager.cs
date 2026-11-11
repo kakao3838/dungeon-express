@@ -94,6 +94,7 @@ public class TutorialManager : MonoBehaviour
     private int shownFrame = -1;
 
     public bool WaitingForPC => phase == Phase.WaitPC;
+    public bool DungeonGuideShown => dungeonGuideShown;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     static void ResetState()

@@ -5,6 +5,9 @@ public class EquipmentData : ScriptableObject
 {
     [Header("기본 정보")]
     public string equipName;
+    [Tooltip("저장/불러오기용 고유 ID. 한 번 정하면 변경하지 마세요.")]
+    public string equipmentId;
+
     public EquipSlotType slotType;
     public Sprite icon;
 
