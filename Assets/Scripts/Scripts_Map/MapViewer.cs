@@ -3,22 +3,22 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-// Áöµµ ÀÌ¹ÌÁö¸¦ º¸¿©ÁÖ°í È®´ë/ÀÌµ¿ÇÏ´Â ºä¾î. (Viewport ¿ÀºêÁ§Æ®¿¡ ºÙÀÓ)
-//  Viewport(ÀÌ ½ºÅ©¸³Æ® + RectMask2D) > Content(È®´ë/ÀÌµ¿µÇ´Â ºÎºĞ) > Áöµµ ÀÌ¹ÌÁö
-// Á¶ÀÛ: ¸¶¿ì½º ÈÙ = È®´ë/Ãà¼Ò, µå·¡±× ¶Ç´Â WASD/¹æÇâÅ° = ÀÌµ¿
+// ì§€ë„ ì´ë¯¸ì§€ë¥¼ ë³´ì—¬ì£¼ê³  í™•ëŒ€/ì´ë™í•˜ëŠ” ë·°ì–´. (Viewport ì˜¤ë¸Œì íŠ¸ì— ë¶™ì„)
+//  Viewport(ì´ ìŠ¤í¬ë¦½íŠ¸ + RectMask2D) > Content(í™•ëŒ€/ì´ë™ë˜ëŠ” ë¶€ë¶„) > ì§€ë„ ì´ë¯¸ì§€
+// ì¡°ì‘: ë§ˆìš°ìŠ¤ íœ  = í™•ëŒ€/ì¶•ì†Œ, ë“œë˜ê·¸ ë˜ëŠ” WASD/ë°©í–¥í‚¤ = ì´ë™
 public class MapViewer : MonoBehaviour, IDragHandler, IScrollHandler
 {
     public RectTransform viewport;
     public RectTransform content;
     public Image mapImage;
 
-    [Header("Á¶ÀÛ")]
-    public float maxZoom = 6f;        // Ã³À½ Å©±â ´ëºñ ÃÖ´ë ¹èÀ²
-    public float wheelStep = 1.15f;   // ÈÙ ÇÑ Ä­´ç ¹èÀ²
-    public float keyPanSpeed = 600f;  // WASD/¹æÇâÅ° ÀÌµ¿ ¼Óµµ
-    public bool keyPanEnabled = true; // ÇÉ À§Ä¡¸¦ °í¸¦ ¶§´Â ²ø ¿¹Á¤
+    [Header("ì¡°ì‘")]
+    public float maxZoom = 6f;        // ì²˜ìŒ í¬ê¸° ëŒ€ë¹„ ìµœëŒ€ ë°°ìœ¨
+    public float wheelStep = 1.15f;   // íœ  í•œ ì¹¸ë‹¹ ë°°ìœ¨
+    public float keyPanSpeed = 600f;  // WASD/ë°©í–¥í‚¤ ì´ë™ ì†ë„
+    public bool keyPanEnabled = true; // í•€ ìœ„ì¹˜ë¥¼ ê³ ë¥¼ ë•ŒëŠ” ëŒ ì˜ˆì •
 
-    private float zoom = 1f; // 1 = Ã³À½ Å©±â
+    private float zoom = 1f; // 1 = ì²˜ìŒ í¬ê¸°
     private Canvas rootCanvas;
 
     private float ScaleFactor
@@ -30,7 +30,7 @@ public class MapViewer : MonoBehaviour, IDragHandler, IScrollHandler
         }
     }
 
-    // fitHeight°¡ false¸é ÀüÃ¼°¡ ÇÑ È­¸é¿¡ º¸ÀÌ°Ô, true¸é ³ôÀÌ¸¦ ¸ÂÃß°í ÁÂ¿ì·Î ÀÌµ¿ÇÏ°Ô (±ä Áöµµ¿ë)
+    // fitHeightê°€ falseë©´ ì „ì²´ê°€ í•œ í™”ë©´ì— ë³´ì´ê²Œ, trueë©´ ë†’ì´ë¥¼ ë§ì¶”ê³  ì¢Œìš°ë¡œ ì´ë™í•˜ê²Œ (ê¸´ ì§€ë„ìš©)
     public void SetMap(Sprite sprite, bool fitHeight)
     {
         mapImage.sprite = sprite;
@@ -41,7 +41,7 @@ public class MapViewer : MonoBehaviour, IDragHandler, IScrollHandler
 
         content.sizeDelta = src * scale;
         zoom = 1f;
-        // ±ä Áöµµ´Â ¿ŞÂÊ ³¡(½ÃÀÛ À§Ä¡)ºÎÅÍ º¸ÀÌ°Ô. ¾Æ·¡ ApplyView°¡ ¹üÀ§ ¾ÈÀ¸·Î ¸ÂÃç ÁÜ
+        // ê¸´ ì§€ë„ëŠ” ì™¼ìª½ ë(ì‹œì‘ ìœ„ì¹˜)ë¶€í„° ë³´ì´ê²Œ. ì•„ë˜ ApplyViewê°€ ë²”ìœ„ ì•ˆìœ¼ë¡œ ë§ì¶° ì¤Œ
         content.anchoredPosition = new Vector2(fitHeight ? -1e6f : 0f, 0f);
         ApplyView();
     }
@@ -58,8 +58,8 @@ public class MapViewer : MonoBehaviour, IDragHandler, IScrollHandler
         if (keyboard.wKey.isPressed || keyboard.upArrowKey.isPressed) dir.y += 1f;
         if (dir == Vector2.zero) return;
 
-        // º¸´Â ÂÊÀ¸·Î °¡·Á¸é Áöµµ´Â ¹İ´ë·Î ¿òÁ÷¿©¾ß ÇÔ.
-        // ÅÂºí¸´ÀÌ ¿­·Á ÀÖÀ¸¸é Time.timeScaleÀÌ 0ÀÌ¶ó¼­ unscaledDeltaTimeÀ» ½á¾ß ¿òÁ÷ÀÓ
+        // ë³´ëŠ” ìª½ìœ¼ë¡œ ê°€ë ¤ë©´ ì§€ë„ëŠ” ë°˜ëŒ€ë¡œ ì›€ì§ì—¬ì•¼ í•¨.
+        // íƒœë¸”ë¦¿ì´ ì—´ë ¤ ìˆìœ¼ë©´ Time.timeScaleì´ 0ì´ë¼ì„œ unscaledDeltaTimeì„ ì¨ì•¼ ì›€ì§ì„
         content.anchoredPosition -= dir * keyPanSpeed * Time.unscaledDeltaTime;
         ApplyView();
     }
@@ -77,7 +77,7 @@ public class MapViewer : MonoBehaviour, IDragHandler, IScrollHandler
         ZoomAt(e.scrollDelta.y > 0f ? wheelStep : 1f / wheelStep, e.position);
     }
 
-    // ¸¶¿ì½º ¾Æ·¡ÀÇ Áöµµ À§ Á¡ÀÌ ±×´ë·Î ¸¶¿ì½º ¾Æ·¡¿¡ ÀÖµµ·Ï È®´ë/Ãà¼Ò (Canvas°¡ Screen Space - Overlay¶ó Ä«¸Ş¶ó´Â null)
+    // ë§ˆìš°ìŠ¤ ì•„ë˜ì˜ ì§€ë„ ìœ„ ì ì´ ê·¸ëŒ€ë¡œ ë§ˆìš°ìŠ¤ ì•„ë˜ì— ìˆë„ë¡ í™•ëŒ€/ì¶•ì†Œ (Canvasê°€ Screen Space - Overlayë¼ ì¹´ë©”ë¼ëŠ” null)
     void ZoomAt(float factor, Vector2 screenPos)
     {
         float newZoom = Mathf.Clamp(zoom * factor, 1f, maxZoom);
@@ -92,7 +92,7 @@ public class MapViewer : MonoBehaviour, IDragHandler, IScrollHandler
         ApplyView();
     }
 
-    // ¹èÀ²À» Àû¿ëÇÏ°í, Áöµµ°¡ Ã¢ ¹ÛÀ¸·Î ³Ê¹« ¹ş¾î³ªÁö ¾Ê°Ô À§Ä¡¸¦ ¸ÂÃã
+    // ë°°ìœ¨ì„ ì ìš©í•˜ê³ , ì§€ë„ê°€ ì°½ ë°–ìœ¼ë¡œ ë„ˆë¬´ ë²—ì–´ë‚˜ì§€ ì•Šê²Œ ìœ„ì¹˜ë¥¼ ë§ì¶¤
     void ApplyView()
     {
         zoom = Mathf.Clamp(zoom, 1f, maxZoom);

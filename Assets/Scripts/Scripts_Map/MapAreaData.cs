@@ -1,12 +1,12 @@
 using UnityEngine;
 
-// ±¸¿ª ÇÏ³ª(»ó¼¼ Áöµµ ÇÑ Àå)ÀÇ µ¥ÀÌÅÍ
+// êµ¬ì—­ í•˜ë‚˜(ìƒì„¸ ì§€ë„ í•œ ì¥)ì˜ ë°ì´í„°
 [CreateAssetMenu(menuName = "Dungeon Express/Map Area Data")]
 public class MapAreaData : ScriptableObject
 {
-    public string areaName;   // »ó¼¼ Áöµµ Á¦¸ñ ("±âº» Á¤±Û" µî)
-    public Sprite detailMap;  // »ó¼¼ Áöµµ ÀÌ¹ÌÁö (ºñ¿öµÎ¸é ÀüÃ¼ Áöµµ·Î ´ë½Å º¸¿©ÁÜ)
+    public string areaName;   // ìƒì„¸ ì§€ë„ ì œëª© ("ê¸°ë³¸ ì •ê¸€" ë“±)
+    public Sprite detailMap;  // ìƒì„¸ ì§€ë„ ì´ë¯¸ì§€ (ë¹„ì›Œë‘ë©´ ì „ì²´ ì§€ë„ë¡œ ëŒ€ì‹  ë³´ì—¬ì¤Œ)
 
-    [Header("³ªÁß¿¡ Ã¤¿ò")]
-    public Rect worldBounds;  // ÀÌ ±¸¿ªÀÇ ¿ùµå ÁÂÇ¥ ¹üÀ§ (ÇÃ·¹ÀÌ¾î À§Ä¡ Ç¥½Ã¿ë)
+    [Header("ë‚˜ì¤‘ì— ì±„ì›€")]
+    public Rect worldBounds;  // ì´ êµ¬ì—­ì˜ ì›”ë“œ ì¢Œí‘œ ë²”ìœ„ (í”Œë ˆì´ì–´ ìœ„ì¹˜ í‘œì‹œìš©)
 }

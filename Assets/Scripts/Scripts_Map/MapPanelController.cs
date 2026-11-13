@@ -1,22 +1,21 @@
 using TMPro;
-using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// ÅÂºí¸´ ¸Ş´º 'Áöµµ' ÅÇ. ÀüÃ¼ Áöµµ¿Í »ó¼¼ Áöµµ(±¸¿ª)¸¦ ¿À°¡¸ç º¸¿©Áİ´Ï´Ù.
+// íƒœë¸”ë¦¿ ë©”ë‰´ 'ì§€ë„' íƒ­. ì „ì²´ ì§€ë„ì™€ ìƒì„¸ ì§€ë„(êµ¬ì—­)ë¥¼ ì˜¤ê°€ë©° ë³´ì—¬ì¤ë‹ˆë‹¤.
 public class MapPanelController : MonoBehaviour
 {
     public MapViewer viewer;
     public TMP_Text areaTitle;
-    public GameObject enlargeButton; // ÀüÃ¼ Áöµµ¿¡¼­ º¸ÀÌ´Â [È®´ë]
-    public GameObject shrinkButton;  // »ó¼¼ Áöµµ¿¡¼­ º¸ÀÌ´Â [Ãà¼Ò]
+    public GameObject enlargeButton; // ì „ì²´ ì§€ë„ì—ì„œ ë³´ì´ëŠ” [í™•ëŒ€]
+    public GameObject shrinkButton;  // ìƒì„¸ ì§€ë„ì—ì„œ ë³´ì´ëŠ” [ì¶•ì†Œ]
     public GameObject noDataText;
 
     private const string DataResourcePath = "MapData";
 
     private MapData data;
     private bool inDetail;
-    private int areaIndex; // Áö±İÀº Ç×»ó Ã¹ ¹øÂ° ±¸¿ª (±¸¿ª ¼±ÅÃÀº ³ªÁß¿¡)
+    private int areaIndex; // ì§€ê¸ˆì€ í•­ìƒ ì²« ë²ˆì§¸ êµ¬ì—­ (êµ¬ì—­ ì„ íƒì€ ë‚˜ì¤‘ì—)
 
     void OnEnable()
     {
@@ -25,18 +24,16 @@ public class MapPanelController : MonoBehaviour
         ShowOverview();
     }
 
-    void Update()
+    // ìƒì„¸ ì§€ë„ì—ì„œ Esc: íƒœë¸”ë¦¿ì„ ë‹«ì§€ ì•Šê³  ì „ì²´ ì§€ë„ë¡œ í•œ ë‹¨ê³„ ëŒì•„ê°.
+    // MenuManagerê°€ Escë¥¼ ë°›ì„ ë•Œ ì§ì ‘ ë¬¼ì–´ë´„ (Update ì‹¤í–‰ ìˆœì„œì™€ ìƒê´€ì—†ì´ ê°™ì€ ê²°ê³¼ê°€ ë‚˜ì˜¤ê²Œ)
+    public bool TryHandleEscape()
     {
-        // »ó¼¼ Áöµµ¿¡¼­ Esc: ÅÂºí¸´À» ´İÁö ¾Ê°í ÀüÃ¼ Áöµµ·Î ÇÑ ´Ü°è µ¹¾Æ°¨
-        var keyboard = Keyboard.current;
-        if (inDetail && keyboard != null && keyboard.escapeKey.wasPressedThisFrame)
-        {
-            ShowOverview();
-            MenuManager.EscapeConsumed = true;
-        }
+        if (!isActiveAndEnabled || !inDetail) return false;
+        ShowOverview();
+        return true;
     }
 
-    // [Ãà¼Ò] ¹öÆ°, ÅÇÀ» ¿­ ¶§
+    // [ì¶•ì†Œ] ë²„íŠ¼, íƒ­ì„ ì—´ ë•Œ
     public void ShowOverview()
     {
         inDetail = false;
@@ -52,14 +49,14 @@ public class MapPanelController : MonoBehaviour
         if (hasImage) viewer.SetMap(data.overviewMap, false);
     }
 
-    // [È®´ë] ¹öÆ°
+    // [í™•ëŒ€] ë²„íŠ¼
     public void ShowDetail()
     {
         if (data == null || data.areas == null || areaIndex >= data.areas.Length) return;
         MapAreaData area = data.areas[areaIndex];
         if (area == null) return;
 
-        // »ó¼¼ Áöµµ ÀÌ¹ÌÁö°¡ ¾ÆÁ÷ ¾øÀ¸¸é ÀüÃ¼ Áöµµ ÀÌ¹ÌÁö·Î ´ë½Å (ÀÓ½Ã)
+        // ìƒì„¸ ì§€ë„ ì´ë¯¸ì§€ê°€ ì•„ì§ ì—†ìœ¼ë©´ ì „ì²´ ì§€ë„ ì´ë¯¸ì§€ë¡œ ëŒ€ì‹  (ì„ì‹œ)
         Sprite sprite = area.detailMap != null ? area.detailMap : data.overviewMap;
         if (sprite == null) return;
 

@@ -1,9 +1,9 @@
 using UnityEngine;
 
-// Áöµµ ÅÇÀÌ ÀĞ´Â µ¥ÀÌÅÍ. Resources Æú´õ¿¡ "MapData"¶ó´Â ÀÌ¸§À¸·Î µÎ¸é ÀÚµ¿À¸·Î ÀĞ´Â´Ù.
+// ì§€ë„ íƒ­ì´ ì½ëŠ” ë°ì´í„°. Resources í´ë”ì— "MapData"ë¼ëŠ” ì´ë¦„ìœ¼ë¡œ ë‘ë©´ ìë™ìœ¼ë¡œ ì½ëŠ”ë‹¤.
 [CreateAssetMenu(menuName = "Dungeon Express/Map Data")]
 public class MapData : ScriptableObject
 {
-    public Sprite overviewMap;   // ÀüÃ¼ Áöµµ ÀÌ¹ÌÁö
-    public MapAreaData[] areas;  // ±¸¿ª ¸ñ·Ï (Áö±İÀº Ã¹ ¹øÂ° ±¸¿ª¸¸ »ç¿ë)
+    public Sprite overviewMap;   // ì „ì²´ ì§€ë„ ì´ë¯¸ì§€
+    public MapAreaData[] areas;  // êµ¬ì—­ ëª©ë¡ (ì§€ê¸ˆì€ ì²« ë²ˆì§¸ êµ¬ì—­ë§Œ ì‚¬ìš©)
 }

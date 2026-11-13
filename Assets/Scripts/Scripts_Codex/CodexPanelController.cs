@@ -3,15 +3,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-// ÅÂºí¸´ ¸Ş´º 'µµ°¨' ÅÇ. ÇÃ·¹ÀÌ¾î°¡ ¾ò¾î º» ¹è´ŞÇ°¸¸ ¸ñ·Ï¿¡ º¸¿©Áİ´Ï´Ù.
+// íƒœë¸”ë¦¿ ë©”ë‰´ 'ë„ê°' íƒ­. í”Œë ˆì´ì–´ê°€ ì–»ì–´ ë³¸ ë°°ë‹¬í’ˆë§Œ ëª©ë¡ì— ë³´ì—¬ì¤ë‹ˆë‹¤.
 public class CodexPanelController : MonoBehaviour
 {
-    [Header("¸ñ·Ï")]
+    [Header("ëª©ë¡")]
     public Transform listParent;
     public CodexEntryUI entryPrefab;
     public GameObject emptyListText;
 
-    [Header("»ó¼¼ Á¤º¸")]
+    [Header("ìƒì„¸ ì •ë³´")]
     public GameObject detailRoot;
     public TMP_Text categoryLabel;
     public TMP_Text nameText;
@@ -25,7 +25,7 @@ public class CodexPanelController : MonoBehaviour
 
     void OnEnable()
     {
-        selectedItem = null; // ¿­ ¶§¸¶´Ù Ã¹ ¹øÂ° Ç×¸ñºÎÅÍ
+        selectedItem = null; // ì—´ ë•Œë§ˆë‹¤ ì²« ë²ˆì§¸ í•­ëª©ë¶€í„°
         FindCodex();
         Refresh();
     }
@@ -79,7 +79,7 @@ public class CodexPanelController : MonoBehaviour
         detailRoot.SetActive(has);
         if (!has) return;
 
-        categoryLabel.text = "¹è´ŞÇ°";
+        categoryLabel.text = "ë°°ë‹¬í’ˆ";
         nameText.text = item.itemName;
 
         bool hasIcon = item.icon != null;
@@ -88,6 +88,6 @@ public class CodexPanelController : MonoBehaviour
         iconFallbackText.gameObject.SetActive(!hasIcon);
         iconFallbackText.text = item.itemName;
 
-        descriptionText.text = string.IsNullOrEmpty(item.description) ? "¼³¸íÀÌ ¾ø½À´Ï´Ù." : item.description;
+        descriptionText.text = string.IsNullOrEmpty(item.description) ? "ì„¤ëª…ì´ ì—†ìŠµë‹ˆë‹¤." : item.description;
     }
 }

@@ -123,6 +123,15 @@ public class MenuManager : MonoBehaviour
         if (IsOpen && keyboard.escapeKey.wasPressedThisFrame)
         {
             ClosedByEscFrame = Time.frameCount; // 같은 프레임에 PauseMenu가 Esc를 또 받아 일시정지 창을 열지 않게
+
+            // 지도 상세 화면이면 태블릿은 닫지 않고 전체 지도로만 돌아감 (LateUpdate도 이번 Esc를 건너뜀)
+            var map = FindFirstObjectByType<MapPanelController>();
+            if (map != null && map.TryHandleEscape())
+            {
+                EscapeConsumed = true;
+                return;
+            }
+
             Close();
             return;
         }

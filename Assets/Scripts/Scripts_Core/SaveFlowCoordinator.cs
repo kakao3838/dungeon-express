@@ -173,7 +173,7 @@ public sealed class SaveFlowCoordinator : MonoBehaviour
         GamePause.Pop();
     }
 
-    private static void ReturnToTitle()
+    public static void ReturnToTitle()
     {
         SaveLoadRequest.Clear();
         SavePlayTime.Pause();

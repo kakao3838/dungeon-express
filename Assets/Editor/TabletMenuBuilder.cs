@@ -11,7 +11,7 @@ using UnityEngine.UI;
 public static class TabletMenuBuilder
 {
     const string FontAssetPath = "Assets/Fonts/MalgunGothic SDF.asset";
-    const string ArtDir = "Assets/artsources/menu_ temporary/";
+    const string ArtDir = "Assets/artsources/menu_temporary/";
     const string PrefabDir = "Assets/Prefab/menu UI/";
     const string MenuPrefabPath = "Assets/Resources/TabletMenu.prefab";
 

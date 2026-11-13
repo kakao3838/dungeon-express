@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-// ÇÃ·¹ÀÌ¾î°¡ ÇÑ ¹øÀÌ¶óµµ °¡¹æ¿¡ ³Ö¾î º» ¹è´Ş ¾ÆÀÌÅÛÀ» ±â·ÏÇÑ´Ù. (Player¿¡ ºÙÀÓ)
+// í”Œë ˆì´ì–´ê°€ í•œ ë²ˆì´ë¼ë„ ê°€ë°©ì— ë„£ì–´ ë³¸ ë°°ë‹¬ ì•„ì´í…œì„ ê¸°ë¡í•œë‹¤. (Playerì— ë¶™ì„)
 [RequireComponent(typeof(Inventory))]
 public class PlayerCodex : MonoBehaviour
 {
     private Inventory inventory;
-    private readonly List<ItemData> discovered = new List<ItemData>(); // ¾òÀº ¼ø¼­´ë·Î
+    private readonly List<ItemData> discovered = new List<ItemData>(); // ì–»ì€ ìˆœì„œëŒ€ë¡œ
 
     public IReadOnlyList<ItemData> Discovered => discovered;
     public event Action OnCodexChanged;

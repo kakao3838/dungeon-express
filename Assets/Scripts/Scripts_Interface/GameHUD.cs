@@ -53,6 +53,7 @@ public class GameHUD : MonoBehaviour
         {
             questManager = QuestManager.Instance;
             questManager.OnQuestStarted += RefreshQuest;
+            questManager.OnQuestAbandoned += OnQuestCompleted;
             questManager.OnQuestCompleted += OnQuestCompleted;
             questManager.OnStateRestored += OnQuestStateRestored;
             RefreshQuest(questManager.TrackedQuest);
@@ -65,6 +66,7 @@ public class GameHUD : MonoBehaviour
         if (questManager != null)
         {
             questManager.OnQuestStarted -= RefreshQuest;
+            questManager.OnQuestAbandoned -= OnQuestCompleted;
             questManager.OnQuestCompleted -= OnQuestCompleted;
             questManager.OnStateRestored -= OnQuestStateRestored;
         }

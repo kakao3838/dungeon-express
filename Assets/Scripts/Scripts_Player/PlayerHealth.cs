@@ -225,7 +225,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         // 없는 씬(던전만 단독 실행 등)에서는 예전처럼 그 씬의 시작 위치에서 바로 부활
         if (DeathManager.Instance != null)
         {
-            yield return DeathManager.Instance.RunDeath(this);
+            DeathManager.Instance.BeginDeath(this); // 불러오기로 플레이어가 사라져도 끊기지 않게 DeathManager가 직접 진행
             yield break;
         }
 

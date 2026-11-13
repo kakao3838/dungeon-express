@@ -30,6 +30,7 @@ public class QuestManager : MonoBehaviour
 
     public event Action<QuestData> OnQuestStarted;
     public event Action<QuestData> OnQuestCompleted;
+    public event Action<QuestData> OnQuestAbandoned;
     public event Action<string> OnFlagChanged;
     public event Action OnStateRestored;
 
@@ -102,6 +103,32 @@ public class QuestManager : MonoBehaviour
 
         OnQuestStarted?.Invoke(quest);
         return true;
+    }
+
+    // 진행 중인 퀘스트를 포기합니다. 메인 퀘스트는 포기할 수 없음 (이야기 진행과 묶여 있어서)
+    // 시작할 때 받은 배달 물품이 가방에 남아 있으면 같이 회수하고, 완료 기록은 남기지 않아 나중에 다시 접수할 수 있음
+    public bool AbandonQuest(QuestData quest, Inventory inventory = null)
+    {
+        if (!CanAbandon(quest)) return false;
+
+        activeQuests.Remove(quest);
+
+        if (inventory != null && quest.giveItemsOnStart)
+        {
+            foreach (var req in quest.requiredItems)
+            {
+                for (int i = 0; i < req.quantity; i++) inventory.RemoveItem(req.item);
+            }
+        }
+
+        Debug.Log("퀘스트 포기: " + quest.questName);
+        OnQuestAbandoned?.Invoke(quest);
+        return true;
+    }
+
+    public bool CanAbandon(QuestData quest)
+    {
+        return IsQuestActive(quest) && quest.category != QuestCategory.Main;
     }
 
     // 인벤토리가 이 퀘스트에 필요한 물품을 다 갖고 있는지 확인
