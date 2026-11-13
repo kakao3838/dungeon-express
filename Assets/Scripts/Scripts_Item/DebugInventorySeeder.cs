@@ -10,6 +10,7 @@ public class DebugInventorySeeder : MonoBehaviour
 
     void Update()
     {
+        if (SaveSlotWindow.BlocksGameplayInput) return;
         var keyboard = Keyboard.current;
         if (keyboard == null || inventory == null) return;
 

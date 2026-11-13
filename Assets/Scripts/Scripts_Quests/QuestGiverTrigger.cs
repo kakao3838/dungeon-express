@@ -29,6 +29,8 @@ public class QuestGiverTrigger : MonoBehaviour
 
     void Update()
     {
+        if (SaveSlotWindow.BlocksGameplayInput) return;
+        if (GamePause.IsPaused) return;
         if (!playerInRange) return;
         if (MenuManager.IsMenuOpen) return; // 태블릿 메뉴가 열려 있을 때는 대화 시작 안 함
         if (NPCDialogueMenu.Instance != null && NPCDialogueMenu.Instance.IsOpen) return;

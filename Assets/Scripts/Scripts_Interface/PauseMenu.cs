@@ -31,6 +31,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
+        if (SaveSlotWindow.BlocksGameplayInput) return;
         var keyboard = Keyboard.current;
         if (keyboard == null || !keyboard.escapeKey.wasPressedThisFrame) return;
         if (MenuManager.ClosedByEscFrame == Time.frameCount) return; // 이 Esc는 인벤토리 메뉴를 닫는 데 쓰임

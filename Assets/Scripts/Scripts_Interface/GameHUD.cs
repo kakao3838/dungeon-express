@@ -54,6 +54,7 @@ public class GameHUD : MonoBehaviour
             questManager = QuestManager.Instance;
             questManager.OnQuestStarted += RefreshQuest;
             questManager.OnQuestCompleted += OnQuestCompleted;
+            questManager.OnStateRestored += OnQuestStateRestored;
             RefreshQuest(questManager.TrackedQuest);
         }
     }
@@ -65,6 +66,7 @@ public class GameHUD : MonoBehaviour
         {
             questManager.OnQuestStarted -= RefreshQuest;
             questManager.OnQuestCompleted -= OnQuestCompleted;
+            questManager.OnStateRestored -= OnQuestStateRestored;
         }
     }
 
@@ -72,6 +74,8 @@ public class GameHUD : MonoBehaviour
     {
         if (goldText != null) goldText.text = gold.ToString();
     }
+
+    void OnQuestStateRestored() => RefreshQuest(questManager.TrackedQuest);
 
     void OnQuestCompleted(QuestData completed)
     {
