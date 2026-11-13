@@ -32,7 +32,8 @@ public static class TabletMenuBuilder
 
         InventorySlotUI slotPrefab = BuildSlotPrefab();
         QuestEntryUI entryPrefab = BuildQuestEntryPrefab();
-        BuildMenuPrefab(slotPrefab, entryPrefab);
+        CodexEntryUI codexEntryPrefab = BuildCodexEntryPrefab();
+        BuildMenuPrefab(slotPrefab, entryPrefab, codexEntryPrefab);
 
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
@@ -203,7 +204,7 @@ public static class TabletMenuBuilder
 
     // ---------- 메뉴 프리팹 ----------
 
-    static void BuildMenuPrefab(InventorySlotUI slotPrefab, QuestEntryUI entryPrefab)
+    static void BuildMenuPrefab(InventorySlotUI slotPrefab, QuestEntryUI entryPrefab, CodexEntryUI codexEntryPrefab)
     {
         var root = new GameObject("TabletMenu", typeof(RectTransform));
         var canvas = root.AddComponent<Canvas>();
@@ -232,8 +233,8 @@ public static class TabletMenuBuilder
         var equipment = BuildEquipmentPanel(content);
         var inventory = BuildInventoryPanel(content, slotPrefab);
         var quest = BuildQuestPanel(content, entryPrefab);
-        var map = BuildPlaceholderPanel(content, "MapPanel", "지도 (준비 중)");
-        var codex = BuildPlaceholderPanel(content, "CodexPanel", "도감 (준비 중)");
+        var map = BuildMapPanel(content);
+        var codex = BuildCodexPanel(content, codexEntryPrefab);
 
         var so = new SerializedObject(manager);
         so.FindProperty("menuRoot").objectReferenceValue = menuRoot.gameObject;
@@ -493,5 +494,109 @@ public static class TabletMenuBuilder
     {
         Pill(parent, label, 1230, y, 110, 36, 20);
         return Txt(label + "Value", parent, "", 26, Ink, TextAlignmentOptions.MidlineLeft, 1356, y, 440, 36, 14);
+    }
+
+    static CodexEntryUI BuildCodexEntryPrefab()
+    {
+        var rt = Rect("TabletCodexEntry", null, 0, 0, 650, 72);
+        var bg = Img(rt, new Color(0.93f, 0.93f, 0.93f), round, true);
+        var button = MakeButton(rt, bg);
+        var entry = rt.gameObject.AddComponent<CodexEntryUI>();
+
+        var icon = Img(Rect("Icon", rt, 12, 10, 52, 52), Color.white);
+        icon.preserveAspect = true;
+        var nameText = Txt("Name", rt, "", 28, Ink, TextAlignmentOptions.MidlineLeft, 80, 0, 550, 72, 16);
+        var selected = OutlineFrame(rt, 4, Selected);
+
+        entry.iconImage = icon;
+        entry.nameText = nameText;
+        entry.selectedFrame = selected;
+        UnityEventTools.AddVoidPersistentListener(button.onClick, entry.OnClick);
+
+        return SavePrefab<CodexEntryUI>(rt.gameObject, PrefabDir + "TabletCodexEntry.prefab");
+    }
+
+    static GameObject BuildCodexPanel(Transform content, CodexEntryUI entryPrefab)
+    {
+        var panel = Stretch("CodexPanel", content);
+        var controller = panel.gameObject.AddComponent<CodexPanelController>();
+        controller.entryPrefab = entryPrefab;
+
+        // 목록 제목
+        Txt("ListTitle", panel, "배달품 도감", 30, Ink, TextAlignmentOptions.MidlineLeft, 470, 150, 400, 58);
+        Img(Rect("TitleLine", panel, 470, 212, 654, 2), new Color(0.8f, 0.8f, 0.8f));
+
+        // 목록 (얻은 아이템만 쌓임)
+        var list = Rect("CodexList", panel, 470, 250, 650, 700);
+        var vlg = list.gameObject.AddComponent<VerticalLayoutGroup>();
+        vlg.spacing = 16;
+        vlg.childControlWidth = false;
+        vlg.childControlHeight = false;
+        vlg.childForceExpandWidth = false;
+        vlg.childForceExpandHeight = false;
+        controller.listParent = list;
+        controller.emptyListText = Txt("EmptyList", panel, "아직 기록된 배달품이 없습니다.", 28, Muted,
+            TextAlignmentOptions.Center, 470, 300, 650, 60).gameObject;
+
+        // 상세 정보
+        var detail = Stretch("CodexDetail", panel);
+        controller.detailRoot = detail.gameObject;
+        controller.categoryLabel = Txt("Category", detail, "배달품", 24, Muted, TextAlignmentOptions.Center, 1230, 132, 560, 40);
+        controller.nameText = Txt("Name", detail, "", 44, Ink, TextAlignmentOptions.Center, 1230, 172, 560, 60, 24);
+
+        var iconBox = Rect("IconBox", detail, 1360, 255, 300, 300);
+        Img(iconBox, SlotGray, round, true);
+        var icon = Img(Stretch("Icon", iconBox, 14), Color.white);
+        icon.preserveAspect = true;
+        controller.iconImage = icon;
+        controller.iconFallbackText = Txt("IconFallback", iconBox, "", 32, Ink, TextAlignmentOptions.Center, 10, 10, 280, 280, 16);
+
+        controller.descriptionText = Txt("Description", detail, "", 26, Ink, TextAlignmentOptions.TopLeft, 1260, 600, 500, 340, 16);
+
+        return panel.gameObject;
+    }
+    static GameObject TextButton(Transform parent, string label, float x, float y, UnityEngine.Events.UnityAction action)
+    {
+        var rt = Rect(label + "Button", parent, x, y, 180, 60);
+        var bg = Img(rt, PillGray, round, true);
+        var button = MakeButton(rt, bg);
+        Txt("Label", rt, label, 28, Ink, TextAlignmentOptions.Center, 0, 0, 180, 60);
+        UnityEventTools.AddVoidPersistentListener(button.onClick, action);
+        return rt.gameObject;
+    }
+
+    static GameObject BuildMapPanel(Transform content)
+    {
+        var panel = Stretch("MapPanel", content);
+        var controller = panel.gameObject.AddComponent<MapPanelController>();
+
+        // 지도가 보이는 창 (밖으로 나가는 부분은 잘림)
+        var viewport = Rect("MapViewport", panel, 430, 210, 1330, 760);
+        viewport.gameObject.AddComponent<RectMask2D>();
+        Img(viewport, new Color(0.96f, 0.96f, 0.96f), null, false, true); // 드래그/휠을 받으려면 raycast가 켜진 이미지가 필요
+        var viewer = viewport.gameObject.AddComponent<MapViewer>();
+
+        // 확대/이동되는 부분 (가운데 기준)
+        var mapContent = Rect("MapContent", viewport, 0, 0, 100, 100);
+        mapContent.anchorMin = mapContent.anchorMax = new Vector2(0.5f, 0.5f);
+        mapContent.pivot = new Vector2(0.5f, 0.5f);
+        mapContent.anchoredPosition = Vector2.zero;
+        var mapImage = Img(mapContent, Color.white); // 이미지는 실행 중에 MapData에서 받아 옴
+
+        viewer.viewport = viewport;
+        viewer.content = mapContent;
+        viewer.mapImage = mapImage;
+        controller.viewer = viewer;
+
+        // 상세 지도 제목 / 데이터가 없을 때 안내
+        controller.areaTitle = Txt("AreaTitle", panel, "", 44, Ink, TextAlignmentOptions.MidlineLeft, 470, 120, 800, 70, 24);
+        controller.noDataText = Txt("NoData", panel, "지도 이미지가 없습니다.\nResources/MapData 애셋에 이미지를 지정해 주세요.",
+            28, Muted, TextAlignmentOptions.Center, 470, 450, 1250, 120).gameObject;
+
+        // 버튼은 지도 창보다 나중에 만들어서 지도 위에 보이게 함
+        controller.enlargeButton = TextButton(panel, "확대", 1560, 890, controller.ShowDetail);
+        controller.shrinkButton = TextButton(panel, "축소", 1560, 890, controller.ShowOverview);
+
+        return panel.gameObject;
     }
 }

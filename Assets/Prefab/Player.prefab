@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 4556138104253121582}
   - component: {fileID: 789489667117391790}
   - component: {fileID: 7953825844749948104}
+  - component: {fileID: 6939141555931187099}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -239,6 +240,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 9
+  InputLocked: 0
+  ScriptedMove: 0
 --- !u!114 &7430819633681513842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,6 +262,7 @@ MonoBehaviour:
     m_Bits: 64
   allowAirAttack: 1
   attackAnimationDuration: 0.6
+  hitTimeNormalized: 0.35
   attackLeftClip: {fileID: 7400000, guid: 4b6ff264f4764a2468eb3e660062ce74, type: 2}
   attackRightClip: {fileID: 7400000, guid: 194a27de6b8b8224aabbe28965c47e3e, type: 2}
 --- !u!114 &6877503546551651531
@@ -412,6 +416,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3fbf9e0dae9c1394eb39529241630fd4, type: 2}
   - {fileID: 11400000, guid: 313f93fed591c874abdae31ee69a347f, type: 2}
   - {fileID: 11400000, guid: 2c3b22f1e6b4d714ab736b72f9006f40, type: 2}
+--- !u!114 &6939141555931187099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743947416986101687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23b9ff06b14313849b0f3152febbbd8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCodex
 --- !u!1 &6519137043486164049
 GameObject:
   m_ObjectHideFlags: 0
