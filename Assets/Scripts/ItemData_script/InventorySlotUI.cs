@@ -18,7 +18,6 @@ public class InventorySlotUI : MonoBehaviour
 
     public void Setup(ItemData item, bool locked, InventoryPanelController controller)
     {
-        currentItem = item;
         panelController = controller;
 
         bool hasItem = item != null;

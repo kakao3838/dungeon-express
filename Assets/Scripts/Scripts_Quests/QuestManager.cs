@@ -87,6 +87,7 @@ public class QuestManager : MonoBehaviour
     }
 
     // 인벤토리가 이 퀘스트에 필요한 물품을 다 갖고 있는지 확인
+    public event Action<QuestData> OnQuestCancelled;
     public bool HasRequiredItems(QuestData quest, Inventory inventory)
     {
         if (quest == null || inventory == null) return false;
@@ -102,7 +103,30 @@ public class QuestManager : MonoBehaviour
         }
         return true;
     }
+    // 진행 중인 퀘스트를 취소합니다. 완료로 기록하지 않으므로 의뢰를 준 곳에서 다시 받을 수 있어요.
+    public bool CancelQuest(QuestData quest, Inventory inventory)
+    {
 
+        // StartQuest가 자동으로 넣어준 물품을 가방에서 회수 (StartQuest의 반대)
+        if (inventory != null && quest.giveItemsOnStart)
+        {
+            foreach (var req in quest.requiredItems)
+            {
+                int removed = 0;
+                for (int i = inventory.Items.Count - 1; i >= 0 && removed < req.quantity; i--)
+                {
+                    if (inventory.Items[i] != req.item) continue;
+                    inventory.RemoveAt(i, out _);
+                    removed++;
+                }
+            }
+        }
+
+        activeQuests.Remove(quest);
+        Debug.Log("퀘스트 취소: " + quest.questName);
+        OnQuestCancelled?.Invoke(quest);
+        return true;
+    }
     // 지정한 퀘스트를 완료 처리: 물품 제거, 완료 기록, 이어지는 퀘스트 시작
     // (퀘스트를 직접 지정하므로 다른 진행 중 퀘스트가 같이 끝나는 일이 없음)
     public void CompleteQuest(QuestData quest, Inventory inventory)

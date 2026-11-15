@@ -247,6 +247,7 @@ public static class TabletMenuBuilder
         for (int i = 0; i < highlights.Length; i++) hl.GetArrayElementAtIndex(i).objectReferenceValue = highlights[i];
         so.ApplyModifiedPropertiesWithoutUndo();
 
+        menuRoot.gameObject.SetActive(false); // 처음부터 꺼진 채로 만들어서, 생성되는 순간 패널들의 OnEnable이 돌지 않게
         PrefabUtility.SaveAsPrefabAsset(root, MenuPrefabPath);
         Object.DestroyImmediate(root);
     }
@@ -486,7 +487,24 @@ public static class TabletMenuBuilder
         controller.descriptionText = Txt("Description", detail, "", 26, Ink, TextAlignmentOptions.TopLeft, 1230, 470, 560, 230, 16);
         controller.objectivesText = Txt("Objectives", detail, "", 26, Ink, TextAlignmentOptions.TopLeft, 1230, 720, 560, 200, 16);
 
+        // [의뢰 취소] 버튼 (canCancel을 켠 진행 중 의뢰에만 보임)
+        controller.cancelButton = TextButton(detail, "의뢰 취소", 1610, 935, controller.OnClickCancel);
+
+        // "정말 취소할까요?" 확인 팝업 (태블릿 가운데에 작게). 맨 마지막에 만들어서 다른 것들 위에 보임
+        var popup = Stretch("CancelConfirm", panel);
+        Img(Stretch("Dim", popup), new Color(0f, 0f, 0f, 0.3f), null, false, true); // 팝업 뒤를 눌러도 반응하지 않게 막음
+        var box = Rect("Box", popup, 830, 410, 520, 260);
+        Img(box, Color.white, round, true, true);
+        OutlineFrame(box, 3, Ink);
+        Txt("Title", box, "정말 취소할까요?", 34, Ink, TextAlignmentOptions.Center, 20, 24, 480, 50);
+        controller.confirmText = Txt("Message", box, "", 22, Muted, TextAlignmentOptions.Center, 40, 84, 440, 76, 14);
+        TextButton(box, "취소하기", 60, 176, controller.OnConfirmCancel);
+        TextButton(box, "돌아가기", 280, 176, controller.CloseConfirm);
+        controller.confirmPopup = popup.gameObject;
+        popup.gameObject.SetActive(false);
+
         return panel.gameObject;
+
     }
 
     static TMP_Text InfoRow(Transform parent, string label, float y)
@@ -494,4 +512,15 @@ public static class TabletMenuBuilder
         Pill(parent, label, 1230, y, 110, 36, 20);
         return Txt(label + "Value", parent, "", 26, Ink, TextAlignmentOptions.MidlineLeft, 1356, y, 440, 36, 14);
     }
+
+    static GameObject TextButton(Transform parent, string label, float x, float y, UnityEngine.Events.UnityAction action)
+    {
+        var rt = Rect(label + "Button", parent, x, y, 180, 60);
+        var bg = Img(rt, PillGray, round, true);
+        var button = MakeButton(rt, bg);
+        Txt("Label", rt, label, 28, Ink, TextAlignmentOptions.Center, 0, 0, 180, 60);
+        UnityEventTools.AddVoidPersistentListener(button.onClick, action);
+        return rt.gameObject;
+    }
+    
 }

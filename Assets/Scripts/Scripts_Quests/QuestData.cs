@@ -46,4 +46,6 @@ public class QuestData : ScriptableObject
     [Header("연계 퀘스트 (선택)")]
     [Tooltip("이 퀘스트를 완료하면 해금되는 다음 퀘스트(들). 하나의 퀘스트가 여러 퀘스트로 분기될 수 있어서 리스트로 관리해요.")]
     public List<QuestData> unlocksQuests = new List<QuestData>();
+
+    
 }
