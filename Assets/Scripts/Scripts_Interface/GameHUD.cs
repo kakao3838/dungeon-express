@@ -1,3 +1,4 @@
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -75,30 +76,43 @@ public class GameHUD : MonoBehaviour
         if (goldText != null) goldText.text = gold.ToString();
     }
 
-    void OnQuestStateRestored() => RefreshQuest(questManager.TrackedQuest);
+    void OnQuestStateRestored() => RefreshQuestList();
 
     void OnQuestCompleted(QuestData completed)
     {
-        // 완료한 퀘스트는 이미 진행 목록에서 빠진 상태이므로, 남은 진행 중 퀘스트 중 가장 최근 것을 보여줌 (없으면 숨김)
-        // 이어서 시작되는 퀘스트가 있으면 뒤따르는 OnQuestStarted가 다시 갱신함
-        RefreshQuest(questManager.TrackedQuest);
+        RefreshQuestList();
     }
 
-    void RefreshQuest(QuestData quest)
+    void RefreshQuest(QuestData started) => RefreshQuestList();
+
+    void RefreshQuestList()
     {
-        bool has = quest != null;
+        var quests = questManager.activeQuests
+            .Where(quest => quest != null)
+            .OrderBy(quest => GetQuestCategoryPriority(quest.category));
+        string questNames = string.Join("\n", quests.Select(quest => quest.questName));
+        bool has = !string.IsNullOrEmpty(questNames);
+
         if (questRoot != null) questRoot.SetActive(has);
         if (!has) return;
 
-        if (questNameText != null) questNameText.text = quest.questName;
-        // 플레이어 화면에는 의뢰 설명(description)이 아니라 목표 설명(objectives)을 보여줌
-        string objectiveText = quest.objectives != null ? string.Join("\n", quest.objectives) : "";
-        if (checkBox != null) checkBox.SetActive(!string.IsNullOrEmpty(objectiveText));
+        if (questNameText != null) questNameText.text = "진행 중인 퀘스트";
+        if (checkBox != null) checkBox.SetActive(false);
 
         if (questSummaryText != null)
         {
-            questSummaryText.text = objectiveText;
+            questSummaryText.text = questNames;
             FitSummary();
+        }
+    }
+
+    static int GetQuestCategoryPriority(QuestCategory category)
+    {
+        switch (category)
+        {
+            case QuestCategory.Main: return 0;
+            case QuestCategory.Side: return 1;
+            default: return 2;
         }
     }
 
