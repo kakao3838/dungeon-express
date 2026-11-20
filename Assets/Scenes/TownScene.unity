@@ -1075,7 +1075,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165312041}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3952,6 +3952,7 @@ MonoBehaviour:
   dialoguePanel: {fileID: 3304857524455092555}
   speakerText: {fileID: 1736084544}
   dialogueText: {fileID: 2807163828099148845}
+  dialogueView: {fileID: 0}
   questDetailPanel: {fileID: 1776409557}
   questSpeakerText: {fileID: 1736084544}
   questDescriptionText: {fileID: 2807163828099148845}
@@ -10586,6 +10587,17 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1618535425 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 847822856779618438, guid: 7ab4d454a615c4d468d47e4fb2bd9117, type: 3}
+  m_PrefabInstance: {fileID: 360134625470309089}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1624766032
 GameObject:
   m_ObjectHideFlags: 0
@@ -11456,6 +11468,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1776409558}
     m_Modifications:
+    - target: {fileID: 6542898043657287284, guid: 7ab4d454a615c4d468d47e4fb2bd9117, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6718345442269603420, guid: 4cbfc86023194d2489e5020e41b20e3b, type: 3}
     - target: {fileID: 8752030594364534353, guid: 7ab4d454a615c4d468d47e4fb2bd9117, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14032,6 +14048,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 526268877}
     m_Modifications:
+    - target: {fileID: 6542898043657287284, guid: 7ab4d454a615c4d468d47e4fb2bd9117, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6718345442269603420, guid: 4cbfc86023194d2489e5020e41b20e3b, type: 3}
     - target: {fileID: 6813321993121370166, guid: 7ab4d454a615c4d468d47e4fb2bd9117, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -14127,7 +14147,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8938876639531567618, guid: 7ab4d454a615c4d468d47e4fb2bd9117, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3304857524455092556}
   m_SourcePrefab: {fileID: 100100000, guid: 7ab4d454a615c4d468d47e4fb2bd9117, type: 3}
 --- !u!224 &432220230072936975 stripped
 RectTransform:
@@ -14139,6 +14162,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6670989780149218283, guid: 95d5e414539b6ea4c8a73fcd16e3070c, type: 3}
   m_PrefabInstance: {fileID: 1034414205292648019}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &603681352088690857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603681352088690856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e7f244f85f04440b6f2f0069b09caa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogView
+  speakerText: {fileID: 1618535425}
+  bodyText: {fileID: 2807163828099148845}
 --- !u!1001 &1034414205292648019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14322,7 +14359,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6670989780149218283, guid: 95d5e414539b6ea4c8a73fcd16e3070c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 603681352088690857}
   m_SourcePrefab: {fileID: 100100000, guid: 95d5e414539b6ea4c8a73fcd16e3070c, type: 3}
 --- !u!1001 &1529533346195211829
 PrefabInstance:
@@ -14413,6 +14453,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8938876639531567618, guid: 7ab4d454a615c4d468d47e4fb2bd9117, type: 3}
   m_PrefabInstance: {fileID: 360134625470309089}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3304857524455092556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3304857524455092555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e7f244f85f04440b6f2f0069b09caa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogView
+  speakerText: {fileID: 1618535425}
+  bodyText: {fileID: 2807163828099148845}
 --- !u!1001 &7117751251534763352
 PrefabInstance:
   m_ObjectHideFlags: 0

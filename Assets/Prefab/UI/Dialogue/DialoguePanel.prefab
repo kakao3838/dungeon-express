@@ -724,6 +724,7 @@ GameObject:
   - component: {fileID: 8752030594364534353}
   - component: {fileID: 454329622906081715}
   - component: {fileID: 6542898043657287284}
+  - component: {fileID: 9100000000000000001}
   m_Layer: 5
   m_Name: DialoguePanel
   m_TagString: Untagged
@@ -781,7 +782,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8498544805150940632, guid: bab5c722286e40f4dadc601ae228a177, type: 3}
+  m_Sprite: {fileID: -6718345442269603420, guid: 4cbfc86023194d2489e5020e41b20e3b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -791,3 +792,17 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &9100000000000000001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8938876639531567618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e7f244f85f04440b6f2f0069b09caa, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::DialogView
+  speakerText: {fileID: 847822856779618438}
+  bodyText: {fileID: 1561456296601670640}

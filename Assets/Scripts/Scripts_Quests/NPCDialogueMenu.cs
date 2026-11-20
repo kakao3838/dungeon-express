@@ -14,6 +14,8 @@ public class NPCDialogueMenu : MonoBehaviour
     public GameObject dialoguePanel;
     public TMP_Text speakerText;
     public TMP_Text dialogueText;
+    [Tooltip("대화창 프리팹의 표시 컴포넌트. 비워두면 Dialogue Panel에서 찾습니다.")]
+    [SerializeField] private DialogView dialogueView;
 
     [Header("연결 - 의뢰 물품 카드")]
     public GameObject questDetailPanel;
@@ -32,6 +34,9 @@ public class NPCDialogueMenu : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        dialogueView = DialogView.Install(dialoguePanel, speakerText, dialogueText, CloseDialogue);
+        DialogView.Install(questDetailPanel, questSpeakerText, questDescriptionText, CloseQuestDetail, true);
+        ResolveDialogueView();
         Close();
     }
 
@@ -76,8 +81,8 @@ public class NPCDialogueMenu : MonoBehaviour
         if (dialoguePanel != null) dialoguePanel.SetActive(false);
         if (questDetailPanel != null) questDetailPanel.SetActive(true);
 
-        if (questSpeakerText != null) questSpeakerText.text = currentNPC.npcName;
-        if (questDescriptionText != null) questDescriptionText.text = quest.description;
+        DialogView.Display(questDetailPanel, currentNPC.npcName, quest.description,
+            questSpeakerText, questDescriptionText);
 
         ItemData firstItem = null;
         if (quest.requiredItems != null && quest.requiredItems.Count > 0)
@@ -107,8 +112,23 @@ public class NPCDialogueMenu : MonoBehaviour
         if (currentNPC == null) return;
         if (menuPanel != null) menuPanel.SetActive(false);
         if (dialoguePanel != null) dialoguePanel.SetActive(true);
-        if (speakerText != null) speakerText.text = currentNPC.npcName;
-        if (dialogueText != null) dialogueText.text = currentNPC.talkLine;
+        ResolveDialogueView();
+        if (dialogueView != null)
+        {
+            dialogueView.SetContent(currentNPC.npcName, currentNPC.talkLine);
+        }
+        else
+        {
+            // 아직 공통 프리팹으로 교체하지 않은 씬도 기존 연결로 동작합니다.
+            if (speakerText != null) speakerText.text = currentNPC.npcName;
+            if (dialogueText != null) dialogueText.text = currentNPC.talkLine;
+        }
+    }
+
+    private void ResolveDialogueView()
+    {
+        if (dialogueView == null && dialoguePanel != null)
+            dialogueView = dialoguePanel.GetComponent<DialogView>();
     }
 
     // "3. 나가기" 선택

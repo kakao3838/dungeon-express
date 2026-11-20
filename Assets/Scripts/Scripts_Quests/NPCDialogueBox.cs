@@ -30,6 +30,7 @@ public class NPCDialogueBox : MonoBehaviour
     void Awake()
     {
         if (turnIn == null) turnIn = GetComponent<QuestTurnInTrigger>();
+        DialogView.Install(panel, speakerText, dialogueText, Close);
         if (panel != null) panel.SetActive(false);
     }
 
@@ -67,8 +68,7 @@ public class NPCDialogueBox : MonoBehaviour
     public void Show(string speaker, string line)
     {
         if (panel == null) return;
-        if (speakerText != null) speakerText.text = speaker;
-        if (dialogueText != null) dialogueText.text = line;
+        DialogView.Display(panel, speaker, line, speakerText, dialogueText);
         panel.SetActive(true);
         openedFrame = Time.frameCount;
 

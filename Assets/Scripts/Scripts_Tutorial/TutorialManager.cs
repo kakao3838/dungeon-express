@@ -153,6 +153,7 @@ public class TutorialManager : MonoBehaviour
             return;
         }
         Instance = this;
+        DialogView.Install(dialoguePanel, speakerText, lineText, () => advanceClicked = true, advance: true);
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += OnSceneLoaded;
 
@@ -542,8 +543,7 @@ public class TutorialManager : MonoBehaviour
     {
         if (dialoguePanel == null) yield break;
 
-        if (speakerText != null) speakerText.text = speaker;
-        if (lineText != null) lineText.text = line;
+        DialogView.Display(dialoguePanel, speaker, line, speakerText, lineText);
         SetActive(nextHint, waitForAdvance);
         dialoguePanel.SetActive(true);
         HoldPause();
