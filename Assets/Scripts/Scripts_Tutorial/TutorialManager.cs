@@ -45,6 +45,9 @@ public class TutorialManager : MonoBehaviour
     public GameObject keyCapTemplate;      // 자식: Label
     public Button keyGuideConfirmButton;
 
+    [Header("Tutorial slides")]
+    public TutorialSlideController tutorialSlides;
+
     [Header("연결 - PC")]
     public PCBoardUI pcBoard; // 튜토리얼도 일반 PC 화면을 그대로 씀 (목록에는 튜토리얼 퀘스트 하나만 보여줌)
 
@@ -203,6 +206,7 @@ public class TutorialManager : MonoBehaviour
         SetActive(toastPanel, false);
         SetActive(keyGuideRowTemplate, false);
         SetActive(keyCapTemplate, false);
+        SetActive(tutorialSlides != null ? tutorialSlides.gameObject : null, false);
     }
 
     static void SetActive(GameObject go, bool on)
@@ -250,6 +254,12 @@ public class TutorialManager : MonoBehaviour
         CloseDialogue();
 
         // 이동 안내
+        if (tutorialSlides != null)
+        {
+            tutorialSlides.Open();
+            while (tutorialSlides.IsOpen) yield return null;
+        }
+
         LockInput(false);
         phase = Phase.WaitMove;
         ShowKeyGuide("", new[] { new KeyRow(new[] { "W", "A", "S", "D" }, "를 눌러 이동할 수 있습니다.") }, false);
