@@ -38,6 +38,17 @@ public class DeliveryCompleteWindow : MonoBehaviour
     {
         if (panel != null) panel.SetActive(false);
         if (rowTemplate != null) rowTemplate.SetActive(false);
+
+        // The reusable BaseUi frame owns its visual X button; connect it here
+        // so the frame can be reused in this delivery window.
+        if (panel != null)
+        {
+            foreach (var button in panel.GetComponentsInChildren<Button>(true))
+            {
+                if (button.name != "CloseButton" && button.name != "ConfirmButton") continue;
+                button.onClick.AddListener(Close);
+            }
+        }
     }
 
     void Update()

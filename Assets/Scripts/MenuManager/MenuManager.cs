@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public enum MenuTab
 {
@@ -74,9 +75,58 @@ public class MenuManager : MonoBehaviour
         Instance = this;
         if (transform.parent == null) DontDestroyOnLoad(gameObject);
 
+        EnsureSidebarLabels();
+
         IsOpen = false;
         menuRoot.SetActive(false);
         SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void EnsureSidebarLabels()
+    {
+        if (menuRoot == null) return;
+
+        Transform sidebar = menuRoot.transform.Find("Frame/Sidebar");
+        if (sidebar == null) return;
+
+        string[] buttonNames = { "Equipment", "Inventory", "Quest", "Map", "Codex" };
+        string[] labels = { "장비", "가방", "의뢰", "지도", "도감" };
+        TMP_FontAsset font = null;
+        foreach (TMP_Text candidate in GetComponentsInChildren<TMP_Text>(true))
+        {
+            if (candidate != null && candidate.font != null)
+            {
+                font = candidate.font;
+                break;
+            }
+        }
+        if (font == null) return;
+
+        for (int i = 0; i < buttonNames.Length; i++)
+        {
+            Transform button = sidebar.Find(buttonNames[i] + "Button");
+            if (button == null || button.Find("Label") != null) continue;
+
+            var labelObject = new GameObject("Label", typeof(RectTransform), typeof(TextMeshProUGUI));
+            labelObject.transform.SetParent(button, false);
+            var rect = (RectTransform)labelObject.transform;
+            rect.anchorMin = Vector2.zero;
+            rect.anchorMax = Vector2.one;
+            rect.offsetMin = Vector2.zero;
+            rect.offsetMax = Vector2.zero;
+
+            var text = labelObject.GetComponent<TextMeshProUGUI>();
+            text.font = font;
+            text.text = labels[i];
+            text.fontSize = 26;
+            text.enableAutoSizing = true;
+            text.fontSizeMin = 18;
+            text.fontSizeMax = 26;
+            text.alignment = TextAlignmentOptions.Center;
+            text.textWrappingMode = TextWrappingModes.NoWrap;
+            text.color = new Color32(55, 42, 27, 255);
+            text.raycastTarget = false;
+        }
     }
 
     private void OnDestroy()

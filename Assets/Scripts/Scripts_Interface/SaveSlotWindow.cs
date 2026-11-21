@@ -48,7 +48,7 @@ public sealed class SaveSlotWindow : MonoBehaviour
             throw new InvalidOperationException("Saving is only allowed in the office.");
         return Open(true, closed);
     }
-    public static SaveSlotWindow OpenLoad(Action closed = null) => Open(false, closed);
+    public static SaveSlotWindow OpenLoad(Action closed = null, GameObject hostPanel = null) => Open(false, closed, hostPanel);
 
     public static SaveSlotWindow OpenDungeonEntry(Action<bool> completed, bool allowEditorTestScene)
     {
@@ -89,12 +89,10 @@ public sealed class SaveSlotWindow : MonoBehaviour
         window.notice.text = "불러오지 못했습니다. 슬롯을 다시 선택하거나 닫고 타이틀로 돌아가 주세요.";
     }
 
-    private static SaveSlotWindow Open(bool saving, Action closed)
+    private static SaveSlotWindow Open(bool saving, Action closed, GameObject hostPanel = null)
     {
         if (instance == null)
         {
-            GameObject prefab = Resources.Load<GameObject>("SaveSlotPanel");
-            if (prefab == null) throw new InvalidOperationException("Resources/SaveSlotPanel is missing.");
             var root = new GameObject("SaveSlotWindow", typeof(RectTransform), typeof(Canvas),
                 typeof(CanvasScaler), typeof(GraphicRaycaster));
             DontDestroyOnLoad(root);
@@ -105,14 +103,24 @@ public sealed class SaveSlotWindow : MonoBehaviour
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             scaler.referenceResolution = new Vector2(1920, 1080);
             scaler.matchWidthOrHeight = 0.5f;
-            try { instance.Build(Instantiate(prefab, root.transform)); }
-            catch
-            {
-                instance = null;
-                Destroy(root);
-                throw;
-            }
         }
+
+        // The title already has an editable ContinuePanel shell. Bind the slot
+        // controller to that hierarchy instead of creating a second visible UI.
+        // Other callers keep using the shared Resources prefab.
+        if (hostPanel != null && instance.panel != hostPanel)
+        {
+            if (instance.IsOpen) return instance;
+            if (instance.panel != null) Destroy(instance.panel);
+            instance.Build(hostPanel);
+        }
+        else if (instance.panel == null)
+        {
+            GameObject prefab = Resources.Load<GameObject>("SaveSlotPanel");
+            if (prefab == null) throw new InvalidOperationException("Resources/SaveSlotPanel is missing.");
+            instance.Build(Instantiate(prefab, instance.transform));
+        }
+
         if (instance.IsOpen) return instance;
         EnsureEventSystem();
         instance.Show(saving, closed);
@@ -132,6 +140,13 @@ public sealed class SaveSlotWindow : MonoBehaviour
     {
         // The old scene's title/menu objects may already have been destroyed.
         onClosed = null;
+        // A title-hosted panel is destroyed when starting a new game without
+        // loading. Recreate the reusable Resources panel for later save screens.
+        if (panel == null)
+        {
+            GameObject prefab = Resources.Load<GameObject>("SaveSlotPanel");
+            if (prefab != null) Build(Instantiate(prefab, transform));
+        }
         if (IsOpen && !SaveFlowCoordinator.IsLoading) Close();
     }
     private void OnDestroy()
@@ -300,6 +315,9 @@ public sealed class SaveSlotWindow : MonoBehaviour
             {
                 bool connected = SaveLoadRequest.HasHandler;
                 SaveLoadRequest.Select(slot, data, backup);
+                // Keep the selected slot window visible while the title scene is
+                // replaced by TownScene. The persistent controller owns this canvas.
+                if (SaveFlowCoordinator.IsLoading) MovePanelToPersistentCanvas();
                 if (!connected && IsOpen) notice.text = "저장 데이터를 읽었습니다. 사무실 이동 연결은 아직 준비되지 않았습니다.";
             }
         }
@@ -413,6 +431,18 @@ public sealed class SaveSlotWindow : MonoBehaviour
         notice = CloneText(heading, window, "Notice", new Vector2(0, -220), new Vector2(1050, 80), 24);
         BuildConfirmation(window);
         panel.SetActive(false);
+    }
+
+    private void MovePanelToPersistentCanvas()
+    {
+        if (panel == null || panel.transform.parent == transform) return;
+        panel.transform.SetParent(transform, false);
+        var rect = panel.transform as RectTransform;
+        if (rect == null) return;
+        rect.anchorMin = Vector2.zero;
+        rect.anchorMax = Vector2.one;
+        rect.offsetMin = rect.offsetMax = Vector2.zero;
+        rect.localScale = Vector3.one;
     }
 
     private void BuildConfirmation(Transform parent)
