@@ -30,8 +30,11 @@ public static class GamePause
         Time.timeScale = 0f;
 
         disabledInputs.Clear();
+        var player = Object.FindFirstObjectByType<PlayerController>();
+        if (player != null) player.StopForMenu();
         DisableIfEnabled(Object.FindFirstObjectByType<PlayerController>());
         DisableIfEnabled(Object.FindFirstObjectByType<PlayerAttack>());
+        DisableIfEnabled(Object.FindFirstObjectByType<PlayerVineClimb>());
     }
 
     public static void Pop()

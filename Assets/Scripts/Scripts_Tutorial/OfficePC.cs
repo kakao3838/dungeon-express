@@ -25,6 +25,7 @@ public class OfficePC : MonoBehaviour
 
     void Update()
     {
+        if (SaveSlotWindow.BlocksGameplayInput) return;
         var manager = TutorialManager.Instance;
         var story = StoryManager.Instance;
         bool tutorialTurn = manager != null && manager.WaitingForPC;

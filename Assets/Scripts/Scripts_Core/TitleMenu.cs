@@ -35,8 +35,14 @@ public class TitleMenu : MonoBehaviour
     public void OpenContinueMenu()
     {
         mainMenuPanel.SetActive(false);
-        continuePanel.SetActive(true);
+        continuePanel.SetActive(false);
         settingsPanel.SetActive(false);
+        try { SaveSlotWindow.OpenLoad(OpenMainMenu); }
+        catch (System.Exception e)
+        {
+            Debug.LogException(e);
+            OpenMainMenu();
+        }
     }
 
     public void OpenSettings()
@@ -91,6 +97,8 @@ public class TitleMenu : MonoBehaviour
     // Start 버튼의 OnClick()에 이 함수를 연결하세요
     public void OnStartGame()
     {
+        SaveLoadRequest.Clear();
+        SaveGameService.BeginNewGame();
         SceneManager.LoadScene(sceneToLoad);
     }
 

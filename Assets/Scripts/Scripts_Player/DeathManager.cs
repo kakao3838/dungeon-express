@@ -56,6 +56,7 @@ public class DeathManager : MonoBehaviour
 
     void Update()
     {
+        if (SaveSlotWindow.BlocksGameplayInput) return;
         if (!debugDieKey || Instance != this) return;
 
         var keyboard = Keyboard.current;

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06112c1221b60f643b0b9ee72d9136d9, type: 3}
+  m_Name: Area_JungleStart
+  m_EditorClassIdentifier: Assembly-CSharp::MapAreaData
+  areaName: "\uAE30\uBCF8\uC815\uAE00"
+  detailMap: {fileID: 3270311749528568799, guid: 5733d66d0d1606e438a682092f8c8a31, type: 3}
+  worldBounds:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0

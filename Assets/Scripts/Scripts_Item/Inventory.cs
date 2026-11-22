@@ -35,6 +35,25 @@ public class Inventory : MonoBehaviour
     public IReadOnlyList<ItemData> Items => items;
     public bool IsFull => items.Count >= maxSlots;
 
+    // Loading replaces the entire bag, including loss history, without item grants.
+    public void RestoreSaveState(int capacity, float lossMultiplier,
+        List<LostItem> restoredItems, List<LostItem> restoredLostItems)
+    {
+        maxSlots = capacity;
+        qualityLossMultiplier = lossMultiplier;
+        items.Clear();
+        qualities.Clear();
+        lostItems.Clear();
+        foreach (var entry in restoredItems)
+        {
+            items.Add(entry.item);
+            qualities.Add(entry.quality);
+        }
+        lostItems.AddRange(restoredLostItems);
+    }
+
+    public void NotifySaveRestored() => OnInventoryChanged?.Invoke();
+
     public int GetQuality(int index)
     {
         return index >= 0 && index < qualities.Count ? qualities[index] : FullQuality;

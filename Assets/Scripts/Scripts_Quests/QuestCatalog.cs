@@ -7,6 +7,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "QuestCatalog", menuName = "Dungeon Express/Quest Catalog")]
 public class QuestCatalog : ScriptableObject
 {
+    public void ValidateIds()
+    {
+        if (allQuests == null) throw new System.InvalidOperationException("Quest catalog list is missing.");
+        var ids = new HashSet<string>(System.StringComparer.Ordinal);
+        foreach (QuestData quest in allQuests)
+        {
+            if (quest == null || string.IsNullOrWhiteSpace(quest.questId) || !ids.Add(quest.questId))
+                throw new System.InvalidOperationException("Quest catalog contains an empty or duplicate ID.");
+        }
+    }
+
     public const string ResourcePath = "QuestCatalog";
 
     public List<QuestData> allQuests = new List<QuestData>();

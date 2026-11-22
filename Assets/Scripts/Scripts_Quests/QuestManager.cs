@@ -31,6 +31,24 @@ public class QuestManager : MonoBehaviour
     public event Action<QuestData> OnQuestStarted;
     public event Action<QuestData> OnQuestCompleted;
     public event Action<string> OnFlagChanged;
+    public event Action OnStateRestored;
+
+    // Do not use StartQuest/CompleteQuest here: they grant items and trigger story events.
+    public void RestoreSaveState(List<QuestData> active, List<QuestData> finished,
+        List<string> restoredFlags, Dictionary<string, int[]> qualityRecords)
+    {
+        activeQuests.Clear();
+        activeQuests.AddRange(active);
+        completedQuests.Clear();
+        completedQuests.AddRange(finished);
+        flags.Clear();
+        foreach (string flag in restoredFlags) flags.Add(flag);
+        deliveredQualities.Clear();
+        foreach (var pair in qualityRecords)
+            deliveredQualities.Add(pair.Key, (int[])pair.Value.Clone());
+    }
+
+    public void NotifySaveRestored() => OnStateRestored?.Invoke();
 
     // HUD처럼 하나만 보여줘야 하는 곳에서 쓰는 추적 대상: 가장 최근에 시작한 진행 중 퀘스트
     public QuestData TrackedQuest => activeQuests.Count > 0 ? activeQuests[activeQuests.Count - 1] : null;

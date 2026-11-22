@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (SaveSlotWindow.BlocksGameplayInput) { StopForMenu(); return; }
         var keyboard = Keyboard.current;
         if (keyboard == null && !InputLocked && !IsDialogueOpen) return;
 
@@ -104,6 +105,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (SaveSlotWindow.BlocksGameplayInput) { StopForMenu(); return; }
         // 대화가 Update 이후에 열려도 다음 물리 프레임부터 즉시 멈춥니다.
         if (IsDialogueOpen) moveInput = 0f;
 
@@ -126,6 +128,19 @@ public class PlayerController : MonoBehaviour
     {
         facingRight = !facingRight;
         if (animator != null) animator.SetBool("FacingRight", facingRight);
+    }
+
+    public void StopForMenu()
+    {
+        moveInput = 0f;
+        isRunning = false;
+        jumpHeld = false;
+        if (rb != null) rb.linearVelocity = Vector2.zero;
+        if (animator != null)
+        {
+            animator.SetBool("IsMoving", false);
+            animator.SetBool("IsRunning", false);
+        }
     }
 
     void OnDrawGizmosSelected()

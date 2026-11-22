@@ -11,6 +11,9 @@ public class PlayerWallet : MonoBehaviour
 
     public event Action<int> OnGoldChanged;
 
+    public void RestoreSaveState(int amount) => gold = amount;
+    public void NotifySaveRestored() => OnGoldChanged?.Invoke(gold);
+
     public void AddGold(int amount)
     {
         gold = Mathf.Max(0, gold + amount);

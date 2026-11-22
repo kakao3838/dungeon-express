@@ -35,6 +35,7 @@ public class NPCDialogueBox : MonoBehaviour
 
     void Update()
     {
+        if (SaveSlotWindow.BlocksGameplayInput) return;
         // QuestManager는 Town에서 만들어져 넘어오므로, 잡힐 때까지 계속 시도
         if (questManager == null && QuestManager.Instance != null)
         {

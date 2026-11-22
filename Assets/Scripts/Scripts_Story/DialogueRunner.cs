@@ -88,6 +88,7 @@ public class DialogueRunner : MonoBehaviour
 
     static bool AdvanceKeyPressed()
     {
+        if (SaveSlotWindow.BlocksGameplayInput) return false;
         var kb = Keyboard.current;
         return kb != null && (kb.fKey.wasPressedThisFrame || kb.spaceKey.wasPressedThisFrame
             || kb.enterKey.wasPressedThisFrame || kb.numpadEnterKey.wasPressedThisFrame);

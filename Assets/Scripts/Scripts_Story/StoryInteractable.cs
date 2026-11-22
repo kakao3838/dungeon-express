@@ -20,6 +20,7 @@ public class StoryInteractable : MonoBehaviour
 
     void Update()
     {
+        if (SaveSlotWindow.BlocksGameplayInput) return;
         var story = StoryManager.Instance;
         if (player == null) player = FindFirstObjectByType<PlayerController>();
 

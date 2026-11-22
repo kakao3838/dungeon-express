@@ -26,6 +26,8 @@ public class QuestTurnInTrigger : MonoBehaviour
 
     void Update()
     {
+        if (SaveSlotWindow.BlocksGameplayInput) return;
+        if (GamePause.IsPaused) return;
         if (!playerInRange || playerInventory == null) return;
         if (MenuManager.IsMenuOpen) return; // 태블릿 메뉴가 열려 있을 때는 납품 처리 안 함
         // QuestManager는 Town에서 만들어져 넘어오므로, 던전 씬만 단독으로 실행하면 없을 수 있음
