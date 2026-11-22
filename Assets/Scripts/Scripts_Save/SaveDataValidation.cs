@@ -22,6 +22,9 @@ public static class SaveDataValidation
             data.activeQuestIds == null || data.completedQuestIds == null ||
             data.flags == null || data.deliveredQualities == null) Fail("Missing save lists.");
         if (data.items.Count > data.maxSlots) Fail("Inventory exceeds bag capacity.");
+        bool hasCheckpointScene = !string.IsNullOrWhiteSpace(data.checkpointSceneName);
+        bool hasCheckpointId = !string.IsNullOrWhiteSpace(data.checkpointId);
+        if (hasCheckpointScene != hasCheckpointId) Fail("Checkpoint scene and ID must both be set or both be empty.");
         // Equipment restore is intentionally deferred; never silently discard it.
         if (data.equipped.Count > 0)
             throw new NotSupportedException("Equipment saving/loading is not implemented yet.");

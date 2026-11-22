@@ -41,8 +41,11 @@ public sealed class SaveFlowCoordinator : MonoBehaviour
         try
         {
             SaveDataRestorer.ValidateForLoad(SaveLoadRequest.Data);
-            if (!Application.CanStreamedLevelBeLoaded(OfficeScene))
-                throw new InvalidOperationException("TownScene is missing from build settings.");
+            string targetScene = string.IsNullOrWhiteSpace(SaveLoadRequest.Data.checkpointSceneName)
+                ? OfficeScene
+                : SaveLoadRequest.Data.checkpointSceneName;
+            if (!Application.CanStreamedLevelBeLoaded(targetScene))
+                throw new InvalidOperationException("Saved scene is missing from build settings: " + targetScene);
         }
         catch { SaveLoadRequest.Clear(); throw; }
         loading = true;
@@ -57,7 +60,10 @@ public sealed class SaveFlowCoordinator : MonoBehaviour
         Exception error = null;
         try
         {
-            yield return Guarded(LoadOffice(), e => error = e);
+            string targetScene = string.IsNullOrWhiteSpace(SaveLoadRequest.Data.checkpointSceneName)
+                ? OfficeScene
+                : SaveLoadRequest.Data.checkpointSceneName;
+            yield return Guarded(LoadSavedScene(targetScene), e => error = e);
         }
         finally
         {
@@ -71,13 +77,14 @@ public sealed class SaveFlowCoordinator : MonoBehaviour
         }
     }
 
-    private IEnumerator LoadOffice()
+    private IEnumerator LoadSavedScene(string targetScene)
     {
         bool backup = SaveLoadRequest.UsedBackup;
+        SaveData loadedData = SaveLoadRequest.Data;
         ClearOldSessionObjects();
         yield return null; // Destroy old singletons before destination Awake runs.
-        AsyncOperation operation = SceneManager.LoadSceneAsync(OfficeScene);
-        if (operation == null) throw new InvalidOperationException("Could not load TownScene.");
+        AsyncOperation operation = SceneManager.LoadSceneAsync(targetScene);
+        if (operation == null) throw new InvalidOperationException("Could not load saved scene: " + targetScene);
         while (!operation.isDone) yield return null;
         yield return null; // Allow destination Start/spawners to finish before restoration.
 
@@ -103,11 +110,30 @@ public sealed class SaveFlowCoordinator : MonoBehaviour
             throw new InvalidOperationException("Office player/save managers did not become ready.");
 
         SaveLoadRequest.Apply(inventory, wallet, QuestManager.Instance, TutorialManager.Instance);
-        PlaceAtOfficeSavePoint(player);
+        PlaceAtSavedCheckpoint(player, loadedData);
         if (CameraFollow.Instance != null) CameraFollow.Instance.SnapToTarget();
         SaveSlotWindow.CompleteLoad(backup);
         while (SaveSlotWindow.IsShowing) yield return null;
         TutorialManager.Instance.ResumeAfterSaveLoad();
+    }
+
+    private static void PlaceAtSavedCheckpoint(PlayerController player, SaveData data)
+    {
+        if (player == null) return;
+        SavePoint checkpoint = SavePoint.FindCheckpoint(data.checkpointSceneName, data.checkpointId);
+        if (checkpoint != null)
+        {
+            player.transform.position = checkpoint.transform.position;
+            Physics2D.SyncTransforms();
+            player.StopForMenu();
+            return;
+        }
+
+        // Existing saves without checkpoint metadata continue from the office spawn.
+        if (string.IsNullOrWhiteSpace(data.checkpointSceneName) || data.checkpointSceneName == OfficeScene)
+            PlaceAtOfficeSavePoint(player);
+        else
+            player.StopForMenu(); // PersistentPlayer has already used the destination scene's SpawnPoint.
     }
 
     private static void ClearOldSessionObjects()
