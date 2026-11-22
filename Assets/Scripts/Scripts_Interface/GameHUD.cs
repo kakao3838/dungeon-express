@@ -55,6 +55,7 @@ public class GameHUD : MonoBehaviour
             questManager = QuestManager.Instance;
             questManager.OnQuestStarted += RefreshQuest;
             questManager.OnQuestCompleted += OnQuestCompleted;
+            questManager.OnQuestCancelled += OnQuestCancelled;
             questManager.OnStateRestored += OnQuestStateRestored;
             RefreshQuest(questManager.TrackedQuest);
         }
@@ -67,6 +68,7 @@ public class GameHUD : MonoBehaviour
         {
             questManager.OnQuestStarted -= RefreshQuest;
             questManager.OnQuestCompleted -= OnQuestCompleted;
+            questManager.OnQuestCancelled -= OnQuestCancelled;
             questManager.OnStateRestored -= OnQuestStateRestored;
         }
     }
@@ -81,6 +83,12 @@ public class GameHUD : MonoBehaviour
     void OnQuestCompleted(QuestData completed)
     {
         RefreshQuestList();
+    }
+
+    void OnQuestCancelled(QuestData cancelled)
+    {
+        // 취소한 퀘스트는 이미 진행 목록에서 빠진 상태이므로, 남은 진행 중 퀘스트 중 가장 최근 것을 보여줌 (없으면 숨김)
+        RefreshQuest(questManager.TrackedQuest);
     }
 
     void RefreshQuest(QuestData started) => RefreshQuestList();
