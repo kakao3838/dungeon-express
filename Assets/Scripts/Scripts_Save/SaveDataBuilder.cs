@@ -35,6 +35,9 @@ public static class SaveDataBuilder
             savedAtUtc = DateTime.UtcNow.ToString("O"),
             playTimeSeconds = playTimeSeconds,
 
+            checkpointSceneName = SaveCheckpointState.SceneName,
+            checkpointId = SaveCheckpointState.CheckpointId,
+
             gold = wallet.Gold,
 
             maxSlots = inventory.maxSlots,

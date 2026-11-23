@@ -11,6 +11,10 @@ public sealed class SavePoint : MonoBehaviour
 {
     [Header("사용 장소")]
     public string officeSceneName = "TownScene";
+    [Tooltip("Enable for save points intentionally placed outside the office.")]
+    public bool allowOutsideOffice;
+    [Tooltip("Optional stable respawn checkpoint ID for this save point.")]
+    public string checkpointId;
     [Tooltip("에디터의 PlayerMonsterTest 씬에서만 테스트를 허용합니다. 빌드에서는 무시됩니다.")]
     public bool allowEditorTestScene;
 
@@ -24,8 +28,17 @@ public sealed class SavePoint : MonoBehaviour
     private GameObject prompt;
     private SaveSlotWindow openedWindow;
 
-    public bool IsSceneAllowed => SaveScenePolicy.IsAllowed(
+    public bool IsSceneAllowed => allowOutsideOffice || SaveScenePolicy.IsAllowed(
         SceneManager.GetActiveScene().name, officeSceneName, Application.isEditor, allowEditorTestScene);
+
+    public static SavePoint FindCheckpoint(string sceneName, string id)
+    {
+        if (string.IsNullOrWhiteSpace(sceneName) || string.IsNullOrWhiteSpace(id)) return null;
+        foreach (SavePoint point in FindObjectsByType<SavePoint>(FindObjectsSortMode.None))
+            if (point.gameObject.scene.name == sceneName && point.checkpointId == id)
+                return point;
+        return null;
+    }
 
     private void Awake()
     {
@@ -55,7 +68,11 @@ public sealed class SavePoint : MonoBehaviour
         if (other.GetComponentInParent<Inventory>() == null) return;
         if (other.CompareTag("Player") ||
             (other.attachedRigidbody != null && other.attachedRigidbody.CompareTag("Player")))
+        {
             players.Add(other);
+            if (!string.IsNullOrWhiteSpace(checkpointId))
+                SaveCheckpointState.SetCurrent(gameObject.scene.name, checkpointId);
+        }
     }
 
     private void Update()
@@ -79,7 +96,8 @@ public sealed class SavePoint : MonoBehaviour
         if (prompt != null) prompt.SetActive(available);
         var keyboard = Keyboard.current;
         if (!available || keyboard == null || !keyboard.fKey.wasPressedThisFrame) return;
-        openedWindow = SaveSlotWindow.OpenSave(() => openedWindow = null, allowEditorTestScene, officeSceneName);
+        openedWindow = SaveSlotWindow.OpenSave(() => openedWindow = null, allowEditorTestScene,
+            officeSceneName, allowOutsideOffice);
         if (prompt != null) prompt.SetActive(false);
     }
 

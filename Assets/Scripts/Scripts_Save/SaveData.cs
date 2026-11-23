@@ -13,6 +13,10 @@ public class SaveData
     public string mainQuestId;
     public string mainQuestName;
 
+    // Last activated respawn checkpoint. Empty values are allowed for older saves.
+    public string checkpointSceneName;
+    public string checkpointId;
+
     // PlayerWallet.Gold
     public int gold;
 

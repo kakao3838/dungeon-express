@@ -32,6 +32,7 @@ public static class SaveDataRestorer
         wallet.RestoreSaveState(data.gold);
         quests.RestoreSaveState(state.Active, state.Completed, data.flags, state.Qualities);
         tutorial.RestoreSaveState(data.tutorialCompleted, data.dungeonGuideShown);
+        SaveCheckpointState.Restore(data.checkpointSceneName, data.checkpointId);
         SavePlayTime.Begin(data.playTimeSeconds);
 
         // Publish after all state is restored. These are refresh events, not quest rewards.

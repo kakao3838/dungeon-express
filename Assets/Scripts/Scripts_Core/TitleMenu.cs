@@ -98,7 +98,12 @@ public class TitleMenu : MonoBehaviour
     public void OnStartGame()
     {
         SaveLoadRequest.Clear();
-        SaveGameService.BeginNewGame();
+        SaveSlotWindow.OpenNewGame(StartNewGame, OpenMainMenu);
+    }
+
+    private void StartNewGame(int profileSlot)
+    {
+        SaveGameService.BeginNewGame(profileSlot);
         SceneManager.LoadScene(sceneToLoad);
     }
 
