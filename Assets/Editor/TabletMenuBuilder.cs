@@ -492,6 +492,22 @@ public static class TabletMenuBuilder
         controller.descriptionText = Txt("Description", detail, "", 26, Ink, TextAlignmentOptions.TopLeft, 1230, 470, 560, 230, 16);
         controller.objectivesText = Txt("Objectives", detail, "", 26, Ink, TextAlignmentOptions.TopLeft, 1230, 720, 560, 200, 16);
 
+        // [의뢰 취소] 버튼 (진행 중인 의뢰에 보임)
+        controller.cancelButton = TextButton(detail, "의뢰 취소", 1610, 935, controller.OnClickCancel);
+
+        // "정말 취소할까요?" 확인 팝업 (태블릿 가운데에 작게). 맨 마지막에 만들어서 다른 것들 위에 보임
+        var popup = Stretch("CancelConfirm", panel);
+        Img(Stretch("Dim", popup), new Color(0f, 0f, 0f, 0.3f), null, false, true);
+        var box = Rect("Box", popup, 830, 410, 520, 260);
+        Img(box, Color.white, round, true, true);
+        OutlineFrame(box, 3, Ink);
+        Txt("Title", box, "정말 취소할까요?", 34, Ink, TextAlignmentOptions.Center, 20, 24, 480, 50);
+        controller.confirmText = Txt("Message", box, "", 22, Muted, TextAlignmentOptions.Center, 40, 84, 440, 76, 14);
+        TextButton(box, "취소하기", 60, 176, controller.OnConfirmCancel);
+        TextButton(box, "돌아가기", 280, 176, controller.CloseConfirm);
+        controller.confirmPopup = popup.gameObject;
+        popup.gameObject.SetActive(false);
+
         return panel.gameObject;
     }
 
