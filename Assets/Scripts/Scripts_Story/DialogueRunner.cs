@@ -22,6 +22,7 @@ public class DialogueRunner : MonoBehaviour
     private bool holdingPause;
     private bool advanceClicked;
     private int shownFrame = -1;
+    private DialogView dialogueView;
 
     public bool IsOpen => panel != null && panel.activeSelf;
 
@@ -29,6 +30,7 @@ public class DialogueRunner : MonoBehaviour
     {
         if (Instance != null && Instance != this) return;
         Instance = this;
+        dialogueView = DialogView.Install(panel, speakerText, lineText, () => advanceClicked = true, advance: true);
         if (panel != null) panel.SetActive(false);
         if (panelButton != null) panelButton.onClick.AddListener(() => advanceClicked = true);
     }
@@ -55,9 +57,15 @@ public class DialogueRunner : MonoBehaviour
         if (panel == null) yield break;
 
         bool hasSpeaker = !string.IsNullOrEmpty(speaker);
-        if (speakerBox != null) speakerBox.SetActive(hasSpeaker);
-        if (speakerText != null) speakerText.text = speaker;
-        if (lineText != null) lineText.text = text;
+        if (speakerBox != null)
+        {
+            // The common frame already contains its name area. Do not resurrect
+            // the legacy grey box each time a new story line starts.
+            bool usesCommonName = dialogueView != null &&
+                !speakerBox.transform.IsChildOf(dialogueView.transform);
+            speakerBox.SetActive(!usesCommonName && hasSpeaker);
+        }
+        DialogView.Display(panel, speaker, text, speakerText, lineText);
 
         panel.SetActive(true);
         HoldPause();

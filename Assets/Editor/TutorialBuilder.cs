@@ -22,6 +22,14 @@ public static class TutorialBuilder
     static TMP_FontAsset font;
     static Sprite round;
 
+    // Allows the tutorial UI to be rebuilt from Unity batch mode as well as
+    // from the editor menu while ensuring the intended scene is active.
+    public static void BuildTownSceneTutorial()
+    {
+        EditorSceneManager.OpenScene("Assets/Scenes/TownScene.unity");
+        Build();
+    }
+
     [MenuItem("Dungeon Express/Build Tutorial")]
     public static void Build()
     {
@@ -124,6 +132,7 @@ public static class TutorialBuilder
     {
         var root = new GameObject("TutorialManager");
         var manager = root.AddComponent<TutorialManager>();
+        manager.tutorialSlides = Object.FindFirstObjectByType<TutorialSlideController>();
         manager.runTutorial = runTutorial;
 
         var canvasGo = new GameObject("TutorialCanvas", typeof(RectTransform));
@@ -138,6 +147,7 @@ public static class TutorialBuilder
         canvasGo.AddComponent<GraphicRaycaster>();
 
         var so = new SerializedObject(manager);
+        Set(so, "tutorialSlides", manager.tutorialSlides);
         so.FindProperty("tutorialQuest").objectReferenceValue = AssetDatabase.LoadAssetAtPath<QuestData>(QuestPath);
         if (so.FindProperty("tutorialQuest").objectReferenceValue == null)
             Debug.LogWarning("[TutorialBuilder] 튜토리얼 퀘스트를 찾지 못했습니다: " + QuestPath);
@@ -302,6 +312,39 @@ public static class TutorialBuilder
         var okLe = okRt.gameObject.AddComponent<LayoutElement>();
         okLe.preferredWidth = 240;
         okLe.preferredHeight = 70;
+
+        // Keep the tutorial key guide as its own prefab so its layout can be
+        // edited independently of the other tutorial screens.
+        const string prefabPath = "Assets/Prefab/UI/Tutorial/KeyGuidePanel.prefab";
+        if (!AssetDatabase.IsValidFolder("Assets/Prefab/UI"))
+            AssetDatabase.CreateFolder("Assets/Prefab", "UI");
+        if (!AssetDatabase.IsValidFolder("Assets/Prefab/UI/Tutorial"))
+            AssetDatabase.CreateFolder("Assets/Prefab/UI", "Tutorial");
+
+        var keyGuidePrefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
+        if (keyGuidePrefab == null)
+        {
+            // These are runtime templates, so they should not appear in the
+            // prefab preview before TutorialManager populates the rows.
+            rowGo.SetActive(false);
+            capGo.SetActive(false);
+            keyGuidePrefab = PrefabUtility.SaveAsPrefabAssetAndConnect(
+                panelGo, prefabPath, InteractionMode.AutomatedAction);
+        }
+        else
+        {
+            Object.DestroyImmediate(panelGo);
+            panelGo = PrefabUtility.InstantiatePrefab(keyGuidePrefab, canvas) as GameObject;
+            if (panelGo == null)
+                throw new System.InvalidOperationException("KeyGuidePanel 프리팹을 씬에 배치하지 못했습니다.");
+
+            panel = (RectTransform)panelGo.transform;
+            title = panelGo.transform.Find("Title").GetComponent<TextMeshProUGUI>(); // Txt returns this concrete TMP type.
+            rowsGo = panelGo.transform.Find("Rows").gameObject;
+            rowGo = panelGo.transform.Find("Rows/RowTemplate").gameObject;
+            capGo = panelGo.transform.Find("KeyCapTemplate").gameObject;
+            okBtn = panelGo.transform.Find("ConfirmButton").GetComponent<Button>();
+        }
 
         Set(so, "keyGuidePanel", panel.gameObject);
         Set(so, "keyGuideTitle", title);
