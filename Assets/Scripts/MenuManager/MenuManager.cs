@@ -45,7 +45,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private string[] blockedScenes = { "BootScene", "TitleScene" };
 
     public bool IsOpen { get; private set; }
-    public MenuTab CurrentTab { get; private set; } = MenuTab.Inventory;
+    public MenuTab CurrentTab { get; private set; } = MenuTab.Map;
 
     private bool holdingPause; // GamePause를 내가 잡고 있는지 (대화창/결과창 등과 같은 정지 처리를 공유)
 
@@ -177,11 +177,11 @@ public class MenuManager : MonoBehaviour
             return;
         }
 
-        // E / Tab : 마지막으로 보던 탭으로 열기 / 닫기
+        // E / Tab : 지도 탭부터 열기 / 닫기 (마지막으로 보던 탭으로 열고 싶으면 MenuTab.Map 대신 CurrentTab)
         if (keyboard.eKey.wasPressedThisFrame || keyboard.tabKey.wasPressedThisFrame)
         {
             if (IsOpen) Close();
-            else Open(CurrentTab);
+            else Open(MenuTab.Map);
         }
 
         // 1~5, M : 해당 탭으로 바로 열기 (이미 그 탭이면 닫기)
