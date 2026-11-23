@@ -4,16 +4,21 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
-// 열려 있는 TownScene에 사망 처리(DeathManager)와 "YOU DIE" 화면을 만듭니다.
+// 열려 있는 TownScene에 사망 처리(DeathManager)와 사망 알림 UI를 만듭니다.
+//   - 장면 이동을 가리는 검은 암전 화면
+//   - 화면 좌하단에 쌓이는 "사라진 물품" 알림 (알림 견본 + 쌓이는 칸)
 // 메뉴: Dungeon Express > Build Death Screen  (이미 있으면 지우고 다시 만듦)
-// 화면 모양을 바꾸고 싶으면 이 스크립트의 좌표와 색을 고치고 다시 실행하세요.
+// 알림 모양을 바꾸고 싶으면 이 스크립트의 좌표와 색을 고치고 다시 실행하세요.
 public static class DeathBuilder
 {
     const string FontAssetPath = "Assets/Fonts/MalgunGothic SDF.asset";
 
-    static readonly Color Ink = Color.white;
-    static readonly Color Muted = new Color(0.75f, 0.75f, 0.75f);
-    static readonly Color Blood = new Color(0.8f, 0.12f, 0.12f);
+    static readonly Color NoticeBg = new Color(0.55f, 0.55f, 0.55f, 0.96f);
+    static readonly Color Ink = new Color(0.08f, 0.08f, 0.08f, 1f);
+
+    // 알림 크기 (1920x1080 기준). 의뢰 포기 줄이 없을 때의 높이는 DeathNoticeStack이 줄임
+    const float NoticeWidth = 780f;
+    const float NoticeHeight = 180f;
 
     static TMP_FontAsset font;
 
@@ -47,59 +52,65 @@ public static class DeathBuilder
         scaler.matchWidthOrHeight = 0.5f;
         canvasGo.AddComponent<GraphicRaycaster>();
 
-        // 화면 전체를 덮는 어두운 배경 (페이드는 CanvasGroup으로)
-        var screen = Full("DeathScreen", canvasGo.transform);
-        var group = screen.gameObject.AddComponent<CanvasGroup>();
-        var bg = screen.gameObject.AddComponent<Image>();
-        bg.color = new Color(0f, 0f, 0f, 0.92f);
-        bg.raycastTarget = true;
+        // 장면 이동을 가리는 검은 화면 (페이드는 CanvasGroup으로)
+        var fade = Full("Fade", canvasGo.transform);
+        var group = fade.gameObject.AddComponent<CanvasGroup>();
+        var fadeImage = fade.gameObject.AddComponent<Image>();
+        fadeImage.color = Color.black;
+        fadeImage.raycastTarget = true;
 
-        // 제목
-        var title = Txt("Title", screen, "YOU DIE", 150, Blood, TextAlignmentOptions.Center, 0, 150, 1920, 200);
-        title.fontStyle = FontStyles.Bold;
-
-        // 사라진 아이템
-        var header = Txt("LostHeader", screen, "사라진 아이템", 48, Ink, TextAlignmentOptions.Center, 0, 400, 1920, 70);
-
-        var rows = Rect("LostRows", screen, 560, 490, 800, 360);
-        var vlg = rows.gameObject.AddComponent<VerticalLayoutGroup>();
-        vlg.spacing = 14;
-        vlg.childAlignment = TextAnchor.UpperCenter;
+        // 좌하단에 쌓이는 알림 칸 (아래쪽 기준으로 쌓임)
+        var stackRt = new GameObject("DeathNotices", typeof(RectTransform)).GetComponent<RectTransform>();
+        stackRt.SetParent(canvasGo.transform, false);
+        stackRt.anchorMin = stackRt.anchorMax = Vector2.zero;
+        stackRt.pivot = Vector2.zero;
+        stackRt.anchoredPosition = Vector2.zero;
+        stackRt.sizeDelta = new Vector2(NoticeWidth, 1000f);
+        var vlg = stackRt.gameObject.AddComponent<VerticalLayoutGroup>();
+        vlg.spacing = 0;
+        vlg.childAlignment = TextAnchor.LowerLeft;
         vlg.childControlWidth = true;
         vlg.childControlHeight = true;
         vlg.childForceExpandWidth = true;
         vlg.childForceExpandHeight = false;
+        var stack = stackRt.gameObject.AddComponent<DeathNoticeStack>();
 
-        // 줄 견본: [아이콘] 이름 ........ 품질%
-        var rowRt = Rect("LostRowTemplate", rows, 0, 0, 800, 76);
-        var rowBg = rowRt.gameObject.AddComponent<Image>();
-        rowBg.color = new Color(1f, 1f, 1f, 0.1f);
-        rowBg.raycastTarget = false;
-        var rowLe = rowRt.gameObject.AddComponent<LayoutElement>();
-        rowLe.preferredHeight = 76;
-        rowLe.minHeight = 76;
-        var iconRt = Rect("Icon", rowRt, 14, 6, 64, 64);
-        var iconImg = iconRt.gameObject.AddComponent<Image>();
-        iconImg.preserveAspect = true;
-        iconImg.raycastTarget = false;
-        Txt("Name", rowRt, "", 38, Ink, TextAlignmentOptions.MidlineLeft, 100, 0, 520, 76);
-        Txt("Quality", rowRt, "", 38, Muted, TextAlignmentOptions.MidlineRight, 620, 0, 160, 76);
+        // 알림 견본: 사라진 물품 / 의뢰 포기 / X 버튼
+        var template = Rect("DeathNoticeTemplate", stackRt, 0, 0, NoticeWidth, NoticeHeight);
+        var bg = template.gameObject.AddComponent<Image>();
+        bg.color = NoticeBg;
+        bg.raycastTarget = true;
+        var le = template.gameObject.AddComponent<LayoutElement>();
+        le.preferredWidth = NoticeWidth;
+        le.preferredHeight = NoticeHeight;
+        le.minHeight = NoticeHeight;
 
-        // 안내
-        var hint = Txt("Hint", screen, "아무 키나 눌러서 사무실로 돌아가기", 36, Muted, TextAlignmentOptions.Center, 0, 940, 1920, 60);
+        var title = Txt("Title", template, "사라진 물품: 케이크", 46, Ink, TextAlignmentOptions.MidlineLeft,
+            28, 16, 660, 70);
+        var sub = Txt("Sub", template, "'의뢰 이름' 포기", 32, Ink, TextAlignmentOptions.MidlineRight,
+            28, 112, NoticeWidth - 56, 50);
 
+        var closeRt = Rect("CloseButton", template, NoticeWidth - 72, 10, 56, 56);
+        var closeImage = closeRt.gameObject.AddComponent<Image>();
+        closeImage.color = new Color(1f, 1f, 1f, 0.01f); // 클릭 영역만 (보이지 않게)
+        var closeButton = closeRt.gameObject.AddComponent<Button>();
+        closeButton.targetGraphic = closeImage;
+        Txt("Label", closeRt, "X", 40, Ink, TextAlignmentOptions.Center, 0, 0, 56, 56);
+
+        // 연결
         var so = new SerializedObject(manager);
-        Set(so, "screen", group);
-        Set(so, "titleText", title);
-        Set(so, "lostHeaderText", header);
-        Set(so, "lostRowsParent", rows);
-        Set(so, "lostRowTemplate", rowRt.gameObject);
-        Set(so, "hintText", hint);
+        Set(so, "fade", group);
+        Set(so, "notices", stack);
         so.ApplyModifiedPropertiesWithoutUndo();
 
+        var stackSo = new SerializedObject(stack);
+        Set(stackSo, "container", stackRt);
+        Set(stackSo, "template", template.gameObject);
+        stackSo.ApplyModifiedPropertiesWithoutUndo();
+
         // 화면을 가리지 않게 꺼둠 (DeathManager가 필요할 때 켬)
-        rowRt.gameObject.SetActive(false);
-        screen.gameObject.SetActive(false);
+        template.gameObject.SetActive(false);
+        fade.gameObject.SetActive(false);
 
         EditorSceneManager.MarkSceneDirty(scene);
         EditorSceneManager.SaveScene(scene);
@@ -113,7 +124,7 @@ public static class DeathBuilder
         p.objectReferenceValue = value;
     }
 
-    // ---------- 헬퍼 (TabletMenuBuilder와 같은 방식) ----------
+    // ---------- 헬퍼 ----------
 
     // 좌상단 기준 좌표(x, y 아래로 증가) 배치
     static RectTransform Rect(string name, Transform parent, float x, float y, float w, float h)

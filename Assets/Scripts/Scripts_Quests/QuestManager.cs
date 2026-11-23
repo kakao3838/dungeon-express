@@ -104,8 +104,10 @@ public class QuestManager : MonoBehaviour
         return true;
     }
 
-    // 인벤토리가 이 퀘스트에 필요한 물품을 다 갖고 있는지 확인
+    // 의뢰가 취소(포기)됐을 때 (태블릿 취소 버튼, 사망으로 인한 포기 등)
     public event Action<QuestData> OnQuestCancelled;
+
+    // 인벤토리가 이 퀘스트에 필요한 물품을 다 갖고 있는지 확인
     public bool HasRequiredItems(QuestData quest, Inventory inventory)
     {
         if (quest == null || inventory == null) return false;
@@ -122,8 +124,10 @@ public class QuestManager : MonoBehaviour
         return true;
     }
     // 진행 중인 퀘스트를 취소합니다. 완료로 기록하지 않으므로 의뢰를 준 곳에서 다시 받을 수 있어요.
+    // 진행 중인 의뢰가 아니면 아무것도 하지 않고 false를 돌려줍니다.
     public bool CancelQuest(QuestData quest, Inventory inventory)
     {
+        if (!IsQuestActive(quest)) return false;
 
         // StartQuest가 자동으로 넣어준 물품을 가방에서 회수 (StartQuest의 반대)
         if (inventory != null && quest.giveItemsOnStart)

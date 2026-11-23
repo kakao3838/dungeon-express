@@ -47,6 +47,7 @@ public class StoryManager : MonoBehaviour
     public bool debugWarpToLeon = true;
 
     private bool running;
+    private QuestManager subscribedTo;
 
     private QuestManager Quests => QuestManager.Instance;
 
@@ -78,9 +79,33 @@ public class StoryManager : MonoBehaviour
 
     void OnDestroy()
     {
+        if (subscribedTo != null) subscribedTo.OnQuestCancelled -= OnQuestCancelled;
+        subscribedTo = null;
+
         if (Instance != this) return;
         SceneManager.sceneLoaded -= OnSceneLoaded;
         Instance = null;
+    }
+
+    // QuestManager는 이 오브젝트와 따로 만들어지므로, 생기면(또는 새로 바뀌면) 의뢰 취소 알림을 구독함
+    void Update()
+    {
+        if (Instance != this) return;
+        var quests = Quests;
+        if (quests == subscribedTo) return;
+
+        if (subscribedTo != null) subscribedTo.OnQuestCancelled -= OnQuestCancelled;
+        subscribedTo = quests;
+        if (subscribedTo != null) subscribedTo.OnQuestCancelled += OnQuestCancelled;
+    }
+
+    // 메인 1-1을 취소(포기)하면 "접수함" 기록을 지워서, 사장이 다시 "PC를 확인해 보게나"부터 같은 의뢰를 접수해 줌
+    // (태블릿에서 취소했을 때와 사망으로 포기됐을 때 모두 해당). 레온을 이미 만난 뒤에는 1-1이 끝난 상태라 건드리지 않음
+    void OnQuestCancelled(QuestData quest)
+    {
+        if (quest == null || quest != main11) return;
+        if (Has(FlagLeonMet)) return;
+        Quests.SetFlag(FlagAccepted, false);
     }
 
     // ---------- 개발용 (임시): 던전에 들어가면 레온 앞으로 이동 ----------
