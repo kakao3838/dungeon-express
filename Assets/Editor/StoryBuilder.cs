@@ -501,7 +501,7 @@ public static class StoryBuilder
         sr.sortingOrder = order;
     }
 
-    // ---------- 헬퍼 (TabletMenuBuilder와 같은 방식) ----------
+    // ---------- 헬퍼 ----------
 
     static void PrepareHelpers()
     {
