@@ -171,8 +171,9 @@ public class QuestPanelController : MonoBehaviour
     {
         if (selectedQuest == null || confirmPopup == null) return;
 
-        confirmText.text = selectedQuest.questName
-            + "\n받은 물품은 회수되고, 의뢰를 준 곳에서 다시 받을 수 있어요.";
+        SetPopup("정말 취소할까요?",
+            selectedQuest.questName + "\n받은 물품은 회수되고, 의뢰를 준 곳에서 다시 받을 수 있어요.",
+            true);
         confirmPopup.SetActive(true);
     }
 
@@ -180,15 +181,84 @@ public class QuestPanelController : MonoBehaviour
     public void OnConfirmCancel()
     {
         var manager = QuestManager.Instance;
-        if (manager != null && selectedQuest != null)
-        {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            Inventory inventory = player != null ? player.GetComponent<Inventory>() : null;
-            manager.CancelQuest(selectedQuest, inventory);
-        }
+        if (manager == null || selectedQuest == null) return;
+
+        QuestData quest = selectedQuest;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Inventory inventory = player != null ? player.GetComponent<Inventory>() : null;
+
+        var before = CountItems(inventory);
+        bool cancelled = manager.CancelQuest(quest, inventory);
+        var after = CountItems(inventory);
 
         selectedQuest = null;
         Refresh(); // 목록에서 사라지고 다음 의뢰(없으면 빈 화면)가 선택됨
+
+        // 취소했다는 걸 알 수 있게 결과(회수된 물품 포함)를 팝업으로 보여줌. [확인]을 누르면 닫힘
+        // (Refresh가 팝업을 닫으므로 그 뒤에 다시 연다)
+        if (cancelled && confirmPopup != null)
+        {
+            SetPopup("의뢰를 취소했어요", "'" + quest.questName + "'\n" + DescribeRecovered(before, after), false);
+            confirmPopup.SetActive(true);
+        }
+    }
+
+    // 팝업을 "정말 취소할까요?"(취소하기 / 돌아가기) 또는 "취소했어요"(확인 하나) 상태로 바꿈.
+    // 팝업 안의 오브젝트는 이름으로 찾음 (Box/Title, Box/취소하기Button, Box/돌아가기Button/Label)
+    void SetPopup(string title, string message, bool askConfirm)
+    {
+        if (confirmText != null) confirmText.text = message;
+
+        Transform box = confirmPopup != null ? confirmPopup.transform.Find("Box") : null;
+        if (box == null) return;
+
+        Transform titleObject = box.Find("Title");
+        if (titleObject != null) titleObject.GetComponent<TMP_Text>().text = title;
+
+        Transform applyButton = box.Find("취소하기Button");
+        if (applyButton != null) applyButton.gameObject.SetActive(askConfirm);
+
+        Transform backButton = box.Find("돌아가기Button");
+        if (backButton == null) return;
+
+        Transform label = backButton.Find("Label");
+        if (label != null) label.GetComponent<TMP_Text>().text = askConfirm ? "돌아가기" : "확인";
+
+        // 결과 화면에서는 [확인] 하나만 가운데에 둠
+        var rect = (RectTransform)backButton;
+        rect.anchoredPosition = new Vector2(askConfirm ? 280f : 170f, rect.anchoredPosition.y);
+    }
+
+    static Dictionary<ItemData, int> CountItems(Inventory inventory)
+    {
+        var counts = new Dictionary<ItemData, int>();
+        if (inventory == null) return counts;
+
+        foreach (var item in inventory.Items)
+        {
+            if (item == null) continue;
+            int count;
+            counts.TryGetValue(item, out count);
+            counts[item] = count + 1;
+        }
+        return counts;
+    }
+
+    // 취소 전후 가방을 비교해서 회수된 물품을 "유리병 3개" 형태로 보여줌
+    static string DescribeRecovered(Dictionary<ItemData, int> before, Dictionary<ItemData, int> after)
+    {
+        var sb = new StringBuilder();
+        foreach (var pair in before)
+        {
+            int left;
+            after.TryGetValue(pair.Key, out left);
+            int removed = pair.Value - left;
+            if (removed <= 0) continue;
+
+            if (sb.Length > 0) sb.Append(", ");
+            sb.Append(pair.Key.itemName).Append(' ').Append(removed).Append("개");
+        }
+        return sb.Length > 0 ? "회수된 물품: " + sb : "회수된 물품 없음";
     }
 
     // [취소] 팝업의 [돌아가기] 버튼
