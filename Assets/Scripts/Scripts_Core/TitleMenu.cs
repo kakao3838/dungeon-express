@@ -35,9 +35,8 @@ public class TitleMenu : MonoBehaviour
     public void OpenContinueMenu()
     {
         mainMenuPanel.SetActive(false);
-        continuePanel.SetActive(false);
         settingsPanel.SetActive(false);
-        try { SaveSlotWindow.OpenLoad(OpenMainMenu); }
+        try { SaveSlotWindow.OpenLoad(OpenMainMenu, continuePanel); }
         catch (System.Exception e)
         {
             Debug.LogException(e);
@@ -98,7 +97,12 @@ public class TitleMenu : MonoBehaviour
     public void OnStartGame()
     {
         SaveLoadRequest.Clear();
-        SaveGameService.BeginNewGame();
+        SaveSlotWindow.OpenNewGame(StartNewGame, OpenMainMenu);
+    }
+
+    private void StartNewGame(int profileSlot)
+    {
+        SaveGameService.BeginNewGame(profileSlot);
         SceneManager.LoadScene(sceneToLoad);
     }
 

@@ -31,8 +31,10 @@ public sealed class SaveSlotWindow : MonoBehaviour
     private readonly TMP_Text[] labels = new TMP_Text[3];
     private readonly SaveSlotInfo[] slots = new SaveSlotInfo[3];
     private bool saveMode, holdingPause, busy;
+    private bool newGameMode, saveConfirmationMode, dungeonEntryMode;
     private int selected;
     private Action pendingConfirmation, onClosed;
+    private Action<int> newGameSelected;
     private Action<bool> entryFinished;
     private DungeonEntrySession entrySession;
     private int openedFrame;
@@ -41,21 +43,48 @@ public sealed class SaveSlotWindow : MonoBehaviour
     private static void ResetStatics() { instance = null; closedFrame = -1; }
 
     public static SaveSlotWindow OpenSave(Action closed = null, bool allowEditorTestScene = false,
-        string officeSceneName = "TownScene")
+        string officeSceneName = "TownScene", bool allowOutsideOffice = false)
     {
-        if (!SaveScenePolicy.IsAllowed(SceneManager.GetActiveScene().name, officeSceneName,
+        if (!allowOutsideOffice && !SaveScenePolicy.IsAllowed(SceneManager.GetActiveScene().name, officeSceneName,
             Application.isEditor, allowEditorTestScene))
             throw new InvalidOperationException("Saving is only allowed in the office.");
-        return Open(true, closed);
+        SaveSlotWindow window = Open(true, closed);
+        window.ConfigureCurrentProfileSave();
+        return window;
     }
-    public static SaveSlotWindow OpenLoad(Action closed = null) => Open(false, closed);
+    public static SaveSlotWindow OpenLoad(Action closed = null, GameObject hostPanel = null) => Open(false, closed, hostPanel);
+
+    // New games can only be created in an empty profile. Existing profiles remain available to Continue.
+    public static SaveSlotWindow OpenNewGame(Action<int> selected, Action closed = null)
+    {
+        if (selected == null) throw new ArgumentNullException(nameof(selected));
+        SaveSlotWindow window = Open(false, closed);
+        window.newGameMode = true;
+        window.saveMode = true;
+        window.newGameSelected = selected;
+        window.saveConfirmationMode = false;
+        window.dungeonEntryMode = false;
+        window.slotGroup.SetActive(true);
+        window.skipSaveButton.gameObject.SetActive(false);
+        window.heading.text = "\uC0C8 \uAC8C\uC784 \uD504\uB85C\uD544 \uC120\uD0DD";
+        window.confirmButton.GetComponentInChildren<TMP_Text>().text = "\uC2DC\uC791";
+        window.notice.text = "\uAE30\uC874 \uD504\uB85C\uD544\uC744 \uC120\uD0DD\uD558\uBA74 \uB36E\uC5B4\uC501\uB2C8\uB2E4.";
+        window.Refresh();
+        return window;
+    }
 
     public static SaveSlotWindow OpenDungeonEntry(Action<bool> completed, bool allowEditorTestScene)
     {
         if (IsShowing) throw new InvalidOperationException("Another slot window is already open.");
-        SaveSlotWindow window = OpenSave(allowEditorTestScene: allowEditorTestScene);
+        if (!SaveScenePolicy.IsAllowed(SceneManager.GetActiveScene().name, "TownScene",
+            Application.isEditor, allowEditorTestScene))
+            throw new InvalidOperationException("Dungeon entry saving is only allowed from the office.");
+        SaveSlotWindow window = Open(true, null);
         window.entryFinished = completed;
         window.entrySession = new DungeonEntrySession();
+        window.newGameMode = false;
+        window.saveConfirmationMode = false;
+        window.dungeonEntryMode = true;
         window.slotGroup.SetActive(false);
         window.heading.text = "세이브 하시겠습니까?";
         window.confirmButton.GetComponentInChildren<TMP_Text>().text = "예";
@@ -89,12 +118,10 @@ public sealed class SaveSlotWindow : MonoBehaviour
         window.notice.text = "불러오지 못했습니다. 슬롯을 다시 선택하거나 닫고 타이틀로 돌아가 주세요.";
     }
 
-    private static SaveSlotWindow Open(bool saving, Action closed)
+    private static SaveSlotWindow Open(bool saving, Action closed, GameObject hostPanel = null)
     {
         if (instance == null)
         {
-            GameObject prefab = Resources.Load<GameObject>("SaveSlotPanel");
-            if (prefab == null) throw new InvalidOperationException("Resources/SaveSlotPanel is missing.");
             var root = new GameObject("SaveSlotWindow", typeof(RectTransform), typeof(Canvas),
                 typeof(CanvasScaler), typeof(GraphicRaycaster));
             DontDestroyOnLoad(root);
@@ -105,14 +132,24 @@ public sealed class SaveSlotWindow : MonoBehaviour
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             scaler.referenceResolution = new Vector2(1920, 1080);
             scaler.matchWidthOrHeight = 0.5f;
-            try { instance.Build(Instantiate(prefab, root.transform)); }
-            catch
-            {
-                instance = null;
-                Destroy(root);
-                throw;
-            }
         }
+
+        // The title already has an editable ContinuePanel shell. Bind the slot
+        // controller to that hierarchy instead of creating a second visible UI.
+        // Other callers keep using the shared Resources prefab.
+        if (hostPanel != null && instance.panel != hostPanel)
+        {
+            if (instance.IsOpen) return instance;
+            if (instance.panel != null) Destroy(instance.panel);
+            instance.Build(hostPanel);
+        }
+        else if (instance.panel == null)
+        {
+            GameObject prefab = Resources.Load<GameObject>("SaveSlotPanel");
+            if (prefab == null) throw new InvalidOperationException("Resources/SaveSlotPanel is missing.");
+            instance.Build(Instantiate(prefab, instance.transform));
+        }
+
         if (instance.IsOpen) return instance;
         EnsureEventSystem();
         instance.Show(saving, closed);
@@ -132,6 +169,13 @@ public sealed class SaveSlotWindow : MonoBehaviour
     {
         // The old scene's title/menu objects may already have been destroyed.
         onClosed = null;
+        // A title-hosted panel is destroyed when starting a new game without
+        // loading. Recreate the reusable Resources panel for later save screens.
+        if (panel == null)
+        {
+            GameObject prefab = Resources.Load<GameObject>("SaveSlotPanel");
+            if (prefab != null) Build(Instantiate(prefab, transform));
+        }
         if (IsOpen && !SaveFlowCoordinator.IsLoading) Close();
     }
     private void OnDestroy()
@@ -145,6 +189,10 @@ public sealed class SaveSlotWindow : MonoBehaviour
     private void Show(bool saving, Action closed)
     {
         saveMode = saving;
+        newGameMode = false;
+        saveConfirmationMode = false;
+        dungeonEntryMode = false;
+        newGameSelected = null;
         entrySession = null;
         entryFinished = null;
         slotGroup.SetActive(true);
@@ -219,7 +267,7 @@ public sealed class SaveSlotWindow : MonoBehaviour
             else labels[i].text = prefix + "  ·  " + SaveSlotDisplay.Chapter(entry.Data) +
                 "\n" + SaveSlotDisplay.SavedAt(entry.Data) + "\n플레이 시간 " + SaveSlotDisplay.PlayTime(entry.Data) +
                 (entry.State == SaveSlotState.Backup ? " (백업)" : "");
-            rows[i].interactable = saveMode || entry.CanLoad;
+            rows[i].interactable = newGameMode || saveMode || entry.CanLoad;
         }
         UpdateConfirmButton();
     }
@@ -234,13 +282,41 @@ public sealed class SaveSlotWindow : MonoBehaviour
 
     private void UpdateConfirmButton()
     {
+        if (saveConfirmationMode || dungeonEntryMode)
+        {
+            confirmButton.interactable = !busy && SaveGameService.HasActiveProfile;
+            return;
+        }
         confirmButton.interactable = !busy && selected > 0 &&
-            (saveMode || slots[selected - 1].CanLoad);
+            (newGameMode || saveMode || slots[selected - 1].CanLoad);
     }
 
     private void ConfirmSelection()
     {
         if (busy || confirmation.activeSelf) return;
+        if (newGameMode)
+        {
+            if (selected < 1) return;
+            int profileSlot = selected;
+            if (SaveGameService.Files.Exists(profileSlot))
+            {
+                Ask("\uD504\uB85C\uD544 " + profileSlot + "\uC758 \uC800\uC7A5 \uB370\uC774\uD130\uB97C \uB36E\uC5B4\uC4F0\uACE0 \uC0C8 \uAC8C\uC784\uC744 \uC2DC\uC791\uD560\uAE4C\uC694?",
+                    () => StartNewGameInProfile(profileSlot, true));
+                return;
+            }
+            StartNewGameInProfile(profileSlot, false);
+            return;
+        }
+        if (saveConfirmationMode)
+        {
+            SaveCurrentProfileAndClose();
+            return;
+        }
+        if (dungeonEntryMode)
+        {
+            SaveCurrentProfileForDungeonEntry();
+            return;
+        }
         if (entrySession != null && entrySession.State == DungeonEntryState.Choosing)
         {
             entrySession.ChooseSave();
@@ -265,6 +341,19 @@ public sealed class SaveSlotWindow : MonoBehaviour
         else Load(slot);
     }
 
+    private void StartNewGameInProfile(int slot, bool overwriteExisting)
+    {
+        try
+        {
+            if (overwriteExisting) SaveGameService.Delete(slot);
+            Action<int> callback = newGameSelected;
+            newGameSelected = null;
+            Close();
+            callback?.Invoke(slot);
+        }
+        catch (Exception e) { ShowFailure(e, "\uD504\uB85C\uD544\uC744 \uC900\uBE44\uD558\uC9C0 \uBABB\uD588\uC2B5\uB2C8\uB2E4."); }
+    }
+
     private void Save(int slot, bool overwrite)
     {
         try
@@ -280,6 +369,52 @@ public sealed class SaveSlotWindow : MonoBehaviour
             StartCoroutine(ShowSuccessAndClose("저장 완료"));
         }
         catch (Exception e) { ShowFailure(e, "저장하지 못했습니다. 게임 데이터와 저장 경로를 확인한 뒤 다시 시도해 주세요."); }
+    }
+
+    private void ConfigureCurrentProfileSave()
+    {
+        newGameMode = false;
+        saveConfirmationMode = true;
+        dungeonEntryMode = false;
+        slotGroup.SetActive(false);
+        skipSaveButton.gameObject.SetActive(false);
+        heading.text = "\uD604\uC7AC \uD504\uB85C\uD544\uC5D0 \uC800\uC7A5\uD558\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?";
+        confirmButton.GetComponentInChildren<TMP_Text>().text = "\uC800\uC7A5";
+        backButton.GetComponentInChildren<TMP_Text>().text = "\uCDE8\uC18C";
+        confirmButton.interactable = SaveGameService.HasActiveProfile;
+        notice.text = SaveGameService.HasActiveProfile ? "" : "\uC120\uD0DD\uB41C \uD504\uB85C\uD544\uC774 \uC5C6\uC2B5\uB2C8\uB2E4.";
+        ApplyLayout(true);
+    }
+
+    private void SaveCurrentProfileAndClose()
+    {
+        try
+        {
+            SaveCurrentProfile();
+            StartCoroutine(ShowSuccessAndClose("\uC800\uC7A5 \uC644\uB8CC"));
+        }
+        catch (Exception e) { ShowFailure(e, "\uC800\uC7A5\uD558\uC9C0 \uBABB\uD588\uC2B5\uB2C8\uB2E4. \uC800\uC7A5 \uB370\uC774\uD130\uB97C \uD655\uC778\uD574 \uC8FC\uC138\uC694."); }
+    }
+
+    private void SaveCurrentProfileForDungeonEntry()
+    {
+        try
+        {
+            SaveCurrentProfile();
+            entrySession?.ChooseSave();
+            entrySession?.Saved();
+            Close();
+        }
+        catch (Exception e) { ShowFailure(e, "\uC800\uC7A5\uD558\uC9C0 \uBABB\uD588\uC2B5\uB2C8\uB2E4. \uB358\uC804\uC5D0 \uC785\uC7A5\uD560 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4."); }
+    }
+
+    private static void SaveCurrentProfile()
+    {
+        var inventory = FindFirstObjectByType<Inventory>();
+        var wallet = FindFirstObjectByType<PlayerWallet>();
+        if (inventory == null || wallet == null || QuestManager.Instance == null)
+            throw new InvalidOperationException("Player save components are not ready.");
+        SaveGameService.SaveCurrentProfile(inventory, wallet, QuestManager.Instance);
     }
 
     private void Load(int slot)
@@ -300,6 +435,9 @@ public sealed class SaveSlotWindow : MonoBehaviour
             {
                 bool connected = SaveLoadRequest.HasHandler;
                 SaveLoadRequest.Select(slot, data, backup);
+                // Keep the selected slot window visible while the title scene is
+                // replaced by TownScene. The persistent controller owns this canvas.
+                if (SaveFlowCoordinator.IsLoading) MovePanelToPersistentCanvas();
                 if (!connected && IsOpen) notice.text = "저장 데이터를 읽었습니다. 사무실 이동 연결은 아직 준비되지 않았습니다.";
             }
         }
@@ -413,6 +551,18 @@ public sealed class SaveSlotWindow : MonoBehaviour
         notice = CloneText(heading, window, "Notice", new Vector2(0, -220), new Vector2(1050, 80), 24);
         BuildConfirmation(window);
         panel.SetActive(false);
+    }
+
+    private void MovePanelToPersistentCanvas()
+    {
+        if (panel == null || panel.transform.parent == transform) return;
+        panel.transform.SetParent(transform, false);
+        var rect = panel.transform as RectTransform;
+        if (rect == null) return;
+        rect.anchorMin = Vector2.zero;
+        rect.anchorMax = Vector2.one;
+        rect.offsetMin = rect.offsetMax = Vector2.zero;
+        rect.localScale = Vector3.one;
     }
 
     private void BuildConfirmation(Transform parent)

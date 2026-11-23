@@ -11,14 +11,15 @@ using UnityEngine.UI;
 public static class TabletMenuBuilder
 {
     const string FontAssetPath = "Assets/Fonts/MalgunGothic SDF.asset";
-    const string ArtDir = "Assets/artsources/menu_ temporary/";
+    const string ArtDir = "Assets/artsources/menu_temporary/";
     const string PrefabDir = "Assets/Prefab/menu UI/";
     const string MenuPrefabPath = "Assets/Resources/TabletMenu.prefab";
 
     static readonly Color Ink = new Color(0.1f, 0.1f, 0.1f);
     static readonly Color Muted = new Color(0.45f, 0.45f, 0.45f);
-    static readonly Color SlotGray = new Color(0.86f, 0.86f, 0.86f);
+    static readonly Color SlotGray = new Color32(0xF8, 0xE5, 0xD9, 0xFF);
     static readonly Color PillGray = new Color(0.87f, 0.87f, 0.87f);
+    static readonly Color AccentOrange = new Color32(0xFE, 0xA6, 0x35, 0xFF);
     static readonly Color Selected = new Color(0.85f, 0.15f, 0.15f);
 
     static TMP_FontAsset font;
@@ -137,10 +138,11 @@ public static class TabletMenuBuilder
         return rt.gameObject;
     }
 
-    static GameObject Pill(Transform parent, string label, float x, float y, float w, float h, float fontSize)
+    static GameObject Pill(Transform parent, string label, float x, float y, float w, float h, float fontSize,
+        Color? background = null)
     {
         var rt = Rect("Pill_" + label, parent, x, y, w, h);
-        Img(rt, PillGray, round, true);
+        Img(rt, background ?? PillGray, round, true);
         Txt("Label", rt, label, fontSize, Ink, TextAlignmentOptions.Center, 0, 0, w, h);
         return rt.gameObject;
     }
@@ -262,6 +264,7 @@ public static class TabletMenuBuilder
             manager.OpenEquipment, manager.OpenInventory, manager.OpenQuest, manager.OpenMap, manager.OpenCodex
         };
         string[] names = { "Equipment", "Inventory", "Quest", "Map", "Codex" };
+        string[] labels = { "장비", "가방", "의뢰", "지도", "도감" };
 
         var highlights = new GameObject[5];
         for (int i = 0; i < 5; i++)
@@ -277,6 +280,7 @@ public static class TabletMenuBuilder
             var clear = Img(brt, new Color(1, 1, 1, 0));
             var button = MakeButton(brt, clear);
             UnityEventTools.AddVoidPersistentListener(button.onClick, actions[i]);
+            Txt("Label", brt, labels[i], 26, Ink, TextAlignmentOptions.Center, 0, 0, 200, 52, 18);
         }
         return highlights;
     }
@@ -344,15 +348,15 @@ public static class TabletMenuBuilder
         controller.iconImage = icon2;
 
         var gradeRow = Rect("GradeRow", detail, 1260, 510, 500, 36);
-        Pill(gradeRow, "등급", 0, 2, 80, 32, 22);
+        Pill(gradeRow, "등급", 0, 2, 80, 32, 22, AccentOrange);
         controller.gradeText = Txt("GradeText", gradeRow, "", 24, Ink, TextAlignmentOptions.MidlineLeft, 100, 0, 300, 36, 16);
 
         var attackRow = Rect("AttackRow", detail, 1260, 560, 500, 36);
-        Pill(attackRow, "기본 효과", 0, 2, 110, 32, 20);
+        Pill(attackRow, "기본 효과", 0, 2, 110, 32, 20, AccentOrange);
         controller.attackPowerText = Txt("AttackText", attackRow, "", 24, Ink, TextAlignmentOptions.MidlineLeft, 130, 0, 300, 36, 16);
 
         var magicRow = Rect("MagicRow", detail, 1260, 610, 500, 36);
-        Pill(magicRow, "마법 효과", 0, 2, 110, 32, 20);
+        Pill(magicRow, "마법 효과", 0, 2, 110, 32, 20, AccentOrange);
         controller.magicEffectText = Txt("MagicText", magicRow, "", 24, Ink, TextAlignmentOptions.MidlineLeft, 130, 0, 300, 36, 16);
 
         controller.descriptionText = Txt("Description", detail, "", 26, Ink, TextAlignmentOptions.TopLeft, 1260, 660, 500, 280, 16);
@@ -386,7 +390,8 @@ public static class TabletMenuBuilder
         }
 
         // 재화
-        Img(Rect("CoinIcon", panel, 1012, 150, 44, 44), Color.white, Art("icon_coin.png.png"));
+        var coinIcon = Img(Rect("CoinIcon", panel, 1012, 150, 44, 44), Color.white, Art("icon_coin.png.png"));
+        coinIcon.preserveAspect = true;
         controller.coinText = Txt("CoinText", panel, "0", 34, Ink, TextAlignmentOptions.MidlineLeft, 1066, 146, 110, 52, 18);
 
         // 슬롯 그리드 (5열 x 4행)
