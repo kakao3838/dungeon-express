@@ -222,7 +222,7 @@ public static class PCBoardBuilder
         p.objectReferenceValue = value;
     }
 
-    // ---------- 헬퍼 (TabletMenuBuilder와 같은 방식) ----------
+    // ---------- 헬퍼 ----------
 
     // 좌상단 기준 좌표(x, y 아래로 증가) 배치
     static RectTransform Rect(string name, Transform parent, float x, float y, float w, float h)
