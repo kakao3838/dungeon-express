@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 // 열려 있는 TownScene에 튜토리얼용 오브젝트(PC, PC 화면, TutorialManager, 튜토리얼 UI)를 만듭니다.
 // 메뉴: Dungeon Express > Build Tutorial (TownScene을 연 상태에서 실행)
-// 레이아웃을 바꾸고 싶으면 이 스크립트의 좌표를 수정하고 다시 실행하세요. (이미 있으면 지우고 다시 만듦)
+// 레이아웃을 바꾸고 싶으면 이 스크립트의 좌표를 수정하고 다시 실행하세요. (이미 있으면 지우고 다시 만듦. 단 OfficePC는 그대로 둠)
 public static class TutorialBuilder
 {
     const string FontAssetPath = "Assets/Fonts/MalgunGothic SDF.asset";
@@ -51,16 +51,16 @@ public static class TutorialBuilder
         // 다시 실행하면 이전 결과를 지우고 새로 만듦
         DestroyIfExists("TutorialManager");
         DestroyIfExists("TutorialPC"); // 예전 이름
-        DestroyIfExists("OfficePC");
         DestroyIfExists("PCBoardCanvas");
 
-        BuildPC();
+        // 사무실 PC(OfficePC)에는 손으로 배치한 사무실 그림이 붙어 있으므로 있으면 그대로 두고, 없을 때만 임시 도형으로 만듦
+        if (GameObject.Find("OfficePC") == null) BuildPC();
         BuildManager(keepRunTutorial);
         PCBoardBuilder.BuildAndLink(); // PC 화면(PCBoardUI)을 만들고 PC / 튜토리얼에 연결
 
         EditorSceneManager.MarkSceneDirty(scene);
         EditorSceneManager.SaveScene(scene);
-        Debug.Log("[TutorialBuilder] 완료: TownScene에 OfficePC / PCBoardCanvas / TutorialManager 생성");
+        Debug.Log("[TutorialBuilder] 완료: TownScene에 PCBoardCanvas / TutorialManager 생성 (OfficePC는 없을 때만 생성)");
     }
 
     static void DestroyIfExists(string name)
