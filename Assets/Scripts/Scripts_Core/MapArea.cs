@@ -7,6 +7,11 @@ public class MapArea : MonoBehaviour
 {
     [SerializeField] private string mapId;
 
+    [Header("타일이 없는 구간 (사무실처럼 배경 그림 한 장인 방)")]
+    [Tooltip("켜면 타일맵 대신 이 오브젝트 위치를 중심으로 아래 크기를 구간 범위로 씁니다")]
+    [SerializeField] private bool useManualSize;
+    [SerializeField] private Vector2 manualSize;
+
     // 씬에 있는 모든 구간 (카메라가 플레이어가 있는 구간을 찾을 때 사용)
     public static readonly List<MapArea> All = new List<MapArea>();
 
@@ -31,6 +36,14 @@ public class MapArea : MonoBehaviour
     public void RecalculateBounds()
     {
         hasBounds = false;
+
+        if (useManualSize)
+        {
+            worldBounds = new Bounds(transform.position, new Vector3(manualSize.x, manualSize.y, 0f));
+            hasBounds = true;
+            return;
+        }
+
         foreach (var tilemapCollider in GetComponentsInChildren<TilemapCollider2D>())
         {
             Bounds b = tilemapCollider.bounds;
