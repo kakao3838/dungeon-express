@@ -313,6 +313,9 @@ MonoBehaviour:
   exitJumpForce: 8
   regrabDelay: 0.3
   topExitReach: 0.8
+  horizontalExitReach: 0.8
+  topEntrySearchDepth: 2
+  topEntryHorizontalReach: 0.6
 --- !u!114 &1609773700234860167
 MonoBehaviour:
   m_ObjectHideFlags: 0
