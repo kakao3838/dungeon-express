@@ -8,21 +8,22 @@ public sealed class ClimbableVine : MonoBehaviour
 {
     private Collider2D vineCollider;
 
+    public Bounds VisualBounds
+    {
+        get
+        {
+            if (TryGetVisualBounds(out Bounds visual)) return visual;
+            return vineCollider != null ? vineCollider.bounds : new Bounds(transform.position, Vector3.zero);
+        }
+    }
+
     public Bounds Bounds
     {
         get
         {
             Bounds area = vineCollider != null ? vineCollider.bounds : new Bounds(transform.position, Vector3.zero);
             // Scene overrides may leave the trigger larger than the visible vine.
-            bool found = false;
-            Bounds visual = default;
-            foreach (SpriteRenderer renderer in GetComponentsInChildren<SpriteRenderer>())
-            {
-                if (!renderer.enabled || renderer.sprite == null) continue;
-                if (!found) { visual = renderer.bounds; found = true; }
-                else visual.Encapsulate(renderer.bounds);
-            }
-            if (found)
+            if (TryGetVisualBounds(out Bounds visual))
             {
                 Vector3 min = area.min;
                 Vector3 max = area.max;
@@ -32,6 +33,19 @@ public sealed class ClimbableVine : MonoBehaviour
             }
             return area;
         }
+    }
+
+    private bool TryGetVisualBounds(out Bounds visual)
+    {
+        bool found = false;
+        visual = default;
+        foreach (SpriteRenderer renderer in GetComponentsInChildren<SpriteRenderer>())
+        {
+            if (!renderer.enabled || renderer.sprite == null) continue;
+            if (!found) { visual = renderer.bounds; found = true; }
+            else visual.Encapsulate(renderer.bounds);
+        }
+        return found;
     }
 
     private void Awake()

@@ -11,9 +11,14 @@ public sealed class PlayerVineClimb : MonoBehaviour
     [SerializeField] private float exitJumpForce = 8f;
     [SerializeField] private float regrabDelay = 0.3f;
     [SerializeField] private float topExitReach = 0.8f;
+    [SerializeField] private float horizontalExitReach = 0.8f;
+    [SerializeField] private float topEntrySearchDepth = 2f;
+    [SerializeField] private float topEntryHorizontalReach = 0.6f;
 
     private readonly HashSet<Collider2D> nearbyVines = new HashSet<Collider2D>();
+    private readonly RaycastHit2D[] climbObstructionHits = new RaycastHit2D[8];
     private Collider2D bodyCollider;
+    private Collider2D ignoredEntryPlatform;
     private float regrabAfter;
 
     private Rigidbody2D rb;
@@ -23,6 +28,7 @@ public sealed class PlayerVineClimb : MonoBehaviour
     private float normalGravityScale;
     private float verticalInput;
     private bool isClimbing;
+    private bool isEnteringVineFromTop;
     private bool hasClimbingParameter;
 
     private float GripY => bodyCollider.bounds.min.y + bodyCollider.bounds.size.y * 0.9f;
@@ -57,6 +63,15 @@ public sealed class PlayerVineClimb : MonoBehaviour
             verticalInput = -1f;
 
         if (!isClimbing) RefreshVine();
+        if (!isClimbing && verticalInput < 0f && Time.time >= regrabAfter &&
+            playerController != null && playerController.IsGrounded &&
+            playerController.enabled && !playerController.InputLocked &&
+            !(NPCDialogueMenu.Instance != null && NPCDialogueMenu.Instance.IsOpen) &&
+            TryStartTopEntry())
+        {
+            return;
+        }
+
         if (!isClimbing && Time.time >= regrabAfter && playerController != null &&
             playerController.enabled && !playerController.InputLocked &&
             !(NPCDialogueMenu.Instance != null && NPCDialogueMenu.Instance.IsOpen) &&
@@ -83,7 +98,38 @@ public sealed class PlayerVineClimb : MonoBehaviour
 
         if (currentVine == null) { StopClimbing(false); return; }
 
-        if (verticalInput > 0f && TryExitOntoPlatform()) return;
+        if (!isEnteringVineFromTop && verticalInput < 0f && IsBlockedBelow() && IsNearVineBottom())
+        {
+            StopClimbing(false);
+            rb.linearVelocity = Vector2.zero;
+            regrabAfter = Time.time + regrabDelay;
+            return;
+        }
+
+        if (verticalInput > 0f)
+        {
+            bool nearVineTop = bodyCollider != null &&
+                bodyCollider.bounds.max.y >= currentVine.Bounds.max.y - topExitReach;
+            if ((nearVineTop || IsBlockedAbove()) && TryExitOntoPlatform()) return;
+        }
+
+        if (isEnteringVineFromTop)
+        {
+            if (ignoredEntryPlatform != null && bodyCollider.bounds.max.y < ignoredEntryPlatform.bounds.min.y - 0.02f)
+                SetIgnoredEntryPlatform(null);
+
+            float entryHorizontalCorrection = Mathf.Clamp(
+                (currentVine.CenterX - rb.position.x) * centerSnapSpeed,
+                -centerSnapSpeed,
+                centerSnapSpeed);
+            rb.linearVelocity = new Vector2(entryHorizontalCorrection, verticalInput < 0f ? -climbSpeed : 0f);
+
+            if (GripY <= currentVine.Bounds.max.y && GripY >= currentVine.Bounds.min.y)
+            {
+                isEnteringVineFromTop = false;
+            }
+            return;
+        }
 
         // Continue onto a neighbouring segment only if it also reaches the hands.
         RefreshVine();
@@ -151,23 +197,29 @@ public sealed class PlayerVineClimb : MonoBehaviour
     // Only step onto a nearby, upward-facing surface with enough room for the body.
     private bool TryExitOntoPlatform()
     {
-        if (bodyCollider == null || playerController == null ||
-            bodyCollider.bounds.max.y < currentVine.Bounds.max.y - topExitReach) return false;
+        if (bodyCollider == null || playerController == null || currentVine == null) return false;
         Bounds body = bodyCollider.bounds;
+        float visibleTop = currentVine.VisualBounds.max.y;
+        float verticalSearchReach = Mathf.Max(topExitReach, visibleTop - body.max.y + topExitReach);
         float direction = playerController.IsFacingRight ? 1f : -1f;
-        // Search outward from the vine, preferring the smallest sideways adjustment.
+        // Search around the visible vine top as well as the trigger top. Scene colliders
+        // can be shorter than the rendered vine, especially where the vine meets a platform.
         float centerX = currentVine.CenterX;
-        float reach = body.extents.x + topExitReach * 0.5f;
+        float reach = body.extents.x + horizontalExitReach;
+        float rayTop = Mathf.Max(body.max.y, visibleTop) + topExitReach;
+        float rayBottom = body.min.y - topExitReach;
+        float rayDistance = rayTop - rayBottom;
         for (int sample = 0; sample <= 12; sample++)
         {
             float offset = sample == 0 ? 0f : ((sample + 1) / 2) * reach / 6f;
             float x = centerX + offset * direction * (sample % 2 == 1 ? 1f : -1f);
-            Vector2 origin = new Vector2(x, currentVine.Bounds.max.y + topExitReach);
+            Vector2 origin = new Vector2(x, rayTop);
             foreach (RaycastHit2D hit in Physics2D.RaycastAll(origin, Vector2.down,
-                topExitReach * 2f, playerController.groundLayer))
+                rayDistance, playerController.groundLayer))
             {
                 if (hit.collider.isTrigger || hit.collider.attachedRigidbody == rb || hit.normal.y < 0.7f ||
-                    hit.point.y < body.min.y - 0.1f || hit.point.y > body.max.y + topExitReach) continue;
+                    hit.point.y < body.min.y - topExitReach ||
+                    hit.point.y > body.max.y + verticalSearchReach) continue;
                 Vector2 targetCenter = new Vector2(x, hit.point.y + body.extents.y + 0.05f);
                 bool blocked = false;
                 foreach (Collider2D obstacle in Physics2D.OverlapBoxAll(targetCenter,
@@ -190,6 +242,40 @@ public sealed class PlayerVineClimb : MonoBehaviour
         return false;
     }
 
+    private bool IsBlockedAbove()
+    {
+        if (bodyCollider == null || playerController == null) return false;
+
+        var filter = new ContactFilter2D();
+        filter.SetLayerMask(playerController.groundLayer);
+        filter.useTriggers = false;
+        int hitCount = bodyCollider.Cast(Vector2.up, filter, climbObstructionHits, 0.08f);
+        for (int i = 0; i < hitCount; i++)
+        {
+            RaycastHit2D hit = climbObstructionHits[i];
+            if (hit.collider != null && hit.normal.y < -0.5f)
+                return true;
+        }
+        return false;
+    }
+
+    private bool IsBlockedBelow()
+    {
+        if (bodyCollider == null || playerController == null) return false;
+
+        var filter = new ContactFilter2D();
+        filter.SetLayerMask(playerController.groundLayer);
+        filter.useTriggers = false;
+        int hitCount = bodyCollider.Cast(Vector2.down, filter, climbObstructionHits, 0.08f);
+        for (int i = 0; i < hitCount; i++)
+        {
+            RaycastHit2D hit = climbObstructionHits[i];
+            if (hit.collider != null && hit.normal.y > 0.5f)
+                return true;
+        }
+        return false;
+    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         nearbyVines.Remove(other);
@@ -205,7 +291,7 @@ public sealed class PlayerVineClimb : MonoBehaviour
             StopClimbing(false);
     }
 
-    private void StartClimbing()
+    private void StartClimbing(bool playClimbingAnimation = true)
     {
         isClimbing = true;
         rb.gravityScale = 0f;
@@ -214,12 +300,100 @@ public sealed class PlayerVineClimb : MonoBehaviour
         if (playerController != null)
             playerController.enabled = false;
 
-        SetClimbingAnimation(true);
+        SetClimbingAnimation(playClimbingAnimation);
+    }
+
+    private bool TryStartTopEntry()
+    {
+        if (bodyCollider == null || playerController == null || topEntrySearchDepth <= 0f)
+            return false;
+
+        int vineLayer = LayerMask.NameToLayer("Climbable");
+        if (vineLayer < 0) return false;
+        int vineMask = 1 << vineLayer;
+        Bounds body = bodyCollider.bounds;
+        float width = body.size.x + topEntryHorizontalReach * 2f;
+        Vector2 searchCenter = new Vector2(body.center.x,
+            body.min.y - topEntrySearchDepth * 0.5f + 0.05f);
+        Vector2 searchSize = new Vector2(width, topEntrySearchDepth + 0.1f);
+        ClimbableVine closestVine = null;
+        float closestDistance = float.PositiveInfinity;
+
+        foreach (Collider2D candidate in Physics2D.OverlapBoxAll(searchCenter, searchSize, 0f, vineMask))
+        {
+            if (candidate == null || !candidate.isTrigger || !candidate.enabled) continue;
+            ClimbableVine vine = candidate.GetComponent<ClimbableVine>();
+            if (vine == null) vine = candidate.GetComponentInParent<ClimbableVine>();
+            if (vine == null || !vine.isActiveAndEnabled) continue;
+
+            Bounds visible = vine.VisualBounds;
+            float horizontalDistance = Mathf.Abs(vine.CenterX - body.center.x);
+            float verticalGap = body.min.y - visible.max.y;
+            if (horizontalDistance > body.extents.x + topEntryHorizontalReach ||
+                verticalGap < -0.15f || verticalGap > topEntrySearchDepth) continue;
+
+            float distance = horizontalDistance + verticalGap;
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestVine = vine;
+            }
+        }
+
+        if (closestVine == null) return false;
+
+        currentVine = closestVine;
+        Collider2D groundSupport = FindGroundSupport();
+        Bounds vineBounds = closestVine.Bounds;
+        float targetGripY = Mathf.Clamp(vineBounds.max.y - 0.05f, vineBounds.min.y, vineBounds.max.y);
+        Vector2 snappedPosition = rb.position;
+        snappedPosition.x += closestVine.CenterX - body.center.x;
+        snappedPosition.y += targetGripY - GripY;
+        rb.position = snappedPosition;
+        rb.linearVelocity = Vector2.zero;
+
+        StartClimbing();
+        isEnteringVineFromTop = true;
+        SetIgnoredEntryPlatform(groundSupport);
+        return true;
+    }
+
+    private Collider2D FindGroundSupport()
+    {
+        Bounds body = bodyCollider.bounds;
+        RaycastHit2D[] hits = Physics2D.RaycastAll(
+            new Vector2(body.center.x, body.min.y + 0.08f), Vector2.down, 0.3f,
+            playerController.groundLayer);
+        foreach (RaycastHit2D hit in hits)
+        {
+            if (hit.collider != null && !hit.collider.isTrigger &&
+                hit.collider.attachedRigidbody != rb && hit.normal.y > 0.5f)
+                return hit.collider;
+        }
+        return null;
+    }
+
+    private void SetIgnoredEntryPlatform(Collider2D platform)
+    {
+        if (ignoredEntryPlatform != null && bodyCollider != null)
+            Physics2D.IgnoreCollision(bodyCollider, ignoredEntryPlatform, false);
+
+        ignoredEntryPlatform = platform;
+        if (ignoredEntryPlatform != null && bodyCollider != null)
+            Physics2D.IgnoreCollision(bodyCollider, ignoredEntryPlatform, true);
+    }
+
+    private bool IsNearVineBottom()
+    {
+        if (bodyCollider == null || currentVine == null) return false;
+        return bodyCollider.bounds.min.y <= currentVine.Bounds.min.y + 0.2f;
     }
 
     private void StopClimbing(bool jumpAway)
     {
         isClimbing = false;
+        isEnteringVineFromTop = false;
+        SetIgnoredEntryPlatform(null);
         rb.gravityScale = normalGravityScale;
 
         if (animator != null)
